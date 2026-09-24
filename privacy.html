@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | CardioCare</title>
+  <meta name="description"
+    content="CardioCare's privacy policy explains how we collect, use, and protect your personal and health information in compliance with HIPAA and other regulations." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/output.css" />
+  <link rel="icon" href="assets/heart.png" type="image/x-icon">
+</head>
+
+<body class="font-body">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-6">
+      <svg width="52" height="52" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M36 62s-28-18-28-36a16 16 0 0132 0 16 16 0 0132 0c0 18-28 36-28 36z" fill="#DC2626"
+          style="animation: heartbeat 1.4s ease-in-out infinite;"></path>
+      </svg>
+      <svg class="ecg-line" viewBox="0 0 260 60">
+        <path class="ecg-path"
+          d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
+      </svg>
+      <div class="text-white font-heading text-xl font-semibold tracking-wide mt-2">CardioCare</div>
+      <div class="text-slate-400 text-sm">Loading Privacy Policy...</div>
+    </div>
+  </div>
+
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="topbar py-2 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div class="flex items-center gap-6">
+          <span class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            <strong class="text-red-400">24/7 Emergency:</strong>
+            <a href="tel:+1-800-CARDIO" class="hover:text-red-400 transition-colors">+1 (800) CARDIO</a>
+          </span>
+        </div>
+        <div class="flex items-center gap-4 text-slate-400 text-xs">
+          <span>Mon–Sat: 8AM – 8PM</span>
+          <span>|</span>
+          <span>Emergency: 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar" class="sticky top-0 z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+        <a href="index.html" class="flex items-center gap-2.5">
+          <div class="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center shadow-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+              <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
+            </svg>
+          </div>
+          <div>
+            <div class="font-heading font-800 text-lg leading-tight dark:text-white">CardioCare</div>
+            <div class="text-xs text-slate-600 leading-none">Heart Specialists</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="index.html" class="nav-link text-sm">Home</a>
+          <a href="index.html#about" class="nav-link text-sm">About</a>
+          <a href="index.html#services" class="nav-link text-sm">Services</a>
+          <a href="index.html#departments" class="nav-link text-sm">Departments</a>
+          <a href="index.html#appointments" class="nav-link text-sm">Appointments</a>
+          <a href="blog.html" class="nav-link text-sm">Blog</a>
+          <a href="index.html#contact" class="nav-link text-sm">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          
+          <a href="index.html#appointments" class="hidden lg:flex btn-primary text-sm py-2.5 px-5">
+            <i data-lucide="calendar" class="w-4 h-4"></i>
+            Book Appointment
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-white">
+            <i data-lucide="menu" class="w-6 h-6" id="menu-open"></i>
+            <i data-lucide="x" class="w-6 h-6 hidden" id="menu-close"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
+        <a href="index.html" class="nav-link text-slate-200 py-2.5 text-sm font-medium">Home</a>
+        <a href="index.html#about" class="nav-link text-slate-200 py-2.5 text-sm font-medium">About</a>
+        <a href="index.html#services" class="nav-link text-slate-200 py-2.5 text-sm font-medium">Services</a>
+        <a href="blog.html" class="nav-link text-slate-200 py-2.5 text-sm font-medium">Blog</a>
+        <a href="index.html#appointments" class="btn-primary mt-3 w-full justify-center">Book Appointment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="relative py-20" style="background: var(--medical-gradient);">
+    <div class="absolute top-20 right-16 w-72 h-72 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span class="inline-flex items-center gap-2 bg-white/10 text-slate-300 text-xs font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4" data-aos="fade-up">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Legal
+      </span>
+      <h1 class="font-heading font-extrabold text-4xl lg:text-5xl text-white mb-4" data-aos="fade-up" data-aos-delay="100">
+        Privacy Policy
+      </h1>
+      <p class="text-slate-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        Last updated: June 10, 2026
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTENT ===================== -->
+  <section class="section-padding bg-white dark:bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 card-medical">
+      <div class="prose max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-6 text-sm" data-aos="fade-up">
+
+        <p>At CardioCare, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website, use our online services, or interact with our clinic. Please read this policy carefully.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">1. Information We Collect</h2>
+        <p>We may collect the following categories of information:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Personal Identifiers:</strong> Name, email address, phone number, date of birth, and mailing address when you book an appointment or contact us.</li>
+          <li><strong>Health Information:</strong> Medical history, current medications, symptoms, and other health data you provide in forms or during consultations. This includes Protected Health Information (PHI) as defined by HIPAA.</li>
+          <li><strong>Technical Data:</strong> IP address, browser type, device information, pages visited, and time spent on our website via cookies and analytics tools.</li>
+          <li><strong>Communication Records:</strong> Emails, contact form submissions, and any correspondence you send us.</li>
+        </ul>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">2. How We Use Your Information</h2>
+        <p>We use the collected information for the following purposes:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>To provide medical services, process appointments, and communicate with you about your care.</li>
+          <li>To send appointment reminders, health tips, newsletters, and clinic updates (only if you opt in).</li>
+          <li>To improve our website, services, and patient experience through analytics.</li>
+          <li>To comply with legal obligations, including medical record‑keeping and HIPAA requirements.</li>
+          <li>To process payments and insurance claims (when applicable).</li>
+        </ul>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">3. HIPAA Compliance & Protected Health Information</h2>
+        <p>CardioCare is a covered entity under the Health Insurance Portability and Accountability Act (HIPAA). Any Protected Health Information (PHI) you share with us — whether online, in‑person, or through our telehealth platform — is protected under HIPAA regulations. We maintain administrative, physical, and technical safeguards to ensure the confidentiality, integrity, and availability of your PHI.</p>
+        <p>We will never disclose your PHI without your written authorization, except as permitted or required by law (e.g., for treatment, payment, or healthcare operations).</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">4. Data Sharing and Disclosure</h2>
+        <p>We do not sell, rent, or lease your personal information to third parties. We may share your information only in these limited circumstances:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>With Your Consent:</strong> When you explicitly direct us to share your information.</li>
+          <li><strong>Service Providers:</strong> With third‑party vendors who perform services on our behalf (e.g., appointment scheduling, email delivery, IT support) and who are contractually bound to protect your data.</li>
+          <li><strong>Legal Requirements:</strong> If required by law, court order, or government regulation.</li>
+          <li><strong>Emergency Situations:</strong> In a medical emergency, we may share necessary information with emergency responders.</li>
+        </ul>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">5. Cookies and Tracking Technologies</h2>
+        <p>Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and understand where our visitors come from. Cookies are small data files stored on your device. You can control cookie preferences through your browser settings. Disabling cookies may affect the functionality of certain parts of our website.</p>
+        <p>We use Google Analytics to collect anonymous usage data. Google Analytics may set its own cookies. You can opt out of Google Analytics by installing the Google Analytics Opt‑out Browser Add‑on.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">6. Data Security</h2>
+        <p>We implement industry‑standard security measures to protect your personal information, including SSL encryption for data transmission, firewalls, secure servers, and regular vulnerability assessments. Access to your health information is restricted to authorized personnel who require it for treatment, payment, or healthcare operations.</p>
+        <p>Despite our best efforts, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security, but we are committed to protecting your data to the highest standards.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">7. Data Retention</h2>
+        <p>We retain your personal and health information for as long as necessary to fulfill the purposes for which it was collected, or as required by applicable law. Medical records are typically retained for a minimum of seven years from your last visit, or longer if mandated by state or federal regulations. Non‑medical personal data is retained only as long as needed for business or legal purposes.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">8. Your Rights</h2>
+        <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Access:</strong> Request a copy of the health and personal data we hold about you.</li>
+          <li><strong>Correction:</strong> Request that we correct any inaccurate or incomplete information.</li>
+          <li><strong>Deletion:</strong> Request the deletion of your data, subject to legal retention requirements.</li>
+          <li><strong>Opt‑Out:</strong> Unsubscribe from marketing emails at any time by clicking the “unsubscribe” link in any email or contacting us directly.</li>
+          <li><strong>Data Portability:</strong> Request a structured, machine‑readable copy of your data.</li>
+        </ul>
+        <p>To exercise these rights, please contact our Privacy Officer using the information below. We will respond within the timeframe required by law.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">9. Children's Privacy</h2>
+        <p>Our website and services are not intended for individuals under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately, and we will take steps to delete such information.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">10. Third‑Party Links</h2>
+        <p>Our website may contain links to external sites not operated by us. We are not responsible for the privacy practices or content of these third‑party websites. We encourage you to review their privacy policies before providing any personal information.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">11. Changes to This Privacy Policy</h2>
+        <p>We reserve the right to update this Privacy Policy at any time. The "Last updated" date at the top of this page indicates when revisions were made. We encourage you to review this policy periodically. Material changes may be communicated via email or a notice on our website.</p>
+
+        <h2 class="font-heading font-bold text-xl text-slate-800 dark:text-white mt-8 mb-3">12. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or wish to exercise your data rights, please contact our Privacy Officer:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Email:</strong> <a href="mailto:privacy@cardiocare.com" class="text-red-600 hover:underline">privacy@cardiocare.com</a></li>
+          <li><strong>Phone:</strong> +1 (212) 555-0123</li>
+          <li><strong>Address:</strong> 123 Medical Center Drive, Suite 400, New York, NY 10001</li>
+        </ul>
+
+        <p class="mt-8 text-xs text-slate-400">This privacy policy is intended to comply with applicable U.S. federal and state laws, including HIPAA and the California Consumer Privacy Act (CCPA) where applicable.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer  -->
+  <footer class="text-white overflow-hidden relative">
+    <!-- Decorative Background Elements -->
+    <div class="absolute top-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.04] pointer-events-none"
+      style="background: radial-gradient(circle, #DC2626, transparent); transform: translate(-40%, -40%);"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.03] pointer-events-none"
+      style="background: radial-gradient(circle, #0EA5E9, transparent); transform: translate(30%, 30%);"></div>
+
+    <!-- ECG Decorative Line -->
+    <div class="w-full overflow-hidden border-b border-white/5">
+      <svg viewBox="0 0 1440 40" preserveAspectRatio="none" class="w-full h-10" fill="none">
+        <path
+          d="M0,20 L200,20 L240,20 L255,4 L265,36 L272,2 L282,38 L292,20 L500,20 L540,20 L555,4 L565,36 L572,2 L582,38 L592,20 L800,20 L840,20 L855,4 L865,36 L872,2 L882,38 L892,20 L1100,20 L1140,20 L1155,4 L1165,36 L1172,2 L1182,38 L1192,20 L1440,20"
+          stroke="#DC2626" stroke-width="1.5" stroke-opacity="0.5" />
+      </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+
+      <!-- TOP ROW: Brand + Newsletter -->
+      <div class="grid lg:grid-cols-2 gap-10 items-start mb-14 pb-14 border-b border-white/8">
+        <!-- Brand Block -->
+        <div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-900/50">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
+              </svg>
+            </div>
+            <div>
+              <div class="font-heading font-extrabold text-2xl text-white tracking-tight">CardioCare</div>
+              <div class="text-xs text-red-400 font-semibold uppercase tracking-widest">Heart Specialists</div>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-md">
+            CardioCare is a premier cardiology clinic dedicated to delivering world-class heart care with compassion.
+            Since 2003, we've been the most trusted cardiac practice in the region, combining advanced technology with a
+            patient-first philosophy.
+          </p>
+
+          <!-- Certifications Row -->
+          <div class="flex flex-wrap gap-3 mb-6">
+            <div class="flex items-center gap-2 bg-white/6 border border-white/10 rounded-lg px-3 py-2">
+              <div class="w-7 h-7 bg-red-600/30 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-red-400"></i>
+              </div>
+              <span class="text-slate-300 text-xs font-medium">FACC Certified</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/6 border border-white/10 rounded-lg px-3 py-2">
+              <div class="w-7 h-7 bg-blue-600/30 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-400"></i>
+              </div>
+              <span class="text-slate-300 text-xs font-medium">HIPAA Compliant</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/6 border border-white/10 rounded-lg px-3 py-2">
+              <div class="w-7 h-7 bg-green-600/30 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="star" class="w-3.5 h-3.5 text-green-400"></i>
+              </div>
+              <span class="text-slate-300 text-xs font-medium">Top Rated 2024</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/6 border border-white/10 rounded-lg px-3 py-2">
+              <div class="w-7 h-7 bg-yellow-600/30 rounded-full flex items-center justify-center flex-shrink-0">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-yellow-400"></i>
+              </div>
+              <span class="text-slate-300 text-xs font-medium">AHA Member</span>
+            </div>
+          </div>
+
+          <!-- Social Icons -->
+          <div class="flex items-center gap-3">
+            <span class="text-slate-500 text-xs mr-1">Follow Us:</span>
+            <a href="#"
+              class="w-9 h-9 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-90 hover:scale-110 transition-all"
+              title="Facebook">
+              <svg width="15" height="15" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center hover:opacity-90 hover:scale-110 transition-all"
+              style="background: linear-gradient(45deg, #f09433,#e6683c,#dc2743,#cc2366,#bc1888)" title="Instagram">
+              <svg width="15" height="15" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 bg-[#0077B5] rounded-full flex items-center justify-center hover:opacity-90 hover:scale-110 transition-all"
+              title="LinkedIn">
+              <svg width="15" height="15" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 bg-[#FF0000] rounded-full flex items-center justify-center hover:opacity-90 hover:scale-110 transition-all"
+              title="YouTube">
+              <svg width="15" height="15" fill="white" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletter Block -->
+        <div class="bg-gradient-to-br from-red-600/15 to-slate-800/40 border border-red-500/20 rounded-2xl p-7">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i data-lucide="mail-check" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-lg text-white">Heart Health Newsletter</h4>
+              <p class="text-slate-400 text-xs">Join 12,000+ subscribers</p>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">Get weekly tips on heart health, cardiology news,
+            treatment breakthroughs, and clinic updates delivered right to your inbox.</p>
+          <form class="flex gap-2.5 mb-4" onsubmit="handleFooterNewsletter(event)">
+            <input type="email" placeholder="Enter your email address" required
+              class="flex-1 bg-white/8 border border-white/15 text-white placeholder-slate-500 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-red-500 transition-all" />
+            <button type="submit"
+              class="bg-red-600 hover:bg-red-700 text-white font-heading font-semibold px-5 py-3 rounded-lg text-sm transition-all whitespace-nowrap flex items-center gap-1.5 flex-shrink-0">
+              <i data-lucide="send" class="w-4 h-4"></i> Subscribe
+            </button>
+          </form>
+          <p class="text-slate-600 text-xs flex items-center gap-1.5">
+            <i data-lucide="lock" class="w-3.5 h-3.5 text-slate-500"></i>
+            Your privacy is protected. Unsubscribe anytime. No spam.
+          </p>
+        </div>
+      </div>
+
+      <!-- MAIN LINKS GRID: 5 columns -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-14 pb-14 border-b border-white/8">
+
+        <!-- Medical Services -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-red-600 rounded-full inline-block"></span>
+            Medical Services
+          </h4>
+          <ul class="space-y-3">
+            <li><a href="heart-health.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Heart
+                Consultation</a></li>
+            <li><a href="ECG-diagnostics.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>ECG
+                & Diagnostics</a></li>
+            <li><a href="hypertension-management.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Hypertension
+                Care</a></li>
+            <li><a href="cardiac-rehabilitation.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Cardiac
+                Rehab</a></li>
+            <li><a href="preventive-cardiology.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Preventive
+                Care</a></li>
+            <li><a href="Emergency.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Emergency
+                Care</a></li>
+            <li><a href="#departments"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Electrophysiology</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Patient Resources -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-blue-500 rounded-full inline-block"></span>
+            Patient Resources
+          </h4>
+          <ul class="space-y-3">
+            <li><a href="#appointments"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Book
+                Appointment</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Patient
+                Portal</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Telehealth</a>
+            </li>
+            <li><a href="#faq"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Patient
+                FAQ</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Insurance
+                Info</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Medical
+                Records</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Billing
+                & Payments</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-green-500 rounded-full inline-block"></span>
+            Quick Links
+          </h4>
+          <ul class="space-y-3">
+            <li><a href="#about"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>About
+                Doctor</a></li>
+            <li><a href="#departments"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Departments</a>
+            </li>
+            <li><a href="blog.html"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Health
+                Blog</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Careers</a>
+            </li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Research</a>
+            </li>
+            <li><a href="#contact"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Contact
+                Us</a></li>
+            <li><a href="#"
+                class="text-slate-400 text-sm hover:text-red-400 transition-colors flex items-center gap-1.5 group"><i
+                  data-lucide="chevron-right"
+                  class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-red-500 flex-shrink-0"></i>Sitemap</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Working Hours -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-yellow-500 rounded-full inline-block"></span>
+            Working Hours
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Monday</span>
+              <span class="text-slate-300 font-medium text-xs">8AM – 8PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Tuesday</span>
+              <span class="text-slate-300 font-medium text-xs">8AM – 8PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Wednesday</span>
+              <span class="text-slate-300 font-medium text-xs">8AM – 8PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Thursday</span>
+              <span class="text-slate-300 font-medium text-xs">8AM – 8PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Friday</span>
+              <span class="text-slate-300 font-medium text-xs">8AM – 6PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Saturday</span>
+              <span class="text-slate-300 font-medium text-xs">9AM – 5PM</span>
+            </li>
+            <li class="flex justify-between gap-4">
+              <span class="text-slate-400">Sunday</span>
+              <span class="text-red-400 font-semibold text-xs">Emergency Only</span>
+            </li>
+          </ul>
+          <div class="mt-4 bg-green-600/15 border border-green-500/25 rounded-lg px-3 py-2 flex items-center gap-2">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse flex-shrink-0"></span>
+            <span class="text-green-400 text-xs font-semibold">Currently Open</span>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-red-500 rounded-full inline-block"></span>
+            Contact Info
+          </h4>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <div class="text-slate-300 text-xs font-semibold mb-0.5">Our Location</div>
+                <div class="text-slate-500 text-xs leading-relaxed">123 Medical Center Dr,<br />Suite 400, New York, NY
+                  10001</div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <div class="text-slate-300 text-xs font-semibold mb-0.5">Phone</div>
+                <a href="tel:+18002273461" class="text-slate-500 text-xs hover:text-red-400 transition-colors">+1 (800)
+                  CARDIO</a><br />
+                <a href="tel:+12125550123" class="text-slate-500 text-xs hover:text-red-400 transition-colors">+1 (212)
+                  555-0123</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-red-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="mail" class="w-4 h-4 text-red-400"></i>
+              </div>
+              <div>
+                <div class="text-slate-300 text-xs font-semibold mb-0.5">Email</div>
+                <a href="mailto:care@cardiocare.com"
+                  class="text-slate-500 text-xs hover:text-red-400 transition-colors">care@cardiocare.com</a><br />
+                <a href="mailto:appointments@cardiocare.com"
+                  class="text-slate-500 text-xs hover:text-red-400 transition-colors">appointments@cardiocare.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GALLERY ROW: Splashbase/Unsplash Images -->
+      <div class="mb-14 pb-14 border-b border-white/8">
+        <div class="flex items-center justify-between mb-5">
+          <h4 class="font-heading font-semibold text-sm text-white flex items-center gap-2">
+            <span class="w-1 h-4 bg-red-500 rounded-full inline-block"></span>
+            Gallery — Our Clinic & Team
+          </h4>
+          <a href="#"
+            class="text-red-400 text-xs font-semibold hover:text-red-300 transition-colors flex items-center gap-1">
+            View All <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-3 sm:grid-cols-6 gap-2.5">
+          <!-- Unsplash real images - medical/cardiology/doctor themed -->
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&h=200&fit=crop&auto=format"
+              alt="Doctor consultation" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=200&h=200&fit=crop&auto=format"
+              alt="Medical equipment" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=200&h=200&fit=crop&auto=format"
+              alt="Hospital corridor" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=200&h=200&fit=crop&auto=format"
+              alt="ECG monitor" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop&auto=format"
+              alt="Medical team" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+          <a href="#" class="block rounded-xl overflow-hidden aspect-square group relative">
+            <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=200&h=200&fit=crop&auto=format"
+              alt="Stethoscope" loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div
+              class="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/30 transition-all duration-300 flex items-center justify-center">
+              <i data-lucide="zoom-in"
+                class="w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- BOTTOM ROW: Accreditations + Map Preview -->
+      <div class="grid md:grid-cols-2 gap-8 mb-10 pb-10 border-b border-white/8">
+        <!-- Accreditations & Awards -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-yellow-400 rounded-full inline-block"></span>
+            Accreditations & Awards
+          </h4>
+          <div class="grid grid-cols-2 gap-3">
+            <div
+              class="bg-white/5 border border-white/8 rounded-xl p-4 flex items-center gap-3 hover:bg-white/8 transition-colors">
+              <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="award" class="w-5 h-5 text-yellow-400"></i>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">Best Cardiac Clinic</div>
+                <div class="text-slate-400 text-xs">NY Health Awards 2024</div>
+              </div>
+            </div>
+            <div
+              class="bg-white/5 border border-white/8 rounded-xl p-4 flex items-center gap-3 hover:bg-white/8 transition-colors">
+              <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="shield-check" class="w-5 h-5 text-blue-400"></i>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">JCAHO Accredited</div>
+                <div class="text-slate-400 text-xs">Joint Commission 2024</div>
+              </div>
+            </div>
+            <div
+              class="bg-white/5 border border-white/8 rounded-xl p-4 flex items-center gap-3 hover:bg-white/8 transition-colors">
+              <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="heart" class="w-5 h-5 text-red-400"></i>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">AHA Gold Plus</div>
+                <div class="text-slate-400 text-xs">Heart Care Quality 2024</div>
+              </div>
+            </div>
+            <div
+              class="bg-white/5 border border-white/8 rounded-xl p-4 flex items-center gap-3 hover:bg-white/8 transition-colors">
+              <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="star" class="w-5 h-5 text-green-400"></i>
+              </div>
+              <div>
+                <div class="text-white text-xs font-semibold">US News Top Rated</div>
+                <div class="text-slate-400 text-xs">Top 10 Cardiologists 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map + Recent Blog Posts -->
+        <div>
+          <h4 class="font-heading font-semibold text-sm text-white mb-5 flex items-center gap-2">
+            <span class="w-1 h-4 bg-blue-500 rounded-full inline-block"></span>
+            Recent Health Articles
+          </h4>
+          <div class="space-y-3">
+            <a href="#blog"
+              class="flex items-start gap-3 p-3 bg-white/4 border border-white/8 rounded-xl hover:bg-white/8 transition-all group">
+              <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=80&h=80&fit=crop&auto=format"
+                alt="Heart health blog" loading="lazy" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" />
+              <div class="min-w-0">
+                <div
+                  class="text-white text-xs font-semibold leading-snug group-hover:text-red-400 transition-colors line-clamp-2">
+                  10 Early Warning Signs of Heart Disease You Shouldn't Ignore</div>
+                <div class="text-slate-400 text-xs mt-1 flex items-center gap-1.5">
+                  <i data-lucide="calendar" class="w-3 h-3"></i> May 15, 2026
+                </div>
+              </div>
+            </a>
+            <a href="blog-detail.html"
+              class="flex items-start gap-3 p-3 bg-white/4 border border-white/8 rounded-xl hover:bg-white/8 transition-all group">
+              <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=80&h=80&fit=crop&auto=format"
+                alt="Blood pressure tips" loading="lazy" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" />
+              <div class="min-w-0">
+                <div
+                  class="text-white text-xs font-semibold leading-snug group-hover:text-red-400 transition-colors line-clamp-2">
+                  How to Lower Your Blood Pressure Naturally</div>
+                <div class="text-slate-400 text-xs mt-1 flex items-center gap-1.5">
+                  <i data-lucide="calendar" class="w-3 h-3"></i> April 28, 2026
+                </div>
+              </div>
+            </a>
+            <a href="#blog"
+              class="flex items-start gap-3 p-3 bg-white/4 border border-white/8 rounded-xl hover:bg-white/8 transition-all group">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=80&h=80&fit=crop&auto=format"
+                alt="Mediterranean diet heart" loading="lazy" class="w-14 h-14 rounded-lg object-cover flex-shrink-0" />
+              <div class="min-w-0">
+                <div
+                  class="text-white text-xs font-semibold leading-snug group-hover:text-red-400 transition-colors line-clamp-2">
+                  The Mediterranean Diet & Heart Health: What the Science Says</div>
+                <div class="text-slate-400 text-xs mt-1 flex items-center gap-1.5">
+                  <i data-lucide="calendar" class="w-3 h-3"></i> April 10, 2026
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
+        <!-- Copyright -->
+        <div class="text-center lg:text-left">
+          <p class="text-slate-400 text-sm">© 2026 <span class="text-slate-300 font-semibold">CardioCare</span>. All
+            rights reserved by <span class="text-slate-300 font-semibold"><a href="https://www.templatemonster.com/authors/k29solutions/" target="_blank">K29Solutions</a></span>. Designed for healthcare professionals &bull; Distributed by <span class="text-slate-300 font-semibold"><a href="https://www.themewagon.com/" target="_blank">ThemeWagon</a></span>.</p>
+          <p class="text-slate-400 text-xs mt-1">This website is for informational purposes only and does not constitute
+            medical advice.</p>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <a href="privacy.html" class="text-slate-400 text-xs hover:text-red-400 transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="text-slate-400 text-xs hover:text-red-400 transition-colors">Terms of Service</a>
+          <a href="faq.html" class="text-slate-400 text-xs hover:text-red-400 transition-colors">FAQs</a>
+          <a href="#" class="text-slate-400 text-xs hover:text-red-400 transition-colors">Accessibility</a>
+          <a href="#" class="text-slate-400 text-xs hover:text-red-400 transition-colors">Cookie Policy</a>
+          <a href="#" class="text-slate-400 text-xs hover:text-red-400 transition-colors">Sitemap</a>
+        </div>
+
+        <!-- Payment Accepted -->
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400 text-xs">Insurance:</span>
+          <div class="flex gap-1.5">
+            <span class="bg-white/8 border border-white/10 text-slate-400 text-xs px-2 py-1 rounded-md">Medicare</span>
+            <span class="bg-white/8 border border-white/10 text-slate-400 text-xs px-2 py-1 rounded-md">Aetna</span>
+            <span class="bg-white/8 border border-white/10 text-slate-400 text-xs px-2 py-1 rounded-md">BCBS</span>
+            <span class="bg-white/8 border border-white/10 text-slate-400 text-xs px-2 py-1 rounded-md">+more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TOP -->
+  <button id="scroll-top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" fill="white" stroke="none"/>
+    </svg>
+  </button>
+  <script src="assets/script.js"></script>
+
+</body>
+
+</html>
