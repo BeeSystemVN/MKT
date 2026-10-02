@@ -23,93 +23,278 @@ footer_start_str = "<!-- ===================== MOBILE QUICK-ACTION STICKY BAR ==
 footer_start_idx = index_html.find(footer_start_str)
 bottom_html = index_html[footer_start_idx:]
 
-articles = [
-  {
-    "id": "haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang",
-    "category": "Thiện Nguyện & Cộng Đồng",
-    "title": "HANIKI Lan Tỏa Yêu Thương Đầu Năm 2026 Tại Bản Nhảng, Cao Bằng",
-    "date": "09/01/2026",
-    "readTime": "6 phút đọc",
-    "image": "assets/news/thien-nguyen-cao-bang-banner.jpg",
-    "excerpt": "Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng.",
-    "content": [
-        "Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng, xã Thị Hoa, huyện Hạ Lang, tỉnh Cao Bằng – một địa phương vùng cao còn nhiều khó khăn về điều kiện sinh hoạt và hạ tầng cơ bản.",
-        "Chương trình do Trường Đại học Khoa học Xã hội và Nhân văn tổ chức, với sự tham gia và hỗ trợ tích cực từ các đơn vị đồng hành. Trong đó, HANIKI cùng với Viện Dưỡng lão Diên Hồng giữ vai trò là nhà tài trợ chính, phối hợp triển khai nhiều hoạt động thiết thực, mang lại giá trị lâu dài cho cộng đồng dân cư trong bản.",
-        "**1. Những hỗ trợ thiết thực – Gieo hy vọng bền lâu:**",
-        "Trong khuôn khổ chương trình, HANIKI đã trực tiếp tài trợ và triển khai các hạng mục hỗ trợ cụ thể:",
-        "- Lắp đặt 20 đèn chiếu sáng đường tại các trục đường chính trong bản, góp phần cải thiện điều kiện đi lại, đảm bảo an toàn cho bà con vào ban đêm và nâng cao chất lượng đời sống sinh hoạt.",
-        "[IMG: assets/news/lap-dat-den-chieu-sang.jpg]",
-        "- Trao tặng 50 phần quà Tết cho các hộ gia đình có hoàn cảnh khó khăn, trị giá 700.000 đồng mỗi phần, gồm các nhu yếu phẩm thiết yếu, giúp bà con đón năm mới ấm áp và đủ đầy hơn.",
-        "[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]",
-        "- Trao tặng 2 máy lọc nước cho Ủy ban Nhân dân xã Thị Hoa, góp phần cải thiện nguồn nước sinh hoạt, phục vụ tốt hơn cho công tác hành chính và các hoạt động cộng đồng tại địa phương.",
-        "- Tổ chức \"Phiên chợ 0 đồng\", nơi người dân trong bản có thể tự do lựa chọn các mặt hàng cần thiết cho gia đình mà không phải chi trả, tạo nên không khí sẻ chia, gần gũi và đầy tính nhân văn.",
-        "[IMG: assets/news/phien-cho-0-dong.jpg]",
-        "Những hoạt động trên không chỉ mang ý nghĩa hỗ trợ trước mắt, mà còn thể hiện mong muốn của HANIKI trong việc góp phần cải thiện điều kiện sống, tiếp thêm niềm tin và động lực cho bà con vùng cao trong hành trình vươn lên.",
-        "**2. Gắn kết cộng đồng – Ấm áp nghĩa tình:**",
-        "[IMG: assets/news/lua-trai-ban-nhang.jpg]",
-        "Điểm nhấn xúc động của chương trình là đêm lửa trại giao lưu cùng bà con nhân dân trong bản. Trong ánh lửa bập bùng giữa núi rừng Cao Bằng, đại diện HANIKI, các đơn vị tổ chức và người dân địa phương đã cùng nhau trò chuyện, ca hát và chia sẻ những câu chuyện đời thường giản dị nhưng ấm áp. Khoảnh khắc ấy đã xóa nhòa khoảng cách, thắt chặt tình cảm và để lại nhiều kỷ niệm khó quên trong lòng những người tham gia.",
-        "**3. Trách nhiệm xã hội – Giá trị cốt lõi của HANIKI:**",
-        "Đại diện HANIKI chia sẻ: \"Chúng tôi tin rằng mỗi doanh nghiệp không chỉ tạo ra giá trị kinh tế mà còn cần lan tỏa giá trị nhân văn cho xã hội. Hoạt động thiện nguyện tại Bản Nhảng là minh chứng cho cam kết lâu dài của HANIKI trong việc đồng hành cùng cộng đồng, đặc biệt là những vùng còn nhiều khó khăn.\"",
-        "Sự phối hợp giữa HANIKI, Trường Đại học Khoa học Xã hội và Nhân văn và Viện Dưỡng lão Diên Hồng đã tạo nên một chương trình thiện nguyện trọn vẹn, mang tính kết nối đa chiều giữa giáo dục – doanh nghiệp – tổ chức xã hội.",
-        "**4. Hành trình sẻ chia sẽ còn tiếp nối:**",
-        "Chương trình thiện nguyện đầu năm 2026 tại Bản Nhảng không chỉ là một hoạt động mang tính thời điểm, mà còn là một phần trong chuỗi chương trình vì cộng đồng mà HANIKI kiên định theo đuổi. Trong thời gian tới, HANIKI sẽ tiếp tục triển khai nhiều hoạt động xã hội ý nghĩa hơn nữa, hướng tới mục tiêu phát triển bền vững gắn liền với trách nhiệm cộng đồng."
-    ]
-  },
-  {
-    "id": "trai-nghiem-tet-nhat-ban-haniki",
-    "category": "Văn Hóa Doanh Nghiệp",
-    "title": "Trải Nghiệm Tết Nhật Bản Tại HANIKI Cùng WeXpats",
-    "date": "25/01/2026",
-    "readTime": "5 phút đọc",
-    "image": "assets/news/tet-nhat-ban-bee-system.jpg",
-    "excerpt": "Tập thể nhân sự của HANIKI háo hức khám phá Tết Nhật Bản (Shougatsu) – viết thư pháp Shodou, nấu mì trường thọ Toshikoshi Soba...",
-    "content": [
-        "Khi mùa xuân gõ cửa, đại gia đình HANIKI lại cùng nhau khám phá và trải nghiệm tinh hoa văn hóa Tết Nhật Bản (Shougatsu) ngay tại văn phòng - một hành trình học hỏi, gắn kết và tràn đầy niềm vui.",
-        "**1. Không khí Tết Nhật Bản tràn ngập tại HANIKI:**",
-        "[IMG: assets/news/tet-shougatsu-khong-khi.jpg]",
-        "Vừa qua, các thành viên của HANIKI đã có cơ hội tham gia buổi ngoại khóa đặc biệt về chủ đề \"Tết Nhật Bản - Shougatsu\" cùng các Sensei đến từ Trung tâm Tiếng Nhật WeXpats Nihongo. Buổi trải nghiệm diễn ra trong không khí ấm áp, sôi nổi và giàu ý nghĩa, giúp các thành viên hiểu sâu hơn về văn hóa Nhật Bản, đồng thời tăng thêm tinh thần đoàn kết và sự gắn bó trong đại gia đình HANIKI.",
-        "**2. Khám phá văn hóa Tết Nhật Bản (Shougatsu):**",
-        "Mở đầu buổi học, các thành viên được Sensei giới thiệu về truyền thống đón Tết của người Nhật Bản - dịp lễ quan trọng nhất trong năm. Mọi người cùng tìm hiểu về các phong tục đặc sắc như:",
-        "- Viếng đền và chùa đầu năm để cầu bình an.",
-        "- Trang trí nhà cửa bằng Kadomatsu và Shimekazari để đón lộc vào nhà.",
-        "- Gửi thiệp chúc mừng năm mới và tặng bao lì xì (Otoshidama) cho trẻ em.",
-        "Những câu chuyện thú vị và sinh động từ các Sensei đã giúp mọi người cảm nhận được sự tỉ mỉ, tinh tế và sâu sắc trong văn hóa đón Tết của người Nhật.",
-        "**3. Trải nghiệm viết thư pháp (Shodou) - Nét đẹp truyền thống đầu năm:**",
-        "[IMG: assets/news/viet-thu-phap-shodou.jpg]",
-        "Tiếp theo, nhân sự HANIKI được trực tiếp thực hành nghệ thuật viết thư pháp Nhật Bản (Shodou). Dưới sự hướng dẫn của Sensei, từng nét bút uyển chuyển trên giấy thể hiện tinh thần kiên nhẫn, tĩnh tâm và tôn trọng truyền thống - những giá trị cốt lõi trong văn hóa Nhật. Mỗi thành viên chọn cho mình một chữ mang ý nghĩa may mắn như \"福\" (phúc), \"夢\" (giấc mơ) hay \"愛\" (tình yêu), để gửi gắm lời chúc cho năm mới.",
-        "**4. Làm và thưởng thức mì Toshikoshi Soba - Món ăn ý nghĩa đêm giao thừa:**",
-        "[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]",
-        "Điểm nhấn của buổi ngoại khóa là hoạt động nấu và thưởng thức món Toshikoshi Soba, món mì truyền thống mà người Nhật ăn vào đêm giao thừa. Mì Soba tượng trưng cho sức khỏe, sự trường thọ và may mắn, được ví như sợi dây nối dài hạnh phúc từ năm cũ sang năm mới. Các thành viên HANIKI đã cùng nhau chuẩn bị, chế biến và thưởng thức món mì thơm ngon này trong tiếng cười và niềm hân hoan chào đón một năm mới sắp đến.",
-        "**5. Học hỏi - Gắn kết - Lan tỏa tinh thần HANIKI:**",
-        "Buổi trải nghiệm không chỉ mang đến kiến thức bổ ích về văn hóa Nhật Bản, mà còn là dịp để mọi người giao lưu, học hỏi và gắn bó hơn trong môi trường làm việc. HANIKI luôn hướng đến việc xây dựng văn hóa doanh nghiệp tích cực, nơi mỗi nhân sự được rèn luyện kỹ năng, trau dồi ngôn ngữ, và khám phá những giá trị văn hóa mới.",
-        "\"Mỗi trải nghiệm là một hành trình học hỏi. Mỗi cá nhân là một mảnh ghép quan trọng tạo nên sức mạnh và thành công của HANIKI.\""
-    ]
-  },
-  {
-    "id": "hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki",
-    "category": "Văn Hóa Doanh Nghiệp",
-    "title": "Hành Trình Khám Phá Văn Hóa Nhật Bản Cùng HANIKI",
-    "date": "10/01/2026",
-    "readTime": "4 phút đọc",
-    "image": "assets/news/van-hoa-nhat-ban-yukata.jpg",
-    "excerpt": "Học viên tiếng Nhật HANIKI cùng các Sensei từ WeXpats Nihongo trải nghiệm mặc trang phục Yukata truyền thống, làm cơm nắm Onigiri.",
-    "content": [
-        "Tập thể cán bộ nhân viên của HANIKI - học viên các lớp tiếng Nhật từ Sơ cấp đến Thượng cấp - đã có một ngày trải nghiệm đầy màu sắc khi cùng nhau khám phá văn hóa Nhật Bản bên cạnh các Sensei đáng mến đến từ Trung tâm tiếng Nhật WeXpats Nihongo.",
-        "Chương trình được tổ chức với mong muốn không chỉ dừng lại ở việc học tiếng Nhật qua sách vở, mà còn giúp đội ngũ HANIKI trực tiếp cảm nhận tinh thần, lối sống và giá trị truyền thống Nhật Bản thông qua những hoạt động trải nghiệm thực tế. Không khí buổi học tràn ngập sự hào hứng, tiếng cười và tinh thần gắn kết - đúng với định hướng phát triển bền vững cùng đội ngũ.",
-        "**1. Mặc Yukata - Trải nghiệm trang phục truyền thống:**",
-        "[IMG: assets/news/mac-trang-phuc-yukata.jpg]",
-        "Mở đầu chương trình là hoạt động mặc Yukata - trang phục truyền thống mùa hè của Nhật Bản. Lần đầu khoác lên mình những bộ Yukata rực rỡ sắc màu, các thành viên HANIKI không giấu được sự thích thú khi cảm nhận được vẻ đẹp tinh tế và thanh lịch trong văn hóa Nhật. Các Sensei tận tình hướng dẫn từng bước: từ cách mặc áo, thắt đai đến chọn phụ kiện. Hoạt động này giúp nhân sự hiểu thêm về ý nghĩa của Yukata - biểu trưng cho sự giản dị, thuần khiết và sự hòa hợp với thiên nhiên.",
-        "**2. Làm Onigiri - Nếm vị Nhật ngay tại HANIKI:**",
-        "[IMG: assets/news/lam-com-nam-onigiri.jpg]",
-        "Tiếp nối chương trình là phần trải nghiệm làm Onigiri - món cơm nắm truyền thống của Nhật Bản. Các Sensei hướng dẫn tỉ mỉ từ khâu nấu cơm, nêm gia vị, tạo hình cho đến thêm nhân bên trong. Dưới bàn tay khéo léo của các thành viên, những chiếc Onigiri xinh xắn, hấp dẫn lần lượt ra đời - không chỉ ngon miệng mà còn tràn đầy tinh thần sáng tạo. Thông qua hoạt động này, mọi người hiểu rằng văn hóa Nhật không chỉ nằm trong ngôn ngữ hay phong tục, mà còn thể hiện trong từng bữa ăn - nơi chứa đựng sự trân trọng, chăm chút và biết ơn đối với thực phẩm.",
-        "**3. Fukuwarai - Tiếng cười từ trò chơi truyền thống Nhật:**",
-        "[IMG: assets/news/tro-choi-fukuwarai.jpg]",
-        "Khép lại hành trình là trò chơi dân gian Fukuwarai - trò ghép mặt truyền thống thường được chơi vào dịp năm mới tại Nhật Bản. Các thành viên bịt mắt và lần lượt ghép mắt, mũi, miệng lên khuôn mặt giấy. Những \"tác phẩm\" ngộ nghĩnh ra đời trong tiếng cười không ngớt, mang đến bầu không khí vui tươi, ấm áp. Fukuwarai không chỉ là trò chơi giải trí, mà còn thể hiện tinh thần lạc quan và hài hòa trong văn hóa Nhật - nơi niềm vui đến từ những điều giản dị nhất.",
-        "**4. HANIKI - Không chỉ là nơi làm việc, mà là nơi cùng trưởng thành:**",
-        "Tại HANIKI, văn hóa doanh nghiệp không chỉ nằm trong công việc mà còn trong từng hoạt động gắn kết con người. Công ty không chỉ đào tạo kỹ năng chuyên môn, mà còn tạo môi trường để mỗi nhân sự học hỏi không ngừng, phát triển bản thân và sống tích cực. Chính những trải nghiệm văn hóa thực tế này là nền tảng cho một môi trường làm việc hạnh phúc, sáng tạo và đoàn kết vững mạnh."
-    ]
-  }
-]
+articles = {
+  "vi": [
+    {
+      "id": "haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang",
+      "category": "Thiện Nguyện & Cộng Đồng",
+      "title": "HANIKI Lan Tỏa Yêu Thương Đầu Năm 2026 Tại Bản Nhảng, Cao Bằng",
+      "date": "09/01/2026",
+      "readTime": "6 phút đọc",
+      "image": "assets/news/thien-nguyen-cao-bang-banner.jpg",
+      "excerpt": "Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng.",
+      "readMore": "Đọc bài viết tiêu điểm",
+      "content": [
+          "Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng, xã Thị Hoa, huyện Hạ Lang, tỉnh Cao Bằng – một địa phương vùng cao còn nhiều khó khăn về điều kiện sinh hoạt và hạ tầng cơ bản.",
+          "Chương trình do Trường Đại học Khoa học Xã hội và Nhân văn tổ chức, với sự tham gia và hỗ trợ tích cực từ các đơn vị đồng hành. Trong đó, HANIKI cùng với Viện Dưỡng lão Diên Hồng giữ vai trò là nhà tài trợ chính, phối hợp triển khai nhiều hoạt động thiết thực, mang lại giá trị lâu dài cho cộng đồng dân cư trong bản.",
+          "**1. Những hỗ trợ thiết thực – Gieo hy vọng bền lâu:**",
+          "Trong khuôn khổ chương trình, HANIKI đã trực tiếp tài trợ và triển khai các hạng mục hỗ trợ cụ thể:",
+          "- Lắp đặt 20 đèn chiếu sáng đường tại các trục đường chính trong bản, góp phần cải thiện điều kiện đi lại, đảm bảo an toàn cho bà con vào ban đêm và nâng cao chất lượng đời sống sinh hoạt.",
+          "[IMG: assets/news/lap-dat-den-chieu-sang.jpg]",
+          "- Trao tặng 50 phần quà Tết cho các hộ gia đình có hoàn cảnh khó khăn, trị giá 700.000 đồng mỗi phần, gồm các nhu yếu phẩm thiết yếu, giúp bà con đón năm mới ấm áp và đủ đầy hơn.",
+          "[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]",
+          "- Trao tặng 2 máy lọc nước cho Ủy ban Nhân dân xã Thị Hoa, góp phần cải thiện nguồn nước sinh hoạt, phục vụ tốt hơn cho công tác hành chính và các hoạt động cộng đồng tại địa phương.",
+          "- Tổ chức \"Phiên chợ 0 đồng\", nơi người dân trong bản có thể tự do lựa chọn các mặt hàng cần thiết cho gia đình mà không phải chi trả, tạo nên không khí sẻ chia, gần gũi và đầy tính nhân văn.",
+          "[IMG: assets/news/phien-cho-0-dong.jpg]",
+          "Những hoạt động trên không chỉ mang ý nghĩa hỗ trợ trước mắt, mà còn thể hiện mong muốn của HANIKI trong việc góp phần cải thiện điều kiện sống, tiếp thêm niềm tin và động lực cho bà con vùng cao trong hành trình vươn lên.",
+          "**2. Gắn kết cộng đồng – Ấm áp nghĩa tình:**",
+          "[IMG: assets/news/lua-trai-ban-nhang.jpg]",
+          "Điểm nhấn xúc động của chương trình là đêm lửa trại giao lưu cùng bà con nhân dân trong bản. Trong ánh lửa bập bùng giữa núi rừng Cao Bằng, đại diện HANIKI, các đơn vị tổ chức và người dân địa phương đã cùng nhau trò chuyện, ca hát và chia sẻ những câu chuyện đời thường giản dị nhưng ấm áp. Khoảnh khắc ấy đã xóa nhòa khoảng cách, thắt chặt tình cảm và để lại nhiều kỷ niệm khó quên trong lòng những người tham gia.",
+          "**3. Trách nhiệm xã hội – Giá trị cốt lõi của HANIKI:**",
+          "Đại diện HANIKI chia sẻ: \"Chúng tôi tin rằng mỗi doanh nghiệp không chỉ tạo ra giá trị kinh tế mà còn cần lan tỏa giá trị nhân văn cho xã hội. Hoạt động thiện nguyện tại Bản Nhảng là minh chứng cho cam kết lâu dài của HANIKI trong việc đồng hành cùng cộng đồng, đặc biệt là những vùng còn nhiều khó khăn.\"",
+          "Sự phối hợp giữa HANIKI, Trường Đại học Khoa học Xã hội và Nhân văn và Viện Dưỡng lão Diên Hồng đã tạo nên một chương trình thiện nguyện trọn vẹn, mang tính kết nối đa chiều giữa giáo dục – doanh nghiệp – tổ chức xã hội.",
+          "**4. Hành trình sẻ chia sẽ còn tiếp nối:**",
+          "Chương trình thiện nguyện đầu năm 2026 tại Bản Nhảng không chỉ là một hoạt động mang tính thời điểm, mà còn là một phần trong chuỗi chương trình vì cộng đồng mà HANIKI kiên định theo đuổi. Trong thời gian tới, HANIKI sẽ tiếp tục triển khai nhiều hoạt động xã hội ý nghĩa hơn nữa, hướng tới mục tiêu phát triển bền vững gắn liền với trách nhiệm cộng đồng."
+      ]
+    },
+    {
+      "id": "trai-nghiem-tet-nhat-ban-haniki",
+      "category": "Văn Hóa Doanh Nghiệp",
+      "title": "Trải Nghiệm Tết Nhật Bản Tại HANIKI Cùng WeXpats",
+      "date": "25/01/2026",
+      "readTime": "5 phút đọc",
+      "image": "assets/news/tet-nhat-ban-bee-system.jpg",
+      "excerpt": "Tập thể nhân sự của HANIKI háo hức khám phá Tết Nhật Bản (Shougatsu) – viết thư pháp Shodou, nấu mì trường thọ Toshikoshi Soba...",
+      "readMore": "Khám phá ngay",
+      "content": [
+          "Khi mùa xuân gõ cửa, đại gia đình HANIKI lại cùng nhau khám phá và trải nghiệm tinh hoa văn hóa Tết Nhật Bản (Shougatsu) ngay tại văn phòng - một hành trình học hỏi, gắn kết và tràn đầy niềm vui.",
+          "**1. Không khí Tết Nhật Bản tràn ngập tại HANIKI:**",
+          "[IMG: assets/news/tet-shougatsu-khong-khi.jpg]",
+          "Vừa qua, các thành viên của HANIKI đã có cơ hội tham gia buổi ngoại khóa đặc biệt về chủ đề \"Tết Nhật Bản - Shougatsu\" cùng các Sensei đến từ Trung tâm Tiếng Nhật WeXpats Nihongo. Buổi trải nghiệm diễn ra trong không khí ấm áp, sôi nổi và giàu ý nghĩa, giúp các thành viên hiểu sâu hơn về văn hóa Nhật Bản, đồng thời tăng thêm tinh thần đoàn kết và sự gắn bó trong đại gia đình HANIKI.",
+          "**2. Khám phá văn hóa Tết Nhật Bản (Shougatsu):**",
+          "Mở đầu buổi học, các thành viên được Sensei giới thiệu về truyền thống đón Tết của người Nhật Bản - dịp lễ quan trọng nhất trong năm. Mọi người cùng tìm hiểu về các phong tục đặc sắc như:",
+          "- Viếng đền và chùa đầu năm để cầu bình an.",
+          "- Trang trí nhà cửa bằng Kadomatsu và Shimekazari để đón lộc vào nhà.",
+          "- Gửi thiệp chúc mừng năm mới và tặng bao lì xì (Otoshidama) cho trẻ em.",
+          "Những câu chuyện thú vị và sinh động từ các Sensei đã giúp mọi người cảm nhận được sự tỉ mỉ, tinh tế và sâu sắc trong văn hóa đón Tết của người Nhật.",
+          "**3. Trải nghiệm viết thư pháp (Shodou) - Nét đẹp truyền thống đầu năm:**",
+          "[IMG: assets/news/viet-thu-phap-shodou.jpg]",
+          "Tiếp theo, nhân sự HANIKI được trực tiếp thực hành nghệ thuật viết thư pháp Nhật Bản (Shodou). Dưới sự hướng dẫn của Sensei, từng nét bút uyển chuyển trên giấy thể hiện tinh thần kiên nhẫn, tĩnh tâm và tôn trọng truyền thống - những giá trị cốt lõi trong văn hóa Nhật. Mỗi thành viên chọn cho mình một chữ mang ý nghĩa may mắn như \"福\" (phúc), \"夢\" (giấc mơ) hay \"愛\" (tình yêu), để gửi gắm lời chúc cho năm mới.",
+          "**4. Làm và thưởng thức mì Toshikoshi Soba - Món ăn ý nghĩa đêm giao thừa:**",
+          "[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]",
+          "Điểm nhấn của buổi ngoại khóa là hoạt động nấu và thưởng thức món Toshikoshi Soba, món mì truyền thống mà người Nhật ăn vào đêm giao thừa. Mì Soba tượng trưng cho sức khỏe, sự trường thọ và may mắn, được ví như sợi dây nối dài hạnh phúc từ năm cũ sang năm mới. Các thành viên HANIKI đã cùng nhau chuẩn bị, chế biến và thưởng thức món mì thơm ngon này trong tiếng cười và niềm hân hoan chào đón một năm mới sắp đến.",
+          "**5. Học hỏi - Gắn kết - Lan tỏa tinh thần HANIKI:**",
+          "Buổi trải nghiệm không chỉ mang đến kiến thức bổ ích về văn hóa Nhật Bản, mà còn là dịp để mọi người giao lưu, học hỏi và gắn bó hơn trong môi trường làm việc. HANIKI luôn hướng đến việc xây dựng văn hóa doanh nghiệp tích cực, nơi mỗi nhân sự được rèn luyện kỹ năng, trau dồi ngôn ngữ, và khám phá những giá trị văn hóa mới.",
+          "\"Mỗi trải nghiệm là một hành trình học hỏi. Mỗi cá nhân là một mảnh ghép quan trọng tạo nên sức mạnh và thành công của HANIKI.\""
+      ]
+    },
+    {
+      "id": "hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki",
+      "category": "Văn Hóa Doanh Nghiệp",
+      "title": "Hành Trình Khám Phá Văn Hóa Nhật Bản Cùng HANIKI",
+      "date": "10/01/2026",
+      "readTime": "4 phút đọc",
+      "image": "assets/news/van-hoa-nhat-ban-yukata.jpg",
+      "excerpt": "Học viên tiếng Nhật HANIKI cùng các Sensei từ WeXpats Nihongo trải nghiệm mặc trang phục Yukata truyền thống, làm cơm nắm Onigiri.",
+      "readMore": "Xem chi tiết",
+      "content": [
+          "Tập thể cán bộ nhân viên của HANIKI - học viên các lớp tiếng Nhật từ Sơ cấp đến Thượng cấp - đã có một ngày trải nghiệm đầy màu sắc khi cùng nhau khám phá văn hóa Nhật Bản bên cạnh các Sensei đáng mến đến từ Trung tâm tiếng Nhật WeXpats Nihongo.",
+          "Chương trình được tổ chức với mong muốn không chỉ dừng lại ở việc học tiếng Nhật qua sách vở, mà còn giúp đội ngũ HANIKI trực tiếp cảm nhận tinh thần, lối sống và giá trị truyền thống Nhật Bản thông qua những hoạt động trải nghiệm thực tế. Không khí buổi học tràn ngập sự hào hứng, tiếng cười và tinh thần gắn kết - đúng với định hướng phát triển bền vững cùng đội ngũ.",
+          "**1. Mặc Yukata - Trải nghiệm trang phục truyền thống:**",
+          "[IMG: assets/news/mac-trang-phuc-yukata.jpg]",
+          "Mở đầu chương trình là hoạt động mặc Yukata - trang phục truyền thống mùa hè của Nhật Bản. Lần đầu khoác lên mình những bộ Yukata rực rỡ sắc màu, các thành viên HANIKI không giấu được sự thích thú khi cảm nhận được vẻ đẹp tinh tế và thanh lịch trong văn hóa Nhật. Các Sensei tận tình hướng dẫn từng bước: từ cách mặc áo, thắt đai đến chọn phụ kiện. Hoạt động này giúp nhân sự hiểu thêm về ý nghĩa của Yukata - biểu trưng cho sự giản dị, thuần khiết và sự hòa hợp với thiên nhiên.",
+          "**2. Làm Onigiri - Nếm vị Nhật ngay tại HANIKI:**",
+          "[IMG: assets/news/lam-com-nam-onigiri.jpg]",
+          "Tiếp nối chương trình là phần trải nghiệm làm Onigiri - món cơm nắm truyền thống của Nhật Bản. Các Sensei hướng dẫn tỉ mỉ từ khâu nấu cơm, nêm gia vị, tạo hình cho đến thêm nhân bên trong. Dưới bàn tay khéo léo của các thành viên, những chiếc Onigiri xinh xắn, hấp dẫn lần lượt ra đời - không chỉ ngon miệng mà còn tràn đầy tinh thần sáng tạo. Thông qua hoạt động này, mọi người hiểu rằng văn hóa Nhật không chỉ nằm trong ngôn ngữ hay phong tục, mà còn thể hiện trong từng bữa ăn - nơi chứa đựng sự trân trọng, chăm chút và biết ơn đối với thực phẩm.",
+          "**3. Fukuwarai - Tiếng cười từ trò chơi truyền thống Nhật:**",
+          "[IMG: assets/news/tro-choi-fukuwarai.jpg]",
+          "Khép lại hành trình là trò chơi dân gian Fukuwarai - trò ghép mặt truyền thống thường được chơi vào dịp năm mới tại Nhật Bản. Các thành viên bịt mắt và lần lượt ghép mắt, mũi, miệng lên khuôn mặt giấy. Những \"tác phẩm\" ngộ nghĩnh ra đời trong tiếng cười không ngớt, mang đến bầu không khí vui tươi, ấm áp. Fukuwarai không chỉ là trò chơi giải trí, mà còn thể hiện tinh thần lạc quan và hài hòa trong văn hóa Nhật - nơi niềm vui đến từ những điều giản dị nhất.",
+          "**4. HANIKI - Không chỉ là nơi làm việc, mà là nơi cùng trưởng thành:**",
+          "Tại HANIKI, văn hóa doanh nghiệp không chỉ nằm trong công việc mà còn trong từng hoạt động gắn kết con người. Công ty không chỉ đào tạo kỹ năng chuyên môn, mà còn tạo môi trường để mỗi nhân sự học hỏi không ngừng, phát triển bản thân và sống tích cực. Chính những trải nghiệm văn hóa thực tế này là nền tảng cho một môi trường làm việc hạnh phúc, sáng tạo và đoàn kết vững mạnh."
+      ]
+    }
+  ],
+  "en": [
+    {
+      "id": "haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang",
+      "category": "Charity & Community",
+      "title": "HANIKI Spreads Love in Early 2026 at Ban Nhang, Cao Bang",
+      "date": "Jan 09, 2026",
+      "readTime": "6 min read",
+      "image": "assets/news/thien-nguyen-cao-bang-banner.jpg",
+      "excerpt": "On the occasion of the New Year 2026, with a spirit of sharing and social responsibility, HANIKI sponsored and accompanied a charity program held in Ban Nhang.",
+      "readMore": "Read featured article",
+      "content": [
+          "On the occasion of the New Year 2026, with a spirit of sharing and social responsibility, HANIKI Co., Ltd. sponsored and accompanied a charity program held in Ban Nhang, Thi Hoa Commune, Ha Lang District, Cao Bang Province - a highland area with many difficulties in living conditions and basic infrastructure.",
+          "The program was organized by the University of Social Sciences and Humanities, with the active participation and support of accompanying units. In which, HANIKI and Dien Hong Nursing Home acted as the main sponsors, coordinating to implement many practical activities, bringing long-term value to the local community.",
+          "**1. Practical Support – Sowing Enduring Hope:**",
+          "Within the framework of the program, HANIKI directly sponsored and implemented specific support items:",
+          "- Installing 20 streetlights on the main roads in the village, contributing to improving travel conditions, ensuring safety for people at night, and improving the quality of daily life.",
+          "[IMG: assets/news/lap-dat-den-chieu-sang.jpg]",
+          "- Presenting 50 Tet gifts to households in difficult circumstances, worth 700,000 VND each, including essential necessities, helping people celebrate a warmer and more fulfilling New Year.",
+          "[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]",
+          "- Donating 2 water purifiers to the People's Committee of Thi Hoa Commune, contributing to improving the domestic water source, better serving administrative work and community activities locally.",
+          "- Organizing the \"0 VND Market\", where villagers can freely choose essential items for their families without having to pay, creating an atmosphere of sharing, closeness, and humanity.",
+          "[IMG: assets/news/phien-cho-0-dong.jpg]",
+          "These activities not only have immediate support significance but also demonstrate HANIKI's desire to contribute to improving living conditions, giving more faith and motivation to highland people on their journey to rise up.",
+          "**2. Community Connection – Warm Affection:**",
+          "[IMG: assets/news/lua-trai-ban-nhang.jpg]",
+          "The emotional highlight of the program was the campfire exchange night with the villagers. In the flickering firelight amid the mountains and forests of Cao Bang, HANIKI representatives, organizing units, and locals chatted, sang, and shared simple but warm everyday stories. That moment erased the distance, strengthened affection, and left many unforgettable memories for the participants.",
+          "**3. Social Responsibility – HANIKI's Core Value:**",
+          "A HANIKI representative shared: \"We believe that every business not only creates economic value but also needs to spread human values to society. The charity activity at Ban Nhang is a testament to HANIKI's long-term commitment to accompanying the community, especially in difficult areas.\"",
+          "The coordination between HANIKI, the University of Social Sciences and Humanities, and Dien Hong Nursing Home created a complete charity program, featuring multi-dimensional connection between education - business - social organizations.",
+          "**4. The Journey of Sharing Will Continue:**",
+          "The early 2026 charity program in Ban Nhang is not just a point-in-time activity, but part of a series of community programs that HANIKI steadfastly pursues. In the future, HANIKI will continue to implement many more meaningful social activities, aiming for sustainable development tied to community responsibility."
+      ]
+    },
+    {
+      "id": "trai-nghiem-tet-nhat-ban-haniki",
+      "category": "Corporate Culture",
+      "title": "Experiencing Japanese New Year at HANIKI with WeXpats",
+      "date": "Jan 25, 2026",
+      "readTime": "5 min read",
+      "image": "assets/news/tet-nhat-ban-bee-system.jpg",
+      "excerpt": "The staff of HANIKI eagerly explored the Japanese New Year (Shougatsu) - writing Shodou calligraphy, cooking Toshikoshi Soba longevity noodles...",
+      "readMore": "Explore now",
+      "content": [
+          "As spring knocked on the door, the extended HANIKI family gathered to explore and experience the essence of Japanese New Year culture (Shougatsu) right in the office - a journey of learning, bonding, and joy.",
+          "**1. The Atmosphere of Japanese New Year Fills HANIKI:**",
+          "[IMG: assets/news/tet-shougatsu-khong-khi.jpg]",
+          "Recently, HANIKI members had the opportunity to participate in a special extracurricular session on the theme \"Japanese New Year - Shougatsu\" with Senseis from WeXpats Nihongo Japanese Center. The experience took place in a warm, lively, and meaningful atmosphere, helping members gain a deeper understanding of Japanese culture, while increasing solidarity and attachment within the HANIKI family.",
+          "**2. Exploring Japanese New Year Culture (Shougatsu):**",
+          "Opening the session, members were introduced by the Sensei to the traditions of welcoming the New Year of the Japanese - the most important holiday of the year. Everyone learned about unique customs such as:",
+          "- Visiting shrines and temples at the beginning of the year to pray for peace.",
+          "- Decorating houses with Kadomatsu and Shimekazari to welcome fortune into the house.",
+          "- Sending New Year greeting cards and giving red envelopes (Otoshidama) to children.",
+          "The interesting and vivid stories from the Senseis helped everyone feel the meticulousness, refinement, and depth in the Japanese culture of welcoming the New Year.",
+          "**3. Experiencing Calligraphy (Shodou) - Traditional Beauty of the New Year:**",
+          "[IMG: assets/news/viet-thu-phap-shodou.jpg]",
+          "Next, HANIKI staff directly practiced the art of Japanese calligraphy (Shodou). Under the guidance of the Sensei, each graceful brushstroke on paper expressed the spirit of patience, calmness, and respect for tradition - core values in Japanese culture. Each member chose a word with a lucky meaning such as \"福\" (fortune), \"夢\" (dream), or \"愛\" (love), to send wishes for the new year.",
+          "**4. Making and Enjoying Toshikoshi Soba - A Meaningful Dish on New Year's Eve:**",
+          "[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]",
+          "The highlight of the extracurricular session was the activity of cooking and enjoying Toshikoshi Soba, the traditional noodle dish that Japanese people eat on New Year's Eve. Soba noodles symbolize health, longevity, and luck, likened to a thread extending happiness from the old year to the new year. HANIKI members prepared, cooked, and enjoyed this delicious noodle dish together amid laughter and joy welcoming the upcoming new year.",
+          "**5. Learning - Bonding - Spreading the HANIKI Spirit:**",
+          "The experience not only brought useful knowledge about Japanese culture but was also an opportunity for everyone to interact, learn, and bond more in the work environment. HANIKI always aims to build a positive corporate culture, where each employee can practice skills, cultivate language, and discover new cultural values.",
+          "\"Every experience is a learning journey. Every individual is an important piece creating the strength and success of HANIKI.\""
+      ]
+    },
+    {
+      "id": "hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki",
+      "category": "Corporate Culture",
+      "title": "Journey to Discover Japanese Culture with HANIKI",
+      "date": "Jan 10, 2026",
+      "readTime": "4 min read",
+      "image": "assets/news/van-hoa-nhat-ban-yukata.jpg",
+      "excerpt": "HANIKI Japanese language learners and Senseis from WeXpats Nihongo experienced wearing traditional Yukata and making Onigiri rice balls.",
+      "readMore": "View details",
+      "content": [
+          "The staff of HANIKI - students of Japanese classes from Beginner to Advanced - had a colorful day of experience discovering Japanese culture together with lovely Senseis from WeXpats Nihongo Japanese Center.",
+          "The program was organized with the desire not only to stop at learning Japanese through books, but also to help the HANIKI team directly feel the spirit, lifestyle, and traditional values of Japan through practical experiences. The atmosphere of the session was filled with excitement, laughter, and a spirit of cohesion - true to the sustainable development orientation with the team.",
+          "**1. Wearing Yukata - Experiencing Traditional Attire:**",
+          "[IMG: assets/news/mac-trang-phuc-yukata.jpg]",
+          "Opening the program was the activity of wearing Yukata - traditional Japanese summer attire. Putting on the brightly colored Yukatas for the first time, HANIKI members couldn't hide their excitement when feeling the refined and elegant beauty in Japanese culture. The Senseis meticulously guided every step: from how to put on the robe, tie the sash (obi), to choosing accessories. This activity helped the staff understand more about the meaning of Yukata - symbolizing simplicity, purity, and harmony with nature.",
+          "**2. Making Onigiri - Tasting Japan Right at HANIKI:**",
+          "[IMG: assets/news/lam-com-nam-onigiri.jpg]",
+          "Following the program was the experience of making Onigiri - traditional Japanese rice balls. The Senseis guided meticulously from cooking rice, seasoning, shaping, to adding fillings inside. Under the skillful hands of the members, cute and attractive Onigiri were born one after another - not only delicious but also full of creative spirit. Through this activity, everyone understood that Japanese culture lies not only in language or customs, but also is expressed in every meal - which contains respect, care, and gratitude for food.",
+          "**3. Fukuwarai - Laughter from a Traditional Japanese Game:**",
+          "[IMG: assets/news/tro-choi-fukuwarai.jpg]",
+          "Closing the journey was the folk game Fukuwarai - a traditional face-matching game often played on New Year's occasions in Japan. Members were blindfolded and took turns attaching eyes, noses, and mouths onto a paper face. The funny \"masterpieces\" were born amid endless laughter, bringing a joyful and warm atmosphere. Fukuwarai is not only an entertaining game, but also shows the optimistic and harmonious spirit in Japanese culture - where joy comes from the simplest things.",
+          "**4. HANIKI - Not Just a Workplace, But a Place to Grow Together:**",
+          "At HANIKI, corporate culture lies not only in work but also in every human bonding activity. The company not only trains professional skills but also creates an environment for each employee to constantly learn, develop themselves, and live positively. These practical cultural experiences are the foundation for a happy, creative, and solidly united work environment."
+      ]
+    }
+  ],
+  "ja": [
+    {
+      "id": "haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang",
+      "category": "ボランティア・社会貢献",
+      "title": "HANIKI、2026年初頭にカオバン省バンニャンで愛を広める",
+      "date": "2026年01月09日",
+      "readTime": "6分で読める",
+      "image": "assets/news/thien-nguyen-cao-bang-banner.jpg",
+      "excerpt": "2026年の新年を迎え、分かち合いと社会的責任の精神に基づき、HANIKIはバンニャンで開催された慈善プログラムを後援し、同行しました。",
+      "readMore": "注目記事を読む",
+      "content": [
+          "2026年の新年を迎え、分かち合いと社会的責任の精神に基づき、HANIKI有限会社はカオバン省ハラン郡ティホア社バンニャンで開催された慈善プログラムを後援し、同行しました。ここは生活条件や基礎インフラに多くの困難を抱える山岳地帯です。",
+          "このプログラムは社会科学人文大学によって組織され、同行する機関の積極的な参加と支援を受けました。その中で、HANIKIとディエンホン介護施設はメインスポンサーとしての役割を果たし、協力して多くの実践的な活動を実施し、地域コミュニティに長期的な価値をもたらしました。",
+          "**1. 実践的な支援 – 長く続く希望の種まき：**",
+          "プログラムの枠組みの中で、HANIKIは以下の具体的な支援項目を直接後援・実施しました：",
+          "- 村の主要道路に20基の街灯を設置し、移動条件の改善、夜間の安全確保、そして日常生活の質の向上に貢献しました。",
+          "[IMG: assets/news/lap-dat-den-chieu-sang.jpg]",
+          "- 困難な状況にある50世帯に、各70万ドン相当のテト（旧正月）の贈り物を贈呈しました。これには生活必需品が含まれており、人々がより暖かく豊かな新年を迎えられるよう支援しました。",
+          "[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]",
+          "- ティホア社人民委員会に2台の浄水器を寄贈し、生活用水の改善に貢献し、地域の行政業務やコミュニティ活動により良く奉仕できるようにしました。",
+          "- 村人が支払いをせずに家族に必要な品物を自由に選べる「0ドン市場」を開催し、分かち合い、親しみやすさ、そして人間味あふれる雰囲気を作り出しました。",
+          "[IMG: assets/news/phien-cho-0-dong.jpg]",
+          "これらの活動は、当面の支援という意義を持つだけでなく、生活条件の改善に貢献し、向上を目指す山岳地帯の人々にさらなる信念と動機を与えたいというHANIKIの願いを表しています。",
+          "**2. コミュニティのつながり – 温かい愛情：**",
+          "[IMG: assets/news/lua-trai-ban-nhang.jpg]",
+          "プログラムの感動的なハイライトは、村人たちとのキャンプファイヤー交流の夜でした。カオバンの山林の中で揺らめく炎の中、HANIKIの代表者、主催者、そして地元の人々は共に語り合い、歌い、素朴で温かい日常の物語を分かち合いました。その瞬間は距離をなくし、愛情を深め、参加者の心に多くの忘れられない思い出を残しました。",
+          "**3. 社会的責任 – HANIKIのコアバリュー：**",
+          "HANIKIの代表者は次のように語りました。「すべての企業は経済的価値を創造するだけでなく、社会に人間的価値を広める必要があると信じています。バンニャンでの慈善活動は、特に困難な地域においてコミュニティに同行するというHANIKIの長期的コミットメントの証です。」",
+          "HANIKI、社会科学人文大学、そしてディエンホン介護施設の連携により、教育・企業・社会組織間の多角的なつながりを持つ、完全な慈善プログラムが生まれました。",
+          "**4. 分かち合いの旅は続く：**",
+          "バンニャンでの2026年初頭の慈善プログラムは、単なる一過性の活動ではなく、HANIKIが確固として追求するコミュニティプログラムシリーズの一部です。今後もHANIKIはさらに多くの有意義な社会活動を展開し、コミュニティの責任と結びついた持続可能な発展を目指していきます。"
+      ]
+    },
+    {
+      "id": "trai-nghiem-tet-nhat-ban-haniki",
+      "category": "企業文化",
+      "title": "WeXpatsと共にHANIKIで日本のお正月を体験",
+      "date": "2026年01月25日",
+      "readTime": "5分で読める",
+      "image": "assets/news/tet-nhat-ban-bee-system.jpg",
+      "excerpt": "HANIKIのスタッフは、書道、年越しそば作りなど、日本のお正月（正月）を熱心に探求しました...",
+      "readMore": "今すぐ見る",
+      "content": [
+          "春が扉を叩く頃、HANIKIの大家族は再び集まり、オフィスで日本のお正月（正月）文化の真髄を探求し体験しました。これは学び、絆、そして喜びに満ちた旅でした。",
+          "**1. 日本のお正月の雰囲気がHANIKIに溢れる：**",
+          "[IMG: assets/news/tet-shougatsu-khong-khi.jpg]",
+          "先日、HANIKIのメンバーは、WeXpats Nihongo日本語センターの先生方と共に、「日本のお正月 - 正月」をテーマにした特別な課外セッションに参加する機会を得ました。この体験は温かく、活気に満ち、意義深い雰囲気の中で行われ、メンバーが日本文化をより深く理解するのに役立つと同時に、HANIKIファミリー内の結束と絆を深めました。",
+          "**2. 日本のお正月（正月）文化の探求：**",
+          "セッションの冒頭で、メンバーは先生から日本人の新年を迎える伝統、つまり一年で最も重要な休日について紹介を受けました。全員が次のようなユニークな習慣について学びました：",
+          "- 年の初めに神社や寺院を参拝し、平安を祈る（初詣）。",
+          "- 門松やしめ飾りを家に飾り、福を家に迎える。",
+          "- 年賀状を送り、子供たちにお年玉をあげる。",
+          "先生方からの面白く生き生きとした話は、日本人が新年を迎える文化の細やかさ、洗練さ、そして深みを全員が感じるのに役立ちました。",
+          "**3. 書道体験 - 新年の伝統的な美しさ：**",
+          "[IMG: assets/news/viet-thu-phap-shodou.jpg]",
+          "次に、HANIKIのスタッフは日本の書道芸術を直接実践しました。先生の指導の下、紙の上の優雅な筆運びのそれぞれが、忍耐、冷静さ、そして伝統への敬意という精神を表現していました。これらは日本文化のコアバリューです。各メンバーは、「福」、「夢」、あるいは「愛」など、新年の願いを込めた縁起の良い意味を持つ文字を選びました。",
+          "**4. 年越しそば作りと試食 - 大晦日の意味のある料理：**",
+          "[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]",
+          "課外セッションのハイライトは、日本人が大晦日に食べる伝統的な麺料理である年越しそばを作って楽しむ活動でした。そばは健康、長寿、幸運を象徴し、旧年から新年へ幸福を伸ばす糸に例えられます。HANIKIのメンバーは、来る新年を迎える笑いと喜びの中で、一緒に準備し、調理し、このおいしい麺料理を楽しみました。",
+          "**5. 学び - 絆 - HANIKI精神を広める：**",
+          "この体験は、日本文化についての有益な知識をもたらしただけでなく、誰もが交流し、学び、職場環境でより絆を深める機会でもありました。HANIKIは常に前向きな企業文化の構築を目指しており、そこでは各従業員がスキルを磨き、語学を養い、新しい文化的価値を発見することができます。",
+          "「すべての体験は学びの旅です。一人一人が、HANIKIの強さと成功を生み出す重要なピースなのです。」"
+      ]
+    },
+    {
+      "id": "hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki",
+      "category": "企業文化",
+      "title": "HANIKIと共に日本文化を探求する旅",
+      "date": "2026年01月10日",
+      "readTime": "4分で読める",
+      "image": "assets/news/van-hoa-nhat-ban-yukata.jpg",
+      "excerpt": "HANIKIの日本語学習者とWeXpats Nihongoの先生方が、伝統的な浴衣の着用とおにぎり作りを体験しました。",
+      "readMore": "詳細を見る",
+      "content": [
+          "HANIKIのスタッフ（初級から上級までの日本語クラスの学生）は、WeXpats Nihongo日本語センターの素敵な先生方と一緒に日本文化を探求し、色彩豊かな体験の一日を過ごしました。",
+          "このプログラムは、本を通して日本語を学ぶことにとどまらず、HANIKIチームが実践的な体験を通じて日本の精神、ライフスタイル、伝統的な価値観を直接感じられるようにしたいという願いから企画されました。セッションの雰囲気は、興奮、笑い、そして結束の精神に満ちており、チームとの持続可能な発展という方向性に合致していました。",
+          "**1. 浴衣の着用 - 伝統衣装の体験：**",
+          "[IMG: assets/news/mac-trang-phuc-yukata.jpg]",
+          "プログラムの幕開けは、日本の伝統的な夏服である浴衣を着る活動でした。色鮮やかな浴衣を初めて羽織ったHANIKIのメンバーは、日本文化の洗練されたエレガントな美しさを感じて興奮を隠せませんでした。先生方は、着物の着方から帯の結び方、小物の選び方まで、あらゆる手順を丁寧に指導しました。この活動は、スタッフが浴衣の意味（シンプルさ、純粋さ、自然との調和の象徴）をより深く理解するのに役立ちました。",
+          "**2. おにぎり作り - HANIKIで日本の味を味わう：**",
+          "[IMG: assets/news/lam-com-nam-onigiri.jpg]",
+          "プログラムに続いて、日本の伝統的なおにぎりを作る体験がありました。先生方は、ご飯を炊くところから、味付け、形作り、そして中に具を入れるところまで丁寧に指導しました。メンバーの器手によって、可愛くて魅力的なおにぎりが次々と生まれました。おいしいだけでなく、創造的な精神に満ちていました。この活動を通じて、日本文化は言語や習慣だけでなく、すべての食事（食べ物への敬意、気遣い、感謝が含まれている）にも表現されていることを全員が理解しました。",
+          "**3. 福笑い - 日本の伝統的な遊びからの笑い：**",
+          "[IMG: assets/news/tro-choi-fukuwarai.jpg]",
+          "旅の締めくくりは、日本のお正月に遊ばれる伝統的な顔合わせゲームである福笑いでした。メンバーは目隠しをして、順番に紙の顔に目、鼻、口を付けました。面白い「傑作」が絶え間ない笑いの中で生まれ、楽しく温かい雰囲気をもたらしました。福笑いは単なる娯楽ゲームではなく、日本文化の楽観的で調和のとれた精神（喜びは最もシンプルなことから来る）を示しています。",
+          "**4. HANIKI - 単なる職場ではなく、共に成長する場所：**",
+          "HANIKIでは、企業文化は仕事だけでなく、すべての人間の絆を深める活動にも存在します。会社は専門的なスキルを訓練するだけでなく、各従業員が絶えず学び、自分自身を開発し、前向きに生きるための環境を作り出しています。これらの実践的な文化体験は、幸せで創造的で、しっかりと団結した職場環境の基盤となっています。"
+      ]
+    }
+  ]
+}
 
 custom_styles = """
 <style>
@@ -413,19 +598,19 @@ main_content = """
   <section class="news-hero">
     <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
       <!-- Tag Removed Gemini Icon, just sleek text -->
-      <div class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-6 uppercase tracking-widest shadow-sm">
+      <div class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-6 uppercase tracking-widest shadow-sm" data-i18n="news_hero_badge">
         Tin Tức & Hoạt Động
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-6 font-heading tracking-tight">
+      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-6 font-heading tracking-tight" data-i18n-html="news_hero_title_html">
         Kết nối cộng đồng, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">kiến tạo giá trị</span>
       </h1>
-      <p class="text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="news_hero_desc">
         Những câu chuyện, sự kiện và cột mốc đáng nhớ trên chặng đường phát triển hệ sinh thái y tế thông minh của BeeCare.
       </p>
       
       <!-- Search (More discreet) -->
       <div class="news-search-box mt-10">
-          <input type="text" placeholder="Tìm kiếm bài viết..." class="news-search-input" />
+          <input type="text" placeholder="Tìm kiếm bài viết..." class="news-search-input" data-i18n-placeholder="news_search_placeholder" />
           <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
       </div>
     </div>
@@ -435,85 +620,13 @@ main_content = """
   <main class="news-main-bg pb-24 pt-8 md:pt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-center items-center relative z-20">
        <div class="news-tab-filter-body">
-          <button class="news-tab-btn-body active">Tất cả bài viết</button>
-          <button class="news-tab-btn-body">Cộng đồng</button>
-          <button class="news-tab-btn-body">Văn hóa</button>
+          <button class="news-tab-btn-body active" data-filter="all" data-i18n="news_cat_all">Tất cả bài viết</button>
+          <button class="news-tab-btn-body" data-filter="Thiện Nguyện & Cộng Đồng" data-i18n="news_cat_charity">Cộng đồng</button>
+          <button class="news-tab-btn-body" data-filter="Văn Hóa Doanh Nghiệp" data-i18n="news_cat_culture">Văn hóa</button>
        </div>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bento-grid">
-"""
-
-# Render Article 1 (Hero - span 12, 1fr 1fr layout on desktop)
-art1 = articles[0]
-main_content += f"""
-        <article class="bento-card bento-hero" data-aos="fade-up" onclick="openSheetModal('{art1['id']}')">
-          <div class="bento-img-wrap">
-            <img src="{art1['image']}" alt="{art1['title']}" class="bento-img" />
-            <span class="bento-card-tag">{art1['category']}</span>
-          </div>
-          <div class="bento-body">
-            <div class="bento-meta">
-              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art1['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art1['readTime']}</span>
-            </div>
-            <h2 class="bento-title">{art1['title']}</h2>
-            <p class="bento-excerpt">{art1['excerpt']}</p>
-            <div class="read-more-btn mt-auto">
-                <span>Đọc bài viết tiêu điểm</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </div>
-          </div>
-        </article>
-"""
-
-# Render Article 2 (Col 6)
-art2 = articles[1]
-main_content += f"""
-        <article class="bento-card bento-col-6" data-aos="fade-up" data-aos-delay="100" onclick="openSheetModal('{art2['id']}')">
-          <div class="bento-img-wrap h-64 lg:h-64">
-            <img src="{art2['image']}" alt="{art2['title']}" class="bento-img" />
-            <span class="bento-card-tag">{art2['category']}</span>
-          </div>
-          <div class="bento-body">
-            <div class="bento-meta">
-              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art2['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art2['readTime']}</span>
-            </div>
-            <h2 class="bento-title" style="font-size: 20px;">{art2['title']}</h2>
-            <p class="bento-excerpt">{art2['excerpt']}</p>
-            <div class="read-more-btn mt-auto">
-                <span>Khám phá ngay</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </div>
-          </div>
-        </article>
-"""
-
-# Render Article 3 (Col 6)
-art3 = articles[2]
-main_content += f"""
-        <article class="bento-card bento-col-6" data-aos="fade-up" data-aos-delay="150" onclick="openSheetModal('{art3['id']}')">
-          <div class="bento-img-wrap h-64 lg:h-64">
-            <img src="{art3['image']}" alt="{art3['title']}" class="bento-img" />
-            <span class="bento-card-tag">{art3['category']}</span>
-          </div>
-          <div class="bento-body">
-            <div class="bento-meta">
-              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art3['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art3['readTime']}</span>
-            </div>
-            <h2 class="bento-title" style="font-size: 20px;">{art3['title']}</h2>
-            <p class="bento-excerpt">{art3['excerpt']}</p>
-            <div class="read-more-btn mt-auto">
-                <span>Xem chi tiết</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </div>
-          </div>
-        </article>
-"""
-
-main_content += """
+      <div class="bento-grid" id="news-bento-grid">
       </div>
     </div>
   </main>
@@ -538,27 +651,85 @@ modal_script = f"""
 <!-- Premium Modal Script -->
 <script>
     const newsData = {articles_json};
+    let currentFilter = 'all';
+    
+    function renderNewsGrid(lang) {{
+        const grid = document.getElementById('news-bento-grid');
+        if (!grid) return;
+        
+        const articles = newsData[lang] || newsData['vi'];
+        let html = '';
+        
+        articles.forEach((art, index) => {{
+            // Apply filtering logic based on data-filter of categories
+            const filterMap = {{
+                'vi': {{ 'Thiện Nguyện & Cộng Đồng': 'Thiện Nguyện & Cộng Đồng', 'Văn Hóa Doanh Nghiệp': 'Văn Hóa Doanh Nghiệp' }},
+                'en': {{ 'Thiện Nguyện & Cộng Đồng': 'Charity & Community', 'Văn Hóa Doanh Nghiệp': 'Corporate Culture' }},
+                'ja': {{ 'Thiện Nguyện & Cộng Đồng': 'ボランティア・社会貢献', 'Văn Hóa Doanh Nghiệp': '企業文化' }}
+            }};
+            
+            // Check filter match
+            let matchesFilter = true;
+            if (currentFilter !== 'all') {{
+                const targetCat = filterMap[lang] && filterMap[lang][currentFilter] ? filterMap[lang][currentFilter] : currentFilter;
+                matchesFilter = (art.category === targetCat || art.category === currentFilter);
+            }}
+            
+            if (!matchesFilter) return;
+            
+            let cardClass = (index === 0) ? 'bento-card bento-hero' : 'bento-card bento-col-6';
+            let delay = (index === 0) ? '0' : (index === 1 ? '100' : '150');
+            let imgClass = (index === 0) ? 'bento-img-wrap' : 'bento-img-wrap h-64 lg:h-64';
+            let titleStyle = (index === 0) ? '' : 'style="font-size: 20px;"';
+            
+            html += `
+                <article class="${{cardClass}}" data-aos="fade-up" data-aos-delay="${{delay}}" onclick="openSheetModal('${{art.id}}')">
+                  <div class="${{imgClass}}">
+                    <img src="${{art.image}}" alt="${{art.title}}" class="bento-img" />
+                    <span class="bento-card-tag">${{art.category}}</span>
+                  </div>
+                  <div class="bento-body">
+                    <div class="bento-meta">
+                      <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> ${{art.date}}</span>
+                      <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> ${{art.readTime}}</span>
+                    </div>
+                    <h2 class="bento-title" ${{titleStyle}}>${{art.title}}</h2>
+                    <p class="bento-excerpt">${{art.excerpt}}</p>
+                    <div class="read-more-btn mt-auto">
+                        <span>${{art.readMore}}</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                  </div>
+                </article>
+            `;
+        }});
+        
+        grid.innerHTML = html;
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }}
     
     document.addEventListener('DOMContentLoaded', () => {{
         const btns = document.querySelectorAll('.news-tab-btn-body');
-        const cards = document.querySelectorAll('.bento-card');
         
         btns.forEach(btn => {{
             btn.addEventListener('click', function() {{
                 btns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
-                const filter = this.textContent.trim().toLowerCase();
-                cards.forEach(card => {{
-                    const tag = card.querySelector('.bento-card-tag').textContent.trim().toLowerCase();
-                    if (filter === 'tất cả bài viết' || tag.includes(filter)) {{
-                        card.style.display = '';
-                    }} else {{
-                        card.style.display = 'none';
-                    }}
-                }});
+                currentFilter = this.getAttribute('data-filter');
+                const currentLang = localStorage.getItem('beecare_lang') || 'vi';
+                renderNewsGrid(currentLang);
             }});
         }});
+        
+        const currentLang = localStorage.getItem('beecare_lang') || 'vi';
+        renderNewsGrid(currentLang);
+    }});
+    
+    // Listen to global language changes
+    window.addEventListener('languageChanged', (e) => {{
+        const lang = e.detail && e.detail.lang ? e.detail.lang : 'vi';
+        renderNewsGrid(lang);
     }});
     
     function parseContent(contentArray) {{
@@ -566,17 +737,14 @@ modal_script = f"""
         let inList = false;
         
         contentArray.forEach(p => {{
-            // Process bold markers
             let formatted = p.replace(/\\*\\*(.*?)\\*\\*/g, '<strong>$1</strong>');
             
-            // Process images
             if (formatted.startsWith('[IMG: ') && formatted.endsWith(']')) {{
                 const url = formatted.substring(6, formatted.length - 1);
                 html += `<div style="margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="${{url}}" style="width: 100%; height: auto; display: block;" alt="News image" /></div>`;
                 return;
             }}
             
-            // Check if it's a list item (starts with -)
             if (formatted.startsWith('- ')) {{
                 if (!inList) {{
                     html += '<ul>';
@@ -588,7 +756,6 @@ modal_script = f"""
                     html += '</ul>';
                     inList = false;
                 }}
-                // Check if it's a quote
                 if (formatted.startsWith('"') && formatted.endsWith('"')) {{
                     html += `<p style="font-style: italic; color: #475569; border-left: 3px solid #0d9488; padding-left: 16px; margin-top: 24px;">${{formatted}}</p>`;
                 }} else {{
@@ -601,7 +768,9 @@ modal_script = f"""
     }}
 
     function openSheetModal(id) {{
-        const article = newsData.find(a => a.id === id);
+        const lang = localStorage.getItem('beecare_lang') || 'vi';
+        const articles = newsData[lang] || newsData['vi'];
+        const article = articles.find(a => a.id === id);
         if(!article) return;
         
         const bodyHtml = parseContent(article.content);
@@ -626,7 +795,7 @@ modal_script = f"""
             </div>
         `;
         
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined') lucide.createIcons();
         
         document.getElementById('sheet-overlay').classList.add('open');
         document.body.style.overflow = 'hidden';

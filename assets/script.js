@@ -1722,6 +1722,7 @@ const TRANSLATIONS = {
     hero_sum_family_action: "Khám phá App người thân",
     news_hero_badge: "Tin tức & Hoạt động cộng đồng",
     news_hero_title: "Tin tức & Hoạt động BeeCare – HANIKI",
+    news_hero_title_html: 'Kết nối cộng đồng, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">kiến tạo giá trị</span>',
     news_hero_desc: "Khám phá những câu chuyện ý nghĩa, chương trình thiện nguyện vì cộng đồng, nét đẹp văn hóa doanh nghiệp và cẩm nang chuyển đổi số viện dưỡng lão.",
     news_cat_all: "Tất cả bài viết",
     news_cat_charity: "Thiện nguyện & Xã hội",
@@ -1973,6 +1974,7 @@ const TRANSLATIONS = {
     hero_sum_family_action: "Explore Family App",
     news_hero_badge: "News & Community Highlights",
     news_hero_title: "BeeCare & HANIKI News & Activities",
+    news_hero_title_html: 'Connecting community, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">creating value</span>',
     news_hero_desc: "Discover inspiring stories, community charity initiatives, corporate culture highlights, and smart nursing home digitization guides.",
     news_cat_all: "All articles",
     news_cat_charity: "Charity & Society",
@@ -2224,6 +2226,7 @@ const TRANSLATIONS = {
     hero_sum_family_action: "ご家族アプリを見る",
     news_hero_badge: "ニュース＆社会貢献活動",
     news_hero_title: "BeeCare・HANIKI ニュース＆活動",
+    news_hero_title_html: 'コミュニティをつなぎ、<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">価値を創造する</span>',
     news_hero_desc: "社会貢献・チャリティー活動、企業文化、そしてスマート介護施設DXの最新ガイドをお届けします。",
     news_cat_all: "すべての記事",
     news_cat_charity: "社会貢献・福祉",
@@ -2443,6 +2446,14 @@ function setLanguage(lang) {
     const key = el.getAttribute('data-i18n');
     if (TRANSLATIONS[lang][key]) {
       el.textContent = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // Update HTML with data-i18n-html
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (TRANSLATIONS[lang][key]) {
+      el.innerHTML = TRANSLATIONS[lang][key];
     }
   });
 
