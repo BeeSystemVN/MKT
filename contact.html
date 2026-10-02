@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên hệ tư vấn & trải nghiệm giải pháp BeeCare</title>
+  <meta name="description"
+    content="Đăng ký tư vấn và trải nghiệm demo trực tiếp giải pháp phần mềm quản lý viện dưỡng lão BeeCare. Cam kết kết nối trong 30 phút, khảo sát tận nơi và bảo mật y tế 100%." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
+  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
+  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+
+  <style>
+    /* ===================== CONTACT PAGE STYLES ===================== */
+    .company-hero {
+      background: linear-gradient(145deg, #091528 0%, #0d273d 45%, #064e3b 100%);
+      position: relative;
+      overflow: hidden;
+      padding-top: 115px;
+      padding-bottom: 55px;
+      color: white;
+      text-align: center;
+    }
+    .company-hero::before {
+      content: '';
+      position: absolute;
+      top: -25%;
+      left: -15%;
+      width: 750px;
+      height: 750px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.24) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .company-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -15%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.18) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Key Commitments Bar */
+    .stats-container {
+      max-width: 1140px;
+      margin: -32px auto 30px;
+      position: relative;
+      z-index: 20;
+      padding: 0 16px;
+    }
+    .stats-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 16px 20px;
+      box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.07);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      gap: 16px;
+    }
+    @media (max-width: 1023px) {
+      .stats-grid-3 {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 18px;
+      }
+    }
+    .contact-comm-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 10px 14px;
+      border-right: 1px solid #f1f5f9;
+    }
+    .contact-comm-card:last-child {
+      border-right: none;
+    }
+    @media (max-width: 1023px) {
+      .contact-comm-card {
+        border-right: none;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 18px;
+      }
+      .contact-comm-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+    .comm-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px;
+    }
+
+    /* Section Wrapper */
+    .section-wrapper {
+      max-width: 1140px;
+      margin: 0 auto 50px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    @media (max-width: 639px) {
+      .section-wrapper {
+        margin-bottom: 40px;
+        padding: 0 16px;
+      }
+    }
+
+    /* Section Header Badges */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(13, 148, 136, 0.1);
+      color: #0d9488;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-heading {
+      font-size: 32px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 26px;
+      }
+    }
+    .section-subtext {
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* Contact Main Form Card (Compact 1-Page Viewport Design) */
+    .contact-form-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px 22px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.06);
+    }
+    @media (max-width: 639px) {
+      .contact-form-card {
+        padding: 16px 14px;
+        border-radius: 16px;
+      }
+    }
+
+    /* Screen reader / Hide native radio completely */
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border-width: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Form Header Spacing - Compact */
+    .contact-form-header {
+      margin-bottom: 12px;
+    }
+    .contact-form-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    @media (max-width: 639px) {
+      .contact-form-title {
+        font-size: 16.5px;
+      }
+    }
+    .contact-form-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* Main Form Steps Stack - Tight 11px vertical gap */
+    .contact-form-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    /* Form Step Container */
+    .form-step {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .form-step-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.35;
+      display: block;
+    }
+
+    /* Scale selector cards (Step 1) - Compact height */
+    .scale-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+    @media (max-width: 639px) {
+      .scale-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+    }
+    .scale-card {
+      position: relative;
+      cursor: pointer;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 6px 8px;
+      background: #ffffff;
+      transition: all 0.18s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 44px;
+      user-select: none;
+    }
+    .scale-card:hover {
+      border-color: #0d9488;
+      background: #f0fdfa;
+    }
+    .scale-card.active {
+      border-color: #0d9488;
+      background: #f0fdfa;
+      box-shadow: 0 0 0 1.5px #0d9488, 0 3px 8px -2px rgba(13, 148, 136, 0.2);
+    }
+    .scale-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 1px;
+      line-height: 1.2;
+      transition: color 0.18s ease;
+    }
+    .scale-card.active .scale-title {
+      color: #0f766e;
+    }
+    .scale-sub {
+      font-size: 10.5px;
+      color: #64748b;
+      line-height: 1.2;
+      transition: color 0.18s ease;
+    }
+    .scale-card.active .scale-sub {
+      color: #0d9488;
+      font-weight: 600;
+    }
+
+    /* Consultation Method Pills (Step 2) - Compact height */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+    }
+    @media (max-width: 639px) {
+      .method-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .method-pill {
+      cursor: pointer;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 6px 10px;
+      background: #ffffff;
+      transition: all 0.18s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #334155;
+      min-height: 36px;
+      text-align: center;
+      user-select: none;
+    }
+    .method-pill:hover {
+      border-color: #0d9488;
+      background: #f0fdfa;
+    }
+    .method-pill.active {
+      border-color: #0d9488;
+      background: #0d9488;
+      color: #ffffff;
+      box-shadow: 0 3px 10px -2px rgba(13, 148, 136, 0.35);
+    }
+    .method-pill.active i {
+      color: #ffffff !important;
+    }
+
+    /* Step 3: Fields Grid & Inputs - Compact */
+    .fields-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .fields-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 639px) {
+      .fields-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+    .contact-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+    .contact-field-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .contact-input-wrap {
+      position: relative;
+    }
+    .contact-input-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: #94a3b8;
+      pointer-events: none;
+      transition: color 0.2s ease;
+    }
+    .contact-input-icon-top {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 14px;
+      height: 14px;
+      color: #94a3b8;
+      pointer-events: none;
+      transition: color 0.2s ease;
+    }
+    .contact-input {
+      width: 100%;
+      min-height: 36px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 9px;
+      padding: 6px 10px 6px 32px;
+      font-size: 12px;
+      color: #0f172a;
+      background: #ffffff;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+    .contact-input:focus {
+      outline: none;
+      border-color: #0d9488;
+      box-shadow: 0 0 0 2.5px rgba(13, 148, 136, 0.12);
+    }
+    .contact-input-wrap:focus-within .contact-input-icon,
+    .contact-input-wrap:focus-within .contact-input-icon-top {
+      color: #0d9488;
+    }
+
+    /* Submit Button & Privacy Note - Compact */
+    .submit-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-top: 2px;
+    }
+    .contact-submit-btn {
+      width: 100%;
+      min-height: 40px;
+      padding: 8px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 3px 10px -2px rgba(13, 148, 136, 0.35);
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+    .contact-submit-btn:hover {
+      background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 5px 14px -2px rgba(13, 148, 136, 0.45);
+    }
+    .contact-submit-btn:active {
+      transform: translateY(0);
+    }
+    .contact-privacy-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 10.5px;
+      color: #64748b;
+      text-align: center;
+    }
+
+    /* Info Sidebar Cards */
+    .contact-info-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.05);
+      transition: all 0.3s ease;
+    }
+    .contact-info-card:hover {
+      box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.09);
+      border-color: #cbd5e1;
+    }
+    .channel-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .channel-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .channel-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(13, 148, 136, 0.08);
+      color: #0d9488;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Connect Card & Multi-channel Box */
+    .contact-connect-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      transition: all 0.3s ease;
+    }
+    .contact-connect-card:hover {
+      box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.09);
+      border-color: #cbd5e1;
+    }
+    .connect-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .hotline-feature-box {
+      background: linear-gradient(135deg, #059669 0%, #0d9488 55%, #0f766e 100%);
+      border-radius: 14px;
+      padding: 13px 15px;
+      color: #ffffff;
+      box-shadow: 0 8px 20px -5px rgba(13, 148, 136, 0.32);
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hotline-feature-box::after {
+      content: '';
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    .hotline-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .hotline-num-wrap {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .hotline-num-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #ffffff;
+    }
+    .hotline-tag-label {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.01em;
+    }
+    .hotline-number-display {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .hotline-call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 7px 13px;
+      min-height: 36px;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #0f766e;
+      font-weight: 700;
+      font-size: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .hotline-call-btn:hover {
+      background: #f0fdf4;
+      color: #047857;
+      transform: translateY(-1px);
+    }
+    .hotline-sub-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.92);
+      flex-wrap: wrap;
+    }
+    .social-channels-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 480px) {
+      .social-channels-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .social-channel-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 48px;
+    }
+    .social-channel-item:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px -4px rgba(15, 23, 42, 0.08);
+    }
+    .social-channel-item.brand-zalo:hover {
+      border-color: #0068FF;
+      background: #f0f7ff;
+    }
+    .social-channel-item.brand-fb:hover {
+      border-color: #1877F2;
+      background: #f0f6ff;
+    }
+    .social-channel-item.brand-tele:hover {
+      border-color: #229ED9;
+      background: #f0f9ff;
+    }
+    .social-channel-item.brand-yt:hover {
+      border-color: #FF0000;
+      background: #fff5f5;
+    }
+    .social-channel-item.brand-tiktok:hover {
+      border-color: #0f172a;
+      background: #f8fafc;
+    }
+    .social-channel-item.span-full {
+      grid-column: span 2;
+    }
+    @media (max-width: 480px) {
+      .social-channel-item.span-full {
+        grid-column: span 1;
+      }
+    }
+    .social-item-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+    .social-item-sub {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+    .social-item-arrow {
+      margin-left: auto;
+      color: #cbd5e1;
+      transition: transform 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .social-channel-item:hover .social-item-arrow {
+      color: #0d9488;
+      transform: translateX(2px);
+    }
+    .connect-card-footer {
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* FAQ Accordion */
+    .contact-faq-item {
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    }
+    .contact-faq-item:hover {
+      border-color: #cbd5e1;
+    }
+    .contact-faq-item.open {
+      border-color: #0d9488;
+      box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1);
+    }
+    .contact-faq-header {
+      width: 100%;
+      text-align: left;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      min-height: 48px;
+    }
+    .contact-faq-icon-arrow {
+      width: 20px;
+      height: 20px;
+      color: #94a3b8;
+      transition: transform 0.3s ease, color 0.3s ease;
+      flex-shrink: 0;
+    }
+    .contact-faq-item.open .contact-faq-icon-arrow {
+      transform: rotate(180deg);
+      color: #0d9488;
+    }
+    .contact-faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 24px;
+      color: #475569;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .contact-faq-item.open .contact-faq-content {
+      max-height: 500px;
+      padding: 0 24px 22px;
+      transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+    }
+
+    /* Fast CTA Banner */
+    .contact-cta-banner {
+      background: linear-gradient(135deg, #091528 0%, #0d383b 50%, #064e3b 100%);
+      border-radius: 28px;
+      padding: 56px 40px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.25);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    @media (max-width: 639px) {
+      .contact-cta-banner {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-body text-slate-800 bg-slate-50">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-5">
+      <div class="relative flex items-center justify-center">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="animation: heartbeat 1.3s ease-in-out infinite;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="#0D9488" />
+        </svg>
+        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+      </div>
+
+      <svg class="ecg-line" viewBox="0 0 260 60">
+        <path class="ecg-path"
+          d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
+      </svg>
+
+      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
+        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      </div>
+      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== UNIFIED ELITE REFINED HEADER ===================== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
+        
+        <!-- CỤM TRÁI: Logo BeeCare -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
+            <span class="brand-text-logo">
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- CỤM GIỮA: Navigation Links (>= 1024px) -->
+        <div class="nav-menu-desktop">
+          <a href="index.html" class="nav-menu-item">
+            <span data-i18n="nav_home">Trang chủ</span>
+          </a>
+          <a href="pricing.html" class="nav-menu-item">
+            <span data-i18n="nav_pricing">Bảng giá</span>
+          </a>
+          <a href="news.html" class="nav-menu-item">
+            <span data-i18n="nav_news">Tin tức</span>
+          </a>
+          <a href="company.html" class="nav-menu-item">
+            <span data-i18n="nav_company">Về chúng tôi</span>
+          </a>
+          <a href="contact.html" class="nav-menu-item active">
+            <span data-i18n="nav_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <!-- CỤM PHẢI: Language Switcher + Demo CTA + Mobile Hamburger -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          
+          <!-- Segmented Glass Language Switcher -->
+          <div class="nav-lang-switcher">
+            <button type="button" class="nav-lang-btn lang-btn active" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
+          </div>
+
+          <!-- Primary CTA Button -->
+          <a href="#booking-form" class="nav-cta-btn">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
+            <span class="sm:hidden" data-i18n="nav_demo_mobile">Demo</span>
+          </a>
+
+          <!-- Mobile Menu Hamburger Button -->
+          <button id="mobile-menu-toggle" type="button" class="nav-hamburger-btn" aria-label="Mở menu điều hướng">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="hidden">
+      <div class="flex flex-col gap-1 pb-2">
+        <a href="index.html" class="mobile-nav-link">
+          <i data-lucide="home" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_home">Trang chủ</span>
+        </a>
+        <a href="pricing.html" class="mobile-nav-link">
+          <i data-lucide="tag" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_pricing">Bảng giá</span>
+        </a>
+        <a href="news.html" class="mobile-nav-link">
+          <i data-lucide="newspaper" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_news">Tin tức</span>
+        </a>
+        <a href="company.html" class="mobile-nav-link">
+          <i data-lucide="building-2" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_company">Về chúng tôi</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link active">
+          <i data-lucide="phone-call" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_contact">Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== 1. CONTACT HERO SECTION ===================== -->
+  <section class="company-hero">
+    <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
+      
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
+        <i data-lucide="headphones" class="w-3.5 h-3.5"></i>
+        <span data-i18n="contact_hero_badge">Kênh tư vấn & triển khai toàn quốc</span>
+      </div>
+      
+      <!-- H1 Main Headline (Sentence case, concise, 1 line) -->
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight whitespace-normal md:whitespace-nowrap">
+        <span data-i18n="contact_hero_title">Đăng ký tư vấn</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300" data-i18n="contact_hero_title_highlight">BeeCare</span>
+      </h1>
+      
+      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto leading-relaxed" data-i18n="contact_hero_desc">
+        Nhận ngay buổi demo trực quan toàn diện hệ sinh thái BeeCare và được đội ngũ chuyên gia lắng nghe, giải đáp chi tiết mọi bài toán vận hành thực tế cho cơ sở của bạn.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ===================== 2. KEY COMMITMENTS BAR ===================== -->
+  <div class="stats-container" data-aos="fade-up" data-aos-delay="100">
+    <div class="stats-grid-3">
+      
+      <!-- Comm 1: Phản hồi 30 phút -->
+      <div class="contact-comm-card">
+        <div class="comm-icon-wrap bg-teal-50 text-teal-600">
+          <i data-lucide="clock" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-slate-500 mb-0.5" data-i18n="contact_comm1_title">Cam kết phản hồi</div>
+          <div class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1" data-i18n="contact_comm1_val">Trong vòng 30 phút</div>
+          <div class="text-xs text-slate-500" data-i18n="contact_comm1_sub">Kể từ khi tiếp nhận đăng ký</div>
+        </div>
+      </div>
+
+      <!-- Comm 2: Khảo sát tận nơi -->
+      <div class="contact-comm-card">
+        <div class="comm-icon-wrap bg-sky-50 text-sky-600">
+          <i data-lucide="map-pin" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-slate-500 mb-0.5" data-i18n="contact_comm2_title">Khảo sát & demo</div>
+          <div class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1" data-i18n="contact_comm2_val">Trực tiếp tại viện</div>
+          <div class="text-xs text-slate-500" data-i18n="contact_comm2_sub">Hoặc trực tuyến 1:1 qua Google Meet / Zoom</div>
+        </div>
+      </div>
+
+      <!-- Comm 3: Bảo mật 100% -->
+      <div class="contact-comm-card">
+        <div class="comm-icon-wrap bg-emerald-50 text-emerald-600">
+          <i data-lucide="lock" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-slate-500 mb-0.5" data-i18n="contact_comm3_title">Bảo mật thông tin</div>
+          <div class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1" data-i18n="contact_comm3_val">Cam kết bảo mật 100%</div>
+          <div class="text-xs text-slate-500" data-i18n="contact_comm3_sub">Chuẩn an toàn dữ liệu y tế & EMR</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== 3. MAIN CONSULTATION HUB & FORM ===================== -->
+  <section id="booking-form" class="section-wrapper scroll-mt-28">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- CỘT TRÁI (7 cols): Phiếu đăng ký tư vấn trực tiếp & demo -->
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="150">
+        <div class="contact-form-card">
+          
+          <!-- Form Header -->
+          <div class="contact-form-header">
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <div class="section-badge !mb-0 !py-0.5 !px-2.5 !text-[11px]">
+                <i data-lucide="calendar-check" class="w-3 h-3"></i>
+                <span data-i18n="contact_form_badge">Đăng ký tư vấn</span>
+              </div>
+              <span class="text-[11px] font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full border border-teal-200/60 inline-flex items-center gap-1">
+                <i data-lucide="clock" class="w-3 h-3 text-teal-600"></i>
+                <span data-i18n="contact_trust_speed">Cam kết kết nối tư vấn trong 30 phút</span>
+              </span>
+            </div>
+            <h2 class="contact-form-title">
+              <span data-i18n="contact_form_title">Đăng ký tư vấn & trải nghiệm demo</span>
+            </h2>
+            <p class="contact-form-desc" data-i18n="contact_form_desc">
+              Để lại thông tin, chuyên gia BeeCare sẽ liên hệ hỗ trợ bạn trong 30 phút.
+            </p>
+          </div>
+
+          <form id="contact-form" class="contact-form-inner">
+            
+            <!-- STEP 1: Resident Scale Selector -->
+            <div class="form-step">
+              <label class="form-step-label" data-i18n="contact_step1_label">
+                1. Quy mô người cao tuổi tại cơ sở:
+              </label>
+              <div class="scale-grid">
+                
+                <!-- Under 30 -->
+                <div class="scale-card" onclick="selectScale(this)">
+                  <input type="radio" name="facility_scale" value="under_30" class="sr-only" />
+                  <div class="scale-title" data-i18n="contact_scale_under30_title">Dưới 30 người</div>
+                  <div class="scale-sub" data-i18n="contact_scale_under30_sub">Viện gia đình</div>
+                </div>
+
+                <!-- 30 - 50 (Default Active) -->
+                <div class="scale-card active" onclick="selectScale(this)">
+                  <input type="radio" name="facility_scale" value="30_50" checked class="sr-only" />
+                  <div class="scale-title" data-i18n="contact_scale_3050_title">30 – 50 người</div>
+                  <div class="scale-sub" data-i18n="contact_scale_3050_sub">Phổ biến nhất</div>
+                </div>
+
+                <!-- 50 - 100 -->
+                <div class="scale-card" onclick="selectScale(this)">
+                  <input type="radio" name="facility_scale" value="50_100" class="sr-only" />
+                  <div class="scale-title" data-i18n="contact_scale_50100_title">50 – 100 người</div>
+                  <div class="scale-sub" data-i18n="contact_scale_50100_sub">Quy mô vừa</div>
+                </div>
+
+                <!-- Over 100 -->
+                <div class="scale-card" onclick="selectScale(this)">
+                  <input type="radio" name="facility_scale" value="over_100" class="sr-only" />
+                  <div class="scale-title" data-i18n="contact_scale_over100_title">Trên 100 người</div>
+                  <div class="scale-sub" data-i18n="contact_scale_over100_sub">Chuỗi cơ sở</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STEP 2: Preferred Consultation Method -->
+            <div class="form-step">
+              <label class="form-step-label" data-i18n="contact_step2_label">
+                2. Hình thức tư vấn mong muốn:
+              </label>
+              <div class="method-grid">
+                
+                <div class="method-pill active" onclick="selectMethod(this)">
+                  <i data-lucide="building" class="w-3.5 h-3.5 text-teal-600"></i>
+                  <span data-i18n="contact_method_onsite">Khảo sát tại viện</span>
+                  <input type="radio" name="consult_method" value="onsite" checked class="sr-only" />
+                </div>
+
+                <div class="method-pill" onclick="selectMethod(this)">
+                  <i data-lucide="video" class="w-3.5 h-3.5 text-sky-600"></i>
+                  <span data-i18n="contact_method_online">Demo online (Meet)</span>
+                  <input type="radio" name="consult_method" value="online" class="sr-only" />
+                </div>
+
+                <div class="method-pill" onclick="selectMethod(this)">
+                  <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <span data-i18n="contact_method_docs">Báo giá qua Email / Zalo</span>
+                  <input type="radio" name="consult_method" value="docs" class="sr-only" />
+                </div>
+
+              </div>
+            </div>
+
+            <!-- STEP 3: Contact Representative Information -->
+            <div class="form-step">
+              <label class="form-step-label" data-i18n="contact_step3_label">
+                3. Thông tin người liên hệ:
+              </label>
+
+              <div class="fields-stack">
+                <div class="fields-row">
+                  
+                  <!-- Họ và tên -->
+                  <div class="contact-field-group">
+                    <label class="contact-field-label">
+                      <span data-i18n="contact_field_name">Họ và tên</span> <span class="text-rose-500">*</span>
+                    </label>
+                    <div class="contact-input-wrap">
+                      <i data-lucide="user" class="contact-input-icon"></i>
+                      <input type="text" id="contact-name" name="name" required class="contact-input"
+                        data-i18n-placeholder="contact_placeholder_name" placeholder="Nguyễn Văn A" />
+                    </div>
+                  </div>
+
+                  <!-- Số điện thoại -->
+                  <div class="contact-field-group">
+                    <label class="contact-field-label">
+                      <span data-i18n="contact_field_phone">Số điện thoại</span> <span class="text-rose-500">*</span>
+                    </label>
+                    <div class="contact-input-wrap">
+                      <i data-lucide="phone" class="contact-input-icon"></i>
+                      <input type="tel" id="contact-phone" name="phone" required class="contact-input"
+                        data-i18n-placeholder="contact_placeholder_phone" placeholder="0988 123 531" />
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="fields-row">
+                  
+                  <!-- Email -->
+                  <div class="contact-field-group">
+                    <label class="contact-field-label">
+                      <span data-i18n="contact_field_email">Email nhận báo giá</span> <span class="text-rose-500">*</span>
+                    </label>
+                    <div class="contact-input-wrap">
+                      <i data-lucide="mail" class="contact-input-icon"></i>
+                      <input type="email" id="contact-email" name="email" required class="contact-input"
+                        data-i18n-placeholder="contact_placeholder_email" placeholder="contact@haniki.vn" />
+                    </div>
+                  </div>
+
+                  <!-- Tên viện / Cơ sở y tế -->
+                  <div class="contact-field-group">
+                    <label class="contact-field-label">
+                      <span data-i18n="contact_field_facility">Tên cơ sở / Viện</span> <span class="text-rose-500">*</span>
+                    </label>
+                    <div class="contact-input-wrap">
+                      <i data-lucide="building-2" class="contact-input-icon"></i>
+                      <input type="text" id="contact-facility" name="facility" required class="contact-input"
+                        data-i18n-placeholder="contact_placeholder_facility" placeholder="Viện dưỡng lão Diên Hồng" />
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Ghi chú / Nhu cầu cụ thể -->
+                <div class="contact-field-group">
+                  <label class="contact-field-label">
+                    <span data-i18n="contact_field_msg">Nhu cầu hoặc câu hỏi</span>
+                  </label>
+                  <div class="contact-input-wrap">
+                    <i data-lucide="message-square" class="contact-input-icon-top"></i>
+                    <textarea id="contact-msg" name="message" rows="1" class="contact-input resize-none !min-h-[36px] !h-[36px] !py-2"
+                      data-i18n-placeholder="contact_placeholder_msg" placeholder="Mô tả số giường hoặc bài toán quản lý cần tối ưu..."></textarea>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Submit Button & Privacy Note -->
+            <div class="submit-wrap">
+              <button type="submit" id="contact-submit-btn" class="contact-submit-btn">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span data-i18n="contact_submit_btn">Gửi yêu cầu tư vấn ngay</span>
+              </button>
+
+              <div class="contact-privacy-note">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i>
+                <span data-i18n="contact_privacy_note">Cam kết bảo mật thông tin theo tiêu chuẩn dữ liệu y tế.</span>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+      <!-- CỘT PHẢI (5 cols): Pháp nhân, Trụ sở điều hành & Kênh hotline trực tiếp -->
+      <div class="lg:col-span-5 space-y-4" data-aos="fade-up" data-aos-delay="200">
+        
+        <!-- Card 1: Trụ sở công nghệ & Giờ làm việc -->
+        <div class="contact-info-card">
+          <div class="space-y-1">
+            <!-- Địa chỉ -->
+            <div class="channel-row">
+              <div class="channel-icon">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-slate-700" data-i18n="contact_corp_addr_label">Trụ sở công nghệ Hà Nội</div>
+                <div class="text-xs text-slate-600 leading-relaxed mt-0.5" data-i18n="contact_corp_addr_val">
+                  Tầng 30, Tòa nhà Handico Tower, Đường Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, TP. Hà Nội
+                </div>
+              </div>
+            </div>
+
+            <!-- Giờ làm việc & Kỹ thuật -->
+            <div class="channel-row">
+              <div class="channel-icon">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-slate-700" data-i18n="contact_corp_hours_label">Giờ làm việc & kỹ thuật</div>
+                <div class="text-xs text-slate-600 leading-relaxed mt-0.5" data-i18n="contact_corp_hours_val">
+                  Thứ Hai – Thứ Bảy: 8:00 – 18:00 (Hệ thống Cloud & Kỹ thuật trực 24/7/365)
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Card 2: Kênh kết nối & Hotline 24/7 -->
+        <div class="contact-connect-card">
+          <!-- Card Header -->
+          <div class="connect-card-header">
+            <div class="flex items-center gap-2">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <h3 class="text-sm font-bold text-slate-900 tracking-tight" data-i18n="contact_corp_hotline_label">Kênh kết nối & hotline 24/7</h3>
+            </div>
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/70" data-i18n="contact_badge_online">Trực tuyến 24/7</span>
+          </div>
+
+          <!-- Hotline Feature Box -->
+          <div class="hotline-feature-box">
+            <div class="hotline-main-row">
+              <div class="hotline-num-wrap">
+                <div class="hotline-num-icon">
+                  <i data-lucide="phone-call" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="hotline-tag-label" data-i18n="contact_hotline_tag">Hotline tư vấn & báo giá</div>
+                  <div class="hotline-number-display">0988 123 531</div>
+                </div>
+              </div>
+              <a href="tel:0988123531" class="hotline-call-btn">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                <span data-i18n="contact_btn_call_now">Gọi ngay</span>
+              </a>
+            </div>
+            <div class="hotline-sub-row">
+              <div class="flex items-center gap-1.5">
+                <span data-i18n="contact_switchboard_label">Tổng đài 24/7:</span>
+                <a href="tel:19006868" class="font-bold underline text-white hover:text-emerald-100 transition-colors">1900 6868</a>
+                <span class="text-white/80">(Phím 1)</span>
+              </div>
+              <span class="text-white/80 text-[11px]">Hỗ trợ kỹ thuật 24/7/365</span>
+            </div>
+          </div>
+
+          <!-- Social Media Grid Heading -->
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500 tracking-wider" data-i18n="contact_social_heading">Mạng xã hội & kênh liên hệ</span>
+          </div>
+
+          <!-- Social Channels 5 Items Grid -->
+          <div class="social-channels-grid">
+            <!-- 1. Zalo -->
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer"
+              class="social-channel-item brand-zalo">
+              <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="8" fill="#0068FF"/>
+                <text x="18" y="24" fill="#ffffff" font-family="'Be Vietnam Pro', sans-serif" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
+              <div class="min-w-0">
+                <div class="social-item-name">Zalo OA</div>
+                <div class="social-item-sub truncate" data-i18n="contact_zalo_sub">Chat tư vấn 1:1</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 social-item-arrow"></i>
+            </a>
+
+            <!-- 2. Facebook -->
+            <a href="https://facebook.com/beecare.vn" target="_blank" rel="noopener noreferrer"
+              class="social-channel-item brand-fb">
+              <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="8" fill="#1877F2"/>
+                <path d="M23.5 18.5h-3.3V30h-4.8V18.5H13v-4.1h2.4v-2.7c0-3.5 2.1-5.5 5.3-5.5 1.5 0 2.8.1 3.2.2v3.7h-2.2c-1.7 0-2 .8-2 2v2.3h4.1l-.5 4.1z" fill="#ffffff"/>
+              </svg>
+              <div class="min-w-0">
+                <div class="social-item-name">Facebook</div>
+                <div class="social-item-sub truncate" data-i18n="contact_fb_sub">BeeCare Fanpage</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 social-item-arrow"></i>
+            </a>
+
+            <!-- 3. Telegram -->
+            <a href="https://t.me/beecare_vn" target="_blank" rel="noopener noreferrer"
+              class="social-channel-item brand-tele">
+              <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="8" fill="#229ED9"/>
+                <path d="M8.5 17.6l17.8-6.9c.8-.3 1.5.2 1.3 1.2l-3 14.3c-.2 1-.8 1.3-1.7.8l-4.7-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L12.4 19.8l-4.7-1.5c-1-.3-1-1 .8-.7z" fill="#ffffff"/>
+              </svg>
+              <div class="min-w-0">
+                <div class="social-item-name">Telegram</div>
+                <div class="social-item-sub truncate" data-i18n="contact_tele_sub">Hỗ trợ kỹ thuật</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 social-item-arrow"></i>
+            </a>
+
+            <!-- 4. YouTube -->
+            <a href="https://youtube.com/@beecare" target="_blank" rel="noopener noreferrer"
+              class="social-channel-item brand-yt">
+              <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="8" fill="#FF0000"/>
+                <path d="M26.8 13.5c-.2-.8-.8-1.4-1.6-1.6C23.8 11.5 18 11.5 18 11.5s-5.8 0-7.2.4c-.8.2-1.4.8-1.6 1.6C8.8 14.9 8.8 18 8.8 18s0 3.1.4 4.5c.2.8.8 1.4 1.6 1.6 1.4.4 7.2.4 7.2.4s5.8 0 7.2-.4c.8-.2 1.4-.8 1.6-1.6.4-1.4.4-4.5.4-4.5s0-3.1-.4-4.5zm-11.6 7.5v-6l5.2 3-5.2 3z" fill="#ffffff"/>
+              </svg>
+              <div class="min-w-0">
+                <div class="social-item-name">YouTube</div>
+                <div class="social-item-sub truncate" data-i18n="contact_yt_sub">Video giới thiệu & HDSD</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 social-item-arrow"></i>
+            </a>
+
+            <!-- 5. TikTok (span-full) -->
+            <a href="https://tiktok.com/@beecare.vn" target="_blank" rel="noopener noreferrer"
+              class="social-channel-item brand-tiktok span-full">
+              <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="36" height="36" rx="8" fill="#010101"/>
+                <path d="M24.2 14.6c-1.3-.9-2.1-2.2-2.3-3.8h-3.3v13.5c0 1.6-1.3 2.9-2.9 2.9s-2.9-1.3-2.9-2.9 1.3-2.9 2.9-2.9c.3 0 .6.1.9.2v-3.4c-.3 0-.6-.1-.9-.1-3.5 0-6.3 2.8-6.3 6.3s2.8 6.3 6.3 6.3 6.3-2.8 6.3-6.3V17.2c1.4 1 3.1 1.6 4.9 1.6v-3.4c-1 0-1.9-.3-2.7-.8z" fill="#ffffff"/>
+              </svg>
+              <div class="min-w-0 flex-1">
+                <div class="social-item-name">TikTok</div>
+                <div class="social-item-sub truncate" data-i18n="contact_tiktok_sub">Truyền thông & Đời sống viện</div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 social-item-arrow"></i>
+            </a>
+          </div>
+
+          <!-- Card Footer: Email chính thức -->
+          <div class="connect-card-footer">
+            <i data-lucide="mail" class="w-4 h-4 text-teal-600 shrink-0"></i>
+            <span data-i18n="contact_corp_email_label">Hộp thư điện tử chính thức</span>:
+            <a href="mailto:contact@haniki.vn" class="text-teal-700 font-bold hover:underline">contact@haniki.vn</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Bản đồ vị trí trụ sở Handico Tower -->
+        <div class="contact-info-card overflow-hidden p-0 border border-slate-200">
+          <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-bold">
+              <i data-lucide="map" class="w-4 h-4 text-teal-400"></i>
+              <span data-i18n="contact_map_title">Vị trí trụ sở Tòa nhà Handico Tower</span>
+            </div>
+            <a href="https://maps.google.com/?q=Handico+Tower+Pham+Hung+Me+Tri+Nam+Tu+Liem+Hanoi" target="_blank" rel="noopener noreferrer"
+              class="text-xs text-teal-300 hover:text-white flex items-center gap-1 font-semibold transition-colors">
+              <span data-i18n="contact_map_open">Mở trên Google Maps</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+          <div class="relative w-full h-[220px] bg-slate-100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3809635038837!2d105.7801869758728!3d21.01743668816434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5394ef342f%3A0xe54d896ee81c3c97!2zVMOyYSBuaMOgIEhBTkRJQ08gVE9XRVI!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Bản đồ Tòa nhà Handico Tower">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== 4. FREQUENTLY ASKED QUESTIONS (FAQ) ===================== -->
+  <section id="faq" class="section-wrapper scroll-mt-28">
+    <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+      <div class="section-badge">
+        <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+        <span data-i18n="contact_faq_badge">Giải đáp thắc mắc</span>
+      </div>
+      <h2 class="section-heading">
+        <span data-i18n="contact_faq_title">Câu hỏi thường gặp trước khi triển khai BeeCare</span>
+      </h2>
+      <p class="section-subtext" data-i18n="contact_faq_desc">
+        Những thắc mắc phổ biến nhất của các nhà quản lý viện dưỡng lão và cơ sở y tế khi tìm hiểu về hệ thống.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      
+      <!-- FAQ 1 (Default Open) -->
+      <div class="contact-faq-item open" data-aos="fade-up" data-aos-delay="100">
+        <button type="button" class="contact-faq-header" onclick="toggleContactFaq(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2" data-i18n="contact_faq1_q">
+            Cơ sở của tôi ở các tỉnh xa hoặc miền Nam thì HANIKI có cử chuyên viên đến tận nơi khảo sát không?
+          </span>
+          <i data-lucide="chevron-down" class="contact-faq-icon-arrow"></i>
+        </button>
+        <div class="contact-faq-content" data-i18n="contact_faq1_a">
+          Có. Đội ngũ chuyên gia giải pháp của HANIKI sẵn sàng đến tận cơ sở tại mọi tỉnh thành trên cả nước để khảo sát luồng vận hành thực tế và demo trực tiếp. Đối với các cơ sở muốn tìm hiểu nhanh, chúng tôi hỗ trợ demo trực tuyến 1:1 qua Google Meet ngay trong ngày.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="150">
+        <button type="button" class="contact-faq-header" onclick="toggleContactFaq(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2" data-i18n="contact_faq2_q">
+            Thời gian triển khai phần mềm và đào tạo điều dưỡng viên sử dụng mất bao lâu?
+          </span>
+          <i data-lucide="chevron-down" class="contact-faq-icon-arrow"></i>
+        </button>
+        <div class="contact-faq-content" data-i18n="contact_faq2_a">
+          Toàn bộ quy trình chỉ mất từ 3 đến 5 ngày làm việc. Hệ thống BeeCare được thiết kế theo tư duy chạm trực quan chuẩn Kaigo, thân thiện tuyệt đối với nhân sự điều dưỡng ở mọi độ tuổi, chỉ cần 1 buổi hướng dẫn là có thể thao tác thành thạo tại giường bệnh.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="200">
+        <button type="button" class="contact-faq-header" onclick="toggleContactFaq(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2" data-i18n="contact_faq3_q">
+            Hệ thống có chạy được trên điện thoại và máy tính bảng hiện có của viện không?
+          </span>
+          <i data-lucide="chevron-down" class="contact-faq-icon-arrow"></i>
+        </button>
+        <div class="contact-faq-content" data-i18n="contact_faq3_a">
+          Có. Cổng Web Admin hoạt động mượt mà trên mọi trình duyệt web máy tính, còn ứng dụng BeeCare Staff và BeeCare Family tương thích hoàn hảo với cả điện thoại iPhone (iOS) và Android hiện có của nhân viên và gia đình, không đòi hỏi đầu tư thiết bị chuyên dụng đắt đỏ.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="contact-faq-item" data-aos="fade-up" data-aos-delay="250">
+        <button type="button" class="contact-faq-header" onclick="toggleContactFaq(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2" data-i18n="contact_faq4_q">
+            Dữ liệu bệnh án EMR và thông tin người cao tuổi được bảo mật như thế nào?
+          </span>
+          <i data-lucide="chevron-down" class="contact-faq-icon-arrow"></i>
+        </button>
+        <div class="contact-faq-content" data-i18n="contact_faq4_a">
+          BeeCare áp dụng kiến trúc Cloud bảo mật nhiều lớp chuẩn y tế, mã hóa dữ liệu đầu cuối (End-to-End Encryption), sao lưu tự động hàng ngày và phân quyền truy cập chặt chẽ giữa các vai trò (Ban giám đốc, Bác sĩ, Điều dưỡng, Gia đình). Cơ sở hoàn toàn sở hữu và kiểm soát dữ liệu của mình.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== 5. CALL TO ACTION BANNER ===================== -->
+  <section class="section-wrapper" data-aos="zoom-in">
+    <div class="contact-cta-banner">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+        <span data-i18n="contact_cta_title">Bắt đầu hành trình chuyển đổi số viện dưỡng lão ngay hôm nay</span>
+      </h2>
+      <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed" data-i18n="contact_cta_desc">
+        Đội ngũ chuyên gia HANIKI & BeeCare luôn sẵn sàng lắng nghe, khảo sát tận nơi và hỗ trợ 24/7/365.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#booking-form"
+          class="min-h-[48px] inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-teal-500/30 transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          <span data-i18n="contact_cta_btn_book">Đăng ký tư vấn miễn phí</span>
+        </a>
+        <a href="tel:0988123531"
+          class="min-h-[48px] inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="phone-call" class="w-4 h-4 text-teal-300"></i>
+          <span data-i18n="contact_cta_btn_call">Gọi hotline: 0988 123 531</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+
+        <!-- Cột 1: Brand + Thông tin liên hệ -->
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <div class="footer-brand-icon">
+              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+            </div>
+            <div>
+              <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <div class="footer-company-badge">
+            <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
+            <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
+          </div>
+          <div class="footer-contact-row">
+            <a href="tel:19006868" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            </a>
+            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              contact@beecare.vn
+            </a>
+            <span class="footer-contact-item">
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
+            </span>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://facebook.com/beecare.vn" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            </a>
+            <a href="https://youtube.com/@beecare" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cột 2: Hệ sinh thái -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_eco">Hệ sinh thái</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--teal">
+              <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--cyan">
+              <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_staff">App Điều dưỡng Staff</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--amber">
+              <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_family">App Người thân Family</span>
+            </a>
+          </div>
+          <div style="margin-top:20px">
+            <div class="footer-col-title" data-i18n="footer_col_feat">Tính năng nổi bật</div>
+            <ul class="footer-nav-list">
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat1">Quản lý hồ sơ EMR</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat2">Đo sinh hiệu tại giường</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat3">Trợ lý AI 24/7</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat4">Thanh toán VietQR</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cột 3: Điều hướng chính -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_nav">Điều hướng</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" data-i18n="nav_home">Trang chủ</a></li>
+            <li><a href="company.html"><span data-i18n="nav_company">Về chúng tôi</span></a></li>
+            <li><a href="pricing.html" data-i18n="nav_pricing">Bảng giá</a></li>
+            <li><a href="news.html"><span data-i18n="nav_news">Tin tức & sự kiện</span></a></li>
+            <li><a href="contact.html" class="active-page"><span data-i18n="nav_contact">Liên hệ</span></a></li>
+            <li><a href="faq.html"><span data-i18n="nav_faq">Câu hỏi thường gặp</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
+          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
+            </div>
+            <div style="font-size:12px;color:#64748b;line-height:1.6">
+              <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+            </div>
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+              <a href="#contact-form" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
+                <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
+                <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
+              </a>
+              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+                <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
+                <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+              </a>
+            </div>
+          </div>
+          <div style="font-size:11.5px;color:#475569;line-height:1.7">
+            <strong style="color:#64748b"><span data-i18n="footer_partner">Đối tác chiến lược:</span></strong><br>
+            <span data-i18n="footer_partner_1">Hệ thống Viện dưỡng lão Diên Hồng</span><br>
+            <span data-i18n="footer_partner_2">Chuẩn chăm sóc Kaigo Nhật Bản</span>
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 <a href="index.html">BeeCare</a> – <span data-i18n="footer_dev_by_prefix">Phát triển bởi</span> <a href="company.html"><span data-i18n="footer_dev_by_suffix">CÔNG TY TNHH HANIKI</span></a>.
+          <span data-i18n="footer_coop">Đồng hành cùng Viện dưỡng lão Diên Hồng.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="terms.html"><span data-i18n="footer_terms">Điều khoản sử dụng</span></a>
+          <a href="privacy.html"><span data-i18n="footer_privacy">Chính sách bảo mật</span></a>
+          <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer-inner -->
+  </footer>
+
+  <!-- ===================== LIGHTBOX MODAL ===================== -->
+  <div id="lightbox-modal">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button id="lightbox-close" class="absolute -top-10 right-0 text-white hover:text-amber-400 transition-colors flex items-center gap-1.5 text-xs font-semibold">
+        <i data-lucide="x" class="w-6 h-6"></i> <span data-i18n="lightbox_close">Đóng lại (ESC)</span>
+      </button>
+      <img id="lightbox-img" src="" alt="Ảnh phóng to" data-i18n-alt="common_alt_lightbox" class="w-auto h-auto max-h-[82vh] rounded-xl shadow-2xl">
+      <div id="lightbox-caption" class="text-slate-200 text-sm font-medium mt-3 text-center"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 border border-teal-500 text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md">
+    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+    </div>
+    <div id="toast-msg" class="text-sm font-medium text-slate-200">
+      <span data-i18n="toast_success">Yêu cầu đã được gửi thành công!</span>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-top" aria-label="Cuộn lên đầu trang" data-i18n-label="common_aria_scroll_top">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <!-- ===================== PAGE LOGIC SCRIPTS ===================== -->
+  <script>
+    // Scale Selection Handler (Step 1)
+    function selectScale(el) {
+      document.querySelectorAll('.scale-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      const radio = el.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    }
+
+    // Method Selection Handler (Step 2)
+    function selectMethod(el) {
+      document.querySelectorAll('.method-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      const radio = el.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+    }
+
+    // FAQ Accordion Handler
+    function toggleContactFaq(btn) {
+      const card = btn.closest('.contact-faq-item');
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.contact-faq-item').forEach(c => c.classList.remove('open'));
+      if (!isOpen) {
+        card.classList.add('open');
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    // Form Submission & Multilingual Toast
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const lang = localStorage.getItem('beecare_lang') || 'vi';
+          const msgs = {
+            vi: 'Cảm ơn quý vị! Yêu cầu tư vấn đã được gửi thành công. Chuyên gia BeeCare sẽ liên hệ trong vòng 30 phút.',
+            en: 'Thank you! Your consultation request has been submitted successfully. A BeeCare specialist will contact you within 30 minutes.',
+            ja: 'ありがとうございます！導入相談のお申し込みを受け付けました。30分以内に専門担当者よりご連絡いたします。'
+          };
+          if (typeof showToast === 'function') {
+            showToast(msgs[lang] || msgs.vi);
+          }
+          form.reset();
+          // Reset default selections
+          const cards = document.querySelectorAll('.scale-card');
+          if (cards.length > 1) selectScale(cards[1]);
+          const methods = document.querySelectorAll('.method-pill');
+          if (methods.length > 0) selectMethod(methods[0]);
+        });
+      }
+
+      // Title listener on language change
+      window.addEventListener('languageChanged', (e) => {
+        const lang = e.detail && e.detail.lang ? e.detail.lang : (localStorage.getItem('beecare_lang') || 'vi');
+        if (window.TRANSLATIONS && window.TRANSLATIONS[lang] && window.TRANSLATIONS[lang]['contact_title_page']) {
+          document.title = window.TRANSLATIONS[lang]['contact_title_page'];
+        }
+      });
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/i18n/common.js?v=20261003_v7"></script>
+  <script src="assets/i18n/contact.js?v=20261003_v7"></script>
+  <script src="assets/script.js?v=20261003_v7"></script>
+</body>
+
+</html>

@@ -25,3 +25,4 @@
 
 ## 5. Quy Tắc Làm Việc Của Agent (AI)
 - **Cấm dùng script phụ:** TUYỆT ĐỐI KHÔNG viết và chạy các script Python trung gian (như trong thư mục `scratch/`) để thực hiện tác vụ sửa file hay replace text. Phải sử dụng công cụ chỉnh sửa trực tiếp.
+- **Quy tắc Git Push:** CHỈ push code (chạy lệnh `git push`) khi người dùng có yêu cầu rõ ràng. Tuyệt đối không tự ý push code lên kho lưu trữ từ xa.

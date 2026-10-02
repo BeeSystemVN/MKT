@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chính sách bảo mật thông tin & dữ liệu y tế | BeeCare</title>
+  <meta name="description"
+    content="Chính sách bảo mật thông tin và dữ liệu y tế số của hệ sinh thái quản lý viện dưỡng lão BeeCare. Cam kết mã hóa đầu cuối, an toàn dữ liệu EMR chuẩn y tế." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
+  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
+  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+
+  <style>
+    .legal-hero {
+      background: linear-gradient(145deg, #091528 0%, #0d273d 45%, #064e3b 100%);
+      padding-top: 140px;
+      padding-bottom: 70px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-container {
+      max-width: 920px;
+      margin: -30px auto 90px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .legal-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid #e2e8f0;
+      padding: 44px 38px;
+      box-shadow: 0 18px 45px -10px rgba(15, 23, 42, 0.06);
+    }
+    @media (max-width: 639px) {
+      .legal-card { padding: 28px 20px; border-radius: 18px; }
+      .legal-container { margin-top: -20px; margin-bottom: 60px; }
+    }
+    .legal-article h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-article h2:first-of-type {
+      margin-top: 0;
+    }
+    .legal-article p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #475569;
+      margin-bottom: 14px;
+    }
+    .legal-article ul {
+      list-style-type: disc;
+      padding-left: 24px;
+      margin-bottom: 18px;
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #475569;
+    }
+    .legal-article li {
+      margin-bottom: 8px;
+    }
+    .legal-highlight-box {
+      background: rgba(13, 148, 136, 0.07);
+      border-left: 4px solid #0d9488;
+      border-radius: 0 14px 14px 0;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #0f766e;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body class="font-body text-slate-800 bg-slate-50">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-5">
+      <div class="relative flex items-center justify-center">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="animation: heartbeat 1.3s ease-in-out infinite;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="#0D9488" />
+        </svg>
+        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+      </div>
+      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
+        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
+        
+        <!-- Logo BeeCare -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
+            <span class="brand-text-logo">
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-menu-desktop">
+          <a href="index.html" class="nav-menu-item">
+            <span data-i18n="nav_home">Trang chủ</span>
+          </a>
+          <a href="pricing.html" class="nav-menu-item">
+            <span data-i18n="nav_pricing">Bảng giá</span>
+          </a>
+          <a href="news.html" class="nav-menu-item">
+            <span data-i18n="nav_news">Tin tức</span>
+          </a>
+          <a href="company.html" class="nav-menu-item">
+            <span data-i18n="nav_company">Về chúng tôi</span>
+          </a>
+          <a href="contact.html" class="nav-menu-item">
+            <span data-i18n="nav_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <!-- Segmented Switcher & CTA -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div class="nav-lang-switcher">
+            <button type="button" class="nav-lang-btn lang-btn active" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
+          </div>
+
+          <a href="contact.html" class="nav-cta-btn">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
+            <span class="sm:hidden" data-i18n="nav_demo_mobile">Demo</span>
+          </a>
+
+          <button id="mobile-menu-toggle" type="button" class="nav-hamburger-btn" aria-label="Mở menu">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden">
+      <div class="flex flex-col gap-1 pb-2">
+        <a href="index.html" class="mobile-nav-link"><i data-lucide="home" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_home">Trang chủ</span></a>
+        <a href="pricing.html" class="mobile-nav-link"><i data-lucide="tag" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_pricing">Bảng giá</span></a>
+        <a href="news.html" class="mobile-nav-link"><i data-lucide="newspaper" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_news">Tin tức</span></a>
+        <a href="company.html" class="mobile-nav-link"><i data-lucide="building-2" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_company">Về chúng tôi</span></a>
+        <a href="contact.html" class="mobile-nav-link"><i data-lucide="phone-call" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_contact">Liên hệ</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="legal-hero">
+    <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-4 tracking-wide shadow-sm">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>An toàn & Bảo mật y tế số</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+        Chính sách bảo mật thông tin
+      </h1>
+      <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Cam kết bảo vệ dữ liệu hồ sơ bệnh án EMR, thông tin sinh hiệu người cao tuổi và quyền riêng tư của các cơ sở y tế đối tác.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTENT ===================== -->
+  <main class="legal-container">
+    <article class="legal-card legal-article" data-aos="fade-up" data-aos-delay="100">
+      
+      <div class="legal-highlight-box">
+        <strong>Cam kết cốt lõi:</strong> Toàn bộ dữ liệu người cao tuổi, lịch sử chăm sóc và hồ sơ EMR được lưu trữ trên nền tảng BeeCare hoàn toàn thuộc quyền sở hữu của cơ sở dưỡng lão. Chúng tôi không mua bán, chia sẻ hoặc khai thác dữ liệu này vì bất kỳ mục đích thương mại nào.
+      </div>
+
+      <h2>
+        <i data-lucide="database" class="w-5 h-5 text-teal-600"></i>
+        1. Phạm vi và mục đích thu thập dữ liệu
+      </h2>
+      <p>
+        Hệ sinh thái BeeCare thu thập các thông tin cần thiết phục vụ trực tiếp cho hoạt động chăm sóc y tế và vận hành tại cơ sở dưỡng lão:
+      </p>
+      <ul>
+        <li><strong>Thông tin người cao tuổi:</strong> Họ tên, ngày sinh, tiền sử bệnh án, dị ứng thuốc, thông tin người giám hộ và số phòng/giường lưu trú.</li>
+        <li><strong>Dữ liệu chăm sóc & sinh hiệu:</strong> Chỉ số huyết áp, nhịp tim, đường huyết, SpO2, cân nặng, lịch uống thuốc và nhật ký dinh dưỡng hàng ngày.</li>
+        <li><strong>Tài khoản nhân sự & điều dưỡng:</strong> Họ tên, ca trực, vai trò chuyên môn và lịch sử thao tác ghi chép y lệnh tại giường.</li>
+        <li><strong>Thông tin tài khoản gia đình:</strong> Số điện thoại đăng ký nhận thông báo chăm sóc và tương tác cùng cơ sở.</li>
+      </ul>
+
+      <h2>
+        <i data-lucide="lock" class="w-5 h-5 text-teal-600"></i>
+        2. Tiêu chuẩn mã hóa và an toàn hạ tầng Cloud
+      </h2>
+      <p>
+        BeeCare áp dụng các tiêu chuẩn an toàn bảo mật nghiêm ngặt đáp ứng yêu cầu của ngành y tế và Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân:
+      </p>
+      <ul>
+        <li><strong>Mã hóa đường truyền (In-Transit):</strong> Sử dụng giao thức HTTPS/TLS 1.3 với chứng chỉ mã hóa 256-bit cho mọi kết nối giữa Web Admin, App Điều dưỡng và App Người thân.</li>
+        <li><strong>Mã hóa dữ liệu lưu trữ (At-Rest):</strong> Dữ liệu bệnh án EMR và cơ sở dữ liệu được mã hóa bằng thuật toán tiêu chuẩn AES-256.</li>
+        <li><strong>Sao lưu tự động đa vùng:</strong> Hệ thống tự động sao lưu dữ liệu dự phòng hàng ngày (Daily Snapshot) tại các trung tâm dữ liệu đạt chuẩn Tier 3 tại Việt Nam.</li>
+      </ul>
+
+      <h2>
+        <i data-lucide="user-check" class="w-5 h-5 text-teal-600"></i>
+        3. Phân quyền truy cập đa cấp bậc (RBAC)
+      </h2>
+      <p>
+        Mỗi tài khoản tham gia hệ thống BeeCare được phân cấp thẩm quyền chặt chẽ theo đúng chuyên môn và vai trò:
+      </p>
+      <ul>
+        <li><strong>Ban giám đốc:</strong> Xem báo cáo tổng quan số lượng, dòng tiền và kiểm soát chất lượng chăm sóc.</li>
+        <li><strong>Bác sĩ phụ trách:</strong> Chỉ định y lệnh, cập nhật phác đồ điều trị và duyệt đơn thuốc.</li>
+        <li><strong>Điều dưỡng viên:</strong> Chỉ có quyền ghi nhận sinh hiệu và xác nhận thực hiện chăm sóc theo danh sách được phân ca.</li>
+        <li><strong>Người thân gia đình:</strong> Chỉ xem được báo cáo chăm sóc và hình ảnh của chính người thân của mình, tuyệt đối không nhìn thấy thông tin của người cao tuổi khác.</li>
+      </ul>
+
+      <h2>
+        <i data-lucide="building" class="w-5 h-5 text-teal-600"></i>
+        4. Quyền làm chủ dữ liệu và trích xuất
+      </h2>
+      <p>
+        Cơ sở dưỡng lão có toàn quyền yêu cầu sao lưu trích xuất toàn bộ dữ liệu người cao tuổi (dưới định dạng Excel, PDF, JSON chuẩn EMR) bất cứ khi nào cần thiết hoặc khi kết thúc hợp đồng dịch vụ mà không bị ràng buộc kỹ thuật.
+      </p>
+
+      <h2>
+        <i data-lucide="help-circle" class="w-5 h-5 text-teal-600"></i>
+        5. Đơn vị chủ quản và liên hệ hỗ trợ bảo mật
+      </h2>
+      <p>
+        Mọi câu hỏi, yêu cầu hỗ trợ hoặc báo cáo sự cố an toàn thông tin, xin vui lòng liên hệ trực tiếp với bộ phận an ninh mạng của chúng tôi:
+      </p>
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-700 space-y-1">
+        <div><strong>CÔNG TY TNHH HANIKI</strong> – Đơn vị phát triển hệ sinh thái BeeCare</div>
+        <div>Địa chỉ: Tầng 30, Tòa nhà Handico Tower, Đường Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, TP. Hà Nội</div>
+        <div>Hotline an toàn dữ liệu: <a href="tel:0988123531" class="text-teal-700 font-bold">0988 123 531</a></div>
+        <div>Hộp thư điện tử: <a href="mailto:contact@haniki.vn" class="text-teal-700 font-bold">contact@haniki.vn</a></div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo-wrap">
+            <span class="footer-logo-brand"><span class="footer-logo-bee">Bee</span><span class="footer-logo-care">Care</span><span class="footer-logo-dot"></span></span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</p>
+          <p class="footer-desc" data-i18n="footer_desc">
+            Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_eco">Hệ sinh thái</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--teal">
+              <i data-lucide="layout-dashboard" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--cyan">
+              <i data-lucide="stethoscope" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_staff">App Điều dưỡng Staff</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--amber">
+              <i data-lucide="heart-handshake" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_family">App Người thân Family</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_nav">Điều hướng</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" data-i18n="nav_home">Trang chủ</a></li>
+            <li><a href="company.html"><span data-i18n="nav_company">Về chúng tôi</span></a></li>
+            <li><a href="pricing.html" data-i18n="nav_pricing">Bảng giá</a></li>
+            <li><a href="news.html"><span data-i18n="nav_news">Tin tức & sự kiện</span></a></li>
+            <li><a href="contact.html"><span data-i18n="nav_contact">Liên hệ</span></a></li>
+            <li><a href="faq.html"><span data-i18n="nav_faq">Câu hỏi thường gặp</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
+          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;">
+            <div style="font-size:12px;color:#64748b;line-height:1.6">
+              <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+            </div>
+            <div style="margin-top:12px">
+              <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;">
+                <i data-lucide="calendar-check" style="width:13px;height:13px"></i>
+                <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 <a href="index.html">BeeCare</a> – <span data-i18n="footer_dev_by_prefix">Phát triển bởi</span> <a href="company.html"><span data-i18n="footer_dev_by_suffix">CÔNG TY TNHH HANIKI</span></a>.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="terms.html"><span data-i18n="footer_terms">Điều khoản sử dụng</span></a>
+          <a href="privacy.html" class="active-page"><span data-i18n="footer_privacy">Chính sách bảo mật</span></a>
+          <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <button id="scroll-top" aria-label="Cuộn lên đầu trang">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <script src="assets/i18n/common.js?v=20261003_v6"></script>
+  <script src="assets/script.js?v=20261003_v6"></script>
+</body>
+
+</html>

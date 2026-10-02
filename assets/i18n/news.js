@@ -1,6 +1,7 @@
 window.TRANSLATIONS = window.TRANSLATIONS || { vi: {}, en: {}, ja: {} };
 
 Object.assign(window.TRANSLATIONS.vi, {
+  "news_title_page": "Tin tức & sự kiện | BeeCare",
   "news_hero_badge": "Tin tức & Hoạt động cộng đồng",
   "news_hero_title": "Tin tức & Hoạt động BeeCare – HANIKI",
   "news_hero_desc": "Khám phá những câu chuyện ý nghĩa, chương trình thiện nguyện vì cộng đồng, nét đẹp văn hóa doanh nghiệp và cẩm nang chuyển đổi số viện dưỡng lão.",
@@ -15,10 +16,12 @@ Object.assign(window.TRANSLATIONS.vi, {
   "news_empty_title": "Không tìm thấy bài viết nào",
   "news_empty_desc": "Vui lòng thử lại với từ khóa hoặc bộ lọc danh mục khác.",
   "news_modal_gallery_title": "Khoảnh khắc hình ảnh thực tế",
-  "news_modal_close_btn": "Đóng và tiếp tục xem"
+  "news_modal_close_btn": "Đóng và tiếp tục xem",
+  "news_hero_title_html": "Kết nối cộng đồng, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200\">kiến tạo giá trị</span>"
 });
 
 Object.assign(window.TRANSLATIONS.en, {
+  "news_title_page": "News & Events | BeeCare",
   "news_hero_badge": "News & Community Highlights",
   "news_hero_title": "BeeCare & HANIKI News & Activities",
   "news_hero_desc": "Discover inspiring stories, community charity initiatives, corporate culture highlights, and smart nursing home digitization guides.",
@@ -33,10 +36,12 @@ Object.assign(window.TRANSLATIONS.en, {
   "news_empty_title": "No articles found",
   "news_empty_desc": "Please try another search keyword or category filter.",
   "news_modal_gallery_title": "Event photo gallery",
-  "news_modal_close_btn": "Close and continue"
+  "news_modal_close_btn": "Close and continue",
+  "news_hero_title_html": "Connecting communities, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200\">creating value</span>"
 });
 
 Object.assign(window.TRANSLATIONS.ja, {
+  "news_title_page": "ニュース＆イベント | BeeCare",
   "news_hero_badge": "ニュース＆社会貢献活動",
   "news_hero_title": "BeeCare・HANIKI ニュース＆活動",
   "news_hero_desc": "社会貢献・チャリティー活動、企業文化、そしてスマート介護施設DXの最新ガイドをお届けします。",
@@ -51,6 +56,7 @@ Object.assign(window.TRANSLATIONS.ja, {
   "news_empty_title": "該当する記事が見つかりません",
   "news_empty_desc": "別のキーワードやカテゴリーを選択してお試しください。",
   "news_modal_gallery_title": "活動写真ギャラリー",
-  "news_modal_close_btn": "閉じて戻る"
+  "news_modal_close_btn": "閉じて戻る",
+  "news_hero_title_html": "コミュニティをつなぎ、<span class=\"text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200\">価値を創造する</span>"
 });
 

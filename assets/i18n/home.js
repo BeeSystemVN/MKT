@@ -157,6 +157,32 @@ Object.assign(window.TRANSLATIONS.vi, {
   "ben_fam_1": "An tâm tuyệt đối khi theo dõi từng giờ",
   "ben_fam_2": "Hỏi đáp trợ lý AI 24/7 mọi lúc mọi nơi",
   "ben_fam_3": "Thanh toán viện phí minh bạch qua VietQR"
+,
+  "staff_alt_residents": "Danh sách người cao tuổi",
+  "staff_alt_detail": "Thông tin chi tiết người cao tuổi",
+  "staff_alt_meds": "Checklist phát thuốc",
+  "staff_alt_meal": "Ghi nhận bữa trưa thực tế",
+  "staff_alt_handover": "Báo cáo bàn giao ca cho người sau",
+  "staff_lb_residents": "Danh sách người cao tuổi – BeeCare Staff",
+  "staff_lb_vitals": "Ghi nhận sinh hiệu tại giường – BeeCare Staff",
+  "staff_lb_detail": "Hồ sơ sức khỏe chi tiết người cao tuổi – BeeCare Staff",
+  "staff_lb_meds": "Checklist cấp phát thuốc chống nhầm – BeeCare Staff",
+  "staff_lb_meal": "Ghi nhận suất ăn dinh dưỡng thực tế – BeeCare Staff",
+  "staff_lb_handover": "Báo cáo bàn giao ca trực điện tử – BeeCare Staff",
+  "family_alt_vitals_bp": "Biểu đồ huyết áp",
+  "family_alt_activities": "Ảnh sinh hoạt thực tế của người cao tuổi",
+  "family_alt_vitals_spo2": "Biểu đồ bão hòa oxy SpO2",
+  "family_alt_invoice": "Hóa đơn viện phí",
+  "family_alt_home": "Trang chủ người thân chi tiết cụ Đỗ Thị Hướng",
+  "family_lb_ai": "Trợ lý AI hỏi đáp 24/7 – BeeCare Family",
+  "family_lb_vitals_bp": "Biểu đồ huyết áp và sinh hiệu – BeeCare Family",
+  "family_lb_activities": "Ảnh sinh hoạt thực tế của người cao tuổi – BeeCare Family",
+  "family_lb_vitals_spo2": "Biểu đồ nồng độ oxy SpO2 – BeeCare Family",
+  "family_lb_invoice": "Bảng kê viện phí và mã thanh toán VietQR – BeeCare Family",
+  "family_lb_home": "Trang chủ theo dõi người cao tuổi – BeeCare Family"
+,
+  "ben_badge": "Hiệu quả giải pháp",
+  "ben_title": "Giá trị đem lại cho các bên"
 });
 
 Object.assign(window.TRANSLATIONS.en, {
@@ -316,6 +342,32 @@ Object.assign(window.TRANSLATIONS.en, {
   "ben_fam_1": "Absolute peace of mind tracking hourly",
   "ben_fam_2": "Ask AI assistant 24/7 anywhere",
   "ben_fam_3": "Transparent billing via VietQR"
+,
+  "staff_alt_residents": "Resident list",
+  "staff_alt_detail": "Resident detail information",
+  "staff_alt_meds": "Medication checklist",
+  "staff_alt_meal": "Actual meal recording",
+  "staff_alt_handover": "Shift handover report",
+  "staff_lb_residents": "Resident list – BeeCare Staff",
+  "staff_lb_vitals": "Bedside vitals recording – BeeCare Staff",
+  "staff_lb_detail": "Resident health profile – BeeCare Staff",
+  "staff_lb_meds": "Error-free medication checklist – BeeCare Staff",
+  "staff_lb_meal": "Actual nutrition meal recording – BeeCare Staff",
+  "staff_lb_handover": "Electronic shift handover report – BeeCare Staff",
+  "family_alt_vitals_bp": "Blood pressure chart",
+  "family_alt_activities": "Resident's daily activities photos",
+  "family_alt_vitals_spo2": "SpO2 oxygen saturation chart",
+  "family_alt_invoice": "Hospital bill",
+  "family_alt_home": "Family home page for Mrs. Do Thi Huong",
+  "family_lb_ai": "24/7 AI Assistant – BeeCare Family",
+  "family_lb_vitals_bp": "Blood pressure & vitals chart – BeeCare Family",
+  "family_lb_activities": "Resident's daily activities photos – BeeCare Family",
+  "family_lb_vitals_spo2": "SpO2 oxygen saturation chart – BeeCare Family",
+  "family_lb_invoice": "Bill details & VietQR payment – BeeCare Family",
+  "family_lb_home": "Family tracking home page – BeeCare Family"
+,
+  "ben_badge": "Solution Efficiency",
+  "ben_title": "Value for All Parties"
 });
 
 Object.assign(window.TRANSLATIONS.ja, {
@@ -475,5 +527,31 @@ Object.assign(window.TRANSLATIONS.ja, {
   "ben_fam_1": "時間ごとの追跡で絶対的な安心感",
   "ben_fam_2": "いつでもどこでもAIアシスタントに質問",
   "ben_fam_3": "VietQRによる透明な費用支払い"
+,
+  "staff_alt_residents": "入居者リスト",
+  "staff_alt_detail": "入居者詳細情報",
+  "staff_alt_meds": "服薬チェックリスト",
+  "staff_alt_meal": "実際の食事記録",
+  "staff_alt_handover": "引き継ぎレポート",
+  "staff_lb_residents": "入居者リスト – BeeCare Staff",
+  "staff_lb_vitals": "ベッドサイドでのバイタル記録 – BeeCare Staff",
+  "staff_lb_detail": "入居者の健康プロフィール – BeeCare Staff",
+  "staff_lb_meds": "ミスのない服薬チェックリスト – BeeCare Staff",
+  "staff_lb_meal": "実際の栄養食事記録 – BeeCare Staff",
+  "staff_lb_handover": "電子引き継ぎレポート – BeeCare Staff",
+  "family_alt_vitals_bp": "血圧チャート",
+  "family_alt_activities": "入居者の日常生活の写真",
+  "family_alt_vitals_spo2": "SpO2酸素飽和度チャート",
+  "family_alt_invoice": "病院の請求書",
+  "family_alt_home": "家族向けホームページ",
+  "family_lb_ai": "24/7 AI アシスタント – BeeCare Family",
+  "family_lb_vitals_bp": "血圧とバイタルのチャート – BeeCare Family",
+  "family_lb_activities": "入居者の日常生活の写真 – BeeCare Family",
+  "family_lb_vitals_spo2": "SpO2酸素飽和度チャート – BeeCare Family",
+  "family_lb_invoice": "請求書の詳細とVietQR支払い – BeeCare Family",
+  "family_lb_home": "家族向け追跡ホームページ – BeeCare Family"
+,
+  "ben_badge": "ソリューションの効率性",
+  "ben_title": "すべての関係者への価値"
 });
 

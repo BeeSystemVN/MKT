@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảng giá phần mềm quản lý viện dưỡng lão | BeeCare</title>
+  <meta name="description"
+    content="Bảng giá phần mềm quản lý viện dưỡng lão BeeCare. Báo giá linh hoạt theo quy mô viện, không phí khởi tạo, bảo mật y tế đa tầng và hỗ trợ kỹ thuật 24/7." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
+  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
+  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+</head>
+
+<body class="font-body text-slate-800 bg-slate-50">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-5">
+      <div class="relative flex items-center justify-center">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="animation: heartbeat 1.3s ease-in-out infinite;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="#0D9488" />
+        </svg>
+        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+      </div>
+
+      <svg class="ecg-line" viewBox="0 0 260 60">
+        <path class="ecg-path"
+          d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
+      </svg>
+
+      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
+        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      </div>
+      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
+    </div>
+  </div>
+
+  <!-- ===================== UNIFIED ELITE REFINED HEADER ===================== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
+        
+        <!-- CỤM TRÁI: Logo BeeCare -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
+            <span class="brand-text-logo">
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- CỤM GIỮA: Navigation Links (>= 1024px) -->
+        <div class="nav-menu-desktop">
+          <a href="index.html" class="nav-menu-item">
+            <span data-i18n="nav_home">Trang chủ</span>
+          </a>
+          <a href="pricing.html" class="nav-menu-item active">
+            <span data-i18n="nav_pricing">Bảng giá</span>
+          </a>
+          <a href="news.html" class="nav-menu-item">
+            <span data-i18n="nav_news">Tin tức</span>
+          </a>
+          <a href="company.html" class="nav-menu-item">
+            <span data-i18n="nav_company">Về chúng tôi</span>
+          </a>
+          <a href="contact.html" class="nav-menu-item">
+            <span data-i18n="nav_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <!-- CỤM PHẢI: Language Switcher + Demo CTA + Mobile Hamburger -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          
+          <!-- Segmented Glass Language Switcher -->
+          <div class="nav-lang-switcher">
+            <button type="button" class="nav-lang-btn lang-btn active" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
+          </div>
+
+          <!-- Primary CTA Button -->
+          <a href="contact.html" class="nav-cta-btn">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
+            <span class="sm:hidden" data-i18n="nav_demo_mobile">Demo</span>
+          </a>
+
+          <!-- Mobile Menu Hamburger Button -->
+          <button id="mobile-menu-toggle" type="button" class="nav-hamburger-btn" aria-label="Mở menu điều hướng">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="hidden">
+      <div class="flex flex-col gap-1 pb-2">
+        <a href="index.html" class="mobile-nav-link">
+          <i data-lucide="home" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_home">Trang chủ</span>
+        </a>
+        <a href="pricing.html" class="mobile-nav-link active">
+          <i data-lucide="tag" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_pricing">Bảng giá</span>
+        </a>
+        <a href="news.html" class="mobile-nav-link">
+          <i data-lucide="newspaper" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_news">Tin tức</span>
+        </a>
+        <a href="company.html" class="mobile-nav-link">
+          <i data-lucide="building-2" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_company">Về chúng tôi</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <i data-lucide="phone-call" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_contact">Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== 1. PRICING HERO SECTION ===================== -->
+  <section class="company-hero">
+    <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
+        <i data-lucide="tag" class="w-3.5 h-3.5"></i>
+        <span data-i18n="pricing_hero_badge">Báo giá linh hoạt • Khảo sát tận nơi</span>
+      </div>
+      
+      <!-- H1 Main Title (Sentence case, concise, 1 line) -->
+      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight whitespace-normal md:whitespace-nowrap">
+        <span data-i18n="pricing_hero_title">Bảng giá giải pháp</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300" data-i18n="pricing_hero_title_highlight">BeeCare</span>
+      </h1>
+      
+      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto mb-7 leading-relaxed" data-i18n="pricing_hero_desc">
+        Lựa chọn gói giải pháp phù hợp với quy mô và lộ trình chuyển đổi số của viện dưỡng lão. Tối ưu chi phí, nâng cao năng suất điều dưỡng và gắn kết gia đình trọn vẹn.
+      </p>
+
+      <!-- Trust Ribbon (Thay thế thanh Toggle gạt giá theo yêu cầu) -->
+      <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/15 text-xs sm:text-sm font-semibold text-white shadow-lg">
+        <i data-lucide="shield-check" class="w-4 h-4 text-teal-300 shrink-0"></i>
+        <span data-i18n="pricing_hero_consult_tag">Khảo sát thực tế tại viện • Báo giá linh hoạt theo số giường</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. KEY STATS & GUARANTEES BAR ===================== -->
+  <div class="stats-container" data-aos="fade-up" data-aos-delay="150">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number text-teal-600" data-i18n="pricing_stat1_num">0đ</div>
+        <div class="stat-label" data-i18n="pricing_stat1_title">Chi phí khởi tạo</div>
+        <div class="stat-desc" data-i18n="pricing_stat1_desc">Thiết lập hệ thống & chuyển giao quy trình miễn phí</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number text-sky-600" data-i18n="pricing_stat2_num">100%</div>
+        <div class="stat-label" data-i18n="pricing_stat2_title">Bảo mật dữ liệu</div>
+        <div class="stat-desc" data-i18n="pricing_stat2_desc">Tiêu chuẩn mã hóa y tế và lưu trữ Cloud an toàn</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number text-emerald-600" data-i18n="pricing_stat3_num">24/7</div>
+        <div class="stat-label" data-i18n="pricing_stat3_title">Đồng hành kỹ thuật</div>
+        <div class="stat-desc" data-i18n="pricing_stat3_desc">Đội ngũ kỹ sư hỗ trợ tại chỗ và giải đáp tức thì</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number text-amber-500" data-i18n="pricing_stat4_num">30 ngày</div>
+        <div class="stat-label" data-i18n="pricing_stat4_title">Trải nghiệm miễn phí</div>
+        <div class="stat-desc" data-i18n="pricing_stat4_desc">Dùng thử toàn diện tính năng trước khi quyết định</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MAIN CONTENT WRAPPER ===================== -->
+  <main class="bg-slate-50 relative pb-20">
+
+    <!-- ===================== 3. PRICING CARDS SECTION ===================== -->
+    <section class="section-wrapper" data-aos="fade-up">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="section-badge">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span data-i18n="pricing_badge_plans">Gói dịch vụ bản quyền</span>
+        </div>
+        <h2 class="section-heading" data-i18n="pricing_plans_title">
+          Bảng giá linh hoạt theo quy mô viện dưỡng lão
+        </h2>
+        <p class="section-subtext" data-i18n="pricing_plans_desc">
+          Mọi gói dịch vụ đều được cập nhật tính năng liên tục, không phát sinh chi phí ẩn và có kỹ sư hỗ trợ riêng.
+        </p>
+      </div>
+
+      <!-- Pricing Cards 3 Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 items-stretch max-w-6xl mx-auto">
+        
+        <!-- CARD 1: CƠ BẢN (BASIC) -->
+        <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <!-- Header Icon & Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="vm-icon-box bg-slate-100 text-slate-700 border border-slate-200">
+                <i data-lucide="building-2" class="w-6 h-6"></i>
+              </div>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-200" data-i18n="plan_basic_badge">
+                Gói khởi đầu
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_basic_title">Cơ bản</h3>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-6" data-i18n="plan_basic_desc">
+              Số hóa hồ sơ bệnh án EMR và quản trị nội bộ cho viện dưỡng lão quy mô nhỏ.
+            </p>
+
+            <!-- Price Block: LIÊN HỆ -->
+            <div class="mb-6 pb-6 border-b border-slate-100">
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="pricing_contact_quote">
+                Liên hệ
+              </div>
+              <div class="text-xs text-slate-500 mt-1.5 font-medium" data-i18n="pricing_quote_desc">
+                Báo giá linh hoạt theo số giường &amp; quy mô viện
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="contact.html" class="w-full py-3 px-4 rounded-xl font-bold text-center border-2 border-slate-200 text-slate-800 hover:border-teal-500 hover:text-teal-600 transition-all duration-300 block mb-6 shadow-sm" style="min-height: 44px;">
+              <span data-i18n="pricing_btn_quote">Đăng ký nhận báo giá</span>
+            </a>
+
+            <!-- Features List -->
+            <div>
+              <div class="text-xs font-bold text-slate-900 tracking-wide mb-4" data-i18n="pricing_features_basic_head">
+                Tính năng bao gồm:
+              </div>
+              <ul class="space-y-3 text-sm text-slate-700">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_1">Quy mô tối đa 50 người cao tuổi</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_2">Cấp 5 tài khoản nhân viên y tế</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_3">Web Admin: Quản lý hồ sơ bệnh án EMR</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_4">Quản lý tiếp nhận & phân bổ phòng giường</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_5">Báo cáo thống kê chỉ số sức khỏe định kỳ</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_basic_6">Đào tạo từ xa & tài liệu hướng dẫn chuẩn Kaigo</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: TIÊU CHUẨN (STANDARD - POPULAR) -->
+        <div class="vm-card pricing-card-popular" data-aos="fade-up" data-aos-delay="200">
+          <!-- Top Popular Ribbon (Sentence case: Phổ biến nhất) -->
+          <div class="popular-ribbon" data-i18n="pricing_popular">
+            Phổ biến nhất
+          </div>
+
+          <div>
+            <!-- Header Icon & Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="vm-icon-box bg-teal-50 text-teal-600 border border-teal-100">
+                <i data-lucide="stethoscope" class="w-6 h-6"></i>
+              </div>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-teal-50 text-teal-700 border border-teal-200/60" data-i18n="plan_pro_badge">
+                Được tin dùng nhất
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_pro_title">Tiêu chuẩn</h3>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-6" data-i18n="plan_pro_desc">
+              Tối ưu hóa thao tác tại giường cho điều dưỡng với ứng dụng di động và thiết bị đo sinh hiệu IoT.
+            </p>
+
+            <!-- Price Block: LIÊN HỆ -->
+            <div class="mb-6 pb-6 border-b border-slate-100">
+              <div class="text-3xl sm:text-4xl font-extrabold text-teal-700 font-heading tracking-tight" data-i18n="pricing_contact_quote">
+                Liên hệ
+              </div>
+              <div class="text-xs text-teal-700 mt-1.5 font-bold" data-i18n="pricing_quote_desc">
+                Báo giá linh hoạt theo số giường &amp; quy mô viện
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="contact.html" class="w-full py-3 px-4 rounded-xl font-bold text-center bg-teal-600 hover:bg-teal-700 text-white transition-all duration-300 block mb-6 shadow-lg shadow-teal-600/30 transform hover:-translate-y-0.5" style="min-height: 44px;">
+              <span data-i18n="pricing_btn_quote">Đăng ký nhận báo giá</span>
+            </a>
+
+            <!-- Features List -->
+            <div>
+              <div class="text-xs font-bold text-teal-900 tracking-wide mb-4" data-i18n="pricing_features_pro_head">
+                Bao gồm gói Cơ bản, cộng thêm:
+              </div>
+              <ul class="space-y-3 text-sm text-slate-700">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_1">Quy mô tối đa 200 người cao tuổi</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_2">Cấp 25 tài khoản nhân viên y tế</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_3">App Điều dưỡng: Nhập liệu tại giường bệnh</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_4">Kết nối thiết bị đo sinh hiệu (Huyết áp, SpO2, Tim)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_5">Cấp phát thuốc chuẩn y lệnh & bàn giao ca trực</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_pro_6">Đào tạo trực tiếp tại viện & hỗ trợ ưu tiên 24/7</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: NÂNG CAO & CHUỖI (ENTERPRISE) -->
+        <div class="vm-card" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <!-- Header Icon & Badge -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="vm-icon-box bg-sky-50 text-sky-600 border border-sky-100">
+                <i data-lucide="crown" class="w-6 h-6"></i>
+              </div>
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-sky-50 text-sky-700 border border-sky-200/60" data-i18n="plan_premium_badge">
+                Hệ sinh thái toàn diện
+              </span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_premium_title">Nâng cao & Chuỗi</h3>
+            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-6" data-i18n="plan_premium_desc">
+              Hệ sinh thái trọn vẹn kết nối App Người thân, cổng thanh toán VietQR và trợ lý AI thông minh.
+            </p>
+
+            <!-- Price Block: LIÊN HỆ -->
+            <div class="mb-6 pb-6 border-b border-slate-100">
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="pricing_contact_quote">
+                Liên hệ
+              </div>
+              <div class="text-xs text-slate-500 mt-1.5 font-medium" data-i18n="pricing_quote_desc">
+                Báo giá linh hoạt theo số giường &amp; quy mô viện
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="contact.html" class="w-full py-3 px-4 rounded-xl font-bold text-center bg-slate-900 hover:bg-slate-800 text-white transition-all duration-300 block mb-6 shadow-md" style="min-height: 44px;">
+              <span data-i18n="pricing_btn_quote">Đăng ký nhận báo giá</span>
+            </a>
+
+            <!-- Features List -->
+            <div>
+              <div class="text-xs font-bold text-slate-900 tracking-wide mb-4" data-i18n="pricing_features_premium_head">
+                Bao gồm gói Tiêu chuẩn, cộng thêm:
+              </div>
+              <ul class="space-y-3 text-sm text-slate-700">
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_1">Không giới hạn số lượng người cao tuổi</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_2">Không giới hạn tài khoản nhân viên</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_3">App Người thân: Theo dõi sức khỏe 24/7 & hình ảnh</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_4">Trợ lý AI phân tích và cảnh báo sớm sinh hiệu</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_5">Cổng thanh toán tự động VietQR & đối soát viện phí</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span data-i18n="feat_premium_6">Tùy biến quy trình & triển khai máy chủ riêng nếu cần</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== 4. FEATURE COMPARISON TABLE SECTION ===================== -->
+    <section class="section-wrapper" data-aos="fade-up">
+      <div class="timeline-card-container p-0 overflow-hidden">
+        <div class="p-8 sm:p-12 border-b border-slate-100 text-center">
+          <div class="section-badge mb-2">
+            <span data-i18n="compare_badge">Chi tiết so sánh</span>
+          </div>
+          <h2 class="section-heading mb-3" data-i18n="compare_title">Bảng so sánh chi tiết tính năng</h2>
+          <p class="section-subtext max-w-2xl mx-auto" data-i18n="compare_subtitle">
+            Đối chiếu cụ thể các phân hệ và quyền lợi kỹ thuật giữa các gói để đưa ra lựa chọn đầu tư tối ưu nhất cho viện.
+          </p>
+        </div>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[760px] text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-50/80 border-b border-slate-200">
+                <th class="py-5 px-6 sm:px-8 font-bold text-slate-900 w-2/5" data-i18n="compare_feature">Tính năng & Phân hệ</th>
+                <th class="py-5 px-5 text-center font-bold text-slate-800 text-base" data-i18n="plan_basic_title">Cơ bản</th>
+                <th class="py-5 px-5 text-center font-bold text-teal-800 text-base bg-teal-50/50 border-x border-teal-100">
+                  <div class="flex flex-col items-center gap-1">
+                    <span data-i18n="plan_pro_title">Tiêu chuẩn</span>
+                    <span class="px-2.5 py-0.5 bg-teal-600 text-white text-[11px] rounded-full font-bold" data-i18n="pricing_popular">Phổ biến nhất</span>
+                  </div>
+                </th>
+                <th class="py-5 px-5 text-center font-bold text-slate-800 text-base" data-i18n="plan_premium_title">Nâng cao & Chuỗi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-sm">
+              
+              <!-- Category 1: Chi phí đầu tư -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_pricing">
+                  Chi phí đầu tư
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-bold" data-i18n="compare_price_label">Chi phí bản quyền phần mềm</td>
+                <td class="py-4 px-5 text-center text-slate-700 font-bold" data-i18n="compare_price_basic">Báo giá theo quy mô</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-extrabold bg-teal-50/30 border-x border-teal-100" data-i18n="compare_price_pro">Báo giá theo quy mô</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold" data-i18n="compare_price_premium">Báo giá theo quy mô</td>
+              </tr>
+
+              <!-- Category 2: Quy mô & Tài khoản -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_users">
+                  Quy mô & Tài khoản
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_residents">Số lượng người cao tuổi quản lý</td>
+                <td class="py-4 px-5 text-center text-slate-600 font-medium" data-i18n="compare_residents_basic">Tối đa 50 người</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold bg-teal-50/30 border-x border-teal-100" data-i18n="compare_residents_pro">Tối đa 200 người</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold" data-i18n="compare_residents_premium">Không giới hạn</td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_staff_accounts">Tài khoản nhân viên điều dưỡng</td>
+                <td class="py-4 px-5 text-center text-slate-600 font-medium" data-i18n="compare_staff_basic">5 tài khoản</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold bg-teal-50/30 border-x border-teal-100" data-i18n="compare_staff_pro">25 tài khoản</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold" data-i18n="compare_staff_premium">Không giới hạn</td>
+              </tr>
+
+              <!-- Category 3: Hệ sinh thái ứng dụng -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_ecosystem">
+                  Hệ sinh thái ứng dụng
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium flex items-center gap-2">
+                  <i data-lucide="laptop" class="w-4 h-4 text-teal-600"></i>
+                  <span data-i18n="compare_web_admin">Cổng Web Admin điều hành viện</span>
+                </td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium flex items-center gap-2">
+                  <i data-lucide="stethoscope" class="w-4 h-4 text-cyan-600"></i>
+                  <span data-i18n="compare_staff_app">App Điều dưỡng tại giường (iOS & Android)</span>
+                </td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium flex items-center gap-2">
+                  <i data-lucide="smartphone" class="w-4 h-4 text-amber-500"></i>
+                  <span data-i18n="compare_family_app">App Người thân kết nối gia đình (iOS & Android)</span>
+                </td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+
+              <!-- Category 4: Nghiệp vụ y tế & Chăm sóc -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_clinical">
+                  Nghiệp vụ y tế & Chăm sóc
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_emr">Hồ sơ bệnh án điện tử EMR lão khoa</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_vitals">Biểu đồ theo dõi 6 chỉ số sinh hiệu</td>
+                <td class="py-4 px-5 text-center text-slate-500 text-xs" data-i18n="compare_vitals_basic">Cơ bản qua Web</td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_iot">Đồng bộ Bluetooth từ máy đo huyết áp, SpO2</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_meds">Nhắc lịch uống thuốc & kiểm tra y lệnh</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_shifts">Bàn giao ca trực & nhật ký sinh hoạt điện tử</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+
+              <!-- Category 5: Công nghệ & Nâng cao -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_tech">
+                  Công nghệ & Nâng cao
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_realtime">Đồng bộ thời gian thực SignalR (&lt; 1 giây)</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_ai">Trợ lý AI y tế phân tích bất thường sinh hiệu</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_billing">Tự động tính viện phí & cổng thanh toán VietQR</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_custom">Tùy chỉnh phân hệ nghiệp vụ theo yêu cầu viện</td>
+                <td class="py-4 px-5 text-center"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center bg-teal-50/30 border-x border-teal-100"><i data-lucide="minus" class="w-4 h-4 text-slate-300 mx-auto"></i></td>
+                <td class="py-4 px-5 text-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 mx-auto"></i></td>
+              </tr>
+
+              <!-- Category 6: Triển khai & Hỗ trợ kỹ thuật -->
+              <tr class="bg-slate-100/60">
+                <td colspan="4" class="py-3 px-6 sm:px-8 font-extrabold text-slate-800 text-xs tracking-wide" data-i18n="compare_cat_support">
+                  Triển khai & Hỗ trợ kỹ thuật
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_onboarding">Đào tạo & hướng dẫn nhân viên</td>
+                <td class="py-4 px-5 text-center text-slate-600 text-xs" data-i18n="compare_onboarding_basic">Hướng dẫn trực tuyến qua Zoom/Meet</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_onboarding_pro">Kỹ sư đến đào tạo trực tiếp tại viện</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_onboarding_premium">Đào tạo tận nơi & chuyển giao toàn diện</td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_migration">Hỗ trợ di chuyển dữ liệu bệnh án cũ</td>
+                <td class="py-4 px-5 text-center text-slate-500 text-xs" data-i18n="compare_migration_basic">Cung cấp mẫu Excel</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_migration_pro">Kỹ sư hỗ trợ import</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_migration_premium">Di chuyển trọn gói 100%</td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_sla">Cam kết thời gian hoạt động hệ thống (SLA)</td>
+                <td class="py-4 px-5 text-center text-slate-600 text-xs font-semibold" data-i18n="compare_sla_val">99.9% Uptime</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_sla_val">99.9% Uptime</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_sla_val">99.9% Uptime</td>
+              </tr>
+              <tr class="hover:bg-slate-50/70 transition-colors">
+                <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_support_channel">Kênh tiếp nhận hỗ trợ kỹ thuật</td>
+                <td class="py-4 px-5 text-center text-slate-600 text-xs" data-i18n="compare_support_basic">Email & Giờ hành chính</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_support_pro">Hotline riêng & Zalo hỗ trợ 24/7</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_support_premium">Kỹ sư phụ trách chuyên trách 24/7/365</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. GUARANTEE & DEPLOYMENT SECTION (MATCHING SCREENSHOT 3) ===================== -->
+    <section class="section-wrapper" data-aos="fade-up">
+      <div class="tech-standard-card">
+        <div>
+          <div class="section-badge">
+            <span data-i18n="pricing_commit_badge">Cam kết dịch vụ & Triển khai</span>
+          </div>
+          <h2 class="section-heading" data-i18n="pricing_commit_title">
+            Chuyển giao chuẩn Nhật, đồng hành tận tâm tại từng cơ sở
+          </h2>
+          <p class="section-subtext mb-8" data-i18n="pricing_commit_desc">
+            Chúng tôi không chỉ cung cấp bản quyền phần mềm mà trực tiếp đào tạo cầm tay chỉ việc, chuẩn hóa quy trình số hóa y tế và đồng hành hỗ trợ tại chỗ cùng đội ngũ điều dưỡng, đảm bảo 100% nhân sự sử dụng thành thạo ngay từ tuần đầu tiên.
+          </p>
+
+          <!-- 2x2 Outlined Badges (Bố cục chống tràn sang hình ảnh) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div class="pill-tag-outline">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="pricing_commit_pill1">Đào tạo tại cơ sở miễn phí</span>
+            </div>
+            <div class="pill-tag-outline">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="pricing_commit_pill2">Di chuyển dữ liệu EMR cũ</span>
+            </div>
+            <div class="pill-tag-outline">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="pricing_commit_pill3">Cam kết SLA khả dụng 99.9%</span>
+            </div>
+            <div class="pill-tag-outline">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="pricing_commit_pill4">Kỹ sư hỗ trợ trực tiếp 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-img-wrap">
+          <img
+            src="assets/company/beecare-3d-ecosystem.png"
+            alt="Kiến trúc hệ sinh thái công nghệ 3D BeeCare"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. FREQUENTLY ASKED QUESTIONS (FAQ - FIXING SCREENSHOT 4) ===================== -->
+    <section class="section-wrapper" data-aos="fade-up">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="section-badge">
+          <span data-i18n="pricing_faq_badge">Giải đáp thắc mắc</span>
+        </div>
+        <h2 class="section-heading" data-i18n="pricing_faq_title">
+          Câu hỏi thường gặp về giải pháp & triển khai
+        </h2>
+        <p class="section-subtext" data-i18n="pricing_faq_desc">
+          Những thông tin quan trọng giúp ban lãnh đạo viện an tâm khi lựa chọn hợp tác cùng BeeCare.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        
+        <!-- Question 1 -->
+        <div class="faq-item-card open">
+          <button type="button" class="faq-question-btn" onclick="toggleFaq(this)">
+            <span data-i18n="pricing_faq_q1">Quy trình khảo sát và báo giá phần mềm diễn ra như thế nào?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <span data-i18n="pricing_faq_a1">
+              Sau khi tiếp nhận yêu cầu, đội ngũ chuyên gia của HANIKI sẽ trực tiếp khảo sát quy trình vận hành và số lượng phòng giường tại viện để tư vấn gói giải pháp phù hợp và gửi bảng báo giá tối ưu nhất, hoàn toàn không phát sinh chi phí ẩn.
+            </span>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item-card">
+          <button type="button" class="faq-question-btn" onclick="toggleFaq(this)">
+            <span data-i18n="pricing_faq_q2">Viện dưỡng lão có cần đầu tư máy chủ vật lý hay thiết bị đắt tiền không?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <span data-i18n="pricing_faq_a2">
+              Không cần. Toàn bộ hệ thống BeeCare vận hành trên hạ tầng đám mây hiện đại. Ban quản trị chỉ cần máy tính kết nối internet thông thường, và điều dưỡng viên có thể sử dụng điện thoại thông minh (iOS/Android) sẵn có để tác nghiệp.
+            </span>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item-card">
+          <button type="button" class="faq-question-btn" onclick="toggleFaq(this)">
+            <span data-i18n="pricing_faq_q3">Hồ sơ y tế và thông tin người cao tuổi được bảo mật như thế nào?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <span data-i18n="pricing_faq_a3">
+              Dữ liệu được mã hóa đa tầng theo tiêu chuẩn bảo mật y tế quốc tế (AES-256 trên đường truyền và tại nơi lưu trữ), sao lưu định kỳ hàng ngày và phân quyền truy cập nghiêm ngặt. Chỉ nhân sự được viện phân quyền mới có thể truy xuất dữ liệu.
+            </span>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item-card">
+          <button type="button" class="faq-question-btn" onclick="toggleFaq(this)">
+            <span data-i18n="pricing_faq_q4">Điều dưỡng viên lớn tuổi chưa thạo công nghệ có thể sử dụng dễ dàng không?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 faq-icon"></i>
+          </button>
+          <div class="faq-answer-panel">
+            <span data-i18n="pricing_faq_a4">
+              Giao diện BeeCare được thiết kế chuyên biệt theo tiêu chuẩn Kaigo Nhật Bản: nút bấm to, chữ rõ ràng, thao tác chạm đơn giản và hỗ trợ nhập liệu bằng giọng nói tiếng Việt. Kỹ sư HANIKI sẽ trực tiếp đào tạo cầm tay chỉ việc tại viện cho đến khi toàn bộ nhân sự tự tin sử dụng.
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== 7. CALL TO ACTION BANNER (FIXING SCREENSHOT 5) ===================== -->
+    <section class="section-wrapper" data-aos="zoom-in">
+      <div class="company-cta-banner">
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-400 rounded-full mix-blend-overlay filter blur-3xl opacity-40"></div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-sky-400 rounded-full mix-blend-overlay filter blur-3xl opacity-40"></div>
+        
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4 font-heading" data-i18n="pricing_cta_title">
+            Sẵn sàng nâng tầm quản lý viện dưỡng lão?
+          </h2>
+          <p class="text-teal-100 text-base sm:text-lg mb-8 leading-relaxed" data-i18n="pricing_cta_desc">
+            Đăng ký ngay hôm nay để nhận 30 ngày trải nghiệm miễn phí toàn diện và được kỹ sư HANIKI khảo sát quy trình trực tiếp tại viện của bạn.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <!-- Nút màu trắng chữ xanh đậm rõ ràng tuyệt đối, sửa triệt để lỗi chữ trắng trên nền trắng -->
+            <a href="contact.html" class="cta-banner-btn-white w-full sm:w-auto">
+              <i data-lucide="calendar-check" class="w-4 h-4"></i>
+              <span data-i18n="pricing_cta_btn1">Đặt lịch tư vấn & Khảo sát</span>
+            </a>
+            <a href="tel:19006868" class="cta-banner-btn-outline w-full sm:w-auto">
+              <i data-lucide="phone-call" class="w-4 h-4"></i>
+              <span data-i18n="pricing_cta_btn2">Gọi hotline 1900 6868</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
+  <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
+    <a href="tel:19006868" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200" style="min-height: 44px;">
+      <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
+      <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+    </a>
+    <a href="contact.html" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md" style="min-height: 44px;">
+      <i data-lucide="calendar-check" class="w-4 h-4"></i>
+      <span data-i18n="nav_demo">Đăng ký demo</span>
+    </a>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+
+        <!-- Cột 1: Brand + Thông tin liên hệ -->
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <div class="footer-brand-icon">
+              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+            </div>
+            <div>
+              <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+            </div>
+          </a>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <div class="footer-company-badge">
+            <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
+            <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
+          </div>
+          <div class="footer-contact-row">
+            <a href="tel:19006868" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            </a>
+            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              contact@beecare.vn
+            </a>
+            <span class="footer-contact-item">
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
+            </span>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://zalo.me/0961816868" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cột 2: Hệ sinh thái -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_eco">Hệ sinh thái</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--teal">
+              <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--cyan">
+              <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_staff">App Điều dưỡng Staff</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--amber">
+              <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
+              <span data-i18n="footer_eco_family">App Người thân Family</span>
+            </a>
+          </div>
+          <div style="margin-top:20px">
+            <div class="footer-col-title" data-i18n="footer_col_feat">Tính năng nổi bật</div>
+            <ul class="footer-nav-list">
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat1">Quản lý hồ sơ EMR</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat2">Đo sinh hiệu tại giường</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat3">Trợ lý AI 24/7</span></a></li>
+              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat4">Thanh toán VietQR</span></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cột 3: Điều hướng chính -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_nav">Điều hướng</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" data-i18n="nav_home">Trang chủ</a></li>
+            <li><a href="company.html"><span data-i18n="nav_company">Về chúng tôi</span></a></li>
+            <li><a href="pricing.html" class="active-page" data-i18n="nav_pricing">Bảng giá</a></li>
+            <li><a href="news.html"><span data-i18n="nav_news">Tin tức & sự kiện</span></a></li>
+            <li><a href="contact.html"><span data-i18n="nav_contact">Liên hệ</span></a></li>
+            <li><a href="faq.html"><span data-i18n="nav_faq">Câu hỏi thường gặp</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
+          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
+            </div>
+            <div style="font-size:12px;color:#64748b;line-height:1.6">
+              <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+            </div>
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+              <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
+                <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
+                <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
+              </a>
+              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+                <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
+                <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+              </a>
+            </div>
+          </div>
+          <div style="font-size:11.5px;color:#475569;line-height:1.7">
+            <strong style="color:#64748b"><span data-i18n="footer_partner">Đối tác chiến lược:</span></strong><br>
+            <span data-i18n="footer_partner_1">Hệ thống Viện dưỡng lão Diên Hồng</span><br>
+            <span data-i18n="footer_partner_2">Chuẩn chăm sóc Kaigo Nhật Bản</span>
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 <a href="index.html">BeeCare</a> – <span data-i18n="footer_dev_by_prefix">Phát triển bởi</span> <a href="company.html"><span data-i18n="footer_dev_by_suffix">CÔNG TY TNHH HANIKI</span></a>.
+          <span data-i18n="footer_coop">Đồng hành cùng Viện dưỡng lão Diên Hồng.</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="terms.html"><span data-i18n="footer_terms">Điều khoản sử dụng</span></a>
+          <a href="privacy.html"><span data-i18n="footer_privacy">Chính sách bảo mật</span></a>
+          <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer-inner -->
+  </footer>
+
+  <!-- ===================== LIGHTBOX MODAL ===================== -->
+  <div id="lightbox-modal">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button id="lightbox-close" class="absolute -top-10 right-0 text-white hover:text-amber-400 transition-colors flex items-center gap-1.5 text-xs font-semibold">
+        <i data-lucide="x" class="w-6 h-6"></i> <span data-i18n="lightbox_close">Đóng lại (ESC)</span>
+      </button>
+      <img id="lightbox-img" src="" alt="Ảnh phóng to" data-i18n-alt="common_alt_lightbox" class="w-auto h-auto max-h-[82vh] rounded-xl shadow-2xl">
+      <div id="lightbox-caption" class="text-slate-200 text-sm font-medium mt-3 text-center"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 border border-teal-500 text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md">
+    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+    </div>
+    <div id="toast-msg" class="text-sm font-medium text-slate-200">
+      <span data-i18n="toast_success">Yêu cầu đã được gửi thành công!</span>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-top" aria-label="Cuộn lên đầu trang" data-i18n-label="common_aria_scroll_top">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <!-- ===================== PAGE LOGIC SCRIPTS ===================== -->
+  <script>
+    // FAQ Accordion Handler
+    function toggleFaq(btn) {
+      const card = btn.closest('.faq-item-card');
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.faq-item-card').forEach(c => c.classList.remove('open'));
+      if (!isOpen) {
+        card.classList.add('open');
+      }
+    }
+
+    // Listen for languageChanged to update page title correctly
+    document.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener('languageChanged', (e) => {
+        const lang = e.detail && e.detail.lang ? e.detail.lang : (localStorage.getItem('beecare_lang') || 'vi');
+        if (window.TRANSLATIONS && window.TRANSLATIONS[lang] && window.TRANSLATIONS[lang]['pricing_title_page']) {
+          document.title = window.TRANSLATIONS[lang]['pricing_title_page'];
+        }
+      });
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="assets/i18n/common.js?v=20261003_v6"></script>
+  <script src="assets/i18n/pricing.js?v=20261003_v6"></script>
+  <script src="assets/script.js?v=20261003_v6"></script>
+</body>
+
+</html>

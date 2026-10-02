@@ -1694,11 +1694,44 @@ function setLanguage(lang) {
     }
   });
 
+  // Update HTML with data-i18n-html
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (TRANSLATIONS[lang][key]) {
+      el.innerHTML = TRANSLATIONS[lang][key];
+    }
+  });
+
   // Update placeholders with data-i18n-placeholder
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (TRANSLATIONS[lang][key]) {
       el.placeholder = TRANSLATIONS[lang][key];
+    }
+  });
+
+
+  // Update alt attributes
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (TRANSLATIONS[lang][key]) {
+      el.alt = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // Update title attributes
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (TRANSLATIONS[lang][key]) {
+      el.title = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // Update aria-label attributes
+  document.querySelectorAll('[data-i18n-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-label');
+    if (TRANSLATIONS[lang][key]) {
+      el.setAttribute('aria-label', TRANSLATIONS[lang][key]);
     }
   });
 
@@ -1708,7 +1741,29 @@ function setLanguage(lang) {
     en: 'BeeCare – Smart Nursing Home Management',
     ja: 'BeeCare – 介護施設管理システム'
   };
-  if (titles[lang]) document.title = titles[lang];
+  const pathname = window.location.pathname.toLowerCase();
+  let pageTitle = null;
+  if (pathname.includes('pricing') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['pricing_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['pricing_title_page'];
+  } else if (pathname.includes('contact') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['contact_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['contact_title_page'];
+  } else if (pathname.includes('company') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['company_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['company_title_page'];
+  } else if (pathname.includes('news') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['news_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['news_title_page'];
+  } else if (pathname.includes('faq') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['faq_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['faq_title_page'];
+  } else if (pathname.includes('privacy') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['privacy_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['privacy_title_page'];
+  } else if (pathname.includes('terms') && TRANSLATIONS[lang] && TRANSLATIONS[lang]['terms_title_page']) {
+    pageTitle = TRANSLATIONS[lang]['terms_title_page'];
+  }
+
+  if (pageTitle) {
+    document.title = pageTitle;
+  } else if (titles[lang]) {
+    document.title = titles[lang];
+  }
 
   // Notify page-specific hooks (e.g., news article rerender)
   if (typeof window.onLanguageChanged === 'function') {

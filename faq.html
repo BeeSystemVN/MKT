@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu hỏi thường gặp về giải pháp BeeCare | FAQ</title>
+  <meta name="description"
+    content="Giải đáp tất cả các thắc mắc về triển khai, thời gian đào tạo, thiết bị tương thích, bảo mật EMR và chi phí phần mềm quản lý viện dưỡng lão BeeCare." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
+  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
+  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+
+  <style>
+    .faq-hero {
+      background: linear-gradient(145deg, #091528 0%, #0d273d 45%, #064e3b 100%);
+      padding-top: 140px;
+      padding-bottom: 75px;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .faq-wrapper {
+      max-width: 960px;
+      margin: -35px auto 90px;
+      padding: 0 20px;
+      position: relative;
+      z-index: 10;
+    }
+    @media (max-width: 639px) {
+      .faq-wrapper { margin-top: -20px; margin-bottom: 60px; padding: 0 16px; }
+    }
+    .faq-card-item {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.03);
+    }
+    .faq-card-item:hover {
+      border-color: #cbd5e1;
+    }
+    .faq-card-item.open {
+      border-color: #0d9488;
+      box-shadow: 0 10px 28px -6px rgba(13, 148, 136, 0.12);
+    }
+    .faq-header-btn {
+      width: 100%;
+      text-align: left;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      min-height: 52px;
+    }
+    .faq-arrow-icon {
+      width: 20px;
+      height: 20px;
+      color: #94a3b8;
+      transition: transform 0.3s ease, color 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-card-item.open .faq-arrow-icon {
+      transform: rotate(180deg);
+      color: #0d9488;
+    }
+    .faq-body-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 24px;
+      color: #475569;
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+    .faq-card-item.open .faq-body-content {
+      max-height: 500px;
+      padding: 0 24px 22px;
+      transition: max-height 0.4s ease-in-out, padding 0.3s ease;
+    }
+    .faq-help-box {
+      background: linear-gradient(135deg, #091528 0%, #0d383b 100%);
+      border-radius: 24px;
+      padding: 40px 32px;
+      color: white;
+      text-align: center;
+      margin-top: 48px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 45px -10px rgba(13, 148, 136, 0.2);
+    }
+  </style>
+</head>
+
+<body class="font-body text-slate-800 bg-slate-50">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-5">
+      <div class="relative flex items-center justify-center">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="animation: heartbeat 1.3s ease-in-out infinite;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="#0D9488" />
+        </svg>
+        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+      </div>
+      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
+        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
+        
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
+            <span class="brand-text-logo">
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+            </span>
+          </a>
+        </div>
+
+        <div class="nav-menu-desktop">
+          <a href="index.html" class="nav-menu-item">
+            <span data-i18n="nav_home">Trang chủ</span>
+          </a>
+          <a href="pricing.html" class="nav-menu-item">
+            <span data-i18n="nav_pricing">Bảng giá</span>
+          </a>
+          <a href="news.html" class="nav-menu-item">
+            <span data-i18n="nav_news">Tin tức</span>
+          </a>
+          <a href="company.html" class="nav-menu-item">
+            <span data-i18n="nav_company">Về chúng tôi</span>
+          </a>
+          <a href="contact.html" class="nav-menu-item">
+            <span data-i18n="nav_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          <div class="nav-lang-switcher">
+            <button type="button" class="nav-lang-btn lang-btn active" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
+          </div>
+
+          <a href="contact.html" class="nav-cta-btn">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
+            <span class="sm:hidden" data-i18n="nav_demo_mobile">Demo</span>
+          </a>
+
+          <button id="mobile-menu-toggle" type="button" class="nav-hamburger-btn" aria-label="Mở menu">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu-drawer" class="hidden">
+      <div class="flex flex-col gap-1 pb-2">
+        <a href="index.html" class="mobile-nav-link"><i data-lucide="home" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_home">Trang chủ</span></a>
+        <a href="pricing.html" class="mobile-nav-link"><i data-lucide="tag" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_pricing">Bảng giá</span></a>
+        <a href="news.html" class="mobile-nav-link"><i data-lucide="newspaper" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_news">Tin tức</span></a>
+        <a href="company.html" class="mobile-nav-link"><i data-lucide="building-2" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_company">Về chúng tôi</span></a>
+        <a href="contact.html" class="mobile-nav-link"><i data-lucide="phone-call" class="w-4 h-4 text-teal-400"></i><span data-i18n="nav_contact">Liên hệ</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="faq-hero">
+    <div class="max-w-4xl mx-auto px-4 relative z-10" data-aos="fade-up">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-4 tracking-wide shadow-sm">
+        <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+        <span>Trung tâm giải đáp thắc mắc</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+        Câu hỏi thường gặp về BeeCare
+      </h1>
+      <p class="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        Tổng hợp tất cả câu hỏi phổ biến nhất của các nhà quản lý viện dưỡng lão và cơ sở y tế khi tìm hiểu và triển khai hệ thống.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== ACCORDION LIST ===================== -->
+  <main class="faq-wrapper">
+    <div class="space-y-3.5" data-aos="fade-up" data-aos-delay="100">
+      
+      <!-- FAQ 1 (Default Open) -->
+      <div class="faq-card-item open">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Cơ sở của tôi ở các tỉnh xa hoặc miền Nam thì HANIKI có cử chuyên viên đến tận nơi khảo sát không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          Có. Đội ngũ chuyên gia giải pháp của HANIKI sẵn sàng đến tận cơ sở tại mọi tỉnh thành trên cả nước để khảo sát luồng vận hành thực tế và demo trực tiếp. Đối với các cơ sở muốn tìm hiểu nhanh, chúng tôi hỗ trợ demo trực tuyến 1:1 qua Google Meet ngay trong ngày.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Thời gian triển khai phần mềm và đào tạo điều dưỡng viên sử dụng mất bao lâu?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          Toàn bộ quy trình chỉ mất từ 3 đến 5 ngày làm việc. Hệ thống BeeCare được thiết kế theo tư duy chạm trực quan chuẩn Kaigo, thân thiện tuyệt đối với nhân sự điều dưỡng ở mọi độ tuổi, chỉ cần 1 buổi hướng dẫn là có thể thao tác thành thạo tại giường bệnh.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Hệ thống có chạy được trên điện thoại và máy tính bảng hiện có của viện không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          Có. Cổng Web Admin hoạt động mượt mà trên mọi trình duyệt web máy tính, còn ứng dụng BeeCare Staff và BeeCare Family tương thích hoàn hảo với cả điện thoại iPhone (iOS) và Android hiện có của nhân viên và gia đình, không đòi hỏi đầu tư thiết bị chuyên dụng đắt đỏ.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Dữ liệu bệnh án EMR và thông tin người cao tuổi được bảo mật như thế nào?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          BeeCare áp dụng kiến trúc Cloud bảo mật nhiều lớp chuẩn y tế, mã hóa dữ liệu đầu cuối (End-to-End Encryption), sao lưu tự động hàng ngày và phân quyền truy cập chặt chẽ giữa các vai trò (Ban giám đốc, Bác sĩ, Điều dưỡng, Gia đình). Cơ sở hoàn toàn sở hữu và kiểm soát dữ liệu của mình.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Viện của tôi có quy mô nhỏ (dưới 30 người cao tuổi) thì chi phí có phù hợp không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          Hoàn toàn phù hợp. Gói Cơ Bản của BeeCare được thiết kế chuyên biệt cho các viện dưỡng lão gia đình hoặc cơ sở quy mô nhỏ, chi phí tính theo số giường thực tế, hoàn toàn không thu phí cài đặt hay phí khởi tạo ban đầu, giúp viện tiết kiệm tối đa ngân sách vận hành.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Người nhà người cao tuổi không rành công nghệ có sử dụng được ứng dụng Family không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          Có. Ứng dụng BeeCare Family được tối ưu giao diện dạng bảng tin trực quan (như mạng xã hội thu nhỏ), người nhà chỉ cần mở app là thấy ngay ảnh suất ăn, thông báo sinh hiệu, đơn thuốc và hoạt động trong ngày của cha mẹ. Mọi thao tác đều cực kỳ đơn giản và dễ hiểu.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Direct Consultation CTA Card -->
+    <div class="faq-help-box" data-aos="zoom-in">
+      <div class="inline-flex items-center gap-2 bg-teal-500/20 text-teal-300 px-3.5 py-1.5 rounded-full text-xs font-bold border border-teal-500/30 mb-4">
+        <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+        <span>Cần giải đáp bài toán riêng?</span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">
+        Đội ngũ chuyên gia BeeCare sẵn sàng tư vấn trực tiếp 1:1
+      </h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+        Hãy để lại thông tin hoặc gọi ngay cho chúng tôi để được khảo sát luồng vận hành thực tế và nhận bản demo chi tiết cho cơ sở của bạn.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3.5">
+        <a href="contact.html"
+          class="min-h-[46px] inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm shadow-lg transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          <span>Đăng ký tư vấn miễn phí</span>
+        </a>
+        <a href="tel:0988123531"
+          class="min-h-[46px] inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="phone-call" class="w-4 h-4 text-teal-300"></i>
+          <span>Gọi hotline: 0988 123 531</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo-wrap">
+            <span class="footer-logo-brand"><span class="footer-logo-bee">Bee</span><span class="footer-logo-care">Care</span><span class="footer-logo-dot"></span></span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</p>
+          <p class="footer-desc" data-i18n="footer_desc">
+            Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_eco">Hệ sinh thái</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--teal">
+              <i data-lucide="layout-dashboard" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--cyan">
+              <i data-lucide="stethoscope" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_staff">App Điều dưỡng Staff</span>
+            </a>
+            <a href="index.html#ecosystem" class="footer-eco-chip footer-eco-chip--amber">
+              <i data-lucide="heart-handshake" style="width:13px;height:13px"></i>
+              <span data-i18n="footer_eco_family">App Người thân Family</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_nav">Điều hướng</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" data-i18n="nav_home">Trang chủ</a></li>
+            <li><a href="company.html"><span data-i18n="nav_company">Về chúng tôi</span></a></li>
+            <li><a href="pricing.html" data-i18n="nav_pricing">Bảng giá</a></li>
+            <li><a href="news.html"><span data-i18n="nav_news">Tin tức & sự kiện</span></a></li>
+            <li><a href="contact.html"><span data-i18n="nav_contact">Liên hệ</span></a></li>
+            <li><a href="faq.html" class="active-page"><span data-i18n="nav_faq">Câu hỏi thường gặp</span></a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
+          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;">
+            <div style="font-size:12px;color:#64748b;line-height:1.6">
+              <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+            </div>
+            <div style="margin-top:12px">
+              <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;">
+                <i data-lucide="calendar-check" style="width:13px;height:13px"></i>
+                <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 <a href="index.html">BeeCare</a> – <span data-i18n="footer_dev_by_prefix">Phát triển bởi</span> <a href="company.html"><span data-i18n="footer_dev_by_suffix">CÔNG TY TNHH HANIKI</span></a>.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="terms.html"><span data-i18n="footer_terms">Điều khoản sử dụng</span></a>
+          <a href="privacy.html"><span data-i18n="footer_privacy">Chính sách bảo mật</span></a>
+          <a href="contact.html" data-i18n="nav_contact">Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <button id="scroll-top" aria-label="Cuộn lên đầu trang">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <script>
+    function toggleFaqCard(btn) {
+      const card = btn.closest('.faq-card-item');
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.faq-card-item').forEach(c => c.classList.remove('open'));
+      if (!isOpen) {
+        card.classList.add('open');
+      }
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+  </script>
+
+  <script src="assets/i18n/common.js?v=20261003_v6"></script>
+  <script src="assets/script.js?v=20261003_v6"></script>
+</body>
+
+</html>
