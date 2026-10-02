@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin Tức & Sự Kiện | BeeCare</title>
+  <meta name="description"
+    content="BeeCare – Phần mềm quản lý viện dưỡng lão thông minh. Cổng web quản lý, app điều dưỡng tại giường và app người thân tích hợp trợ lý AI." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="assets/aos.css" />
+  <script src="assets/aos.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
+  <link rel="stylesheet" href="assets/style.css?v=20261002_v5" />
+  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+
+<style>
+/* ===================== ELITE NEWS & BENTO GRID ===================== */
+.news-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #115e59 50%, #0f172a 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 130px;
+    padding-bottom: 70px;
+    color: white;
+}
+.news-hero::before {
+    content: ''; position: absolute;
+    top: -20%; left: -5%; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(45,212,191,0.15) 0%, transparent 60%);
+    border-radius: 50%; pointer-events: none;
+}
+.news-hero::after {
+    content: ''; position: absolute;
+    bottom: -20%; right: -5%; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 60%);
+    border-radius: 50%; pointer-events: none;
+}
+
+.news-tab-filter {
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 6px;
+    display: inline-flex; gap: 4px; flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.news-tab-btn {
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 14px; font-weight: 600;
+    color: #cbd5e1;
+    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+    background: transparent;
+}
+.news-tab-btn:hover {
+    color: #fff; background: rgba(255,255,255,0.08);
+}
+.news-tab-btn.active {
+    background: #0d9488; color: #fff;
+    box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+}
+
+.news-search-box {
+    position: relative;
+    width: 100%; max-width: 480px;
+    margin: 0 auto;
+}
+.news-search-input {
+    width: 100%;
+    background: rgba(15,23,42,0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 16px 20px 16px 48px;
+    border-radius: 100px;
+    color: white; font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.news-search-input::placeholder { color: #94a3b8; }
+.news-search-input:focus {
+    outline: none; border-color: #2dd4bf;
+    background: rgba(15,23,42,0.7);
+}
+
+.news-main-bg {
+    background-color: #f8fafc;
+    position: relative;
+}
+.news-main-bg::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 300px;
+    background: linear-gradient(to bottom, #0f172a 0%, #f8fafc 100%);
+}
+
+.news-tab-filter-body {
+    display: inline-flex; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.news-tab-btn-body {
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 13.5px; font-weight: 600;
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.news-tab-btn-body:hover {
+    color: #0f172a; border-color: #cbd5e1;
+}
+.news-tab-btn-body.active {
+    background: #0f172a; color: #fff;
+    border-color: #0f172a;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    position: relative; z-index: 10;
+}
+
+.bento-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(226,232,240,0.6);
+    box-shadow: 0 4px 16px -6px rgba(15,23,42,0.06);
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    cursor: pointer;
+    display: flex; flex-direction: column;
+}
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -10px rgba(15,23,42,0.1);
+    border-color: #cbd5e1;
+}
+
+.bento-img-wrap {
+    position: relative; overflow: hidden;
+}
+.bento-img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.bento-card:hover .bento-img {
+    transform: scale(1.03);
+}
+.bento-card-tag {
+    position: absolute; top: 16px; left: 16px;
+    background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    color: #0f172a; font-size: 11px; font-weight: 700;
+    padding: 6px 12px; border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.bento-body {
+    padding: 24px 28px; display: flex; flex-direction: column; flex: 1;
+}
+.bento-meta {
+    display: flex; gap: 16px; color: #64748b; font-size: 12.5px; font-weight: 600;
+    margin-bottom: 10px;
+}
+.bento-title {
+    font-size: 20px; font-weight: 700; color: #0f172a; line-height: 1.4;
+    margin-bottom: 12px; font-family: 'Be Vietnam Pro', sans-serif;
+    transition: color 0.3s ease;
+}
+.bento-card:hover .bento-title { color: #0d9488; }
+.bento-excerpt {
+    font-size: 14px; color: #475569; line-height: 1.6;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    margin-bottom: 20px; flex: 1;
+}
+
+/* Specific Sizes */
+.bento-hero { grid-column: span 12; }
+.bento-col-6 { grid-column: span 6; }
+@media (max-width: 1023px) {
+    .bento-hero, .bento-col-6 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+    .bento-hero { display: grid; grid-template-columns: 1.2fr 1fr; }
+    .bento-hero .bento-img-wrap { height: 100%; min-height: 360px; }
+    .bento-hero .bento-body { justify-content: center; padding: 40px; }
+    .bento-hero .bento-title { font-size: 28px; }
+}
+
+.read-more-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13.5px; font-weight: 700; color: #0d9488;
+    margin-top: auto;
+}
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+.bento-card:hover .read-more-btn i {
+    transform: translateX(4px);
+}
+
+/* ===================== MODAL CHỈN CHU, TINH TẾ ===================== */
+.sheet-overlay {
+    position: fixed; inset: 0; background: rgba(15,23,42,0.85); backdrop-filter: blur(12px);
+    z-index: 9999; opacity: 0; visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    display: flex; align-items: center; justify-content: center;
+}
+.sheet-overlay.open { opacity: 1; visibility: visible; }
+
+.sheet-modal {
+    background: #ffffff;
+    width: 90%; max-width: 800px;
+    height: auto; max-height: 90vh;
+    border-radius: 24px;
+    transform: scale(0.95); opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+    overflow-y: auto; overflow-x: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.sheet-overlay.open .sheet-modal { transform: scale(1); opacity: 1; }
+
+/* Tùy chỉnh thanh cuộn tinh tế */
+.sheet-modal::-webkit-scrollbar {
+    width: 6px;
+}
+.sheet-modal::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 32px 0;
+}
+.sheet-modal::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.4);
+    border-radius: 10px;
+}
+.sheet-modal::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.7);
+}
+
+.sheet-drag-handle {
+    width: 40px; height: 5px; border-radius: 100px;
+    background: rgba(255,255,255,0.5);
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+}
+
+.sheet-close {
+    position: sticky; top: 24px; float: right; margin-right: 24px; margin-bottom: -64px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(12px);
+    color: #334155; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 100;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+    border: 1px solid rgba(226,232,240,0.8);
+}
+.sheet-close:hover { background: #f8fafc; color: #ef4444; transform: scale(1.1) rotate(90deg); }
+
+.sheet-cover {
+    width: 100%; height: 380px; position: relative;
+}
+.sheet-cover img { width: 100%; height: 100%; object-fit: cover; }
+.sheet-cover::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, #ffffff 100%);
+}
+
+.sheet-content {
+    padding: 0 48px 80px 48px;
+    max-width: 680px; margin: 0 auto;
+    position: relative; z-index: 10;
+    margin-top: -60px;
+}
+@media (max-width: 640px) {
+    .sheet-cover { height: 260px; }
+    .sheet-content { padding: 0 24px 60px 24px; margin-top: -40px; }
+    .sheet-modal { border-radius: 24px 24px 0 0; }
+}
+
+.sheet-title {
+    font-size: 32px; font-weight: 800; color: #0f172a; line-height: 1.35;
+    font-family: 'Be Vietnam Pro', sans-serif; margin-bottom: 20px;
+    letter-spacing: -0.3px;
+}
+.sheet-meta-bar {
+    display: flex; gap: 24px; color: #64748b; font-size: 13.5px; font-weight: 600;
+    padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; margin-bottom: 32px;
+}
+.sheet-body {
+    font-size: 16.5px; line-height: 1.8; color: #334155;
+    text-align: justify;
+}
+.sheet-body p { margin-bottom: 20px; }
+.sheet-body ul {
+    list-style-type: disc; padding-left: 24px; margin-bottom: 20px;
+}
+.sheet-body li {
+    margin-bottom: 8px;
+}
+.sheet-body strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+</style>
+</head>
+
+<body class="font-body text-slate-800 bg-slate-50">
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="flex flex-col items-center gap-5">
+      <div class="relative flex items-center justify-center">
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          style="animation: heartbeat 1.3s ease-in-out infinite;">
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            fill="#0D9488" />
+        </svg>
+        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+      </div>
+
+      <svg class="ecg-line" viewBox="0 0 260 60">
+        <path class="ecg-path"
+          d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
+      </svg>
+
+      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
+        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      </div>
+      <div class="text-teal-200 text-sm font-medium">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</div>
+    </div>
+  </div>
+
+  <!-- ===================== UNIFIED ELITE REFINED HEADER ===================== -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
+        
+        <!-- CỤM TRÁI: Chữ BeeCare thiết kế mới (Bỏ logo ảnh, Bỏ khẩu hiệu Diên Hồng) -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
+            <span class="brand-text-logo">
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+            </span>
+          </a>
+        </div>
+
+        <!-- CỤM GIỮA: Navigation Links (>= 1024px) -->
+        <div class="nav-menu-desktop">
+          <a href="index.html" class="nav-menu-item">
+            <span data-i18n="nav_home">Trang chủ</span>
+          </a>
+          <a href="pricing.html" class="nav-menu-item">
+            <span data-i18n="nav_pricing">Bảng giá</span>
+          </a>
+          <a href="news.html" class="nav-menu-item active">
+            <span data-i18n="nav_news">Tin tức</span>
+          </a>
+          <a href="company.html" class="nav-menu-item">
+            <span data-i18n="nav_company">Về chúng tôi</span>
+          </a>
+          <a href="contact.html" class="nav-menu-item">
+            <span data-i18n="nav_contact">Liên hệ</span>
+          </a>
+        </div>
+
+        <!-- CỤM PHẢI: Segmented Language Switcher + Demo CTA + Mobile Hamburger (Bỏ số điện thoại) -->
+        <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          
+          <!-- Segmented Glass Language Switcher -->
+          <div class="nav-lang-switcher">
+            <button type="button" class="nav-lang-btn lang-btn active" data-lang="vi" onclick="setLanguage('vi')">VI</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            <button type="button" class="nav-lang-btn lang-btn" data-lang="ja" onclick="setLanguage('ja')">JA</button>
+          </div>
+
+          <!-- Primary CTA Button -->
+          <a href="contact.html" class="nav-cta-btn">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
+            <span class="sm:hidden">Demo</span>
+          </a>
+
+          <!-- Mobile Menu Hamburger Button -->
+          <button id="mobile-menu-toggle" type="button" class="nav-hamburger-btn" aria-label="Mở menu điều hướng">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu-drawer" class="hidden">
+      <div class="flex flex-col gap-1 pb-2">
+        <a href="index.html" class="mobile-nav-link">
+          <i data-lucide="home" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_home">Trang chủ</span>
+        </a>
+        <a href="pricing.html" class="mobile-nav-link">
+          <i data-lucide="tag" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_pricing">Bảng giá</span>
+        </a>
+        <a href="news.html" class="mobile-nav-link active">
+          <i data-lucide="newspaper" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_news">Tin tức</span>
+        </a>
+        <a href="company.html" class="mobile-nav-link">
+          <i data-lucide="building-2" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_company">Về chúng tôi</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-link">
+          <i data-lucide="phone-call" class="w-4 h-4 text-teal-400"></i>
+          <span data-i18n="nav_contact">Liên hệ</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- Premium Dark Hero -->
+  <section class="news-hero">
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+      <!-- Tag Removed Gemini Icon, just sleek text -->
+      <div class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-6 uppercase tracking-widest shadow-sm">
+        Tin Tức & Hoạt Động
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-6 font-heading tracking-tight">
+        Kết nối cộng đồng, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">kiến tạo giá trị</span>
+      </h1>
+      <p class="text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+        Những câu chuyện, sự kiện và cột mốc đáng nhớ trên chặng đường phát triển hệ sinh thái y tế thông minh của BeeCare.
+      </p>
+      
+      <!-- Search (More discreet) -->
+      <div class="news-search-box mt-10">
+          <input type="text" placeholder="Tìm kiếm bài viết..." class="news-search-input" />
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid Main Content -->
+  <main class="news-main-bg pb-24 pt-8 md:pt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-center items-center relative z-20">
+       <div class="news-tab-filter-body">
+          <button class="news-tab-btn-body active">Tất cả bài viết</button>
+          <button class="news-tab-btn-body">Cộng đồng</button>
+          <button class="news-tab-btn-body">Văn hóa</button>
+       </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bento-grid">
+
+        <article class="bento-card bento-hero" data-aos="fade-up" onclick="openSheetModal('haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang')">
+          <div class="bento-img-wrap">
+            <img src="assets/news/thien-nguyen-cao-bang-banner.jpg" alt="HANIKI Lan Tỏa Yêu Thương Đầu Năm 2026 Tại Bản Nhảng, Cao Bằng" class="bento-img" />
+            <span class="bento-card-tag">Thiện Nguyện & Cộng Đồng</span>
+          </div>
+          <div class="bento-body">
+            <div class="bento-meta">
+              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> 09/01/2026</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> 6 phút đọc</span>
+            </div>
+            <h2 class="bento-title">HANIKI Lan Tỏa Yêu Thương Đầu Năm 2026 Tại Bản Nhảng, Cao Bằng</h2>
+            <p class="bento-excerpt">Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng.</p>
+            <div class="read-more-btn mt-auto">
+                <span>Đọc bài viết tiêu điểm</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-col-6" data-aos="fade-up" data-aos-delay="100" onclick="openSheetModal('trai-nghiem-tet-nhat-ban-haniki')">
+          <div class="bento-img-wrap h-64 lg:h-64">
+            <img src="assets/news/tet-nhat-ban-bee-system.jpg" alt="Trải Nghiệm Tết Nhật Bản Tại HANIKI Cùng WeXpats" class="bento-img" />
+            <span class="bento-card-tag">Văn Hóa Doanh Nghiệp</span>
+          </div>
+          <div class="bento-body">
+            <div class="bento-meta">
+              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> 25/01/2026</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> 5 phút đọc</span>
+            </div>
+            <h2 class="bento-title" style="font-size: 20px;">Trải Nghiệm Tết Nhật Bản Tại HANIKI Cùng WeXpats</h2>
+            <p class="bento-excerpt">Tập thể nhân sự của HANIKI háo hức khám phá Tết Nhật Bản (Shougatsu) – viết thư pháp Shodou, nấu mì trường thọ Toshikoshi Soba...</p>
+            <div class="read-more-btn mt-auto">
+                <span>Khám phá ngay</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento-card bento-col-6" data-aos="fade-up" data-aos-delay="150" onclick="openSheetModal('hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki')">
+          <div class="bento-img-wrap h-64 lg:h-64">
+            <img src="assets/news/van-hoa-nhat-ban-yukata.jpg" alt="Hành Trình Khám Phá Văn Hóa Nhật Bản Cùng HANIKI" class="bento-img" />
+            <span class="bento-card-tag">Văn Hóa Doanh Nghiệp</span>
+          </div>
+          <div class="bento-body">
+            <div class="bento-meta">
+              <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> 10/01/2026</span>
+              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> 4 phút đọc</span>
+            </div>
+            <h2 class="bento-title" style="font-size: 20px;">Hành Trình Khám Phá Văn Hóa Nhật Bản Cùng HANIKI</h2>
+            <p class="bento-excerpt">Học viên tiếng Nhật HANIKI cùng các Sensei từ WeXpats Nihongo trải nghiệm mặc trang phục Yukata truyền thống, làm cơm nắm Onigiri.</p>
+            <div class="read-more-btn mt-auto">
+                <span>Xem chi tiết</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- iOS Premium Sheet Modal -->
+  <div id="sheet-overlay" class="sheet-overlay">
+      <div class="sheet-drag-handle"></div>
+      <div class="sheet-modal">
+          <div class="sheet-close" onclick="closeSheetModal()">
+              <i data-lucide="x" class="w-5 h-5"></i>
+          </div>
+          <div id="sheet-content-wrap">
+             <!-- Injected content via JS -->
+          </div>
+      </div>
+  </div>
+<!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
+  <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
+    <a href="tel:19006868" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
+      <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
+      <span>Gọi 1900 6868</span>
+    </a>
+    <a href="#demo" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md">
+      <i data-lucide="calendar-check" class="w-4 h-4"></i>
+      <span>Đăng ký demo</span>
+    </a>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="footer-grid">
+
+        <!-- Cột 1: Brand + Thông tin liên hệ -->
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <div class="footer-brand-icon">
+              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+            </div>
+            <div>
+              <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
+              <div class="footer-tagline">Hệ sinh thái y tế thông minh</div>
+            </div>
+          </a>
+          <p class="footer-desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <div class="footer-company-badge">
+            <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
+            Phát triển bởi CÔNG TY TNHH HANIKI
+          </div>
+          <div class="footer-contact-row">
+            <a href="tel:19006868" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            </a>
+            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              contact@beecare.vn
+            </a>
+            <span class="footer-contact-item">
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội
+            </span>
+          </div>
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cột 2: Hệ sinh thái -->
+        <div>
+          <div class="footer-col-title">Hệ sinh thái</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="ecosystem-web.html" class="footer-eco-chip footer-eco-chip--teal">
+              <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
+              Cổng Web Admin
+            </a>
+            <a href="ecosystem-staff.html" class="footer-eco-chip footer-eco-chip--cyan">
+              <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
+              App Điều dưỡng Staff
+            </a>
+            <a href="ecosystem-family.html" class="footer-eco-chip footer-eco-chip--amber">
+              <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
+              App Người thân Family
+            </a>
+          </div>
+          <div style="margin-top:20px">
+            <div class="footer-col-title">Tính năng nổi bật</div>
+            <ul class="footer-nav-list">
+              <li><a href="index.html#ecosystem">Quản lý hồ sơ EMR</a></li>
+              <li><a href="index.html#ecosystem">Đo sinh hiệu tại giường</a></li>
+              <li><a href="index.html#ecosystem">Trợ lý AI 24/7</a></li>
+              <li><a href="index.html#ecosystem">Thanh toán VietQR</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cột 3: Điều hướng chính -->
+        <div>
+          <div class="footer-col-title">Điều hướng</div>
+          <ul class="footer-nav-list">
+            <li><a href="index.html" class="active-page">Trang chủ</a></li>
+            <li><a href="company.html">Về công ty</a></li>
+            <li><a href="pricing.html">Bảng giá</a></li>
+            <li><a href="news.html">Tin tức & Sự kiện</a></li>
+            <li><a href="contact.html">Liên hệ tư vấn</a></li>
+            <li><a href="faq.html">Câu hỏi thường gặp</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
+        <div>
+          <div class="footer-col-title">Tư vấn & Hỗ trợ</div>
+          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+              <i data-lucide="clock" style="width:12px;height:12px"></i>
+              Giờ hỗ trợ
+            </div>
+            <div style="font-size:12px;color:#64748b;line-height:1.6">
+              Thứ 2 – Thứ 7: <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
+              Giám sát cloud: <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+            </div>
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+              <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
+                <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
+                Đăng ký demo miễn phí
+              </a>
+              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+                <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
+                Gọi 1900 6868
+              </a>
+            </div>
+          </div>
+          <div style="font-size:11.5px;color:#475569;line-height:1.7">
+            <strong style="color:#64748b">Đối tác chiến lược:</strong><br>
+            Hệ thống Viện dưỡng lão Diên Hồng<br>
+            Chuẩn chăm sóc Kaigo Nhật Bản
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <!-- Footer bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 <a href="index.html">BeeCare</a> – Phát triển bởi <a href="company.html">CÔNG TY TNHH HANIKI</a>.
+          Đồng hành cùng Viện dưỡng lão Diên Hồng.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="terms.html">Điều khoản sử dụng</a>
+          <a href="privacy.html">Chính sách bảo mật</a>
+          <a href="contact.html">Liên hệ</a>
+        </div>
+      </div>
+
+    </div><!-- /.site-footer-inner -->
+  </footer>
+
+  <!-- ===================== LIGHTBOX MODAL ===================== -->
+  <div id="lightbox-modal">
+    <div class="relative max-w-5xl w-full flex flex-col items-center">
+      <button id="lightbox-close" class="absolute -top-10 right-0 text-white hover:text-amber-400 transition-colors flex items-center gap-1.5 text-xs font-semibold">
+        <i data-lucide="x" class="w-6 h-6"></i> Đóng lại (ESC)
+      </button>
+      <img id="lightbox-img" src="" alt="Ảnh phóng to" class="w-auto h-auto max-h-[82vh] rounded-xl shadow-2xl">
+      <div id="lightbox-caption" class="text-slate-200 text-sm font-medium mt-3 text-center"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed bottom-6 right-6 z-50 transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 border border-teal-500 text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md">
+    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+      <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+    </div>
+    <div id="toast-msg" class="text-sm font-medium text-slate-200">
+      Yêu cầu đã được gửi thành công!
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scroll-top" aria-label="Cuộn lên đầu trang">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="assets/script.js?v=20261002_v4"></script>
+
+<!-- Premium Modal Script -->
+<script>
+    const newsData = [{"id": "haniki-lan-toa-yeu-thuong-tai-ban-nhang-cao-bang", "category": "Thiện Nguyện & Cộng Đồng", "title": "HANIKI Lan Tỏa Yêu Thương Đầu Năm 2026 Tại Bản Nhảng, Cao Bằng", "date": "09/01/2026", "readTime": "6 phút đọc", "image": "assets/news/thien-nguyen-cao-bang-banner.jpg", "excerpt": "Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng.", "content": ["Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng, xã Thị Hoa, huyện Hạ Lang, tỉnh Cao Bằng – một địa phương vùng cao còn nhiều khó khăn về điều kiện sinh hoạt và hạ tầng cơ bản.", "Chương trình do Trường Đại học Khoa học Xã hội và Nhân văn tổ chức, với sự tham gia và hỗ trợ tích cực từ các đơn vị đồng hành. Trong đó, HANIKI cùng với Viện Dưỡng lão Diên Hồng giữ vai trò là nhà tài trợ chính, phối hợp triển khai nhiều hoạt động thiết thực, mang lại giá trị lâu dài cho cộng đồng dân cư trong bản.", "**1. Những hỗ trợ thiết thực – Gieo hy vọng bền lâu:**", "Trong khuôn khổ chương trình, HANIKI đã trực tiếp tài trợ và triển khai các hạng mục hỗ trợ cụ thể:", "- Lắp đặt 20 đèn chiếu sáng đường tại các trục đường chính trong bản, góp phần cải thiện điều kiện đi lại, đảm bảo an toàn cho bà con vào ban đêm và nâng cao chất lượng đời sống sinh hoạt.", "[IMG: assets/news/lap-dat-den-chieu-sang.jpg]", "- Trao tặng 50 phần quà Tết cho các hộ gia đình có hoàn cảnh khó khăn, trị giá 700.000 đồng mỗi phần, gồm các nhu yếu phẩm thiết yếu, giúp bà con đón năm mới ấm áp và đủ đầy hơn.", "[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]", "- Trao tặng 2 máy lọc nước cho Ủy ban Nhân dân xã Thị Hoa, góp phần cải thiện nguồn nước sinh hoạt, phục vụ tốt hơn cho công tác hành chính và các hoạt động cộng đồng tại địa phương.", "- Tổ chức \"Phiên chợ 0 đồng\", nơi người dân trong bản có thể tự do lựa chọn các mặt hàng cần thiết cho gia đình mà không phải chi trả, tạo nên không khí sẻ chia, gần gũi và đầy tính nhân văn.", "[IMG: assets/news/phien-cho-0-dong.jpg]", "Những hoạt động trên không chỉ mang ý nghĩa hỗ trợ trước mắt, mà còn thể hiện mong muốn của HANIKI trong việc góp phần cải thiện điều kiện sống, tiếp thêm niềm tin và động lực cho bà con vùng cao trong hành trình vươn lên.", "**2. Gắn kết cộng đồng – Ấm áp nghĩa tình:**", "[IMG: assets/news/lua-trai-ban-nhang.jpg]", "Điểm nhấn xúc động của chương trình là đêm lửa trại giao lưu cùng bà con nhân dân trong bản. Trong ánh lửa bập bùng giữa núi rừng Cao Bằng, đại diện HANIKI, các đơn vị tổ chức và người dân địa phương đã cùng nhau trò chuyện, ca hát và chia sẻ những câu chuyện đời thường giản dị nhưng ấm áp. Khoảnh khắc ấy đã xóa nhòa khoảng cách, thắt chặt tình cảm và để lại nhiều kỷ niệm khó quên trong lòng những người tham gia.", "**3. Trách nhiệm xã hội – Giá trị cốt lõi của HANIKI:**", "Đại diện HANIKI chia sẻ: \"Chúng tôi tin rằng mỗi doanh nghiệp không chỉ tạo ra giá trị kinh tế mà còn cần lan tỏa giá trị nhân văn cho xã hội. Hoạt động thiện nguyện tại Bản Nhảng là minh chứng cho cam kết lâu dài của HANIKI trong việc đồng hành cùng cộng đồng, đặc biệt là những vùng còn nhiều khó khăn.\"", "Sự phối hợp giữa HANIKI, Trường Đại học Khoa học Xã hội và Nhân văn và Viện Dưỡng lão Diên Hồng đã tạo nên một chương trình thiện nguyện trọn vẹn, mang tính kết nối đa chiều giữa giáo dục – doanh nghiệp – tổ chức xã hội.", "**4. Hành trình sẻ chia sẽ còn tiếp nối:**", "Chương trình thiện nguyện đầu năm 2026 tại Bản Nhảng không chỉ là một hoạt động mang tính thời điểm, mà còn là một phần trong chuỗi chương trình vì cộng đồng mà HANIKI kiên định theo đuổi. Trong thời gian tới, HANIKI sẽ tiếp tục triển khai nhiều hoạt động xã hội ý nghĩa hơn nữa, hướng tới mục tiêu phát triển bền vững gắn liền với trách nhiệm cộng đồng."]}, {"id": "trai-nghiem-tet-nhat-ban-haniki", "category": "Văn Hóa Doanh Nghiệp", "title": "Trải Nghiệm Tết Nhật Bản Tại HANIKI Cùng WeXpats", "date": "25/01/2026", "readTime": "5 phút đọc", "image": "assets/news/tet-nhat-ban-bee-system.jpg", "excerpt": "Tập thể nhân sự của HANIKI háo hức khám phá Tết Nhật Bản (Shougatsu) – viết thư pháp Shodou, nấu mì trường thọ Toshikoshi Soba...", "content": ["Khi mùa xuân gõ cửa, đại gia đình HANIKI lại cùng nhau khám phá và trải nghiệm tinh hoa văn hóa Tết Nhật Bản (Shougatsu) ngay tại văn phòng - một hành trình học hỏi, gắn kết và tràn đầy niềm vui.", "**1. Không khí Tết Nhật Bản tràn ngập tại HANIKI:**", "[IMG: assets/news/tet-shougatsu-khong-khi.jpg]", "Vừa qua, các thành viên của HANIKI đã có cơ hội tham gia buổi ngoại khóa đặc biệt về chủ đề \"Tết Nhật Bản - Shougatsu\" cùng các Sensei đến từ Trung tâm Tiếng Nhật WeXpats Nihongo. Buổi trải nghiệm diễn ra trong không khí ấm áp, sôi nổi và giàu ý nghĩa, giúp các thành viên hiểu sâu hơn về văn hóa Nhật Bản, đồng thời tăng thêm tinh thần đoàn kết và sự gắn bó trong đại gia đình HANIKI.", "**2. Khám phá văn hóa Tết Nhật Bản (Shougatsu):**", "Mở đầu buổi học, các thành viên được Sensei giới thiệu về truyền thống đón Tết của người Nhật Bản - dịp lễ quan trọng nhất trong năm. Mọi người cùng tìm hiểu về các phong tục đặc sắc như:", "- Viếng đền và chùa đầu năm để cầu bình an.", "- Trang trí nhà cửa bằng Kadomatsu và Shimekazari để đón lộc vào nhà.", "- Gửi thiệp chúc mừng năm mới và tặng bao lì xì (Otoshidama) cho trẻ em.", "Những câu chuyện thú vị và sinh động từ các Sensei đã giúp mọi người cảm nhận được sự tỉ mỉ, tinh tế và sâu sắc trong văn hóa đón Tết của người Nhật.", "**3. Trải nghiệm viết thư pháp (Shodou) - Nét đẹp truyền thống đầu năm:**", "[IMG: assets/news/viet-thu-phap-shodou.jpg]", "Tiếp theo, nhân sự HANIKI được trực tiếp thực hành nghệ thuật viết thư pháp Nhật Bản (Shodou). Dưới sự hướng dẫn của Sensei, từng nét bút uyển chuyển trên giấy thể hiện tinh thần kiên nhẫn, tĩnh tâm và tôn trọng truyền thống - những giá trị cốt lõi trong văn hóa Nhật. Mỗi thành viên chọn cho mình một chữ mang ý nghĩa may mắn như \"福\" (phúc), \"夢\" (giấc mơ) hay \"愛\" (tình yêu), để gửi gắm lời chúc cho năm mới.", "**4. Làm và thưởng thức mì Toshikoshi Soba - Món ăn ý nghĩa đêm giao thừa:**", "[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]", "Điểm nhấn của buổi ngoại khóa là hoạt động nấu và thưởng thức món Toshikoshi Soba, món mì truyền thống mà người Nhật ăn vào đêm giao thừa. Mì Soba tượng trưng cho sức khỏe, sự trường thọ và may mắn, được ví như sợi dây nối dài hạnh phúc từ năm cũ sang năm mới. Các thành viên HANIKI đã cùng nhau chuẩn bị, chế biến và thưởng thức món mì thơm ngon này trong tiếng cười và niềm hân hoan chào đón một năm mới sắp đến.", "**5. Học hỏi - Gắn kết - Lan tỏa tinh thần HANIKI:**", "Buổi trải nghiệm không chỉ mang đến kiến thức bổ ích về văn hóa Nhật Bản, mà còn là dịp để mọi người giao lưu, học hỏi và gắn bó hơn trong môi trường làm việc. HANIKI luôn hướng đến việc xây dựng văn hóa doanh nghiệp tích cực, nơi mỗi nhân sự được rèn luyện kỹ năng, trau dồi ngôn ngữ, và khám phá những giá trị văn hóa mới.", "\"Mỗi trải nghiệm là một hành trình học hỏi. Mỗi cá nhân là một mảnh ghép quan trọng tạo nên sức mạnh và thành công của HANIKI.\""]}, {"id": "hanh-trinh-kham-pha-van-hoa-nhat-ban-haniki", "category": "Văn Hóa Doanh Nghiệp", "title": "Hành Trình Khám Phá Văn Hóa Nhật Bản Cùng HANIKI", "date": "10/01/2026", "readTime": "4 phút đọc", "image": "assets/news/van-hoa-nhat-ban-yukata.jpg", "excerpt": "Học viên tiếng Nhật HANIKI cùng các Sensei từ WeXpats Nihongo trải nghiệm mặc trang phục Yukata truyền thống, làm cơm nắm Onigiri.", "content": ["Tập thể cán bộ nhân viên của HANIKI - học viên các lớp tiếng Nhật từ Sơ cấp đến Thượng cấp - đã có một ngày trải nghiệm đầy màu sắc khi cùng nhau khám phá văn hóa Nhật Bản bên cạnh các Sensei đáng mến đến từ Trung tâm tiếng Nhật WeXpats Nihongo.", "Chương trình được tổ chức với mong muốn không chỉ dừng lại ở việc học tiếng Nhật qua sách vở, mà còn giúp đội ngũ HANIKI trực tiếp cảm nhận tinh thần, lối sống và giá trị truyền thống Nhật Bản thông qua những hoạt động trải nghiệm thực tế. Không khí buổi học tràn ngập sự hào hứng, tiếng cười và tinh thần gắn kết - đúng với định hướng phát triển bền vững cùng đội ngũ.", "**1. Mặc Yukata - Trải nghiệm trang phục truyền thống:**", "[IMG: assets/news/mac-trang-phuc-yukata.jpg]", "Mở đầu chương trình là hoạt động mặc Yukata - trang phục truyền thống mùa hè của Nhật Bản. Lần đầu khoác lên mình những bộ Yukata rực rỡ sắc màu, các thành viên HANIKI không giấu được sự thích thú khi cảm nhận được vẻ đẹp tinh tế và thanh lịch trong văn hóa Nhật. Các Sensei tận tình hướng dẫn từng bước: từ cách mặc áo, thắt đai đến chọn phụ kiện. Hoạt động này giúp nhân sự hiểu thêm về ý nghĩa của Yukata - biểu trưng cho sự giản dị, thuần khiết và sự hòa hợp với thiên nhiên.", "**2. Làm Onigiri - Nếm vị Nhật ngay tại HANIKI:**", "[IMG: assets/news/lam-com-nam-onigiri.jpg]", "Tiếp nối chương trình là phần trải nghiệm làm Onigiri - món cơm nắm truyền thống của Nhật Bản. Các Sensei hướng dẫn tỉ mỉ từ khâu nấu cơm, nêm gia vị, tạo hình cho đến thêm nhân bên trong. Dưới bàn tay khéo léo của các thành viên, những chiếc Onigiri xinh xắn, hấp dẫn lần lượt ra đời - không chỉ ngon miệng mà còn tràn đầy tinh thần sáng tạo. Thông qua hoạt động này, mọi người hiểu rằng văn hóa Nhật không chỉ nằm trong ngôn ngữ hay phong tục, mà còn thể hiện trong từng bữa ăn - nơi chứa đựng sự trân trọng, chăm chút và biết ơn đối với thực phẩm.", "**3. Fukuwarai - Tiếng cười từ trò chơi truyền thống Nhật:**", "[IMG: assets/news/tro-choi-fukuwarai.jpg]", "Khép lại hành trình là trò chơi dân gian Fukuwarai - trò ghép mặt truyền thống thường được chơi vào dịp năm mới tại Nhật Bản. Các thành viên bịt mắt và lần lượt ghép mắt, mũi, miệng lên khuôn mặt giấy. Những \"tác phẩm\" ngộ nghĩnh ra đời trong tiếng cười không ngớt, mang đến bầu không khí vui tươi, ấm áp. Fukuwarai không chỉ là trò chơi giải trí, mà còn thể hiện tinh thần lạc quan và hài hòa trong văn hóa Nhật - nơi niềm vui đến từ những điều giản dị nhất.", "**4. HANIKI - Không chỉ là nơi làm việc, mà là nơi cùng trưởng thành:**", "Tại HANIKI, văn hóa doanh nghiệp không chỉ nằm trong công việc mà còn trong từng hoạt động gắn kết con người. Công ty không chỉ đào tạo kỹ năng chuyên môn, mà còn tạo môi trường để mỗi nhân sự học hỏi không ngừng, phát triển bản thân và sống tích cực. Chính những trải nghiệm văn hóa thực tế này là nền tảng cho một môi trường làm việc hạnh phúc, sáng tạo và đoàn kết vững mạnh."]}];
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const btns = document.querySelectorAll('.news-tab-btn-body');
+        const cards = document.querySelectorAll('.bento-card');
+        
+        btns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                btns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.textContent.trim().toLowerCase();
+                cards.forEach(card => {
+                    const tag = card.querySelector('.bento-card-tag').textContent.trim().toLowerCase();
+                    if (filter === 'tất cả bài viết' || tag.includes(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+    
+    function parseContent(contentArray) {
+        let html = '';
+        let inList = false;
+        
+        contentArray.forEach(p => {
+            // Process bold markers
+            let formatted = p.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            // Process images
+            if (formatted.startsWith('[IMG: ') && formatted.endsWith(']')) {
+                const url = formatted.substring(6, formatted.length - 1);
+                html += `<div style="margin: 24px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><img src="${url}" style="width: 100%; height: auto; display: block;" alt="News image" /></div>`;
+                return;
+            }
+            
+            // Check if it's a list item (starts with -)
+            if (formatted.startsWith('- ')) {
+                if (!inList) {
+                    html += '<ul>';
+                    inList = true;
+                }
+                html += `<li>${formatted.substring(2)}</li>`;
+            } else {
+                if (inList) {
+                    html += '</ul>';
+                    inList = false;
+                }
+                // Check if it's a quote
+                if (formatted.startsWith('"') && formatted.endsWith('"')) {
+                    html += `<p style="font-style: italic; color: #475569; border-left: 3px solid #0d9488; padding-left: 16px; margin-top: 24px;">${formatted}</p>`;
+                } else {
+                    html += `<p>${formatted}</p>`;
+                }
+            }
+        });
+        if (inList) html += '</ul>';
+        return html;
+    }
+
+    function openSheetModal(id) {
+        const article = newsData.find(a => a.id === id);
+        if(!article) return;
+        
+        const bodyHtml = parseContent(article.content);
+
+        const container = document.getElementById('sheet-content-wrap');
+        container.innerHTML = `
+            <div class="sheet-cover">
+                <img src="${article.image}" alt="${article.title}" />
+            </div>
+            <div class="sheet-content">
+                <div class="inline-block px-4 py-1 bg-teal-50 text-teal-700 text-xs font-bold rounded-full mb-5 border border-teal-100 uppercase tracking-wide">
+                    ${article.category}
+                </div>
+                <h2 class="sheet-title">${article.title}</h2>
+                <div class="sheet-meta-bar">
+                    <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> ${article.date}</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-slate-400"></i> ${article.readTime}</span>
+                </div>
+                <div class="sheet-body">
+                    ${bodyHtml}
+                </div>
+            </div>
+        `;
+        
+        lucide.createIcons();
+        
+        document.getElementById('sheet-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSheetModal() {
+        document.getElementById('sheet-overlay').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('sheet-overlay').addEventListener('click', function(e) {
+        if(e.target === this || e.target.classList.contains('sheet-drag-handle')) {
+            closeSheetModal();
+        }
+    });
+</script>
+
+</body>
+
+</html>

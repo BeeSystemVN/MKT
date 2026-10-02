@@ -1,0 +1,14 @@
+<svg width="220" height="55" viewBox="0 0 220 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nozomi Care Brand Logo: Japanese Blossom & Caring Hands Concept -->
+  <g transform="translate(4, 5)">
+    <!-- Stylized Cherry Blossom / Care Leaves Emblem -->
+    <path d="M22 6C22 6 27 1 33 5C38 9 36 17 31 20C26 23 22 23 22 23C22 23 18 23 13 20C8 17 6 9 11 5C17 1 22 6 22 6Z" fill="#E11D48" opacity="0.9" />
+    <path d="M37 20C37 20 44 20 46 27C48 33 42 39 36 38C30 37 26 33 26 33C26 33 28 29 29 23C30 18 37 20 37 20Z" fill="#F43F5E" opacity="0.85" />
+    <path d="M7 20C7 20 0 20 -2 27C-4 33 2 39 8 38C14 37 18 33 18 33C18 33 16 29 15 23C14 18 7 20 7 20Z" fill="#FB7185" opacity="0.85" />
+    <circle cx="22" cy="23" r="5" fill="#FFF1F2" />
+    <circle cx="22" cy="23" r="2.5" fill="#BE123C" />
+  </g>
+  <!-- Typography -->
+  <text x="62" y="27" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-weight="900" font-size="19" fill="#0F172A" letter-spacing="1">NOZOMI<tspan fill="#E11D48">CARE</tspan></text>
+  <text x="63" y="42" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-weight="600" font-size="9" fill="#64748B" letter-spacing="1.5">JAPAN SENIOR HEALTHCARE</text>
+</svg>
