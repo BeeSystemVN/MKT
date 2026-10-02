@@ -23,3 +23,5 @@
 - **Chuyển đổi ngôn ngữ tức thì (i18n):** Có bộ chọn ngôn ngữ (Language Switcher) trực quan trên thanh Header/Navbar. Khi chuyển đổi, toàn bộ nội dung (tiêu đề, mô tả, nút bấm, kịch bản tương tác, nhãn tab) chuyển đổi tức thì không cần tải lại trang.
 - **Font chữ tiếng Nhật:** Bổ sung font hỗ trợ tiếng Nhật mượt mà (như `Noto Sans JP`) kết hợp cùng `Be Vietnam Pro` để tránh lỗi font chữ Hiragana/Katakana/Kanji.
 
+## 5. Quy Tắc Làm Việc Của Agent (AI)
+- **Cấm dùng script phụ:** TUYỆT ĐỐI KHÔNG viết và chạy các script Python trung gian (như trong thư mục `scratch/`) để thực hiện tác vụ sửa file hay replace text. Phải sử dụng công cụ chỉnh sửa trực tiếp.

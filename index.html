@@ -223,7 +223,7 @@
                   class="crossfade-img is-back laptop-screen-content w-full h-full object-cover object-top">
                 <div class="laptop-glare pointer-events-none"></div>
                 <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg text-white text-[11px] font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-20 pointer-events-none">
-                  <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-teal-400"></i> Bấm để phóng to
+                  <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-teal-400"></i> <span data-i18n="click_to_zoom">Bấm để phóng to</span>
                 </div>
               </div>
               <!-- Floating 3D Badge: Centered in exact center of laptop screen -->
@@ -278,7 +278,7 @@
               <img id="family-hero-screen-b" src="assets/screenshots/family-home-2.png" alt="Trang chủ người thân chi tiết cụ Đỗ Thị Hướng" class="crossfade-img is-back">
               <div class="phone-hover-zoom pointer-events-none">
                 <i data-lucide="zoom-in" class="w-5 h-5 text-amber-400"></i>
-                <span>Bấm phóng to</span>
+                <span data-i18n="click_to_zoom">Bấm phóng to</span>
               </div>
               <div class="phone-glare pointer-events-none"></div>
             </div>
@@ -308,7 +308,7 @@
               <img id="staff-hero-screen-b" src="assets/screenshots/staff-residents.png" alt="Danh sách người cao tuổi điều dưỡng phụ trách" class="crossfade-img is-back">
               <div class="phone-hover-zoom pointer-events-none">
                 <i data-lucide="zoom-in" class="w-5 h-5 text-teal-400"></i>
-                <span>Bấm phóng to</span>
+                <span data-i18n="click_to_zoom">Bấm phóng to</span>
               </div>
               <div class="phone-glare pointer-events-none"></div>
             </div>
@@ -467,12 +467,12 @@
       <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
         <span class="section-tag mb-3">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          Bộ 3 giải pháp công nghệ
+          <span data-i18n="eco_badge">Bộ 3 giải pháp công nghệ</span>
         </span>
         <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
-          Hệ sinh thái 3 ứng dụng y tế chuyên biệt
+          <span data-i18n="eco_title">Hệ sinh thái 3 ứng dụng y tế chuyên biệt</span>
         </h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">
+        <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="eco_desc">
           Thiết kế chuyên sâu cho từng đối tượng, cùng chia sẻ một nền tảng dữ liệu y tế thời gian thực.
         </p>
 
@@ -507,34 +507,34 @@
       <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
         <span class="section-tag mb-3">
           <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
-          Cổng quản trị web
+          <span data-i18n="panel_web_badge">Cổng quản trị web</span>
         </span>
         <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
-          BeeCare Web Portal trên máy tính
+          <span data-i18n="panel_web_title">BeeCare Web Portal trên máy tính</span>
         </h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">
+        <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_web_desc">
           Bấm các nút dưới đây để thay đổi trực tiếp màn hình thực tế bên trong khung laptop 3D.
         </p>
 
         <!-- Interactive Screen Switcher Tabs -->
         <div class="screen-tabs-container flex flex-wrap justify-center gap-2.5 mt-6">
-          <button class="screen-tab-btn active" onclick="switchLaptopScreen('assets/screenshots/web-dashboard.png', 'Bảng điều khiển tổng quan viện', this)">
-            <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Bảng điều khiển tổng quan
+          <button class="screen-tab-btn active" onclick="switchLaptopScreen('assets/screenshots/web-dashboard.png', TRANSLATIONS[currentLang]['panel_web_tab1'] || 'Bảng điều khiển tổng quan', this)">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span data-i18n="panel_web_tab1">Bảng điều khiển tổng quan</span>
           </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-rooms.png', 'Sơ đồ phòng và giường bệnh', this)">
-            <i data-lucide="building-2" class="w-4 h-4"></i> Sơ đồ phòng và giường
+          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-rooms.png', TRANSLATIONS[currentLang]['panel_web_tab2'] || 'Sơ đồ phòng và giường', this)">
+            <i data-lucide="building-2" class="w-4 h-4"></i> <span data-i18n="panel_web_tab2">Sơ đồ phòng và giường</span>
           </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-timeline.png', 'Dòng thời gian sinh hoạt EMR', this)">
-            <i data-lucide="file-text" class="w-4 h-4"></i> Dòng thời gian sinh hoạt
+          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-timeline.png', TRANSLATIONS[currentLang]['panel_web_tab3'] || 'Dòng thời gian sinh hoạt', this)">
+            <i data-lucide="file-text" class="w-4 h-4"></i> <span data-i18n="panel_web_tab3">Dòng thời gian sinh hoạt</span>
           </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-shifts.png', 'Quản lý ca trực nhân sự', this)">
-            <i data-lucide="clock" class="w-4 h-4"></i> Quản lý ca trực
+          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-shifts.png', TRANSLATIONS[currentLang]['panel_web_tab4'] || 'Quản lý ca trực', this)">
+            <i data-lucide="clock" class="w-4 h-4"></i> <span data-i18n="panel_web_tab4">Quản lý ca trực</span>
           </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-report.png', 'Báo cáo quản trị viện tổng hợp', this)">
-            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Báo cáo tổng quan viện
+          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-report.png', TRANSLATIONS[currentLang]['panel_web_tab5'] || 'Báo cáo tổng quan viện', this)">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> <span data-i18n="panel_web_tab5">Báo cáo tổng quan viện</span>
           </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-admission.png', 'Phiếu tiếp nhận người cao tuổi', this)">
-            <i data-lucide="user-plus" class="w-4 h-4"></i> Tiếp nhận người cao tuổi
+          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-admission.png', TRANSLATIONS[currentLang]['panel_web_tab6'] || 'Tiếp nhận người cao tuổi', this)">
+            <i data-lucide="user-plus" class="w-4 h-4"></i> <span data-i18n="panel_web_tab6">Tiếp nhận người cao tuổi</span>
           </button>
         </div>
       </div>
@@ -575,7 +575,7 @@
                 <div class="laptop-glare pointer-events-none"></div>
                 <div class="laptop-zoom-pill">
                   <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-teal-400"></i>
-                  <span>Bấm để phóng to</span>
+                  <span data-i18n="idx_zoom_in">Bấm để phóng to</span>
                 </div>
               </div>
             </div>
@@ -600,7 +600,7 @@
 
         <!-- Current screen title caption -->
         <div class="text-center relative z-10 mt-6 sm:mt-8 mb-4">
-          <span id="laptop-screen-title" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-slate-700 text-xs font-bold border border-slate-200 shadow-sm">
+          <span id="laptop-screen-title" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-slate-700 text-xs font-bold border border-slate-200 shadow-sm" data-i18n="panel_web_tab1">
             Bảng điều khiển tổng quan viện
           </span>
         </div>
@@ -612,32 +612,32 @@
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
             <i data-lucide="file-text" class="w-5 h-5"></i>
           </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1">Bệnh án điện tử EMR</h4>
-          <p class="text-slate-600 text-xs">Lưu trữ tiền sử bệnh, dị ứng, phác đồ điều trị và sinh hiệu trọn đời.</p>
+          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat1_title">Bệnh án điện tử EMR</h4>
+          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat1_desc">Lưu trữ tiền sử bệnh, dị ứng, phác đồ điều trị và sinh hiệu trọn đời.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
             <i data-lucide="building-2" class="w-5 h-5"></i>
           </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1">Sơ đồ phòng và giường</h4>
-          <p class="text-slate-600 text-xs">Quản lý trực quan theo tòa nhà, tầng, phòng và tình trạng từng giường.</p>
+          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat2_title">Sơ đồ phòng và giường</h4>
+          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat2_desc">Quản lý trực quan theo tòa nhà, tầng, phòng và tình trạng từng giường.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
             <i data-lucide="pill" class="w-5 h-5"></i>
           </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1">Quản lý cấp phát thuốc</h4>
-          <p class="text-slate-600 text-xs">Kê đơn thông minh, chia cữ uống sáng - trưa - chiều - tối, chống sót liều.</p>
+          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat3_title">Quản lý cấp phát thuốc</h4>
+          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat3_desc">Kê đơn thông minh, chia cữ uống sáng - trưa - chiều - tối, chống sót liều.</p>
         </div>
 
         <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
             <i data-lucide="clock" class="w-5 h-5"></i>
           </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1">Phân ca và bàn giao ca</h4>
-          <p class="text-slate-600 text-xs">Xếp lịch kíp trực tự động, tổng hợp biên bản bàn giao ca điện tử 3 phút.</p>
+          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat4_title">Phân ca và bàn giao ca</h4>
+          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat4_desc">Xếp lịch kíp trực tự động, tổng hợp biên bản bàn giao ca điện tử 3 phút.</p>
         </div>
       </div>
 
@@ -653,12 +653,12 @@
           <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
             <span class="section-tag mb-3">
               <i data-lucide="heart-pulse" class="w-3.5 h-3.5"></i>
-              Ứng dụng điều dưỡng tại giường
+              <span data-i18n="panel_staff_badge">Ứng dụng điều dưỡng tại giường</span>
             </span>
             <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
-              Nghiệp vụ điều dưỡng chuẩn hóa tại giường bệnh
+              <span data-i18n="panel_staff_title">Nghiệp vụ điều dưỡng chuẩn hóa tại giường bệnh</span>
             </h2>
-            <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_staff_desc">
               Trợ thủ tại giường bệnh giúp giảm 70% thủ tục giấy tờ, loại bỏ nhầm lẫn thuốc và đồng bộ EMR tức thì. Tương thích mượt mà trên iPhone, iPad, Samsung Galaxy & Google Pixel.
             </p>
           </div>
@@ -669,27 +669,27 @@
             <div class="carousel-pills-nav" id="staff-carousel-pills">
               <button class="carousel-pill-btn active staff-pill" data-carousel-pill="staff-carousel-3d" data-index="0" onclick="staffCarousel.goTo(0)">
                 <i data-lucide="users" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>1. Danh sách NCT</span>
+                <span data-i18n="panel_staff_tab1">1. Danh sách NCT</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="1" onclick="staffCarousel.goTo(1)">
                 <i data-lucide="activity" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>2. Đo sinh hiệu</span>
+                <span data-i18n="panel_staff_tab2">2. Đo sinh hiệu</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="2" onclick="staffCarousel.goTo(2)">
                 <i data-lucide="file-text" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>3. Bệnh án EMR</span>
+                <span data-i18n="panel_staff_tab3">3. Bệnh án EMR</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="3" onclick="staffCarousel.goTo(3)">
                 <i data-lucide="pill" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>4. Phát thuốc 5Đ</span>
+                <span data-i18n="panel_staff_tab4">4. Phát thuốc 5Đ</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="4" onclick="staffCarousel.goTo(4)">
                 <i data-lucide="utensils" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>5. Suất ăn & Nước</span>
+                <span data-i18n="panel_staff_tab5">5. Suất ăn & Nước</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="5" onclick="staffCarousel.goTo(5)">
                 <i data-lucide="clipboard-check" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span>6. Bàn giao ca</span>
+                <span data-i18n="panel_staff_tab6">6. Bàn giao ca</span>
               </button>
             </div>
 
@@ -846,8 +846,8 @@
 
             <!-- Synchronized Feature Spotlight Card -->
             <div class="carousel-feature-card" id="staff-feature-card">
-              <h3 class="carousel-card-title">1. Danh sách người cao tuổi</h3>
-              <p class="carousel-card-desc">Hiển thị trực quan theo số phòng, cấp độ chăm sóc và cảnh báo sức khỏe cần lưu ý.</p>
+              <h3 class="carousel-card-title" data-i18n="panel_staff_f1_title">1. Danh sách người cao tuổi</h3>
+              <p class="carousel-card-desc" data-i18n="panel_staff_f1_desc">Hiển thị trực quan theo số phòng, cấp độ chăm sóc và cảnh báo sức khỏe cần lưu ý.</p>
             </div>
 
             <!-- Bottom Progress Dots & Autoplay Controller -->
@@ -898,9 +898,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Quản trị danh sách</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">1. Danh sách người cao tuổi</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Hiển thị trực quan theo số phòng, cấp độ chăm sóc và cảnh báo sức khỏe cần lưu ý.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f1_tag">Quản trị danh sách</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f1_title">1. Danh sách người cao tuổi</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f1_desc">Hiển thị trực quan theo số phòng, cấp độ chăm sóc và cảnh báo sức khỏe cần lưu ý.</p>
               </div>
             </div>
 
@@ -924,9 +924,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Sinh hiệu & Cảnh báo</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">2. <span data-i18n="footer_feat2">Đo sinh hiệu tại giường</span></h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Nhập nhanh huyết áp, mạch, SpO2, nhiệt độ và tự động cảnh báo đỏ khi phát hiện bất thường.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f2_tag">Sinh hiệu & Cảnh báo</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f2_title">2. Đo sinh hiệu tại giường</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f2_desc">Nhập nhanh huyết áp, mạch, SpO2, nhiệt độ và tự động cảnh báo đỏ khi phát hiện bất thường.</p>
               </div>
             </div>
 
@@ -950,9 +950,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Hồ sơ EMR cá nhân</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">3. Thông tin & Bệnh án chi tiết</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Tra cứu tiền sử bệnh, dị ứng thuốc, số điện thoại người nhà và phác đồ điều trị riêng biệt.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f3_tag">Hồ sơ EMR cá nhân</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f3_title">3. Thông tin & Bệnh án chi tiết</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f3_desc">Tra cứu tiền sử bệnh, dị ứng thuốc, số điện thoại người nhà và phác đồ điều trị riêng biệt.</p>
               </div>
             </div>
 
@@ -976,9 +976,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Cấp phát thuốc 5 Đúng</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">4. Checklist phát thuốc chống nhầm</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Chia cữ uống sáng - trưa - chiều - tối, đối soát ảnh viên thuốc và đánh dấu đã uống.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f4_tag">Cấp phát thuốc 5 Đúng</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f4_title">4. Checklist phát thuốc chống nhầm</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f4_desc">Chia cữ uống sáng - trưa - chiều - tối, đối soát ảnh viên thuốc và đánh dấu đã uống.</p>
               </div>
             </div>
 
@@ -1002,9 +1002,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Dinh dưỡng & Bữa ăn</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">5. Chụp ảnh suất ăn & Chấm điểm</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Chụp ảnh khay cơm thật, ghi nhận tỷ lệ ăn hết 90% và lượng nước uống hàng ngày.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f5_tag">Dinh dưỡng & Bữa ăn</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f5_title">5. Chụp ảnh suất ăn & Chấm điểm</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f5_desc">Chụp ảnh khay cơm thật, ghi nhận tỷ lệ ăn hết 90% và lượng nước uống hàng ngày.</p>
               </div>
             </div>
 
@@ -1032,9 +1032,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800">Bàn giao ca 3 phút</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">6. Biên bản bàn giao ca trực</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Tự động tổng hợp sự cố y tế và thuốc tồn đọng, ký bàn giao giữa 2 kíp trực nhanh chóng.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f6_tag">Bàn giao ca 3 phút</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f6_title">6. Biên bản bàn giao ca trực</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f6_desc">Tự động tổng hợp sự cố y tế và thuốc tồn đọng, ký bàn giao giữa 2 kíp trực nhanh chóng.</p>
               </div>
             </div>
           </div>
@@ -1049,12 +1049,12 @@
           <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
             <span class="section-tag-amber mb-3">
               <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
-              Ứng dụng người thân
+              <span data-i18n="panel_family_badge">Ứng dụng người thân</span>
             </span>
             <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
-              Kết nối gia đình & Đồng hành chăm sóc 24/7
+              <span data-i18n="panel_family_title">Kết nối gia đình & Đồng hành chăm sóc 24/7</span>
             </h2>
-            <p class="text-slate-600 text-sm sm:text-base mt-2">
+            <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_family_desc">
               Cầu nối minh bạch và an tâm tuyệt đối: theo dõi sinh hiệu, hình ảnh sinh hoạt, hóa đơn viện phí và trò chuyện cùng trợ lý AI mọi lúc mọi nơi trên iOS, Android và máy tính bảng.
             </p>
           </div>
@@ -1065,27 +1065,27 @@
             <div class="carousel-pills-nav" id="family-carousel-pills">
               <button class="carousel-pill-btn active family-pill" data-carousel-pill="family-carousel-3d" data-index="0" onclick="familyCarousel.goTo(0)">
                 <i data-lucide="bot" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>1. <span data-i18n="footer_feat3">Trợ lý AI 24/7</span></span>
+                <span data-i18n="footer_feat3">1. Trợ lý AI 24/7</span>
               </button>
               <button class="carousel-pill-btn family-pill" data-carousel-pill="family-carousel-3d" data-index="1" onclick="familyCarousel.goTo(1)">
                 <i data-lucide="heart-pulse" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>2. Biểu đồ huyết áp</span>
+                <span data-i18n="panel_family_tab2">2. Biểu đồ huyết áp</span>
               </button>
               <button class="carousel-pill-btn family-pill" data-carousel-pill="family-carousel-3d" data-index="2" onclick="familyCarousel.goTo(2)">
                 <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>3. Ảnh sinh hoạt</span>
+                <span data-i18n="panel_family_tab3">3. Ảnh sinh hoạt</span>
               </button>
               <button class="carousel-pill-btn family-pill" data-carousel-pill="family-carousel-3d" data-index="3" onclick="familyCarousel.goTo(3)">
                 <i data-lucide="wind" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>4. Oxy SpO2</span>
+                <span data-i18n="panel_family_tab4">4. Oxy SpO2</span>
               </button>
               <button class="carousel-pill-btn family-pill" data-carousel-pill="family-carousel-3d" data-index="4" onclick="familyCarousel.goTo(4)">
                 <i data-lucide="receipt" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>5. Viện phí VietQR</span>
+                <span data-i18n="panel_family_tab5">5. Viện phí VietQR</span>
               </button>
               <button class="carousel-pill-btn family-pill" data-carousel-pill="family-carousel-3d" data-index="5" onclick="familyCarousel.goTo(5)">
                 <i data-lucide="layout" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>6. Bảng tin tổng hợp</span>
+                <span data-i18n="panel_family_tab6">6. Bảng tin tổng hợp</span>
               </button>
             </div>
 
@@ -1242,8 +1242,8 @@
 
             <!-- Synchronized Feature Spotlight Card -->
             <div class="carousel-feature-card" id="family-feature-card">
-              <h3 class="carousel-card-title">1. Hỏi đáp tình hình cha mẹ 24/7</h3>
-              <p class="carousel-card-desc">AI tự động đọc sinh hiệu và thực đơn để giải đáp ngay cho con cái mọi lúc mọi nơi.</p>
+              <h3 class="carousel-card-title" data-i18n="panel_family_f1_title">1. Hỏi đáp tình hình cha mẹ 24/7</h3>
+              <p class="carousel-card-desc" data-i18n="panel_family_f1_desc">AI tự động đọc sinh hiệu và thực đơn để giải đáp ngay cho con cái mọi lúc mọi nơi.</p>
             </div>
 
             <!-- Bottom Progress Dots & Autoplay Controller -->
@@ -1294,9 +1294,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800"><span data-i18n="footer_feat3">Trợ lý AI 24/7</span></span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">1. Hỏi đáp tình hình cha mẹ 24/7</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">AI tự động đọc sinh hiệu và thực đơn để giải đáp ngay cho con cái mọi lúc mọi nơi.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f1_tag">Trợ lý AI 24/7</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f1_title">1. Hỏi đáp tình hình cha mẹ 24/7</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f1_desc">AI tự động đọc sinh hiệu và thực đơn để giải đáp ngay cho con cái mọi lúc mọi nơi.</p>
               </div>
             </div>
 
@@ -1320,9 +1320,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800">Huyết áp & Tim mạch</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">2. Biểu đồ huyết áp chạm vuốt</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Xem diễn biến huyết áp, nhịp tim và SpO2 chi tiết theo từng ngày và từng tuần.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f2_tag">Huyết áp & Tim mạch</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f2_title">2. Biểu đồ huyết áp chạm vuốt</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f2_desc">Xem diễn biến huyết áp, nhịp tim và SpO2 chi tiết theo từng ngày và từng tuần.</p>
               </div>
             </div>
 
@@ -1346,9 +1346,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800">Khoảnh khắc vui khỏe</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">3. Hình ảnh sinh hoạt thực tế</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Ngắm nhìn cha mẹ tập dưỡng sinh, ca hát và giao lưu vui vẻ cùng bạn già tại viện.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f3_tag">Khoảnh khắc vui khỏe</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f3_title">3. Hình ảnh sinh hoạt thực tế</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f3_desc">Ngắm nhìn cha mẹ tập dưỡng sinh, ca hát và giao lưu vui vẻ cùng bạn già tại viện.</p>
               </div>
             </div>
 
@@ -1372,9 +1372,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800">Chỉ số SpO2 & Hô hấp</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">4. Theo dõi nồng độ Oxy SpO2</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Giám sát chỉ số bão hòa oxy trong máu và nhịp thở, phát hiện sớm nguy cơ suy hô hấp.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f4_tag">Chỉ số SpO2 & Hô hấp</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f4_title">4. Theo dõi nồng độ Oxy SpO2</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f4_desc">Giám sát chỉ số bão hòa oxy trong máu và nhịp thở, phát hiện sớm nguy cơ suy hô hấp.</p>
               </div>
             </div>
 
@@ -1398,9 +1398,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800">Thanh toán minh bạch</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">5. Tra cứu hóa đơn và đóng phí</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR gạch nợ tức thì.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f5_tag">Thanh toán minh bạch</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f5_title">5. Tra cứu hóa đơn và đóng phí</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f5_desc">Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR gạch nợ tức thì.</p>
               </div>
             </div>
 
@@ -1428,9 +1428,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-amber-100 text-amber-800">Bảng tin tổng hợp</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1">6. Trang chủ chăm sóc toàn diện</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Tổng hợp trạng thái sức khỏe hôm nay, thông báo của viện và nhật ký ca trực hàng ngày.</p>
+                <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f6_tag">Bảng tin tổng hợp</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f6_title">6. Trang chủ chăm sóc toàn diện</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f6_desc">Tổng hợp trạng thái sức khỏe hôm nay, thông báo của viện và nhật ký ca trực hàng ngày.</p>
               </div>
             </div>
           </div>
@@ -1445,10 +1445,10 @@
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
         <span class="section-tag mb-3">
           <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          Hiệu quả giải pháp
+          <span data-i18n="idx_ben_badge">Hiệu quả giải pháp</span>
         </span>
         <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
-          Giá trị đem lại cho các bên
+          <span data-i18n="idx_ben_title">Giá trị đem lại cho các bên</span>
         </h2>
       </div>
 
@@ -1457,11 +1457,11 @@
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-4">
             <i data-lucide="building-2" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3">Cho viện dưỡng lão</h3>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3" data-i18n="idx_ben1_title">Cho viện dưỡng lão</h3>
           <ul class="space-y-2 text-xs text-slate-600">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> Giảm 60% chi phí sổ sách và in ấn</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> Chuẩn hóa quy trình chăm sóc y tế</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> Nâng cao mức độ hài lòng của thân nhân</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben1_li1">Giảm 60% chi phí sổ sách và in ấn</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben1_li2">Chuẩn hóa quy trình chăm sóc y tế</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-teal-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben1_li3">Nâng cao mức độ hài lòng của thân nhân</span></li>
           </ul>
         </div>
 
@@ -1469,11 +1469,11 @@
           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mb-4">
             <i data-lucide="heart-pulse" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3">Cho đội ngũ điều dưỡng</h3>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3" data-i18n="idx_ben2_title">Cho đội ngũ điều dưỡng</h3>
           <ul class="space-y-2 text-xs text-slate-600">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> Giảm 2 giờ ghi chép sổ mỗi ca trực</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> Chống nhầm lẫn lịch uống thuốc 100%</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> Bàn giao ca trực điện tử trong 3 phút</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben2_li1">Giảm 2 giờ ghi chép sổ mỗi ca trực</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben2_li2">Chống nhầm lẫn lịch uống thuốc 100%</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben2_li3">Bàn giao ca trực điện tử trong 3 phút</span></li>
           </ul>
         </div>
 
@@ -1481,11 +1481,11 @@
           <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
             <i data-lucide="users" class="w-5 h-5"></i>
           </div>
-          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3">Cho gia đình người cao tuổi</h3>
+          <h3 class="font-heading font-bold text-lg text-slate-900 mb-3" data-i18n="idx_ben3_title">Cho gia đình người cao tuổi</h3>
           <ul class="space-y-2 text-xs text-slate-600">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> An tâm tuyệt đối khi theo dõi từng giờ</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> Hỏi đáp trợ lý AI 24/7 mọi lúc mọi nơi</li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> Thanh toán viện phí minh bạch qua VietQR</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben3_li1">An tâm tuyệt đối khi theo dõi từng giờ</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben3_li2">Hỏi đáp trợ lý AI 24/7 mọi lúc mọi nơi</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-600 w-4 h-4 shrink-0"></i> <span data-i18n="idx_ben3_li3">Thanh toán viện phí minh bạch qua VietQR</span></li>
           </ul>
         </div>
       </div>
