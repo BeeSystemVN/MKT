@@ -4899,7 +4899,7 @@ h2.font-heading,
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 40px 0 24px 0;
+  padding: 10px 0 16px 0;
   overflow: hidden;
 }
 
@@ -5004,7 +5004,7 @@ h2.font-heading,
 .phone-3d-stage {
   position: relative;
   width: 100%;
-  height: 640px;
+  height: 520px;
   perspective: 1400px;
   -webkit-perspective: 1400px;
   perspective-origin: 50% 50%;
@@ -5023,7 +5023,7 @@ h2.font-heading,
 
 @media (max-width: 1023px) {
   .phone-3d-stage {
-    height: 570px;
+    height: 460px;
     perspective: 1200px;
     -webkit-perspective: 1200px;
   }
@@ -5031,7 +5031,7 @@ h2.font-heading,
 
 @media (max-width: 639px) {
   .phone-3d-stage {
-    height: 510px;
+    height: 400px;
     perspective: 1000px;
     -webkit-perspective: 1000px;
   }
@@ -5065,7 +5065,7 @@ h2.font-heading,
 /* 3D Deck */
 .phone-3d-deck {
   position: relative;
-  width: 280px;
+  width: 240px;
   height: 100%;
   transform-style: preserve-3d;
   display: flex;
@@ -5079,9 +5079,9 @@ h2.font-heading,
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 280px;
-  margin-top: -285px;
-  margin-left: -140px;
+  width: 240px;
+  margin-top: -245px;
+  margin-left: -120px;
   transform-style: preserve-3d;
   transition: transform 0.65s cubic-bezier(0.2, 0.9, 0.3, 1),
               opacity 0.65s ease;
@@ -5119,23 +5119,23 @@ h2.font-heading,
 
 @media (max-width: 1023px) {
   .phone-3d-deck {
-    width: 250px;
+    width: 210px;
   }
   .phone-3d-slide {
-    width: 250px;
-    margin-top: -255px;
-    margin-left: -125px;
+    width: 210px;
+    margin-top: -215px;
+    margin-left: -105px;
   }
 }
 
 @media (max-width: 639px) {
   .phone-3d-deck {
-    width: 220px;
+    width: 180px;
   }
   .phone-3d-slide {
-    width: 220px;
-    margin-top: -225px;
-    margin-left: -110px;
+    width: 180px;
+    margin-top: -185px;
+    margin-left: -90px;
   }
 }
 
