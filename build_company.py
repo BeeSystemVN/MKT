@@ -578,8 +578,8 @@ main_content = """
             "Mang công nghệ và chuẩn mực quản lý dưỡng lão khắt khe từ Nhật Bản về Việt Nam, sứ mệnh của HANIKI là xây dựng hệ sinh thái BeeCare thông minh, chuẩn y khoa và tràn đầy sự ấm áp — giúp các viện dưỡng lão vận hành an tâm và các gia đình trọn vẹn niềm tin."
           </blockquote>
           <div class="pt-2">
-            <div class="text-base font-extrabold text-slate-900">Mạc Duy Hưng</div>
-            <div class="text-xs text-slate-500 font-medium">Tổng Giám Đốc CÔNG TY TNHH HANIKI</div>
+            <div class="text-base font-extrabold text-slate-900" data-i18n="company_ceo_name">Mạc Duy Hưng</div>
+            <div class="text-xs text-slate-500 font-medium" data-i18n="company_ceo_title_bot">Tổng Giám Đốc CÔNG TY TNHH HANIKI</div>
           </div>
         </div>
       </div>
