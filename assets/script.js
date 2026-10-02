@@ -1,18 +1,19 @@
 // Init AOS Animation
-AOS.init({ duration: 900, once: true, easing: 'ease-in-out', offset: 60 });
+try { if (typeof AOS !== 'undefined') AOS.init({ duration: 900, once: true, easing: 'ease-in-out', offset: 60 }); } catch(e) {}
 
 // Init Lucide Icons
-lucide.createIcons();
+try { if (typeof lucide !== 'undefined') lucide.createIcons(); } catch(e) {}
 
 // ---- PRELOADER ----
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-      preloader.classList.add('hidden');
-    }
-  }, 1600);
-});
+function hidePreloader() {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('hidden');
+  }
+}
+window.addEventListener('load', () => setTimeout(hidePreloader, 1200));
+// Fallback in case load event already fired or takes too long
+setTimeout(hidePreloader, 2500);
 
 // ---- NAVBAR SCROLL ----
 const navbar = document.getElementById('navbar');
@@ -1664,6 +1665,72 @@ window.addEventListener('languageChanged', (e) => {
 // ==================== MULTILINGUAL i18n (VI - EN - JA) ====================
 const TRANSLATIONS = {
   vi: {
+
+    company_lead_badge: "Thông Điệp Từ Ban Lãnh Đạo",
+    company_lead_title: '"Công Nghệ Tận Tâm, Nâng Tầm Dưỡng Lão"',
+    company_ceo_role: "Tổng Giám Đốc – Người Sáng Lập HANIKI & BeeCare",
+    company_ceo_quote: '"Mang công nghệ và chuẩn mực quản lý dưỡng lão khắt khe từ Nhật Bản về Việt Nam, sứ mệnh của HANIKI là xây dựng hệ sinh thái BeeCare thông minh, chuẩn y khoa và tràn đầy sự ấm áp — giúp các viện dưỡng lão vận hành an tâm và các gia đình trọn vẹn niềm tin."',
+    company_ceo_name: "Mạc Duy Hưng",
+    company_ceo_title_bot: "Tổng Giám Đốc CÔNG TY TNHH HANIKI",
+    
+
+    hero_title_lead: "BeeCare – Hệ sinh thái y tế số",
+    nav_demo_mobile: "Demo",
+    preloader_text: "Công Nghệ Tận Tâm, Nâng Tầm Dưỡng Lão",
+    idx_faq1_q: "1. Viện dưỡng lão cần chuẩn bị thiết bị gì để bắt đầu?",
+    idx_faq1_a: "Chỉ cần máy tính văn phòng có kết nối Internet để sử dụng cổng web và điện thoại thông minh thông thường để điều dưỡng cài đặt ứng dụng staff. Toàn bộ máy chủ và dữ liệu được vận hành an toàn trên đám mây.",
+    idx_faq2_q: "2. Người cao tuổi không dùng điện thoại thì hoạt động thế nào?",
+    idx_faq2_a: "Người cao tuổi không cần dùng điện thoại. Điều dưỡng viên tại viện sẽ chăm sóc và ghi nhận sinh hiệu cho các cụ trên app staff. Dữ liệu sẽ tự động gửi về điện thoại của con cái và người nhà để theo dõi.",
+    idx_faq3_q: "3. Thời gian đào tạo và triển khai mất bao lâu?",
+    idx_faq3_a: "Thông thường chỉ mất từ 3 đến 5 ngày làm việc để cài đặt sơ đồ phòng ốc, danh sách người cao tuổi và đào tạo điều dưỡng viên sử dụng thành thạo.",
+    idx_faq_badge: "Hỏi và đáp",
+    idx_faq_title: "Câu hỏi thường gặp về hệ sinh thái BeeCare",
+    idx_demo_badge: "Đăng ký dùng thử",
+    idx_demo_title: "Đăng ký tư vấn và trải nghiệm bản demo",
+    idx_demo_desc: "Để lại thông tin để chuyên gia BeeCare liên hệ tư vấn và cấp tài khoản trải nghiệm hệ thống miễn phí.",
+    idx_form_name: "Họ và tên *",
+    idx_form_name_ph: "Ví dụ: Nguyễn Văn An",
+    idx_form_phone: "Số điện thoại *",
+    idx_form_phone_ph: "Ví dụ: 0912 345 678",
+    idx_form_email: "Email liên hệ",
+    idx_form_unit: "Đơn vị / Viện dưỡng lão",
+    idx_form_unit_ph: "Tên viện hoặc cơ sở y tế",
+    idx_form_pkg: "Gói ứng dụng quan tâm",
+    idx_form_pkg1: "Trọn bộ hệ sinh thái (Web portal + App người thân + App điều dưỡng)",
+    idx_form_pkg2: "Cổng quản trị web portal (Dành cho viện dưỡng lão)",
+    idx_form_pkg3: "Ứng dụng người thân và trợ lý AI",
+    idx_form_pkg4: "Ứng dụng điều dưỡng tác nghiệp tại giường",
+    idx_form_submit: "Gửi yêu cầu tư vấn và dùng thử demo",
+    idx_mobile_call: "Gọi 1900 6868",
+    footer_tagline: "Hệ sinh thái y tế thông minh",
+    footer_desc: "Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.",
+    footer_dev_by: "Phát triển bởi CÔNG TY TNHH HANIKI",
+    footer_address: "Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội",
+    footer_col_eco: "Hệ sinh thái",
+    footer_eco_web: "Cổng Web Admin",
+    footer_eco_staff: "App Điều dưỡng Staff",
+    footer_eco_family: "App Người thân Family",
+    footer_col_feat: "Tính năng nổi bật",
+    footer_feat1: "Quản lý hồ sơ EMR",
+    footer_feat2: "Đo sinh hiệu tại giường",
+    footer_feat3: "Trợ lý AI 24/7",
+    footer_feat4: "Thanh toán VietQR",
+    footer_col_nav: "Điều hướng",
+    nav_faq: "Câu hỏi thường gặp",
+    footer_col_support: "Tư vấn & Hỗ trợ",
+    footer_support_hours: "Giờ hỗ trợ",
+    footer_hours_days: "Thứ 2 – Thứ 7:",
+    footer_hours_cloud: "Giám sát cloud:",
+    footer_btn_demo: "Đăng ký demo miễn phí",
+    footer_partner: "Đối tác chiến lược:",
+    footer_partner_1: "Hệ thống Viện dưỡng lão Diên Hồng",
+    footer_partner_2: "Chuẩn chăm sóc Kaigo Nhật Bản",
+    footer_coop: "Đồng hành cùng Viện dưỡng lão Diên Hồng.",
+    footer_terms: "Điều khoản sử dụng",
+    footer_privacy: "Chính sách bảo mật",
+    lightbox_close: "Đóng lại (ESC)",
+    toast_success: "Yêu cầu đã được gửi thành công!",
+    
     nav_tagline: "Hệ sinh thái y tế số",
     nav_home: "Trang chủ",
     nav_ecosystem: "Hệ sinh thái",
@@ -1916,6 +1983,72 @@ const TRANSLATIONS = {
     contact_faq4_a: "BeeCare áp dụng kiến trúc Cloud bảo mật nhiều lớp chuẩn y tế, mã hóa dữ liệu đầu cuối (End-to-End Encryption), sao lưu tự động hàng ngày và phân quyền truy cập chặt chẽ giữa các vai trò (Ban giám đốc, Bác sĩ, Điều dưỡng, Gia đình). Cơ sở hoàn toàn sở hữu và kiểm soát dữ liệu của mình."
   },
   en: {
+
+    company_lead_badge: "Message from the Leadership",
+    company_lead_title: '"Dedicated Technology, Elevating Nursing Care"',
+    company_ceo_role: "CEO & Founder of HANIKI & BeeCare",
+    company_ceo_quote: '"Bringing strict Japanese nursing care management standards and technology to Vietnam, HANIKI's mission is to build a smart, medically standard, and warm BeeCare ecosystem — helping nursing homes operate with peace of mind and families with complete trust."',
+    company_ceo_name: "Mac Duy Hung",
+    company_ceo_title_bot: "CEO of HANIKI CO., LTD.",
+    
+
+    hero_title_lead: "BeeCare – Digital Healthcare Ecosystem",
+    nav_demo_mobile: "Demo",
+    preloader_text: "Dedicated Technology, Elevating Nursing Care",
+    idx_faq1_q: "1. What equipment does the nursing home need to get started?",
+    idx_faq1_a: "Only office computers with an Internet connection for the web portal, and standard smartphones for nurses to use the staff app. All servers and data are securely operated on the cloud.",
+    idx_faq2_q: "2. How does it work if seniors don't use smartphones?",
+    idx_faq2_a: "Seniors do not need smartphones. Nurses will care for and record their vitals on the staff app. Data is automatically sent to the phones of children and relatives for monitoring.",
+    idx_faq3_q: "3. How long does training and implementation take?",
+    idx_faq3_a: "It typically takes only 3 to 5 business days to set up room layouts, resident lists, and train nurses to use the system proficiently.",
+    idx_faq_badge: "Q&A",
+    idx_faq_title: "Frequently Asked Questions about BeeCare",
+    idx_demo_badge: "Register for Trial",
+    idx_demo_title: "Register for Consultation and Demo",
+    idx_demo_desc: "Leave your information for a BeeCare expert to contact you and provide a free demo account.",
+    idx_form_name: "Full Name *",
+    idx_form_name_ph: "Example: Nguyen Van An",
+    idx_form_phone: "Phone Number *",
+    idx_form_phone_ph: "Example: 0912 345 678",
+    idx_form_email: "Contact Email",
+    idx_form_unit: "Organization / Nursing Home",
+    idx_form_unit_ph: "Name of nursing home or facility",
+    idx_form_pkg: "App Package of Interest",
+    idx_form_pkg1: "Full Ecosystem (Web portal + Family App + Staff App)",
+    idx_form_pkg2: "Web Admin Portal (For nursing homes)",
+    idx_form_pkg3: "Family App and AI Assistant",
+    idx_form_pkg4: "Bedside Staff App",
+    idx_form_submit: "Send request for consultation & demo",
+    idx_mobile_call: "Call 1900 6868",
+    footer_tagline: "Smart Healthcare Ecosystem",
+    footer_desc: "Smart nursing home management software. Connecting Web Portal, Staff App & Family App with built-in AI assistant.",
+    footer_dev_by: "Developed by HANIKI CO., LTD.",
+    footer_address: "30th Floor, Handico Tower, Me Tri, Nam Tu Liem, Hanoi",
+    footer_col_eco: "Ecosystem",
+    footer_eco_web: "Web Admin Portal",
+    footer_eco_staff: "Staff App",
+    footer_eco_family: "Family App",
+    footer_col_feat: "Key Features",
+    footer_feat1: "EMR Profile Management",
+    footer_feat2: "Bedside Vital Measurement",
+    footer_feat3: "24/7 AI Assistant",
+    footer_feat4: "VietQR Payment",
+    footer_col_nav: "Navigation",
+    nav_faq: "FAQ",
+    footer_col_support: "Consultation & Support",
+    footer_support_hours: "Support Hours",
+    footer_hours_days: "Mon – Sat:",
+    footer_hours_cloud: "Cloud Monitoring:",
+    footer_btn_demo: "Register for Free Demo",
+    footer_partner: "Strategic Partners:",
+    footer_partner_1: "Dien Hong Nursing Home System",
+    footer_partner_2: "Japanese Kaigo Care Standards",
+    footer_coop: "Accompanying Dien Hong Nursing Home.",
+    footer_terms: "Terms of Use",
+    footer_privacy: "Privacy Policy",
+    lightbox_close: "Close (ESC)",
+    toast_success: "Request sent successfully!",
+    
     nav_tagline: "Digital Healthcare Ecosystem",
     nav_home: "Home",
     nav_ecosystem: "Ecosystem",
@@ -2168,6 +2301,72 @@ const TRANSLATIONS = {
     contact_faq4_a: "BeeCare utilizes multi-layered medical-grade cloud security, end-to-end encryption, automated daily backups, and strict role-based access control (Directors, Doctors, Caregivers, Families). Facilities retain 100% data ownership and control."
   },
   ja: {
+
+    company_lead_badge: "経営陣からのメッセージ",
+    company_lead_title: '"献身的なテクノロジー、介護の向上"',
+    company_ceo_role: "HANIKI & BeeCare 創設者兼CEO",
+    company_ceo_quote: '"日本の厳格な介護管理基準と技術をベトナムにもたらすことで、HANIKIの使命は、スマートで医療基準を満たし、温かみのあるBeeCareエコシステムを構築することです。これにより、介護施設は安心して運営でき、家族は完全に信頼できるようになります。"',
+    company_ceo_name: "Mac Duy Hung（マック・ズイ・フン）",
+    company_ceo_title_bot: "HANIKI有限会社 CEO",
+    
+
+    hero_title_lead: "BeeCare – デジタルヘルスケアエコシステム",
+    nav_demo_mobile: "デモ",
+    preloader_text: "献身的なテクノロジー、介護の向上",
+    idx_faq1_q: "1. 施設ではどのような機器を準備する必要がありますか？",
+    idx_faq1_a: "Webポータルを使用するためのインターネット接続されたオフィス用PCと、介護スタッフがアプリをインストールするための標準的なスマートフォンのみが必要です。すべてのサーバーとデータはクラウド上で安全に運用されます。",
+    idx_faq2_q: "2. 高齢者がスマートフォンを使わない場合はどうなりますか？",
+    idx_faq2_a: "高齢者がスマートフォンを使用する必要はありません。施設の介護スタッフがスタッフアプリでケアを行い、バイタルを記録します。データは自動的に子供や家族の携帯電話に送信され、見守ることができます。",
+    idx_faq3_q: "3. トレーニングと導入にはどのくらい時間がかかりますか？",
+    idx_faq3_a: "部屋のレイアウトや入居者リストの設定、スタッフがシステムを熟練して使えるようになるためのトレーニングには、通常3～5営業日しかかかりません。",
+    idx_faq_badge: "Q&A",
+    idx_faq_title: "BeeCareエコシステムに関するよくある質問",
+    idx_demo_badge: "お試し登録",
+    idx_demo_title: "相談・デモ体験の登録",
+    idx_demo_desc: "BeeCareの専門家が連絡し、無料のデモアカウントを提供するために、情報を残してください。",
+    idx_form_name: "氏名 *",
+    idx_form_name_ph: "例：山田 太郎",
+    idx_form_phone: "電話番号 *",
+    idx_form_phone_ph: "例：0912 345 678",
+    idx_form_email: "連絡先メールアドレス",
+    idx_form_unit: "所属 / 介護施設",
+    idx_form_unit_ph: "施設名または機関名",
+    idx_form_pkg: "関心のあるアプリパッケージ",
+    idx_form_pkg1: "フルエコシステム（Webポータル＋家族アプリ＋スタッフアプリ）",
+    idx_form_pkg2: "Web管理ポータル（施設向け）",
+    idx_form_pkg3: "家族アプリとAIアシスタント",
+    idx_form_pkg4: "ベッドサイドスタッフアプリ",
+    idx_form_submit: "相談・デモ体験リクエストを送信",
+    idx_mobile_call: "1900 6868へ電話",
+    footer_tagline: "スマートヘルスケアエコシステム",
+    footer_desc: "スマート介護施設管理ソフトウェア。Webポータル、スタッフアプリ、家族アプリをAIアシスタントと連携。",
+    footer_dev_by: "開発：HANIKI有限会社",
+    footer_address: "ハノイ市ナムトゥリエム区メチー、Handicoタワー30階",
+    footer_col_eco: "エコシステム",
+    footer_eco_web: "Web管理ポータル",
+    footer_eco_staff: "スタッフアプリ",
+    footer_eco_family: "家族アプリ",
+    footer_col_feat: "主な機能",
+    footer_feat1: "EMRプロファイル管理",
+    footer_feat2: "ベッドサイドバイタル測定",
+    footer_feat3: "24時間対応AIアシスタント",
+    footer_feat4: "VietQR決済",
+    footer_col_nav: "ナビゲーション",
+    nav_faq: "よくある質問",
+    footer_col_support: "ご相談・サポート",
+    footer_support_hours: "サポート時間",
+    footer_hours_days: "月曜～土曜：",
+    footer_hours_cloud: "クラウド監視：",
+    footer_btn_demo: "無料デモ登録",
+    footer_partner: "戦略的パートナー：",
+    footer_partner_1: "ディエンホン介護施設システム",
+    footer_partner_2: "日本の介護基準",
+    footer_coop: "ディエンホン介護施設と共に歩む",
+    footer_terms: "利用規約",
+    footer_privacy: "プライバシーポリシー",
+    lightbox_close: "閉じる (ESC)",
+    toast_success: "リクエストが正常に送信されました！",
+    
     nav_tagline: "デジタルヘルスケアエコシステム",
     nav_home: "ホーム",
     nav_ecosystem: "エコシステム",
