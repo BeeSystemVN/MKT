@@ -24,23 +24,26 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261003_v10" />
+  <link rel="stylesheet" href="assets/style.css?v=20261005_v10" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+
+  <!-- Preload primary showcase screenshots for instant zero-latency tab switching -->
+  <link rel="preload" as="image" href="assets/screenshots/web-dashboard.png" />
+  <link rel="preload" as="image" href="assets/screenshots/staff-residents.png" />
+  <link rel="preload" as="image" href="assets/screenshots/family-ai.png" />
 </head>
 
-<body class="font-body text-slate-800 bg-slate-50">
+<body class="font-body text-slate-800 bg-[#FBF7F3]">
 
   <!-- ===================== PRELOADER ===================== -->
   <div id="preloader">
     <div class="flex flex-col items-center gap-5">
-      <div class="relative flex items-center justify-center">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="animation: heartbeat 1.3s ease-in-out infinite;">
-          <path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#0D9488" />
+      <div class="preloader-heart-wrap">
+        <svg class="preloader-heart-icon" width="68" height="68" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="heart-outline-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <path class="heart-pulse-path" d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
         </svg>
-        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping pointer-events-none" style="top: 35%; left: 58%;"></span>
       </div>
 
       <svg class="ecg-line" viewBox="0 0 260 60">
@@ -48,10 +51,11 @@
           d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
       </svg>
 
-      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
-        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      <div class="preloader-brand-wrap">
+        <div class="preloader-brand-logo">
+          <span class="preloader-bee">Bee</span><span class="preloader-care">Care</span>
+        </div>
       </div>
-      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
     </div>
   </div>
 
@@ -64,7 +68,7 @@
         <div class="flex items-center gap-3 shrink-0">
           <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
             <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
             </span>
           </a>
         </div>
@@ -142,39 +146,70 @@
     </div>
   </nav>
 
+  <!-- ===================== HERO COVER BANNER SLIDER (BEE CARE ADS) ===================== -->
+  <section id="hero-banner-slider" class="hero-cover-slider-section" aria-label="Banner giới thiệu BeeCare">
+    <div class="hero-cover-slider-inner relative w-full">
+      
+      <!-- Slide Track -->
+      <div id="cover-slider-track" class="relative w-full h-full">
+        <!-- Slide 1: Chăm sóc thông minh, kết nối yêu thương -->
+        <div class="cover-slide active" data-index="0">
+          <img src="assets/banners/banner-web.png" alt="BeeCare – Chăm sóc thông minh, kết nối yêu thương" class="select-none pointer-events-none" loading="eager" fetchpriority="high">
+        </div>
+        <!-- Slide 2: Ảnh trên cùng (Hệ sinh thái công nghệ quản lý và chăm sóc toàn diện) -->
+        <div class="cover-slide" data-index="1">
+          <img src="assets/banners/banner-2.png" alt="BeeCare – Hệ sinh thái công nghệ quản lý và chăm sóc toàn diện" class="select-none pointer-events-none" loading="lazy">
+        </div>
+        <!-- Slide 3: Ảnh bìa 3 (Chăm sóc toàn diện với AI & VietQR) -->
+        <div class="cover-slide" data-index="2">
+          <img src="assets/banners/banner-3.jpg" alt="Chăm sóc người cao tuổi toàn diện với AI – BeeCare" class="select-none pointer-events-none" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Left Navigation Arrow (<) -->
+      <button id="cover-slider-prev" type="button" class="cover-nav-arrow cover-nav-arrow--left" aria-label="Slide trước">
+        <i data-lucide="chevron-left" class="w-6 h-6 stroke-[2.5]"></i>
+      </button>
+
+      <!-- Right Navigation Arrow (>) -->
+      <button id="cover-slider-next" type="button" class="cover-nav-arrow cover-nav-arrow--right" aria-label="Slide tiếp theo">
+        <i data-lucide="chevron-right" class="w-6 h-6 stroke-[2.5]"></i>
+      </button>
+
+      <!-- Bottom Pagination Pill Capsule: [ ── • • 1/3 ] -->
+      <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20">
+        <div class="cover-pagination-pill">
+          <div id="cover-dots" class="flex items-center gap-2">
+            <button type="button" class="cover-dot cover-dot-active" data-slide="0" aria-label="Chuyển đến ảnh 1"></button>
+            <button type="button" class="cover-dot" data-slide="1" aria-label="Chuyển đến ảnh 2"></button>
+            <button type="button" class="cover-dot" data-slide="2" aria-label="Chuyển đến ảnh 3"></button>
+          </div>
+          <span class="text-white/30 text-xs select-none">|</span>
+          <span id="cover-counter" class="cover-counter-text">1/3</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="home" class="hero-section flex flex-col items-center justify-center relative pb-16 overflow-hidden">
-    <!-- Ambient Light Glows -->
-    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-teal-500/20 rounded-full blur-[100px] pointer-events-none"></div>
-    <div class="absolute top-40 right-10 w-96 h-96 bg-amber-500/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- Ambient Light Glows - Radiant sapphire & medical sky blue -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 w-[880px] h-[450px] bg-sky-400/35 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-36 right-10 w-[500px] h-[500px] bg-cyan-400/30 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-44 left-10 w-[460px] h-[460px] bg-blue-500/32 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10 w-full mb-8 sm:mb-10">
       
       <!-- Main Headline (Sentence case, Balanced & Harmonious) -->
       <div class="hero-headline-wrap" data-aos="fade-up" data-aos-delay="100">
         <h1 class="hero-main-title">
-          <span class="hero-title-lead" data-i18n="hero_title_lead">BeeCare – Hệ sinh thái y tế số</span>
+          <span class="hero-title-lead" data-i18n="hero_title_lead">BeeCare </span>
           <span class="hero-title-gradient" data-i18n="hero_title">Quản lý viện dưỡng lão thông minh</span>
         </h1>
       </div>
 
-      <!-- 3 Service Scope Capsules: Unified & Sleek -->
-      <div class="hero-scope-capsules mb-8" data-aos="fade-up" data-aos-delay="150">
-        <span class="scope-capsule scope-capsule--teal">
-          <i data-lucide="bed" class="w-3.5 h-3.5"></i>
-          <span data-i18n="hero_for_mgmt">Nội trú</span>
-        </span>
-        <span class="scope-capsule scope-capsule--cyan">
-          <i data-lucide="sun" class="w-3.5 h-3.5"></i>
-          <span data-i18n="hero_for_staff">Bán trú</span>
-        </span>
-        <span class="scope-capsule scope-capsule--amber">
-          <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
-          <span data-i18n="hero_for_family">Ngoại trú</span>
-        </span>
-      </div>
-
       <!-- 5. High-Conversion CTA Buttons -->
-      <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="250">
+      <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="200">
         <a href="contact.html" class="hero-cta-primary">
           <span data-i18n="hero_cta_demo">Đăng ký trải nghiệm</span>
         </a>
@@ -198,7 +233,7 @@
                 <span class="laptop-camera-lens"></span>
                 <span class="laptop-camera-indicator"></span>
               </div>
-              <!-- Real Web Portal Dashboard inside 3D Laptop -->
+              <!-- Real Web Management Dashboard inside 3D Laptop -->
                             <!-- Realistic MacBook Browser Bar -->
               <div class="macbook-browser-bar">
                 <div class="macbook-dots">
@@ -337,7 +372,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch">
           
-          <!-- Card 1: Web Admin Portal -->
+          <!-- Card 1: Web Management -->
           <div class="app-summary-card app-summary-card--web group">
             <div class="app-summary-card__glow"></div>
             <div class="app-summary-card__body">
@@ -346,7 +381,7 @@
                   <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                 </div>
                 <span class="app-summary-card__badge" data-i18n="hero_sum_web_badge">
-                  Bác sĩ & Ban quản trị
+                  Ban quản lý viện
                 </span>
               </div>
               <h4 class="app-summary-card__title" data-i18n="hero_sum_web_title">
@@ -459,27 +494,24 @@
     </div>
   </section>
 
-    <!-- ===================== SECTION 1: HỆ SINH THÁI 3 ỨNG DỤNG Y TẾ CHUYÊN BIỆT ===================== -->
-  <section id="ecosystem" class="section-padding bg-slate-50 relative border-t border-slate-200 ecosystem-mode-all">
+    <!-- ===================== SECTION 1: HỆ SINH THÁI QUẢN LÝ VIỆN DƯỠNG LÃO TOÀN DIỆN ===================== -->
+  <section id="ecosystem" class="section-padding bg-[#FBF7F3] relative border-t border-[#E5E1D8] ecosystem-mode-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Unified Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
         <span class="section-tag mb-3">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          <span data-i18n="eco_badge">Bộ 3 giải pháp công nghệ</span>
+          <span data-i18n="eco_badge">Hệ sinh thái 3 nền tảng</span>
         </span>
         <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
-          <span data-i18n="eco_title">Hệ sinh thái 3 ứng dụng y tế chuyên biệt</span>
+          <span data-i18n="eco_title">Hệ sinh thái quản lý viện dưỡng lão toàn diện</span>
         </h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="eco_desc">
-          Thiết kế chuyên sâu cho từng đối tượng, cùng chia sẻ một nền tảng dữ liệu y tế thời gian thực.
-        </p>
 
         <!-- 3 App Interactive Selector Tabs -->
         <div class="app-tabs-container flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-6 py-1 px-1 max-w-full mx-auto">
           <button class="app-tab-btn active" onclick="switchAppTab('all', this)" id="tab-btn-all" title="Xem đồng thời cả 3 ứng dụng">
-            <i data-lucide="layout-grid" class="w-4 h-4 text-teal-500"></i>
+            <i data-lucide="layout-grid" class="w-4 h-4 text-blue-600"></i>
             <span data-i18n="eco_tab_all">Xem tất cả</span>
           </button>
           <button class="app-tab-btn" onclick="switchAppTab('web', this)" id="tab-btn-web">
@@ -499,18 +531,18 @@
 
     </div>
 
-    <!-- PANEL 1: WEB PORTAL -->
-    <div id="panel-app-web" class="app-panel transition-all duration-300">
+    <!-- PANEL 1: WEB MANAGEMENT -->
+    <div id="panel-app-web" class="app-panel">
       <div id="web-showcase">
         
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="section-tag mb-3">
           <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
           <span data-i18n="panel_web_badge">Cổng quản trị web</span>
         </span>
         <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
-          <span data-i18n="panel_web_title">BeeCare Web Portal trên máy tính</span>
+          <span data-i18n="panel_web_title">BeeCare Web trên máy tính</span>
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_web_desc">
           Bấm các nút dưới đây để thay đổi trực tiếp màn hình thực tế bên trong khung laptop 3D.
@@ -540,7 +572,7 @@
       </div>
 
       <!-- Giant 3D Laptop Display with Selected Screen -->
-      <div class="stage-3d max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+      <div class="stage-3d max-w-4xl mx-auto">
         <div class="laptop-3d mb-12 sm:mb-14">
           <div class="laptop-3d-lid">
             <!-- Screen bezel & display area -->
@@ -570,7 +602,7 @@
 
               <!-- Screen viewport -->
               <div class="laptop-screen-viewport relative cursor-pointer group" onclick="openLightbox(document.getElementById('laptop-main-screen').src, document.getElementById('laptop-screen-title').textContent)">
-                <img id="laptop-main-screen" src="assets/screenshots/web-dashboard.png" alt="Màn hình web portal"
+                <img id="laptop-main-screen" src="assets/screenshots/web-dashboard.png" alt="Màn hình Web quản lý"
                   class="laptop-screen-content w-full h-full object-cover object-top transition-all duration-300">
                 <div class="laptop-glare pointer-events-none"></div>
                 <div class="laptop-zoom-pill">
@@ -606,7 +638,7 @@
         </div>
       </div>
 
-      <!-- Quick 4 Features of Web Portal -->
+      <!-- Quick 4 Features of Web Management -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 sm:mt-12">
         <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
           <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
@@ -647,10 +679,10 @@
     </div>
 
 <!-- PANEL 2: STAFF APP -->
-    <div id="panel-app-staff" class="app-panel transition-all duration-300 pt-6">
+    <div id="panel-app-staff" class="app-panel pt-6">
       <div id="staff-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+          <div class="text-center max-w-3xl mx-auto mb-10">
             <span class="section-tag mb-3">
               <i data-lucide="heart-pulse" class="w-3.5 h-3.5"></i>
               <span data-i18n="panel_staff_badge">Ứng dụng điều dưỡng tại giường</span>
@@ -664,7 +696,7 @@
           </div>
 
           <!-- Top Carousel Navigation Controls & Mode Switch -->
-          <div class="carousel-top-controls" data-aos="fade-up" data-aos-delay="100">
+          <div class="carousel-top-controls">
             <!-- 6 Feature Pills for Direct Jumping -->
             <div class="carousel-pills-nav" id="staff-carousel-pills">
               <button class="carousel-pill-btn active staff-pill" data-carousel-pill="staff-carousel-3d" data-index="0" onclick="staffCarousel.goTo(0)">
@@ -681,7 +713,7 @@
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="3" onclick="staffCarousel.goTo(3)">
                 <i data-lucide="pill" class="w-3.5 h-3.5 text-teal-600"></i>
-                <span data-i18n="panel_staff_tab4">4. Phát thuốc 5Đ</span>
+                <span data-i18n="panel_staff_tab4">4. Nhắc uống thuốc</span>
               </button>
               <button class="carousel-pill-btn staff-pill" data-carousel-pill="staff-carousel-3d" data-index="4" onclick="staffCarousel.goTo(4)">
                 <i data-lucide="utensils" class="w-3.5 h-3.5 text-teal-600"></i>
@@ -696,7 +728,7 @@
           </div>
 
           <!-- ===================== 3D ROTATING PHONE CAROUSEL (STAFF) ===================== -->
-          <div class="phone-carousel-3d-wrap" id="staff-carousel-3d" data-aos="fade-up" data-aos-delay="150">
+          <div class="phone-carousel-3d-wrap" id="staff-carousel-3d">
             <!-- 3D Perspective Stage -->
             <div class="phone-3d-stage">
               <!-- Ambient Radial Lighting Glow -->
@@ -976,9 +1008,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f4_tag">Cấp phát thuốc 5 Đúng</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f4_title">4. Checklist phát thuốc chống nhầm</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f4_desc">Chia cữ uống sáng - trưa - chiều - tối, đối soát ảnh viên thuốc và đánh dấu đã uống.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f4_tag">Nhắc uống thuốc đúng giờ</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f4_title">4. Nhắc và kiểm soát uống thuốc đúng giờ</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f4_desc">Tự động nhắc cữ sáng, trưa, chiều, tối kèm hình ảnh viên thuốc trực quan. Điều dưỡng kiểm tra và tích nhận tại giường, đảm bảo không quên cữ và không nhầm thuốc.</p>
               </div>
             </div>
 
@@ -1003,8 +1035,8 @@
               </div>
               <div class="phone-card-caption mt-6">
                 <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f5_tag">Dinh dưỡng & Bữa ăn</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f5_title">5. Chụp ảnh suất ăn & Chấm điểm</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f5_desc">Chụp ảnh khay cơm thật, ghi nhận tỷ lệ ăn hết 90% và lượng nước uống hàng ngày.</p>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f5_title">5. Ghi nhận khẩu phần & Dinh dưỡng</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f5_desc">Theo dõi chi tiết mức độ ăn từng bữa và lượng nước mỗi ngày. Dữ liệu tự động đồng bộ lên ứng dụng giúp người thân luôn yên tâm về chế độ ăn uống của cha mẹ.</p>
               </div>
             </div>
 
@@ -1032,9 +1064,9 @@
                 <div class="device-floor-shadow"></div>
               </div>
               <div class="phone-card-caption mt-6">
-                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f6_tag">Bàn giao ca 3 phút</span>
-                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f6_title">6. Biên bản bàn giao ca trực</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f6_desc">Tự động tổng hợp sự cố y tế và thuốc tồn đọng, ký bàn giao giữa 2 kíp trực nhanh chóng.</p>
+                <span class="screenshot-chip bg-teal-100 text-teal-800" data-i18n="panel_staff_f6_tag">Bàn giao ca điện tử</span>
+                <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_staff_f6_title">6. Bàn giao ca trực điện tử</h4>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_staff_f6_desc">Tổng hợp nhanh toàn bộ dặn dò y tế và công việc cần tiếp quản cho ca tiếp theo.</p>
               </div>
             </div>
           </div>
@@ -1043,10 +1075,10 @@
     </div>
 
     <!-- PANEL 3: FAMILY APP -->
-    <div id="panel-app-family" class="app-panel transition-all duration-300 pt-6">
+    <div id="panel-app-family" class="app-panel pt-6">
       <div id="family-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+          <div class="text-center max-w-3xl mx-auto mb-10">
             <span class="section-tag-amber mb-3">
               <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
               <span data-i18n="panel_family_badge">Ứng dụng người thân</span>
@@ -1060,7 +1092,7 @@
           </div>
 
           <!-- Top Carousel Navigation Controls & Mode Switch -->
-          <div class="carousel-top-controls" data-aos="fade-up" data-aos-delay="100">
+          <div class="carousel-top-controls">
             <!-- 6 Feature Pills for Direct Jumping -->
             <div class="carousel-pills-nav" id="family-carousel-pills">
               <button class="carousel-pill-btn active family-pill" data-carousel-pill="family-carousel-3d" data-index="0" onclick="familyCarousel.goTo(0)">
@@ -1092,7 +1124,7 @@
           </div>
 
           <!-- ===================== 3D ROTATING PHONE CAROUSEL (FAMILY) ===================== -->
-          <div class="phone-carousel-3d-wrap" id="family-carousel-3d" data-aos="fade-up" data-aos-delay="150">
+          <div class="phone-carousel-3d-wrap" id="family-carousel-3d">
             <!-- 3D Perspective Stage -->
             <div class="phone-3d-stage">
               <!-- Ambient Radial Lighting Glow -->
@@ -1400,7 +1432,7 @@
               <div class="phone-card-caption mt-6">
                 <span class="screenshot-chip bg-amber-100 text-amber-800" data-i18n="panel_family_f5_tag">Thanh toán minh bạch</span>
                 <h4 class="font-heading font-bold text-base text-slate-900 mt-1" data-i18n="panel_family_f5_title">5. Tra cứu hóa đơn và đóng phí</h4>
-                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f5_desc">Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR gạch nợ tức thì.</p>
+                <p class="text-slate-500 text-xs mt-1.5 leading-relaxed" data-i18n="panel_family_f5_desc">Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR.</p>
               </div>
             </div>
 
@@ -1440,7 +1472,7 @@
 </section>
 
   <!-- ===================== SECTION 7: BENEFITS ===================== -->
-  <section id="benefits" class="section-padding bg-slate-100 border-t border-slate-200">
+  <section id="benefits" class="section-padding bg-gradient-to-b from-[#F4F6FA] to-[#FBF7F3] border-t border-[#E5E1D8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
         <span class="section-tag mb-3">
@@ -1542,9 +1574,9 @@
 
   <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
   <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
-    <a href="tel:19006868" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
+    <a href="tel:0988123531" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
       <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
-      <span data-i18n="idx_mobile_call"><span data-i18n="idx_mobile_call">Gọi 1900 6868</span></span>
+      <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
     </a>
     <a href="contact.html" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md">
       <i data-lucide="calendar-check" class="w-4 h-4"></i>
@@ -1565,25 +1597,25 @@
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
           </div>
           <div class="footer-contact-row">
-            <a href="tel:19006868" class="footer-contact-item">
-              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            <a href="tel:0988123531" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              Hotline: <strong style="color:#38bdf8">0988 123 531</strong>
             </a>
-            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
-              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              contact@beecare.vn
+            <a href="mailto:trang.haniki@gmail.com" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              trang.haniki@gmail.com
             </a>
             <span class="footer-contact-item">
-              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
               <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
             </span>
           </div>
@@ -1591,8 +1623,11 @@
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="https://zalo.me/0961816868" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12C2.5 6.753 6.753 2.5 12 2.5C17.247 2.5 21.5 6.753 21.5 12C21.5 17.247 17.247 21.5 12 21.5C10.36 21.5 8.816 21.084 7.468 20.354L3.5 21.5L4.764 17.728C3.344 16.148 2.5 14.17 2.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -1647,23 +1682,23 @@
         <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
         <div>
           <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
-          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
-            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+          <div style="background:rgba(38,83,151,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#38bdf8;margin-bottom:8px;display:flex;align-items:center;gap:6px">
               <i data-lucide="clock" style="width:12px;height:12px"></i>
               <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
             </div>
             <div style="font-size:12px;color:#64748b;line-height:1.6">
               <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
-              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#38bdf8">24/7 365 ngày</strong>
             </div>
             <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
               <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
                 <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
                 <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
               </a>
-              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+              <a href="tel:0988123531" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(2,132,199,0.12);border:1px solid rgba(2,132,199,0.25);color:#38bdf8;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
                 <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
-                <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+                <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
           </div>
@@ -1720,9 +1755,9 @@
   </button>
 
   <!-- Scripts -->
-  <script src="assets/i18n/common.js?v=20261003_v2"></script>
-  <script src="assets/i18n/home.js?v=20261003_v2"></script>
-  <script src="assets/script.js?v=20261003_v2"></script>
+  <script src="assets/i18n/common.js?v=20261005_v5"></script>
+  <script src="assets/i18n/home.js?v=20261005_v5"></script>
+  <script src="assets/script.js?v=20261005_v5"></script>
 </body>
 
 </html>

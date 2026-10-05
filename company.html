@@ -24,54 +24,132 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261003_v7" />
+  <link rel="stylesheet" href="assets/style.css?v=20261005_v12" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <style>
-    /* ===================== COMPANY HERO STYLES ===================== */
-    .company-hero {
-      background: linear-gradient(145deg, #091528 0%, #0d273d 45%, #064e3b 100%);
+    /* ===================== COMPANY HERO STYLES (MATCH DESIGN) ===================== */
+    .company-hero-section {
+      padding-top: 112px;
+      padding-bottom: 12px;
       position: relative;
+    }
+    @media (max-width: 768px) {
+      .company-hero-section {
+        padding-top: 96px;
+      }
+    }
+    .company-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      background: #EEF4FF;
+      border: 1px solid #BFDBFE;
+      color: #1E3A8A;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(30, 58, 138, 0.04);
+      transition: all 0.25s ease;
+    }
+    .company-hero-badge:hover {
+      background: #E0EDFF;
+      border-color: #93C5FD;
+    }
+    .company-hero-title {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #1A4F9C 0%, #265397 45%, #0284C7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+    }
+    @media (min-width: 640px) {
+      .company-hero-title { font-size: 36px; }
+    }
+    @media (min-width: 1024px) {
+      .company-hero-title { font-size: 42px; }
+    }
+    .company-hero-desc {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.68;
+      max-width: 820px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+    @media (min-width: 640px) {
+      .company-hero-desc { font-size: 14.5px; }
+    }
+    .company-hero-desc strong {
+      color: #0F172A;
+      font-weight: 700;
+    }
+    .company-hero-backdrop-wrap {
+      position: relative;
+      border-radius: 20px;
       overflow: hidden;
-      padding-top: 140px;
-      padding-bottom: 90px;
-      color: white;
-      text-align: center;
+      box-shadow: 0 12px 35px -8px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(15, 23, 42, 0.03);
+      border: 1px solid #E2E8F0;
+      background: #F8FAFC;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
     }
-    .company-hero::before {
-      content: '';
-      position: absolute;
-      top: -25%;
-      left: -15%;
-      width: 750px;
-      height: 750px;
-      background: radial-gradient(circle, rgba(13, 148, 136, 0.22) 0%, transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
+    @media (min-width: 640px) {
+      .company-hero-backdrop-wrap { border-radius: 24px; }
     }
-    .company-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      right: -15%;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.16) 0%, transparent 65%);
-      border-radius: 50%;
-      pointer-events: none;
+    .company-hero-backdrop-img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1672 / 941;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .company-hero-backdrop-wrap:hover .company-hero-backdrop-img {
+      transform: scale(1.01);
     }
 
     /* Key Stats Bar */
     .stats-container {
       max-width: 1140px;
-      margin: -40px auto 80px;
+      margin: 36px auto 28px;
       position: relative;
       z-index: 20;
       padding: 0 16px;
     }
+    @media (max-width: 768px) {
+      .stats-container {
+        margin: 24px auto 18px;
+      }
+    }
+
+    /* Company Main Content with Soft Gradient Transition */
+    .company-main {
+      background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 32px, #f8fafc 100%);
+      padding-top: 56px;
+      padding-bottom: 90px;
+    }
+    @media (max-width: 768px) {
+      .company-main {
+        background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 20px, #f8fafc 100%);
+        padding-top: 36px;
+        padding-bottom: 60px;
+      }
+    }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       background: #ffffff;
       border-radius: 24px;
       padding: 32px 24px;
@@ -79,10 +157,7 @@
       border: 1px solid rgba(226, 232, 240, 0.9);
       gap: 20px;
     }
-    @media (max-width: 1023px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 24px 20px; }
-    }
-    @media (max-width: 639px) {
+    @media (max-width: 767px) {
       .stats-grid { grid-template-columns: 1fr; padding: 20px 16px; gap: 16px; }
     }
     .stat-card {
@@ -93,10 +168,7 @@
     .stat-card:last-child {
       border-right: none;
     }
-    @media (max-width: 1023px) {
-      .stat-card:nth-child(2) { border-right: none; }
-    }
-    @media (max-width: 639px) {
+    @media (max-width: 767px) {
       .stat-card { border-right: none; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
       .stat-card:last-child { border-bottom: none; padding-bottom: 0; }
     }
@@ -138,8 +210,8 @@
       gap: 8px;
       padding: 6px 14px;
       border-radius: 9999px;
-      background: rgba(13, 148, 136, 0.1);
-      color: #0d9488;
+      background: rgba(38, 83, 151, 0.1);
+      color: #265397;
       font-size: 12px;
       font-weight: 700;
       margin-bottom: 12px;
@@ -167,7 +239,7 @@
       border-radius: 28px;
       padding: 48px;
       box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.06);
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E5E1D8;
       display: grid;
       grid-template-columns: 380px 1fr;
       gap: 48px;
@@ -208,37 +280,81 @@
     }
 
     /* Vision & Mission Cards */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 868px) {
+      .vm-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
     .vm-card-redesign {
       background: #ffffff;
       border-radius: 26px;
-      padding: 40px 34px;
-      border: 1px solid #e2e8f0;
+      padding: 38px 32px;
+      border: 1px solid rgba(226, 232, 240, 0.85);
       box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+    @media (max-width: 639px) {
+      .vm-card-redesign {
+        padding: 28px 20px;
+      }
     }
     .vm-card-redesign:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
-      border-color: #cbd5e1;
+      box-shadow: 0 20px 45px -10px rgba(38, 83, 151, 0.12), 0 4px 16px rgba(15, 23, 42, 0.04);
     }
-    .vm-card-accent-teal {
-      border-top: 5px solid #0d9488;
+    .vm-card-accent-teal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #265397;
     }
-    .vm-card-accent-sky {
-      border-top: 5px solid #0284c7;
+    .vm-card-accent-sky::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #0284c7;
     }
 
     /* Core Values Cards */
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .values-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+    }
     .value-card {
       background: #ffffff;
       border-radius: 22px;
       padding: 32px 24px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E5E1D8;
       box-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.03);
       transition: all 0.35s ease;
       display: flex;
@@ -247,39 +363,188 @@
     }
     .value-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 35px -8px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 18px 35px -8px rgba(38, 83, 151, 0.12);
       border-color: #cbd5e1;
     }
 
-    /* Workplace Gallery Cards */
-    .gallery-card {
-      border-radius: 20px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.06);
-      background: #0f172a;
-      cursor: pointer;
+    /* Workplace Bento Tech-Cards (Ý tưởng 1: Hiện đại, sáng rõ, công nghệ cao) */
+    .workplace-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
     }
-    .gallery-card img {
+    @media (max-width: 1023px) {
+      .workplace-bento-grid {
+        gap: 20px;
+      }
+    }
+    .workplace-card {
+      background: #ffffff;
+      border-radius: 22px;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      cursor: pointer;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+    }
+    .workplace-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 42px -10px rgba(38, 83, 151, 0.12), 0 4px 16px rgba(15, 23, 42, 0.04);
+      border-color: #cbd5e1;
+    }
+    .workplace-card-hero {
+      grid-column: span 8;
+    }
+    .workplace-card-side {
+      grid-column: span 4;
+    }
+    .workplace-card-col4 {
+      grid-column: span 4;
+    }
+    @media (max-width: 1023px) {
+      .workplace-card-hero {
+        grid-column: span 12;
+      }
+      .workplace-card-side,
+      .workplace-card-col4 {
+        grid-column: span 6;
+      }
+    }
+    @media (max-width: 639px) {
+      .workplace-card-hero,
+      .workplace-card-side,
+      .workplace-card-col4 {
+        grid-column: span 12;
+      }
+    }
+    .workplace-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #f1f5f9;
+      width: 100%;
+    }
+    .workplace-photo-wrap-hero {
+      aspect-ratio: 16 / 9;
+    }
+    .workplace-photo-wrap-standard {
+      aspect-ratio: 16 / 10;
+    }
+    @media (max-width: 639px) {
+      .workplace-photo-wrap-hero,
+      .workplace-photo-wrap-standard {
+        aspect-ratio: 16 / 10;
+      }
+    }
+    .workplace-photo-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s ease;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .gallery-card:hover img {
+    .workplace-card:hover .workplace-photo-img {
       transform: scale(1.04);
     }
-    .gallery-overlay {
+    .workplace-photo-badge {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%);
-      padding: 24px;
+      top: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1e3a8a;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      z-index: 2;
+    }
+    .workplace-zoom-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #334155;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      transition: all 0.25s ease;
+      z-index: 2;
+      opacity: 0.9;
+    }
+    .workplace-card:hover .workplace-zoom-btn {
+      opacity: 1;
+      background: #265397;
+      color: #ffffff;
+      transform: scale(1.08);
+    }
+    .workplace-card-body {
+      padding: 18px 22px 20px;
+      background: #ffffff;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      color: white;
+      justify-content: space-between;
+    }
+    @media (max-width: 639px) {
+      .workplace-card-body {
+        padding: 16px 18px 18px;
+      }
+    }
+    .workplace-card-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+    .workplace-card-hero .workplace-card-title {
+      font-size: 19px;
+    }
+    @media (min-width: 640px) {
+      .workplace-card-hero .workplace-card-title {
+        font-size: 20px;
+      }
+    }
+    .workplace-card:hover .workplace-card-title {
+      color: #265397;
+    }
+    .workplace-card-desc {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    .workplace-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12px;
+      font-weight: 600;
+      color: #265397;
+      transition: color 0.2s ease;
+    }
+    .workplace-card:hover .workplace-card-footer {
+      color: #0284c7;
     }
 
     /* Strategic Partners Grid & Flagship Showcase */
@@ -324,7 +589,7 @@
       background: #ffffff;
       border-radius: 24px;
       padding: 32px 28px;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E5E1D8;
       box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
       display: flex;
       flex-direction: column;
@@ -335,8 +600,8 @@
     }
     .advisor-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.09);
-      border-color: #0d9488;
+      box-shadow: 0 20px 40px -10px rgba(38, 83, 151, 0.12);
+      border-color: #265397;
     }
     .advisor-logo-wrap {
       height: 84px;
@@ -345,15 +610,15 @@
       align-items: center;
       justify-content: center;
       padding: 14px;
-      background: #f8fafc;
+      background: #F4F6FA;
       border-radius: 16px;
-      border: 1px solid #f1f5f9;
+      border: 1px solid #E5E1D8;
       margin-bottom: 20px;
       transition: background 0.3s ease, border-color 0.3s ease;
     }
     .advisor-card:hover .advisor-logo-wrap {
-      background: #f1f5f9;
-      border-color: #e2e8f0;
+      background: #EEF1F7;
+      border-color: #265397;
     }
 
     /* Corporate Legal Info Card */
@@ -362,7 +627,7 @@
       border-radius: 28px;
       overflow: hidden;
       box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.07);
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E5E1D8;
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -372,12 +637,12 @@
 
     /* Call To Action Banner */
     .company-cta-banner {
-      background: linear-gradient(135deg, #0d9488 0%, #0369a1 100%);
+      background: linear-gradient(135deg, #183C6F 0%, #265397 50%, #0284C7 100%);
       border-radius: 28px;
       padding: 56px 40px;
       color: white;
       text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(13, 148, 136, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(38, 83, 151, 0.4), 0 0 35px rgba(2, 132, 199, 0.25);
       position: relative;
       overflow: hidden;
     }
@@ -387,19 +652,17 @@
   </style>
 </head>
 
-<body class="font-body text-slate-800 bg-slate-50">
+<body class="font-body text-slate-800 bg-[#FBF7F3]">
 
   <!-- ===================== PRELOADER ===================== -->
   <div id="preloader">
     <div class="flex flex-col items-center gap-5">
-      <div class="relative flex items-center justify-center">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="animation: heartbeat 1.3s ease-in-out infinite;">
-          <path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#0D9488" />
+      <div class="preloader-heart-wrap">
+        <svg class="preloader-heart-icon" width="68" height="68" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="heart-outline-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <path class="heart-pulse-path" d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
         </svg>
-        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping pointer-events-none" style="top: 35%; left: 58%;"></span>
       </div>
 
       <svg class="ecg-line" viewBox="0 0 260 60">
@@ -407,10 +670,11 @@
           d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
       </svg>
 
-      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
-        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      <div class="preloader-brand-wrap">
+        <div class="preloader-brand-logo">
+          <span class="preloader-bee">Bee</span><span class="preloader-care">Care</span>
+        </div>
       </div>
-      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
     </div>
   </div>
 
@@ -423,7 +687,7 @@
         <div class="flex items-center gap-3 shrink-0">
           <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
             <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
             </span>
           </a>
         </div>
@@ -501,37 +765,35 @@
     </div>
   </nav>
 
-  <!-- ===================== 1. HERO SECTION ===================== -->
-  <section class="company-hero">
-    <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
+  <!-- ===================== 1. HERO SECTION (MATCH DESIGN) ===================== -->
+  <section class="company-hero-section max-w-6xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto relative z-10 mb-6 sm:mb-8">
       
-      <!-- Top Badge -->
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
-        <span data-i18n="company_hero_badge">Về công ty HANIKI • Đơn vị nghiên cứu & phát triển BeeCare</span>
+      <!-- Badge -->
+      <div class="company-hero-badge">
+        <i data-lucide="globe" class="w-3.5 h-3.5 text-[#1e3a8a] shrink-0"></i>
+        <span data-i18n="company_hero_badge">KINH NGHIỆM CHUẨN NHẬT – PHÁT TRIỂN TẠI THỊ TRƯỜNG VIỆT NAM</span>
       </div>
-      
-      <!-- Main Headline (Sentence case, concise, 1 line) -->
-      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 font-heading tracking-tight whitespace-normal md:whitespace-nowrap" style="line-height: 1.35;">
-        <span data-i18n="company_hero_title">Giải pháp số hóa viện dưỡng lão</span>
+
+      <!-- H1 Main Title -->
+      <h1 class="company-hero-title font-heading" data-i18n="company_hero_title">
+        CÔNG TY TNHH HANIKI
       </h1>
-      
-      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto mb-8 leading-relaxed" data-i18n="company_hero_desc">
-        HANIKI tập trung nghiên cứu và phát triển phần mềm quản lý viện dưỡng lão BeeCare, đồng hành cùng các cơ sở dưỡng lão tại Việt Nam chuẩn hóa quy trình chăm sóc, số hóa bệnh án và kết nối thông suốt với gia đình người cao tuổi.
+
+      <!-- Description Paragraph -->
+      <p class="company-hero-desc" data-i18n-html="company_hero_desc_html">
+        Kế thừa hơn <strong class="font-bold text-slate-900">6 năm kinh nghiệm thực chiến</strong> phát triển phần mềm điều dưỡng (<strong class="font-bold text-slate-900">Kaigo</strong>) chuẩn mực tại Nhật Bản, HANIKI mang đến <strong class="font-bold text-slate-900">Hệ sinh thái BeeCare</strong> thuần Việt, giúp các viện dưỡng lão số hóa toàn diện vận hành và gắn kết bền chặt niềm tin với gia đình.
       </p>
+    </div>
 
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
-        <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-teal-500/30 transition-all duration-200 hover:-translate-y-0.5">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          <span data-i18n="company_hero_cta_survey">Đặt lịch tư vấn & khảo sát tại viện</span>
-        </a>
-        <a href="pricing.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5">
-          <i data-lucide="tag" class="w-4 h-4 text-teal-300"></i>
-          <span data-i18n="company_hero_cta_pricing">Xem bảng giá các gói</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-
+    <!-- Ảnh Backdrop Nhận Diện Thương Hiệu HANIKI -->
+    <div class="company-hero-backdrop-wrap">
+      <img
+        src="assets/company/backdrop-cong-ty.png"
+        alt="Không gian nhận diện thương hiệu và sảnh đón tiếp CÔNG TY TNHH HANIKI"
+        class="company-hero-backdrop-img"
+        loading="eager"
+      />
     </div>
   </section>
 
@@ -549,11 +811,6 @@
         <div class="stat-desc" data-i18n="company_stat2_desc">Sinh hiệu, đơn thuốc & phân ca trực</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number text-emerald-600" data-i18n="company_stat3_num">R&D</div>
-        <div class="stat-label" data-i18n="company_stat3_title">Đội ngũ kỹ sư tại Hà Nội</div>
-        <div class="stat-desc" data-i18n="company_stat3_desc">Nghiên cứu & phát triển phần mềm y tế</div>
-      </div>
-      <div class="stat-card">
         <div class="stat-number text-amber-500" data-i18n="company_stat4_num">24/7</div>
         <div class="stat-label" data-i18n="company_stat4_title">Hỗ trợ kỹ thuật chuyên sâu</div>
         <div class="stat-desc" data-i18n="company_stat4_desc">Đồng hành liên tục cùng đơn vị vận hành</div>
@@ -561,7 +818,7 @@
     </div>
   </div>
 
-  <main style="background-color: #f8fafc; padding-bottom: 90px;">
+  <main class="company-main">
 
     <!-- ===================== 3. EXECUTIVE LEADERSHIP MESSAGE ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
@@ -634,7 +891,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="vm-grid">
         
         <!-- Sứ Mệnh Phụng Sự (Card Redesign 1) -->
         <div class="vm-card-redesign vm-card-accent-teal">
@@ -653,7 +910,7 @@
             </p>
           </div>
           
-          <div class="space-y-3 pt-6 border-t border-slate-100 text-sm text-slate-700 font-medium">
+          <div class="space-y-3 pt-4 text-sm text-slate-700 font-medium">
             <div class="flex items-start gap-3">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
               <span data-i18n="company_mission_item1">Minh bạch hóa lịch trình sinh hoạt, y lệnh dùng thuốc và thông tin viện phí</span>
@@ -686,7 +943,7 @@
             </p>
           </div>
           
-          <div class="space-y-3 pt-6 border-t border-slate-100 text-sm text-slate-700 font-medium">
+          <div class="space-y-3 pt-4 text-sm text-slate-700 font-medium">
             <div class="flex items-start gap-3">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-600 shrink-0 mt-0.5"></i>
               <span data-i18n="company_vision_item1">Hạn chế ghi chép thủ công, số hóa biểu đồ theo dõi sinh hiệu và bàn giao ca trực</span>
@@ -720,7 +977,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="values-grid">
         
         <!-- Giá trị 1 -->
         <div class="value-card">
@@ -792,63 +1049,148 @@
         </p>
       </div>
 
-      <!-- Photo Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Photo Bento Grid (Ý tưởng 1: Modern Bento Tech-Cards) -->
+      <div class="workplace-bento-grid">
         
-        <!-- Ảnh 1: Tập thể nhân sự HANIKI -->
-        <div class="gallery-card lg:col-span-2 aspect-[16/9] group"
-          onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Tập thể nhân sự HANIKI – Đội ngũ kỹ sư công nghệ nhiệt huyết tại trụ sở Hà Nội')">
-          <img src="assets/company/tap-the-haniki.jpg" alt="Tập thể nhân sự HANIKI" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="text-xs font-bold tracking-wide text-teal-300 mb-1" data-i18n="company_photo1_badge">Đội ngũ kỹ sư</span>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-1" data-i18n="company_photo1_title">Tập thể nhân sự HANIKI</h3>
-            <p class="text-xs sm:text-sm text-slate-200" data-i18n="company_photo1_desc">Đội ngũ kỹ sư công nghệ nhiệt huyết tại trụ sở Hà Nội.</p>
+        <!-- Ảnh 1: Tập thể nhân sự HANIKI (Hero 8 cột, 16:9) -->
+        <article class="workplace-card workplace-card-hero"
+          onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Tập thể nhân sự HANIKI – Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội')">
+          <div class="workplace-photo-wrap workplace-photo-wrap-hero">
+            <img src="assets/company/tap-the-haniki.jpg" alt="Tập thể nhân sự HANIKI" class="workplace-photo-img" loading="lazy" />
+            <div class="workplace-photo-badge">
+              <i data-lucide="users" class="w-3.5 h-3.5 text-primary"></i>
+              <span data-i18n="company_photo1_badge">Đội ngũ kỹ thuật</span>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
-        </div>
+          <div class="workplace-card-body">
+            <div>
+              <h3 class="workplace-card-title" data-i18n="company_photo1_title">Tập thể nhân sự HANIKI</h3>
+              <p class="workplace-card-desc" data-i18n="company_photo1_desc">Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội.</p>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+              <span class="text-xs text-slate-400 font-medium">HANIKI HQ · 2026</span>
+            </div>
+          </div>
+        </article>
 
-        <!-- Ảnh 2: Họp kỹ thuật -->
-        <div class="gallery-card aspect-[4/3] group"
+        <!-- Ảnh 2: Họp kỹ thuật & Phân tích tính năng (Side 4 cột, 16:10) -->
+        <article class="workplace-card workplace-card-side"
           onclick="openLightbox('assets/company/hop-ky-thuat-san-pham.jpg', 'Họp kỹ thuật & Phân tích tính năng')">
-          <img src="assets/company/hop-ky-thuat-san-pham.jpg" alt="Họp kỹ thuật & Phân tích tính năng" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="text-xs font-bold tracking-wide text-teal-300 mb-1" data-i18n="company_photo2_badge">R&D & Thiết kế</span>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-1" data-i18n="company_photo2_title">Họp kỹ thuật & Phân tích tính năng</h3>
-            <p class="text-xs text-slate-200" data-i18n="company_photo2_desc">Thảo luận tối ưu trải nghiệm người dùng và quy trình thao tác điều dưỡng.</p>
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/hop-ky-thuat-san-pham.jpg" alt="Họp kỹ thuật & Phân tích tính năng" class="workplace-photo-img" loading="lazy" />
+            <div class="workplace-photo-badge">
+              <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-600"></i>
+              <span data-i18n="company_photo2_badge">R&D & Thiết kế</span>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
-        </div>
+          <div class="workplace-card-body">
+            <div>
+              <h3 class="workplace-card-title" data-i18n="company_photo2_title">Họp kỹ thuật & Phân tích tính năng</h3>
+              <p class="workplace-card-desc" data-i18n="company_photo2_desc">Thảo luận tối ưu trải nghiệm người dùng và quy trình thao tác điều dưỡng.</p>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+              <span class="text-xs text-slate-400 font-medium">R&D Lab</span>
+            </div>
+          </div>
+        </article>
 
-        <!-- Ảnh 3: Đào tạo & Demo -->
-        <div class="gallery-card aspect-[4/3] group"
+        <!-- Ảnh 3: Đào tạo & Demo (4 cột, 16:10) -->
+        <article class="workplace-card workplace-card-col4"
           onclick="openLightbox('assets/company/dao-tao-demo-he-thong.jpg', 'Đào tạo & Thử nghiệm giải pháp')">
-          <img src="assets/company/dao-tao-demo-he-thong.jpg" alt="Đào tạo & Thử nghiệm giải pháp" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="text-xs font-bold tracking-wide text-teal-300 mb-1" data-i18n="company_photo3_badge">Kiểm thử hệ thống</span>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-1" data-i18n="company_photo3_title">Đào tạo & Thử nghiệm giải pháp</h3>
-            <p class="text-xs text-slate-200" data-i18n="company_photo3_desc">Kiểm thử các luồng dữ liệu đồng bộ giữa Cổng quản trị và Ứng dụng di động.</p>
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/dao-tao-demo-he-thong.jpg" alt="Đào tạo & Thử nghiệm giải pháp" class="workplace-photo-img" loading="lazy" />
+            <div class="workplace-photo-badge">
+              <i data-lucide="check-check" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span data-i18n="company_photo3_badge">Kiểm thử hệ thống</span>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
-        </div>
+          <div class="workplace-card-body">
+            <div>
+              <h3 class="workplace-card-title" data-i18n="company_photo3_title">Đào tạo & Thử nghiệm giải pháp</h3>
+              <p class="workplace-card-desc" data-i18n="company_photo3_desc">Kiểm thử các luồng dữ liệu đồng bộ giữa Cổng quản trị và Ứng dụng di động.</p>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+              <span class="text-xs text-slate-400 font-medium">QA & Testing</span>
+            </div>
+          </div>
+        </article>
 
-        <!-- Ảnh 4: Khu vực nghiên cứu -->
-        <div class="gallery-card aspect-[4/3] group"
+        <!-- Ảnh 4: Khu vực nghiên cứu (4 cột, 16:10) -->
+        <article class="workplace-card workplace-card-col4"
           onclick="openLightbox('assets/company/van-phong-lap-trinh-1.jpg', 'Khu vực nghiên cứu phần mềm')">
-          <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực nghiên cứu phần mềm" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="text-xs font-bold tracking-wide text-teal-300 mb-1" data-i18n="company_photo4_badge">Môi trường làm việc</span>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-1" data-i18n="company_photo4_title">Khu vực nghiên cứu phần mềm</h3>
-            <p class="text-xs text-slate-200" data-i18n="company_photo4_desc">Không gian làm việc mở, năng động tại văn phòng Handico Phạm Hùng.</p>
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực nghiên cứu phần mềm" class="workplace-photo-img" loading="lazy" />
+            <div class="workplace-photo-badge">
+              <i data-lucide="building" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span data-i18n="company_photo4_badge">Môi trường làm việc</span>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
-        </div>
+          <div class="workplace-card-body">
+            <div>
+              <h3 class="workplace-card-title" data-i18n="company_photo4_title">Khu vực nghiên cứu phần mềm</h3>
+              <p class="workplace-card-desc" data-i18n="company_photo4_desc">Không gian làm việc mở, năng động tại văn phòng Handico Phạm Hùng.</p>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+              <span class="text-xs text-slate-400 font-medium">Handico Tower</span>
+            </div>
+          </div>
+        </article>
 
-        <!-- Ảnh 5: Hạ tầng Cloud -->
-        <div class="gallery-card aspect-[4/3] group"
+        <!-- Ảnh 5: Hạ tầng Cloud (4 cột, 16:10) -->
+        <article class="workplace-card workplace-card-col4"
           onclick="openLightbox('assets/company/van-phong-lap-trinh-2.jpg', 'Hạ tầng Cloud & Giám sát hệ thống')">
-          <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Hạ tầng Cloud & Giám sát hệ thống" loading="lazy" />
-          <div class="gallery-overlay">
-            <span class="text-xs font-bold tracking-wide text-teal-300 mb-1" data-i18n="company_photo5_badge">Hạ tầng & Bảo mật</span>
-            <h3 class="text-base sm:text-lg font-bold text-white mb-1" data-i18n="company_photo5_title">Hạ tầng Cloud & Giám sát hệ thống</h3>
-            <p class="text-xs text-slate-200" data-i18n="company_photo5_desc">Đội ngũ kỹ thuật giám sát hệ thống, tối ưu độ ổn định và an toàn dữ liệu.</p>
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Hạ tầng Cloud & Giám sát hệ thống" class="workplace-photo-img" loading="lazy" />
+            <div class="workplace-photo-badge">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-indigo-600"></i>
+              <span data-i18n="company_photo5_badge">Hạ tầng & Bảo mật</span>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
-        </div>
+          <div class="workplace-card-body">
+            <div>
+              <h3 class="workplace-card-title" data-i18n="company_photo5_title">Hạ tầng Cloud & Giám sát hệ thống</h3>
+              <p class="workplace-card-desc" data-i18n="company_photo5_desc">Đội ngũ kỹ thuật giám sát hệ thống, tối ưu độ ổn định và an toàn dữ liệu.</p>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+              <span class="text-xs text-slate-400 font-medium">24/7 Ops</span>
+            </div>
+          </div>
+        </article>
 
       </div>
     </section>
@@ -1097,7 +1439,7 @@
                 <div>
                   <div class="text-xs font-bold text-slate-400 tracking-wide mb-0.5" data-i18n="company_legal_hotline_label">Hotline tư vấn & Hỗ trợ</div>
                   <div class="text-emerald-600 text-lg font-extrabold font-mono">
-                    <a href="tel:19006868" class="hover:underline">1900 6868</a>
+                    <a href="tel:0988123531" class="hover:underline">0988 123 531</a>
                   </div>
                 </div>
               </div>
@@ -1110,7 +1452,7 @@
                 <div>
                   <div class="text-xs font-bold text-slate-400 tracking-wide mb-0.5" data-i18n="company_legal_email_label">Email liên hệ chính thức</div>
                   <div class="text-slate-800 text-sm font-semibold">
-                    <a href="mailto:contact@beecare.vn" class="hover:text-teal-600">contact@beecare.vn</a>
+                    <a href="mailto:trang.haniki@gmail.com" class="hover:text-teal-600">trang.haniki@gmail.com</a>
                   </div>
                 </div>
               </div>
@@ -1201,25 +1543,25 @@
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
           </div>
           <div class="footer-contact-row">
-            <a href="tel:19006868" class="footer-contact-item">
-              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            <a href="tel:0988123531" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              Hotline: <strong style="color:#38bdf8">0988 123 531</strong>
             </a>
-            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
-              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              contact@beecare.vn
+            <a href="mailto:trang.haniki@gmail.com" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              trang.haniki@gmail.com
             </a>
             <span class="footer-contact-item">
-              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
               <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
             </span>
           </div>
@@ -1228,7 +1570,10 @@
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12C2.5 6.753 6.753 2.5 12 2.5C17.247 2.5 21.5 6.753 21.5 12C21.5 17.247 17.247 21.5 12 21.5C10.36 21.5 8.816 21.084 7.468 20.354L3.5 21.5L4.764 17.728C3.344 16.148 2.5 14.17 2.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
             </a>
             <a href="https://youtube.com/@beecare" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -1283,23 +1628,23 @@
         <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
         <div>
           <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
-          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
-            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+          <div style="background:rgba(38,83,151,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#38bdf8;margin-bottom:8px;display:flex;align-items:center;gap:6px">
               <i data-lucide="clock" style="width:12px;height:12px"></i>
               <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
             </div>
             <div style="font-size:12px;color:#64748b;line-height:1.6">
               <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
-              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#38bdf8">24/7 365 ngày</strong>
             </div>
             <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
               <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
                 <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
                 <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
               </a>
-              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+              <a href="tel:0988123531" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(2,132,199,0.12);border:1px solid rgba(2,132,199,0.25);color:#38bdf8;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
                 <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
-                <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+                <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
           </div>
@@ -1357,7 +1702,7 @@
 
   <!-- Scripts -->
   <script src="assets/i18n/common.js?v=20261003_v8"></script>
-  <script src="assets/i18n/company.js?v=20261003_v6"></script>
+  <script src="assets/i18n/company.js?v=20261005_v7"></script>
   <script src="assets/script.js?v=20261003_v8"></script>
 </body>
 

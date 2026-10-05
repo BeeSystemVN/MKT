@@ -24,23 +24,21 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
+  <link rel="stylesheet" href="assets/style.css?v=20261005_v12" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 </head>
 
-<body class="font-body text-slate-800 bg-slate-50">
+<body class="font-body text-slate-800 bg-[#FBF7F3]">
 
   <!-- ===================== PRELOADER ===================== -->
   <div id="preloader">
     <div class="flex flex-col items-center gap-5">
-      <div class="relative flex items-center justify-center">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="animation: heartbeat 1.3s ease-in-out infinite;">
-          <path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#0D9488" />
+      <div class="preloader-heart-wrap">
+        <svg class="preloader-heart-icon" width="68" height="68" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="heart-outline-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <path class="heart-pulse-path" d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
         </svg>
-        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping pointer-events-none" style="top: 35%; left: 58%;"></span>
       </div>
 
       <svg class="ecg-line" viewBox="0 0 260 60">
@@ -48,10 +46,11 @@
           d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
       </svg>
 
-      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
-        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      <div class="preloader-brand-wrap">
+        <div class="preloader-brand-logo">
+          <span class="preloader-bee">Bee</span><span class="preloader-care">Care</span>
+        </div>
       </div>
-      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
     </div>
   </div>
 
@@ -64,7 +63,7 @@
         <div class="flex items-center gap-3 shrink-0">
           <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
             <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
             </span>
           </a>
         </div>
@@ -143,39 +142,86 @@
   </nav>
 
   <!-- ===================== 1. PRICING HERO SECTION ===================== -->
-  <section class="company-hero">
-    <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
-        <i data-lucide="tag" class="w-3.5 h-3.5"></i>
-        <span data-i18n="pricing_hero_badge">Báo giá linh hoạt • Khảo sát tận nơi</span>
-      </div>
-      
-      <!-- H1 Main Title (Sentence case, concise, 1 line) -->
-      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight whitespace-normal md:whitespace-nowrap">
-        <span data-i18n="pricing_hero_title">Bảng giá giải pháp</span>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300" data-i18n="pricing_hero_title_highlight">BeeCare</span>
-      </h1>
-      
-      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto mb-7 leading-relaxed" data-i18n="pricing_hero_desc">
-        Lựa chọn gói giải pháp phù hợp với quy mô và lộ trình chuyển đổi số của viện dưỡng lão. Tối ưu chi phí, nâng cao năng suất điều dưỡng và gắn kết gia đình trọn vẹn.
-      </p>
+  <section class="company-hero pricing-hero-split">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="pricing-hero-grid">
+        
+        <!-- Left Column: Content, Value Proposition & Actions -->
+        <div class="pricing-hero-col-content" data-aos="fade-right">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
+            <i data-lucide="zap" class="w-3.5 h-3.5 text-teal-300"></i>
+            <span data-i18n="pricing_hero_badge">Chính sách báo giá & triển khai hệ thống</span>
+          </div>
+          
+          <!-- H1 Main Title -->
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight" data-i18n="pricing_hero_title">
+            Báo Giá Gói Dịch Vụ Theo Quy Mô
+          </h1>
+          
+          <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal mb-6 leading-relaxed max-w-2xl" data-i18n="pricing_hero_desc">
+            Báo giá trọn gói bao gồm đầy đủ Web Admin, Mobile Staff, Mobile Family và Cloud Server. Không phát sinh chi phí ẩn, cam kết đồng hành và bảo hành miễn phí suốt thời gian hợp đồng.
+          </p>
 
-      <!-- Trust Ribbon (Thay thế thanh Toggle gạt giá theo yêu cầu) -->
-      <div class="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/15 text-xs sm:text-sm font-semibold text-white shadow-lg">
-        <i data-lucide="shield-check" class="w-4 h-4 text-teal-300 shrink-0"></i>
-        <span data-i18n="pricing_hero_consult_tag">Khảo sát thực tế tại viện • Báo giá linh hoạt theo số giường</span>
+          <!-- 3 Value Highlights Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-2.5 rounded-xl text-white text-xs font-medium">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span data-i18n="pricing_hero_highlight1">Đầy đủ 3 nền tảng (Web + 2 App Mobile)</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-2.5 rounded-xl text-white text-xs font-medium">
+              <i data-lucide="shield-check" class="w-4 h-4 text-sky-400 shrink-0"></i>
+              <span data-i18n="pricing_hero_highlight2">Hạ tầng Cloud bảo mật riêng</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-2.5 rounded-xl text-white text-xs font-medium">
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 shrink-0"></i>
+              <span data-i18n="pricing_hero_highlight3">Bảo hành & sửa lỗi 100% miễn phí</span>
+            </div>
+          </div>
+
+          <!-- Quick CTAs -->
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#plans" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200">
+              <i data-lucide="arrow-down-circle" class="w-4 h-4"></i>
+              <span data-i18n="pricing_hero_btn_explore">Xem chi tiết các gói</span>
+            </a>
+            <a href="tel:0988123531" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-sm transition-all duration-200">
+              <i data-lucide="phone-call" class="w-4 h-4 text-teal-300"></i>
+              <span>Hotline 0988 123 531</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: 3D Ecosystem Device Showcase -->
+        <div class="pricing-hero-col-showcase" data-aos="fade-left" data-aos-delay="150">
+          <div class="pricing-hero-img-box">
+            <!-- Ambient Radial Glow Behind Image -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-cyan-500/30 via-sky-400/20 to-teal-400/30 rounded-3xl filter blur-2xl pointer-events-none"></div>
+
+            <!-- Central Floating Top Badge -->
+            <div class="pricing-floating-badge absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 bg-slate-900/90 border border-teal-400/50 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-white shadow-xl flex items-center gap-2 whitespace-nowrap">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span data-i18n="pricing_device_tag_ecosystem">Hệ sinh thái 3 trong 1 đồng bộ</span>
+            </div>
+
+            <!-- 3D Isometric Device Image Card -->
+            <div class="pricing-hero-img-card">
+              <img
+                src="assets/pricing/pricing-hero-devices.jpg"
+                alt="Hệ sinh thái thiết bị BeeCare 3D: Web Admin, App Điều dưỡng, App Người thân"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ===================== 2. KEY STATS & GUARANTEES BAR ===================== -->
   <div class="stats-container" data-aos="fade-up" data-aos-delay="150">
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number text-teal-600" data-i18n="pricing_stat1_num">0đ</div>
-        <div class="stat-label" data-i18n="pricing_stat1_title">Chi phí khởi tạo</div>
-        <div class="stat-desc" data-i18n="pricing_stat1_desc">Thiết lập hệ thống & chuyển giao quy trình miễn phí</div>
-      </div>
+    <div class="stats-grid stats-grid-3">
       <div class="stat-card">
         <div class="stat-number text-sky-600" data-i18n="pricing_stat2_num">100%</div>
         <div class="stat-label" data-i18n="pricing_stat2_title">Bảo mật dữ liệu</div>
@@ -184,7 +230,7 @@
       <div class="stat-card">
         <div class="stat-number text-emerald-600" data-i18n="pricing_stat3_num">24/7</div>
         <div class="stat-label" data-i18n="pricing_stat3_title">Đồng hành kỹ thuật</div>
-        <div class="stat-desc" data-i18n="pricing_stat3_desc">Đội ngũ kỹ sư hỗ trợ tại chỗ và giải đáp tức thì</div>
+        <div class="stat-desc" data-i18n="pricing_stat3_desc">Đội ngũ kỹ thuật hỗ trợ tại chỗ và giải đáp tức thì</div>
       </div>
       <div class="stat-card">
         <div class="stat-number text-amber-500" data-i18n="pricing_stat4_num">30 ngày</div>
@@ -198,7 +244,7 @@
   <main class="bg-slate-50 relative pb-20">
 
     <!-- ===================== 3. PRICING CARDS SECTION ===================== -->
-    <section class="section-wrapper" data-aos="fade-up">
+    <section id="plans" class="section-wrapper scroll-mt-24" data-aos="fade-up">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <div class="section-badge">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i>
@@ -208,12 +254,12 @@
           Bảng giá linh hoạt theo quy mô viện dưỡng lão
         </h2>
         <p class="section-subtext" data-i18n="pricing_plans_desc">
-          Mọi gói dịch vụ đều được cập nhật tính năng liên tục, không phát sinh chi phí ẩn và có kỹ sư hỗ trợ riêng.
+          Mọi gói dịch vụ đều được cập nhật tính năng liên tục, không phát sinh chi phí ẩn và có đội ngũ kỹ thuật hỗ trợ riêng.
         </p>
       </div>
 
       <!-- Pricing Cards 3 Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-7 items-stretch max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto pt-6 pb-8">
         
         <!-- CARD 1: CƠ BẢN (BASIC) -->
         <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
@@ -284,10 +330,11 @@
         </div>
 
         <!-- CARD 2: TIÊU CHUẨN (STANDARD - POPULAR) -->
-        <div class="vm-card pricing-card-popular" data-aos="fade-up" data-aos-delay="200">
+        <div class="vm-card pricing-card-popular">
           <!-- Top Popular Ribbon (Sentence case: Phổ biến nhất) -->
-          <div class="popular-ribbon" data-i18n="pricing_popular">
-            Phổ biến nhất
+          <div class="popular-ribbon">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300 shrink-0"></i>
+            <span data-i18n="pricing_popular">Phổ biến nhất</span>
           </div>
 
           <div>
@@ -441,18 +488,33 @@
         </div>
         
         <div class="overflow-x-auto">
-          <table class="w-full min-w-[760px] text-left border-collapse">
+          <table class="w-full min-w-[760px] text-left border-collapse compare-table">
             <thead>
               <tr class="bg-slate-50/80 border-b border-slate-200">
-                <th class="py-5 px-6 sm:px-8 font-bold text-slate-900 w-2/5" data-i18n="compare_feature">Tính năng & Phân hệ</th>
-                <th class="py-5 px-5 text-center font-bold text-slate-800 text-base" data-i18n="plan_basic_title">Cơ bản</th>
-                <th class="py-5 px-5 text-center font-bold text-teal-800 text-base bg-teal-50/50 border-x border-teal-100">
-                  <div class="flex flex-col items-center gap-1">
-                    <span data-i18n="plan_pro_title">Tiêu chuẩn</span>
-                    <span class="px-2.5 py-0.5 bg-teal-600 text-white text-[11px] rounded-full font-bold" data-i18n="pricing_popular">Phổ biến nhất</span>
+                <th class="compare-table-head-th py-5 px-6 sm:px-8 font-bold text-slate-900 w-2/5">
+                  <div class="compare-plan-header compare-plan-header-left">
+                    <span class="compare-plan-title text-slate-900" data-i18n="compare_feature">Tính năng & Phân hệ</span>
                   </div>
                 </th>
-                <th class="py-5 px-5 text-center font-bold text-slate-800 text-base" data-i18n="plan_premium_title">Nâng cao & Chuỗi</th>
+                <th class="compare-table-head-th py-5 px-5 text-center font-bold text-slate-800">
+                  <div class="compare-plan-header">
+                    <span class="compare-plan-title text-slate-800" data-i18n="plan_basic_title">Cơ bản</span>
+                  </div>
+                </th>
+                <th class="compare-table-head-th py-5 px-5 text-center font-bold text-teal-800 bg-teal-50/50 border-x border-teal-100">
+                  <div class="compare-plan-header">
+                    <span class="compare-plan-title text-teal-800" data-i18n="plan_pro_title">Tiêu chuẩn</span>
+                    <span class="table-popular-badge">
+                      <i data-lucide="sparkles" class="w-3 h-3 text-amber-300 shrink-0"></i>
+                      <span data-i18n="pricing_popular">Phổ biến nhất</span>
+                    </span>
+                  </div>
+                </th>
+                <th class="compare-table-head-th py-5 px-5 text-center font-bold text-slate-800">
+                  <div class="compare-plan-header">
+                    <span class="compare-plan-title text-slate-800" data-i18n="plan_premium_title">Nâng cao & Chuỗi</span>
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 text-sm">
@@ -600,13 +662,13 @@
               <tr class="hover:bg-slate-50/70 transition-colors">
                 <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_onboarding">Đào tạo & hướng dẫn nhân viên</td>
                 <td class="py-4 px-5 text-center text-slate-600 text-xs" data-i18n="compare_onboarding_basic">Hướng dẫn trực tuyến qua Zoom/Meet</td>
-                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_onboarding_pro">Kỹ sư đến đào tạo trực tiếp tại viện</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_onboarding_pro">Đội ngũ kỹ thuật đến đào tạo trực tiếp tại viện</td>
                 <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_onboarding_premium">Đào tạo tận nơi & chuyển giao toàn diện</td>
               </tr>
               <tr class="hover:bg-slate-50/70 transition-colors">
                 <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_migration">Hỗ trợ di chuyển dữ liệu bệnh án cũ</td>
                 <td class="py-4 px-5 text-center text-slate-500 text-xs" data-i18n="compare_migration_basic">Cung cấp mẫu Excel</td>
-                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_migration_pro">Kỹ sư hỗ trợ import</td>
+                <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_migration_pro">Đội ngũ kỹ thuật hỗ trợ import</td>
                 <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_migration_premium">Di chuyển trọn gói 100%</td>
               </tr>
               <tr class="hover:bg-slate-50/70 transition-colors">
@@ -619,7 +681,7 @@
                 <td class="py-4 px-6 sm:px-8 text-slate-700 font-medium" data-i18n="compare_support_channel">Kênh tiếp nhận hỗ trợ kỹ thuật</td>
                 <td class="py-4 px-5 text-center text-slate-600 text-xs" data-i18n="compare_support_basic">Email & Giờ hành chính</td>
                 <td class="py-4 px-5 text-center text-teal-800 font-bold text-xs bg-teal-50/30 border-x border-teal-100" data-i18n="compare_support_pro">Hotline riêng & Zalo hỗ trợ 24/7</td>
-                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_support_premium">Kỹ sư phụ trách chuyên trách 24/7/365</td>
+                <td class="py-4 px-5 text-center text-slate-900 font-bold text-xs" data-i18n="compare_support_premium">Đội ngũ kỹ thuật chuyên trách 24/7/365</td>
               </tr>
 
             </tbody>
@@ -643,7 +705,7 @@
           </p>
 
           <!-- 2x2 Outlined Badges (Bố cục chống tràn sang hình ảnh) -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div class="pill-tag-grid">
             <div class="pill-tag-outline">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
               <span data-i18n="pricing_commit_pill1">Đào tạo tại cơ sở miễn phí</span>
@@ -658,7 +720,7 @@
             </div>
             <div class="pill-tag-outline">
               <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
-              <span data-i18n="pricing_commit_pill4">Kỹ sư hỗ trợ trực tiếp 24/7</span>
+              <span data-i18n="pricing_commit_pill4">Đội ngũ kỹ thuật hỗ trợ trực tiếp 24/7</span>
             </div>
           </div>
         </div>
@@ -736,7 +798,7 @@
           </button>
           <div class="faq-answer-panel">
             <span data-i18n="pricing_faq_a4">
-              Giao diện BeeCare được thiết kế chuyên biệt theo tiêu chuẩn Kaigo Nhật Bản: nút bấm to, chữ rõ ràng, thao tác chạm đơn giản và hỗ trợ nhập liệu bằng giọng nói tiếng Việt. Kỹ sư HANIKI sẽ trực tiếp đào tạo cầm tay chỉ việc tại viện cho đến khi toàn bộ nhân sự tự tin sử dụng.
+              Giao diện BeeCare được thiết kế chuyên biệt theo tiêu chuẩn Kaigo Nhật Bản: nút bấm to, chữ rõ ràng, thao tác chạm đơn giản và hỗ trợ nhập liệu bằng giọng nói tiếng Việt. Đội ngũ kỹ thuật HANIKI sẽ trực tiếp đào tạo cầm tay chỉ việc tại viện cho đến khi toàn bộ nhân sự tự tin sử dụng.
             </span>
           </div>
         </div>
@@ -755,7 +817,7 @@
             Sẵn sàng nâng tầm quản lý viện dưỡng lão?
           </h2>
           <p class="text-teal-100 text-base sm:text-lg mb-8 leading-relaxed" data-i18n="pricing_cta_desc">
-            Đăng ký ngay hôm nay để nhận 30 ngày trải nghiệm miễn phí toàn diện và được kỹ sư HANIKI khảo sát quy trình trực tiếp tại viện của bạn.
+            Đăng ký ngay hôm nay để nhận 30 ngày trải nghiệm miễn phí toàn diện và được đội ngũ kỹ thuật HANIKI khảo sát quy trình trực tiếp tại viện của bạn.
           </p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
             <!-- Nút màu trắng chữ xanh đậm rõ ràng tuyệt đối, sửa triệt để lỗi chữ trắng trên nền trắng -->
@@ -763,9 +825,9 @@
               <i data-lucide="calendar-check" class="w-4 h-4"></i>
               <span data-i18n="pricing_cta_btn1">Đặt lịch tư vấn & Khảo sát</span>
             </a>
-            <a href="tel:19006868" class="cta-banner-btn-outline w-full sm:w-auto">
+            <a href="tel:0988123531" class="cta-banner-btn-outline w-full sm:w-auto">
               <i data-lucide="phone-call" class="w-4 h-4"></i>
-              <span data-i18n="pricing_cta_btn2">Gọi hotline 1900 6868</span>
+              <span data-i18n="pricing_cta_btn2">Gọi hotline 0988 123 531</span>
             </a>
           </div>
         </div>
@@ -776,9 +838,9 @@
 
   <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
   <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
-    <a href="tel:19006868" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200" style="min-height: 44px;">
+    <a href="tel:0988123531" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200" style="min-height: 44px;">
       <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
-      <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+      <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
     </a>
     <a href="contact.html" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md" style="min-height: 44px;">
       <i data-lucide="calendar-check" class="w-4 h-4"></i>
@@ -799,25 +861,25 @@
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
           </div>
           <div class="footer-contact-row">
-            <a href="tel:19006868" class="footer-contact-item">
-              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            <a href="tel:0988123531" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              Hotline: <strong style="color:#38bdf8">0988 123 531</strong>
             </a>
-            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
-              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              contact@beecare.vn
+            <a href="mailto:trang.haniki@gmail.com" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              trang.haniki@gmail.com
             </a>
             <span class="footer-contact-item">
-              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
               <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
             </span>
           </div>
@@ -825,8 +887,11 @@
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="https://zalo.me/0961816868" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12C2.5 6.753 6.753 2.5 12 2.5C17.247 2.5 21.5 6.753 21.5 12C21.5 17.247 17.247 21.5 12 21.5C10.36 21.5 8.816 21.084 7.468 20.354L3.5 21.5L4.764 17.728C3.344 16.148 2.5 14.17 2.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -881,23 +946,23 @@
         <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
         <div>
           <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
-          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
-            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+          <div style="background:rgba(38,83,151,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#38bdf8;margin-bottom:8px;display:flex;align-items:center;gap:6px">
               <i data-lucide="clock" style="width:12px;height:12px"></i>
               <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
             </div>
             <div style="font-size:12px;color:#64748b;line-height:1.6">
               <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
-              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#38bdf8">24/7 365 ngày</strong>
             </div>
             <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
               <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
                 <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
                 <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
               </a>
-              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+              <a href="tel:0988123531" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(2,132,199,0.12);border:1px solid rgba(2,132,199,0.25);color:#38bdf8;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
                 <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
-                <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+                <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
           </div>
@@ -977,9 +1042,83 @@
   </script>
 
   <!-- Scripts -->
-  <script src="assets/i18n/common.js?v=20261003_v6"></script>
-  <script src="assets/i18n/pricing.js?v=20261003_v6"></script>
-  <script src="assets/script.js?v=20261003_v6"></script>
+  <script src="assets/gsap.min.js"></script>
+  <script src="assets/ScrollTrigger.min.js"></script>
+  <script>
+    // GSAP Motion for Featured Card (Tiêu chuẩn - Floating & Breathing)
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof gsap !== "undefined") {
+        if (typeof ScrollTrigger !== "undefined") {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        const popularCard = document.querySelector(".pricing-card-popular");
+        if (popularCard) {
+          const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+          if (isDesktop) {
+            // Initial position before scroll into view
+            gsap.set(popularCard, {
+              scale: 0.98,
+              y: 12,
+              opacity: 0.85
+            });
+
+            // Entrance animation triggered when scrolling to pricing
+            gsap.to(popularCard, {
+              scale: 1.05,
+              y: -14,
+              opacity: 1,
+              duration: 1.0,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: popularCard,
+                start: "top 85%",
+                toggleActions: "play none none none"
+              },
+              onComplete: () => {
+                // Continuous subtle floating / breathing loop
+                const floatLoop = gsap.to(popularCard, {
+                  y: -22,
+                  duration: 3.2,
+                  ease: "sine.inOut",
+                  yoyo: true,
+                  repeat: -1
+                });
+
+                // Hover interaction: pause float and lift up slightly
+                popularCard.addEventListener("mouseenter", () => {
+                  floatLoop.pause();
+                  gsap.to(popularCard, {
+                    y: -26,
+                    scale: 1.07,
+                    boxShadow: "0 35px 70px -12px rgba(26, 116, 181, 0.38), 0 0 0 1px rgba(26, 116, 181, 0.25)",
+                    duration: 0.35,
+                    ease: "power2.out"
+                  });
+                });
+
+                popularCard.addEventListener("mouseleave", () => {
+                  gsap.to(popularCard, {
+                    y: -14,
+                    scale: 1.05,
+                    boxShadow: "0 25px 60px -12px rgba(26, 116, 181, 0.28), 0 0 0 1px rgba(26, 116, 181, 0.15)",
+                    duration: 0.4,
+                    ease: "power2.out",
+                    onComplete: () => {
+                      floatLoop.resume();
+                    }
+                  });
+                });
+              }
+            });
+          }
+        }
+      }
+    });
+  </script>
+  <script src="assets/i18n/common.js?v=20261005_v11"></script>
+  <script src="assets/i18n/pricing.js?v=20261005_v11"></script>
+  <script src="assets/script.js?v=20261005_v11"></script>
 </body>
 
 </html>

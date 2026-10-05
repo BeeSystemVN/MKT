@@ -24,110 +24,136 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261003_v7" />
+  <link rel="stylesheet" href="assets/style.css?v=20261005_v9" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
 <style>
-/* ===================== ELITE NEWS & BENTO GRID ===================== */
+/* ===================== HERO SECTION (WARM IVORY MATCHING COMPANY PAGE) ===================== */
 .news-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #115e59 50%, #0f172a 100%);
-    position: relative;
-    overflow: hidden;
-    padding-top: 130px;
-    padding-bottom: 70px;
-    color: white;
-}
-.news-hero::before {
-    content: ''; position: absolute;
-    top: -20%; left: -5%; width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(45,212,191,0.15) 0%, transparent 60%);
-    border-radius: 50%; pointer-events: none;
-}
-.news-hero::after {
-    content: ''; position: absolute;
-    bottom: -20%; right: -5%; width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 60%);
-    border-radius: 50%; pointer-events: none;
-}
-
-.news-tab-filter {
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 100px;
-    padding: 6px;
-    display: inline-flex; gap: 4px; flex-wrap: wrap;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-.news-tab-btn {
-    padding: 10px 24px;
-    border-radius: 100px;
-    font-size: 14px; font-weight: 600;
-    color: #cbd5e1;
-    transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
     background: transparent;
+    position: relative;
+    padding-top: 112px;
+    padding-bottom: 24px;
+    color: #0F172A;
 }
-.news-tab-btn:hover {
-    color: #fff; background: rgba(255,255,255,0.08);
+@media (max-width: 768px) {
+    .news-hero {
+        padding-top: 96px;
+        padding-bottom: 20px;
+    }
 }
-.news-tab-btn.active {
-    background: #0d9488; color: #fff;
-    box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+.news-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    background: #EEF4FF;
+    border: 1px solid #BFDBFE;
+    color: #1E3A8A;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(30, 58, 138, 0.04);
+    transition: all 0.25s ease;
+}
+.news-hero-badge:hover {
+    background: #E0EDFF;
+    border-color: #93C5FD;
+}
+.news-hero-title {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #1A4F9C 0%, #265397 45%, #0284C7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+@media (min-width: 640px) {
+    .news-hero-title { font-size: 36px; }
+}
+@media (min-width: 1024px) {
+    .news-hero-title { font-size: 40px; }
+}
+.news-hero-desc {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.68;
+    max-width: 780px;
+    margin: 0 auto 24px;
+    font-weight: 400;
+}
+@media (min-width: 640px) {
+    .news-hero-desc { font-size: 15px; }
 }
 
 .news-search-box {
     position: relative;
-    width: 100%; max-width: 480px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 10px;
 }
 .news-search-input {
     width: 100%;
-    background: rgba(15,23,42,0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.15);
-    padding: 16px 20px 16px 48px;
+    background: #ffffff;
+    border: 1.5px solid #E2E8F0;
+    padding: 13px 20px 13px 46px;
     border-radius: 100px;
-    color: white; font-size: 15px;
-    transition: all 0.3s ease;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    color: #0F172A;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.06);
 }
-.news-search-input::placeholder { color: #94a3b8; }
+.news-search-input::placeholder { color: #94A3B8; }
 .news-search-input:focus {
-    outline: none; border-color: #2dd4bf;
-    background: rgba(15,23,42,0.7);
+    outline: none;
+    border-color: #265397;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(38, 83, 151, 0.12), 0 4px 16px -4px rgba(15, 23, 42, 0.08);
 }
 
 .news-main-bg {
-    background-color: #f8fafc;
+    background-color: #FBF7F3;
     position: relative;
-}
-.news-main-bg::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 300px;
-    background: linear-gradient(to bottom, #0f172a 0%, #f8fafc 100%);
 }
 
 .news-tab-filter-body {
-    display: inline-flex; gap: 8px; flex-wrap: wrap;
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
     margin-bottom: 24px;
+    background: #ffffff;
+    padding: 6px;
+    border-radius: 100px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 .news-tab-btn-body {
-    padding: 8px 20px;
+    padding: 8px 22px;
     border-radius: 100px;
-    font-size: 13.5px; font-weight: 600;
+    font-size: 13.5px;
+    font-weight: 600;
     color: #475569;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    background: transparent;
+    border: 1px solid transparent;
     transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
 .news-tab-btn-body:hover {
-    color: #0f172a; border-color: #cbd5e1;
+    color: #265397;
+    background: #F8FAFC;
 }
 .news-tab-btn-body.active {
-    background: #0f172a; color: #fff;
-    border-color: #0f172a;
-    box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+    background: linear-gradient(135deg, #0284c7 0%, #265397 100%);
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 4px 14px rgba(38, 83, 151, 0.3);
 }
 
 .bento-grid {
@@ -185,7 +211,7 @@
     margin-bottom: 12px; font-family: 'Be Vietnam Pro', sans-serif;
     transition: color 0.3s ease;
 }
-.bento-card:hover .bento-title { color: #0d9488; }
+.bento-card:hover .bento-title { color: #265397; }
 .bento-excerpt {
     font-size: 14px; color: #475569; line-height: 1.6;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
@@ -219,7 +245,7 @@
 
 .read-more-btn {
     display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13.5px; font-weight: 700; color: #0d9488;
+    font-size: 13.5px; font-weight: 700; color: #0284c7;
     margin-top: auto;
 }
 .read-more-btn i {
@@ -333,19 +359,17 @@
 </style>
 </head>
 
-<body class="font-body text-slate-800 bg-slate-50">
+<body class="font-body text-slate-800 bg-[#FBF7F3]">
 
   <!-- ===================== PRELOADER ===================== -->
   <div id="preloader">
     <div class="flex flex-col items-center gap-5">
-      <div class="relative flex items-center justify-center">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="animation: heartbeat 1.3s ease-in-out infinite;">
-          <path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#0D9488" />
+      <div class="preloader-heart-wrap">
+        <svg class="preloader-heart-icon" width="68" height="68" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="heart-outline-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <path class="heart-pulse-path" d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
         </svg>
-        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping pointer-events-none" style="top: 35%; left: 58%;"></span>
       </div>
 
       <svg class="ecg-line" viewBox="0 0 260 60">
@@ -353,10 +377,11 @@
           d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
       </svg>
 
-      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
-        <span class="text-teal-400">Bee</span><span class="text-amber-400">Care</span>
+      <div class="preloader-brand-wrap">
+        <div class="preloader-brand-logo">
+          <span class="preloader-bee">Bee</span><span class="preloader-care">Care</span>
+        </div>
       </div>
-      <div class="text-teal-200 text-sm font-medium"><span data-i18n="preloader_text">Đang tải mô hình thiết bị 3D và dữ liệu ứng dụng...</span></div>
     </div>
   </div>
 
@@ -369,7 +394,7 @@
         <div class="flex items-center gap-3 shrink-0">
           <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
             <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span><span class="brand-dot"></span>
+              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
             </span>
           </a>
         </div>
@@ -446,35 +471,32 @@
       </div>
     </div>
   </nav>
-  <!-- Premium Dark Hero -->
-  <section class="news-hero">
-    <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="fade-up">
-      <!-- Tag Removed Gemini Icon, just sleek text -->
-      <div class="inline-flex items-center justify-center bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-6 tracking-widest shadow-sm" data-i18n="news_hero_badge">
-        Tin Tức & Hoạt Động
-      </div>
-      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-3 font-heading tracking-tight" data-i18n-html="news_hero_title_html">
-        Kết nối cộng đồng, <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-teal-200">kiến tạo giá trị</span>
-      </h1>
-      <p class="text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto mb-6 leading-relaxed" data-i18n="news_hero_desc">
-        Những câu chuyện, sự kiện và cột mốc đáng nhớ trên chặng đường phát triển hệ sinh thái y tế thông minh của BeeCare.
-      </p>
+  <!-- ===================== 1. HERO SECTION ===================== -->
+  <section class="news-hero max-w-5xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
+    <div class="max-w-3xl mx-auto relative z-10 mb-4">
       
-      <!-- Search (More discreet) -->
-      <div class="news-search-box mt-6">
-          <input type="text" placeholder="Tìm kiếm bài viết..." class="news-search-input" data-i18n-placeholder="news_search_placeholder" />
-          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+      <!-- Badge / Main Title -->
+      <h1 class="news-hero-badge">
+        <i data-lucide="newspaper" class="w-3.5 h-3.5 text-[#1e3a8a] shrink-0"></i>
+        <span data-i18n="news_hero_badge">Tin tức & sự kiện</span>
+      </h1>
+
+      <!-- Search Box (Refined Light Design) -->
+      <div class="news-search-box mt-2">
+        <input type="text" placeholder="Tìm kiếm bài viết theo từ khóa..." class="news-search-input" data-i18n-placeholder="news_search_placeholder" />
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
       </div>
+
     </div>
   </section>
 
   <!-- Bento Grid Main Content -->
-  <main class="news-main-bg pb-24 pt-4 md:pt-6">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 flex justify-center items-center relative z-20">
+  <main class="news-main-bg pb-24 pt-2 md:pt-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-center items-center relative z-20">
        <div class="news-tab-filter-body">
           <button class="news-tab-btn-body active" data-filter="all" data-i18n="news_cat_all">Tất cả bài viết</button>
-          <button class="news-tab-btn-body" data-filter="Thiện Nguyện & Cộng Đồng" data-i18n="news_cat_charity">Cộng đồng</button>
-          <button class="news-tab-btn-body" data-filter="Văn Hóa Doanh Nghiệp" data-i18n="news_cat_culture">Văn hóa</button>
+          <button class="news-tab-btn-body" data-filter="Thiện Nguyện & Cộng Đồng" data-i18n="news_cat_charity">Thiện nguyện & Xã hội</button>
+          <button class="news-tab-btn-body" data-filter="Văn Hóa Doanh Nghiệp" data-i18n="news_cat_culture">Văn hóa doanh nghiệp</button>
        </div>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,9 +519,9 @@
   </div>
 <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
   <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
-    <a href="tel:19006868" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
+    <a href="tel:0988123531" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
       <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
-      <span data-i18n="idx_mobile_call">Gọi 1900 6868</span>
+      <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
     </a>
     <a href="#demo" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md">
       <i data-lucide="calendar-check" class="w-4 h-4"></i>
@@ -520,25 +542,25 @@
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái y tế thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web Portal, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
           </div>
           <div class="footer-contact-row">
-            <a href="tel:19006868" class="footer-contact-item">
-              <i data-lucide="phone" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              Hotline: <strong style="color:#2dd4bf">1900 6868</strong> &nbsp;•&nbsp; 0988 123 531
+            <a href="tel:0988123531" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              Hotline: <strong style="color:#38bdf8">0988 123 531</strong>
             </a>
-            <a href="mailto:contact@beecare.vn" class="footer-contact-item">
-              <i data-lucide="mail" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
-              contact@beecare.vn
+            <a href="mailto:trang.haniki@gmail.com" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              trang.haniki@gmail.com
             </a>
             <span class="footer-contact-item">
-              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0d9488;flex-shrink:0"></i>
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
               <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
             </span>
           </div>
@@ -546,8 +568,11 @@
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="https://zalo.me/0961816868" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 16.5H9.25c-.414 0-.75-.336-.75-.75V10.5h-.75c-.414 0-.75-.336-.75-.75s.336-.75.75-.75H9.5v-1.5c0-1.654 1.346-3 3-3s3 1.346 3 3v.75c0 .414-.336.75-.75.75s-.75-.336-.75-.75V7.5c0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5V9h4.5c.414 0 .75.336.75.75v6c0 .414-.336.75-.75.75z"/></svg>
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12C2.5 6.753 6.753 2.5 12 2.5C17.247 2.5 21.5 6.753 21.5 12C21.5 17.247 17.247 21.5 12 21.5C10.36 21.5 8.816 21.084 7.468 20.354L3.5 21.5L4.764 17.728C3.344 16.148 2.5 14.17 2.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -602,23 +627,23 @@
         <!-- Cột 4: Liên hệ & Tư vấn nhanh -->
         <div>
           <div class="footer-col-title" data-i18n="footer_col_support">Tư vấn & hỗ trợ</div>
-          <div style="background:rgba(13,148,136,0.08);border:1px solid rgba(45,212,191,0.15);border-radius:14px;padding:18px 16px;margin-bottom:16px">
-            <div style="font-size:12px;font-weight:600;color:#5eead4;margin-bottom:8px;display:flex;align-items:center;gap:6px">
+          <div style="background:rgba(38,83,151,0.08);border:1px solid rgba(2,132,199,0.2);border-radius:14px;padding:18px 16px;margin-bottom:16px">
+            <div style="font-size:12px;font-weight:600;color:#38bdf8;margin-bottom:8px;display:flex;align-items:center;gap:6px">
               <i data-lucide="clock" style="width:12px;height:12px"></i>
               <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
             </div>
             <div style="font-size:12px;color:#64748b;line-height:1.6">
               <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
-              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#2dd4bf">24/7 365 ngày</strong>
+              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#38bdf8">24/7 365 ngày</strong>
             </div>
             <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
               <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
                 <i data-lucide="calendar-check" style="width:13px;height:13px;flex-shrink:0"></i>
                 <span data-i18n="footer_btn_demo">Đăng ký demo miễn phí</span>
               </a>
-              <a href="tel:19006868" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(13,148,136,0.12);border:1px solid rgba(45,212,191,0.2);color:#5eead4;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
+              <a href="tel:0988123531" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 14px;border-radius:9px;background:rgba(2,132,199,0.12);border:1px solid rgba(2,132,199,0.25);color:#38bdf8;font-size:12.5px;font-weight:600;text-decoration:none;transition:background 0.2s ease">
                 <i data-lucide="phone-call" style="width:13px;height:13px;flex-shrink:0"></i>
-                Gọi 1900 6868
+                <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
           </div>
@@ -683,8 +708,9 @@
 <script>
     const newsData = {"vi":[{"id":"thien-nguyen-cao-bang","category":"Thiện Nguyện & Cộng Đồng","title":"HANIKI lan tỏa yêu thương tại Bản Nhảng, Cao Bằng","date":"09/01/2026","readTime":"6 phút đọc","image":"assets/news/thien-nguyen-cao-bang-banner.jpg","excerpt":"Đầu năm mới 2026, HANIKI đã tài trợ và trực tiếp trao tặng hàng chục suất quà cho bà con vùng sâu vùng xa.","readMore":"Đọc bài viết tiêu điểm","content":["Nhân dịp đầu năm mới 2026, với tinh thần sẻ chia và trách nhiệm đối với cộng đồng, Công ty TNHH HANIKI đã đồng hành và tài trợ cho chương trình thiện nguyện được tổ chức tại Bản Nhảng, xã Thị Hoa, huyện Hạ Lang, tỉnh Cao Bằng – một địa phương vùng cao còn nhiều khó khăn về điều kiện sinh hoạt và hạ tầng cơ bản.","Chương trình do Trường Đại học Khoa học Xã hội và Nhân văn tổ chức, với sự tham gia và hỗ trợ tích cực từ các đơn vị đồng hành. Trong đó, HANIKI cùng với Viện Dưỡng lão Diên Hồng giữ vai trò là nhà tài trợ chính, phối hợp triển khai nhiều hoạt động thiết thực, mang lại giá trị lâu dài cho cộng đồng dân cư trong bản.","**1. Những hỗ trợ thiết thực – Gieo hy vọng bền lâu:**","Trong khuôn khổ chương trình, HANIKI đã trực tiếp tài trợ và triển khai các hạng mục hỗ trợ cụ thể:","- Lắp đặt 20 đèn chiếu sáng đường tại các trục đường chính trong bản, góp phần cải thiện điều kiện đi lại.","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","- Trao tặng 50 phần quà Tết cho các hộ gia đình có hoàn cảnh khó khăn, trị giá 700.000 đồng mỗi phần.","[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]","- Tổ chức \"Phiên chợ 0 đồng\", nơi người dân trong bản có thể tự do lựa chọn các mặt hàng cần thiết.","[IMG: assets/news/phien-cho-0-dong.jpg]","Những hoạt động trên không chỉ mang ý nghĩa hỗ trợ trước mắt, mà còn thể hiện mong muốn của HANIKI trong việc góp phần cải thiện điều kiện sống.","**2. Gắn kết cộng đồng – Ấm áp nghĩa tình:**","[IMG: assets/news/lua-trai-ban-nhang.jpg]","Điểm nhấn xúc động của chương trình là đêm lửa trại giao lưu cùng bà con nhân dân trong bản. Khoảnh khắc ấy đã xóa nhòa khoảng cách, thắt chặt tình cảm và để lại nhiều kỷ niệm khó quên trong lòng những người tham gia.","Đại diện HANIKI chia sẻ: \"Chúng tôi tin rằng mỗi doanh nghiệp không chỉ tạo ra giá trị kinh tế mà còn cần lan tỏa giá trị nhân văn cho xã hội.\"","Hành trình sẻ chia sẽ còn tiếp nối, hướng tới mục tiêu phát triển bền vững gắn liền với trách nhiệm cộng đồng."]},{"id":"trai-nghiem-tet-nhat-ban","category":"Văn Hóa Doanh Nghiệp","title":"Trải nghiệm Tết Nhật Bản Shougatsu tại HANIKI","date":"25/01/2026","readTime":"5 phút đọc","image":"assets/news/tet-nhat-ban-bee-system.jpg","excerpt":"Nhân sự HANIKI hào hứng khám phá Tết Nhật Bản, viết thư pháp Shodou và nấu mì trường thọ.","readMore":"Đọc chi tiết","content":["Khi mùa xuân gõ cửa, đại gia đình HANIKI lại cùng nhau khám phá và trải nghiệm tinh hoa văn hóa Tết Nhật Bản (Shougatsu) ngay tại văn phòng - một hành trình học hỏi, gắn kết và tràn đầy niềm vui.","**1. Không khí Tết Nhật Bản tràn ngập tại HANIKI:**","[IMG: assets/news/tet-shougatsu-khong-khi.jpg]","Vừa qua, các thành viên của HANIKI đã có cơ hội tham gia buổi ngoại khóa đặc biệt về chủ đề \"Tết Nhật Bản - Shougatsu\" cùng các Sensei đến từ Trung tâm Tiếng Nhật WeXpats Nihongo.","**2. Khám phá văn hóa Tết Nhật Bản (Shougatsu):**","Mở đầu buổi học, các thành viên được Sensei giới thiệu về truyền thống đón Tết của người Nhật Bản - dịp lễ quan trọng nhất trong năm. Mọi người cùng tìm hiểu về các phong tục đặc sắc như:","- Viếng đền và chùa đầu năm để cầu bình an.","- Trang trí nhà cửa bằng Kadomatsu và Shimekazari để đón lộc vào nhà.","- Gửi thiệp chúc mừng năm mới và tặng bao lì xì (Otoshidama) cho trẻ em.","**3. Trải nghiệm viết thư pháp (Shodou) - Nét đẹp truyền thống đầu năm:**","[IMG: assets/news/viet-thu-phap-shodou.jpg]","Tiếp theo, nhân sự HANIKI được trực tiếp thực hành nghệ thuật viết thư pháp Nhật Bản (Shodou). Dưới sự hướng dẫn của Sensei, từng nét bút uyển chuyển trên giấy thể hiện tinh thần kiên nhẫn, tĩnh tâm.","Mỗi thành viên chọn cho mình một chữ mang ý nghĩa may mắn như \"福\" (phúc), \"夢\" (giấc mơ) hay \"愛\" (tình yêu).","Buổi trải nghiệm không chỉ mang đến kiến thức bổ ích về văn hóa Nhật Bản, mà còn là dịp để mọi người giao lưu, học hỏi và gắn bó hơn trong môi trường làm việc."]},{"id":"team-building-nam-moi","category":"Văn Hóa Doanh Nghiệp","title":"Gala chào xuân 2026: Bee together, grow together","date":"10/02/2026","readTime":"4 phút đọc","image":"assets/news/bee-together-grow-together.jpg","excerpt":"Đêm Gala vinh danh những cá nhân xuất sắc và thắt chặt tình đoàn kết của đại gia đình HANIKI.","readMore":"Khám phá","content":["Trong không khí hân hoan chào đón năm mới, đại gia đình HANIKI đã tổ chức đêm Gala tổng kết cuối năm với chủ đề 'Bee Together, Grow Together'.","Đây là dịp để toàn thể cán bộ nhân viên nhìn lại chặng đường một năm đầy nỗ lực, đồng thời vinh danh những cá nhân và tập thể đã có thành tích xuất sắc, đóng góp vào sự phát triển chung của công ty.","[IMG: assets/news/bee-together-grow-together.jpg]","**1. Vinh danh những nỗ lực không ngừng nghỉ:**","Ban lãnh đạo công ty đã trao tặng những phần thưởng xứng đáng cho các nhân viên xuất sắc. Những cống hiến thầm lặng đều được ghi nhận và trân trọng.","**2. Thắt chặt tình đoàn kết:**","Đêm Gala không chỉ có những bài phát biểu tổng kết mà còn tràn ngập tiếng cười với các tiết mục văn nghệ tự biên tự diễn mang đậm bản sắc HANIKI.","**3. Hướng tới mục tiêu 2026:**","Với khẩu hiệu 'Grow Together', toàn thể nhân sự đã cùng nhau cam kết sẽ bứt phá mạnh mẽ hơn nữa trong năm 2026, đưa các giải pháp y tế số của BeeCare tiếp cận thêm nhiều viện dưỡng lão trên cả nước."]},{"id":"le-hoi-am-thuc-onigiri","category":"Văn Hóa Doanh Nghiệp","title":"Cuộc thi nấu ăn nội bộ: Tinh hoa ẩm thực Nhật","date":"05/03/2026","readTime":"3 phút đọc","image":"assets/news/lam-com-nam-onigiri.jpg","excerpt":"Các phòng ban đã có dịp trổ tài khéo léo qua cuộc thi làm cơm nắm Onigiri truyền thống.","readMore":"Xem thêm","content":["Với mục tiêu đa dạng hóa các hoạt động nội bộ và mang đến những giờ phút thư giãn sau giờ làm việc, HANIKI đã tổ chức cuộc thi làm cơm nắm Onigiri truyền thống.","**1. Tinh hoa ẩm thực thu nhỏ:**","Các Sensei từ WeXpats đã hướng dẫn tỉ mỉ từ khâu nấu cơm, nêm gia vị, tạo hình cho đến thêm nhân bên trong.","[IMG: assets/news/lam-com-nam-onigiri.jpg]","**2. Sự khéo léo của các thành viên HANIKI:**","Dưới bàn tay khéo léo của các thành viên, những chiếc Onigiri xinh xắn, hấp dẫn lần lượt ra đời - không chỉ ngon miệng mà còn tràn đầy tinh thần sáng tạo.","**3. Tinh thần đồng đội:**","Thông qua hoạt động này, mọi người hiểu rằng văn hóa Nhật không chỉ nằm trong ngôn ngữ hay phong tục, mà còn thể hiện trong từng bữa ăn - nơi chứa đựng sự trân trọng, chăm chút và biết ơn đối với thực phẩm.","[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]","Bên cạnh cơm nắm, mọi người còn được hướng dẫn làm món mì trường thọ Toshikoshi Soba. Một bữa tiệc ẩm thực ấm cúng đã gắn kết thêm tình cảm của các thành viên trong công ty."]},{"id":"ngay-hoi-yukata","category":"Văn Hóa Doanh Nghiệp","title":"Ngày hội trải nghiệm trang phục mùa hè Yukata","date":"20/03/2026","readTime":"4 phút đọc","image":"assets/news/mac-trang-phuc-yukata.jpg","excerpt":"Một ngày làm việc ngập tràn màu sắc khi toàn bộ nhân viên cùng khoác lên mình bộ trang phục Yukata.","readMore":"Xem chi tiết","content":["Một ngày làm việc thật đặc biệt tại HANIKI khi toàn bộ không gian văn phòng bừng sáng bởi những bộ trang phục Yukata truyền thống đầy màu sắc.","**1. Trải nghiệm khoác lên mình văn hóa Nhật:**","Các thành viên HANIKI không giấu được sự thích thú khi cảm nhận được vẻ đẹp tinh tế và thanh lịch trong văn hóa Nhật. Các Sensei tận tình hướng dẫn từng bước: từ cách mặc áo, thắt đai đến chọn phụ kiện.","[IMG: assets/news/mac-trang-phuc-yukata.jpg]","**2. Ý nghĩa của trang phục Yukata:**","Hoạt động này giúp nhân sự hiểu thêm về ý nghĩa của Yukata - biểu trưng cho sự giản dị, thuần khiết và sự hòa hợp với thiên nhiên trong mùa hè Nhật Bản.","**3. Trò chơi dân gian Fukuwarai:**","Khép lại hành trình là trò chơi dân gian Fukuwarai. Những 'tác phẩm' ngộ nghĩnh ra đời trong tiếng cười không ngớt, mang đến bầu không khí vui tươi, ấm áp.","[IMG: assets/news/tro-choi-fukuwarai.jpg]","Tại HANIKI, văn hóa doanh nghiệp không chỉ nằm trong công việc mà còn trong từng hoạt động gắn kết con người."]},{"id":"chien-dich-anh-sang","category":"Thiện Nguyện & Cộng Đồng","title":"Dự án 'Ánh sáng bản làng' tại vùng núi Hà Giang","date":"02/04/2026","readTime":"5 phút đọc","image":"assets/news/lap-dat-den-chieu-sang.jpg","excerpt":"Tiếp nối hành trình vì cộng đồng, HANIKI tài trợ 50 trụ đèn năng lượng mặt trời cho các thôn xóm nghèo.","readMore":"Xem chi tiết","content":["Tiếp nối sứ mệnh mang lại những giá trị thiết thực cho cộng đồng, dự án 'Ánh Sáng Bản Làng' đã được HANIKI triển khai thành công tại vùng núi cao Hà Giang.","**1. Thắp sáng những con đường tối:**","Với địa hình đồi núi trắc trở, việc di chuyển vào ban đêm của bà con gặp rất nhiều nguy hiểm. Nắm bắt được khó khăn đó, HANIKI đã tài trợ 50 trụ đèn năng lượng mặt trời.","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","**2. Lợi ích lâu dài và bền vững:**","Hệ thống đèn năng lượng mặt trời không chỉ thân thiện với môi trường mà còn không tốn chi phí vận hành, giúp thắp sáng các trục đường chính của thôn xóm liên tục mỗi đêm.","**3. Nụ cười hạnh phúc của bà con:**","Sự xuất hiện của những ánh đèn đã thay đổi hoàn toàn diện mạo của bản làng về đêm. Trẻ em có thể vui chơi an toàn, người lớn đi lại thuận tiện hơn.","HANIKI tin rằng, mỗi ánh đèn được thắp lên không chỉ xua tan bóng tối mà còn thắp sáng hy vọng về một tương lai tươi sáng hơn cho những vùng quê còn nhiều khó khăn."]}],"en":[{"id":"thien-nguyen-cao-bang","category":"Charity & Community","title":"HANIKI spreads love in Cao Bang","date":"Jan 09, 2026","readTime":"6 min read","image":"assets/news/thien-nguyen-cao-bang-banner.jpg","excerpt":"Early 2026, HANIKI sponsored and directly presented dozens of gifts to highland people.","readMore":"Read featured article","content":["On the occasion of the New Year 2026, with a spirit of sharing and social responsibility, HANIKI Co., Ltd. has accompanied and sponsored a charity program held in Ban Nhang, Cao Bang.","The program was organized by the University of Social Sciences and Humanities, with the active participation of accompanying units.","**1. Practical Support - Sowing Enduring Hope:**","Within the framework of the program, HANIKI directly sponsored and implemented specific support items:","- Installed 20 solar street lights on the main roads in the village, improving travel conditions.","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","- Donated 50 Tet gifts to families in difficult circumstances, worth 700,000 VND each.","[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]","- Organized a '0 VND Market', where villagers can freely choose essential items without paying.","[IMG: assets/news/phien-cho-0-dong.jpg]","These activities not only have immediate support meaning but also express HANIKI's desire to contribute to improving living conditions.","**2. Community Connection - Warm Affection:**","[IMG: assets/news/lua-trai-ban-nhang.jpg]","The emotional highlight of the program was the campfire exchange night with the villagers.","A HANIKI representative shared: 'We believe that every business not only creates economic value but also needs to spread human values to society.'","The journey of sharing will continue, towards the goal of sustainable development associated with community responsibility."]},{"id":"trai-nghiem-tet-nhat-ban","category":"Corporate Culture","title":"Shougatsu Japanese New Year at HANIKI","date":"Jan 25, 2026","readTime":"5 min read","image":"assets/news/tet-nhat-ban-bee-system.jpg","excerpt":"HANIKI staff eagerly explored Japanese New Year, writing Shodou calligraphy.","readMore":"Read more","content":["When spring knocks on the door, the extended HANIKI family gathers together to explore and experience the essence of Japanese New Year culture (Shougatsu) right at the office.","**1. Japanese New Year Atmosphere Fills HANIKI:**","[IMG: assets/news/tet-shougatsu-khong-khi.jpg]","Recently, HANIKI members had the opportunity to participate in a special extracurricular session on the theme 'Japanese New Year' with Senseis from WeXpats Nihongo.","**2. Exploring Japanese New Year Culture:**","Everyone learned about unique customs such as:","- Visiting shrines and temples at the beginning of the year.","- Decorating houses with Kadomatsu and Shimekazari.","- Giving lucky money envelopes (Otoshidama) to children.","**3. Calligraphy Experience (Shodou):**","[IMG: assets/news/viet-thu-phap-shodou.jpg]","HANIKI staff directly practiced Japanese calligraphy. Each member chose a lucky character such as '福' (fortune) or '夢' (dream).","The experience is an opportunity for everyone to interact, learn and bond more in the working environment."]},{"id":"team-building-nam-moi","category":"Corporate Culture","title":"Spring Gala 2026: Bee together, grow together","date":"Feb 10, 2026","readTime":"4 min read","image":"assets/news/bee-together-grow-together.jpg","excerpt":"Gala night honoring outstanding individuals and strengthening HANIKI family solidarity.","readMore":"Explore","content":["In the joyful atmosphere of welcoming the New Year, the extended HANIKI family organized a year-end Gala night with the theme 'Bee Together, Grow Together'.","This is an opportunity for all staff to look back on a year of hard work, while honoring individuals and groups with outstanding achievements.","[IMG: assets/news/bee-together-grow-together.jpg]","**1. Honoring Continuous Efforts:**","The Board of Directors presented well-deserved rewards to outstanding employees.","**2. Strengthening Solidarity:**","The Gala night was filled with laughter and self-composed musical performances imbued with the HANIKI identity.","**3. Looking Towards 2026 Goals:**","With the slogan 'Grow Together', the entire staff committed to making stronger breakthroughs in 2026."]},{"id":"le-hoi-am-thuc-onigiri","category":"Corporate Culture","title":"Internal cooking contest: Japanese cuisine","date":"Mar 05, 2026","readTime":"3 min read","image":"assets/news/lam-com-nam-onigiri.jpg","excerpt":"Departments had the opportunity to show off their skills through traditional Onigiri contest.","readMore":"View details","content":["With the goal of diversifying internal activities, HANIKI organized a traditional Onigiri rice ball making contest.","**1. Miniature Culinary Essence:**","The Senseis from WeXpats meticulously guided everything from cooking rice, seasoning, shaping to adding fillings.","[IMG: assets/news/lam-com-nam-onigiri.jpg]","**2. The Ingenuity of HANIKI Members:**","Under the skillful hands of the members, cute and attractive Onigiri were born.","**3. Team Spirit:**","Through this activity, everyone understands that Japanese culture is not only in language but also expressed in every meal.","[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]","Besides rice balls, everyone was also guided on how to make Toshikoshi Soba longevity noodles."]},{"id":"ngay-hoi-yukata","category":"Corporate Culture","title":"Summer Yukata experience festival","date":"Mar 20, 2026","readTime":"4 min read","image":"assets/news/mac-trang-phuc-yukata.jpg","excerpt":"A colorful workday as all employees dressed up in Yukata traditional costumes.","readMore":"View details","content":["A very special working day at HANIKI when the entire office space was brightened by colorful traditional Yukata costumes.","**1. Experiencing Japanese Culture:**","HANIKI members could not hide their excitement when feeling the refined and elegant beauty in Japanese culture.","[IMG: assets/news/mac-trang-phuc-yukata.jpg]","**2. Meaning of Yukata:**","This activity helps staff understand more about the meaning of Yukata - a symbol of simplicity, purity, and harmony with nature.","**3. Fukuwarai Folk Game:**","Closing the journey was the Fukuwarai folk game. Funny 'masterpieces' were born in endless laughter.","[IMG: assets/news/tro-choi-fukuwarai.jpg]","At HANIKI, corporate culture is not only in work but also in every human bonding activity."]},{"id":"chien-dich-anh-sang","category":"Charity & Community","title":"'Village light' project in Ha Giang mountains","date":"Apr 02, 2026","readTime":"5 min read","image":"assets/news/lap-dat-den-chieu-sang.jpg","excerpt":"Continuing the community journey, HANIKI sponsored 50 solar lights for poor villages.","readMore":"View details","content":["Continuing the mission of bringing practical values to the community, the 'Village Light' project was successfully implemented by HANIKI in Ha Giang mountainous area.","**1. Lighting Up Dark Roads:**","With difficult mountainous terrain, traveling at night is very dangerous. HANIKI sponsored 50 solar light poles.","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","**2. Long-term and Sustainable Benefits:**","The solar lighting system is environmentally friendly and costs nothing to operate.","**3. Happy Smiles:**","The appearance of lights completely changed the face of the village at night. Children can play safely, adults travel more easily.","Each light lit up not only dispels the darkness but also lights up hope for a brighter future."]}],"ja":[{"id":"thien-nguyen-cao-bang","category":"ボランティア・社会貢献","title":"HANIKI、カオバン省で愛を広める","date":"2026年01月09日","readTime":"6分で読める","image":"assets/news/thien-nguyen-cao-bang-banner.jpg","excerpt":"2026年初頭、HANIKIは山岳地帯の人々に数十の贈り物を直接手渡しました。","readMore":"注目記事を読む","content":["2026年の新年を迎え、分かち合いと社会的責任の精神に基づき、HANIKI有限会社はカオバン省バンニャンで開催された慈善プログラムを後援し、同行しました。","このプログラムは社会科学人文大学によって組織されました。","**1. 実践的な支援 - 長く続く希望の種まき：**","HANIKIは以下の具体的な支援項目を直接後援・実施しました：","- 村の主要道路に20基のソーラー街灯を設置しました。","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","- 困難な状況にある50世帯にテトの贈り物を贈呈しました。","[IMG: assets/news/trao-qua-tet-ho-kho-khan.jpg]","- 村人が支払いをせずに必要な品物を自由に選べる「0ドン市場」を開催しました。","[IMG: assets/news/phien-cho-0-dong.jpg]","これらの活動は、HANIKIの生活条件改善への貢献の願いを表しています。","**2. コミュニティのつながり - 温かい愛情：**","[IMG: assets/news/lua-trai-ban-nhang.jpg]","プログラムの感動的なハイライトは、村人たちとのキャンプファイヤー交流の夜でした。","HANIKIの代表者は「すべての企業は社会に人間的価値を広める必要がある」と語りました。","持続可能な発展を目指し、分かち合いの旅は続きます。"]},{"id":"trai-nghiem-tet-nhat-ban","category":"企業文化","title":"HANIKIでの日本の正月体験","date":"2026年01月25日","readTime":"5分で読める","image":"assets/news/tet-nhat-ban-bee-system.jpg","excerpt":"スタッフは書道など、日本のお正月を熱心に体験しました。","readMore":"詳細を見る","content":["春が扉を叩く頃、HANIKIの大家族はオフィスで日本のお正月文化の真髄を探求し体験しました。","**1. 日本のお正月の雰囲気がHANIKIに溢れる：**","[IMG: assets/news/tet-shougatsu-khong-khi.jpg]","HANIKIのメンバーは、WeXpats Nihongoの先生方と共に特別なセッションに参加しました。","**2. 日本のお正月文化の探求：**","全員が次のようなユニークな習慣について学びました：","- 初詣で神社や寺院を参拝する。","- 門松やしめ飾りを家に飾る。","- 子供たちにお年玉をあげる。","**3. 書道体験：**","[IMG: assets/news/viet-thu-phap-shodou.jpg]","HANIKIのスタッフは日本の書道芸術を直接実践し、「福」や「夢」などの縁起の良い文字を選びました。","この体験は、誰もが交流し、絆を深める機会となりました。"]},{"id":"team-building-nam-moi","category":"企業文化","title":"2026年春季ガラ：Bee Together, Grow Together","date":"2026年02月10日","readTime":"4分で読める","image":"assets/news/bee-together-grow-together.jpg","excerpt":"優秀な個人を表彰し、HANIKIファミリーの結束を深めるガラナイト。","readMore":"探求する","content":["新年を迎える喜びの雰囲気の中、HANIKIは「Bee Together, Grow Together」をテーマにした年末ガラナイトを開催しました。","これは、全従業員が1年間の努力を振り返り、優秀な成績を収めた個人やグループを表彰する機会です。","[IMG: assets/news/bee-together-grow-together.jpg]","**1. 絶え間ない努力を称える：**","経営陣は優秀な従業員にふさわしい報酬を授与しました。","**2. 結束を深める：**","ガラナイトは笑い声とHANIKIのアイデンティティが染み込んだ音楽パフォーマンスに満ちていました。","**3. 2026年の目標に向けて：**","全社員が2026年にさらに力強い飛躍を遂げることを誓いました。"]},{"id":"le-hoi-am-thuc-onigiri","category":"企業文化","title":"社内料理コンテスト：日本料理の真髄","date":"2026年03月05日","readTime":"3分で読める","image":"assets/news/lam-com-nam-onigiri.jpg","excerpt":"各部署が伝統的なおにぎりコンテストを通じて腕前を披露する機会を得ました。","readMore":"詳細を見る","content":["社内活動の多様化を目標に、HANIKIは伝統的なおにぎり作りコンテストを開催しました。","**1. 料理の真髄：**","WeXpatsの先生方がご飯の炊き方から形作りまで丁寧に指導しました。","[IMG: assets/news/lam-com-nam-onigiri.jpg]","**2. HANIKIメンバーの創意工夫：**","メンバーの器用な手によって、可愛くて魅力的なおにぎりが生まれました。","**3. チームスピリット：**","この活動を通じて、日本文化が毎回の食事にも表現されていることを理解しました。","[IMG: assets/news/nau-mi-toshikoshi-soba.jpg]","おにぎりに加えて、年越しそばの作り方も指導されました。"]},{"id":"ngay-hoi-yukata","category":"企業文化","title":"夏の浴衣体験フェスティバル","date":"2026年03月20日","readTime":"4分で読める","image":"assets/news/mac-trang-phuc-yukata.jpg","excerpt":"全社員が伝統的な浴衣を着た、色彩豊かな勤務日。","readMore":"詳細を見る","content":["色鮮やかな伝統的な浴衣によってオフィス全体が明るくなった、HANIKIでの特別な1日。","**1. 日本文化の体験：**","HANIKIのメンバーは、日本文化の洗練された美しさを感じて興奮を隠せませんでした。","[IMG: assets/news/mac-trang-phuc-yukata.jpg]","**2. 浴衣の意味：**","この活動は、シンプルさ、純粋さ、自然との調和の象徴である浴衣の意味をスタッフが理解するのに役立ちます。","**3. 福笑い：**","旅の締めくくりは福笑いでした。絶え間ない笑いの中で面白い「傑作」が生まれました。","[IMG: assets/news/tro-choi-fukuwarai.jpg]","HANIKIでは、企業文化は仕事だけでなく、すべての人間の絆を深める活動にも存在します。"]},{"id":"chien-dich-anh-sang","category":"ボランティア・社会貢献","title":"ハザン山地での「村の光」プロジェクト","date":"2026年04月02日","readTime":"5分で読める","image":"assets/news/lap-dat-den-chieu-sang.jpg","excerpt":"コミュニティへの貢献を継続し、HANIKIは貧しい村に50基のソーラーライトを寄贈しました。","readMore":"詳細を見る","content":["コミュニティに実践的な価値をもたらすという使命を継続し、「村の光」プロジェクトがハザン山岳地帯で無事実施されました。","**1. 暗い道を照らす：**","山岳地帯での夜間の移動は非常に危険です。HANIKIは50基のソーラーライトを後援しました。","[IMG: assets/news/lap-dat-den-chieu-sang.jpg]","**2. 長期的かつ持続可能な利益：**","ソーラー照明システムは環境に優しく、運用コストがかかりません。","**3. 幸せな笑顔：**","明かりの出現により、夜の村の様子は一変しました。子供たちは安全に遊ぶことができ、大人は移動しやすくなりました。","灯された各々の明かりは、暗闇を払拭するだけでなく、より明るい未来への希望を照らします。"]}]};
     let currentFilter = 'all';
+    let searchQuery = '';
     
-            function renderNewsGrid(lang) {
+    function renderNewsGrid(lang) {
         const grid = document.getElementById('news-bento-grid');
         if (!grid) return;
         
@@ -698,14 +724,37 @@
             'ja': { 'Thiện Nguyện & Cộng Đồng': 'ボランティア・社会貢献', 'Văn Hóa Doanh Nghiệp': '企業文化' }
         };
         
+        const t = window.TRANSLATIONS && window.TRANSLATIONS[lang] ? window.TRANSLATIONS[lang] : (window.TRANSLATIONS ? window.TRANSLATIONS['vi'] : {});
+
         const filtered = articles.filter(art => {
-            if (currentFilter === 'all') return true;
-            const targetCat = filterMap[lang] && filterMap[lang][currentFilter] ? filterMap[lang][currentFilter] : currentFilter;
-            return art.category === targetCat || art.category === currentFilter;
+            let matchesCategory = true;
+            if (currentFilter !== 'all') {
+                const targetCat = filterMap[lang] && filterMap[lang][currentFilter] ? filterMap[lang][currentFilter] : currentFilter;
+                matchesCategory = (art.category === targetCat || art.category === currentFilter);
+            }
+            let matchesSearch = true;
+            if (searchQuery) {
+                const q = searchQuery.toLowerCase();
+                const titleMatch = art.title && art.title.toLowerCase().includes(q);
+                const excerptMatch = art.excerpt && art.excerpt.toLowerCase().includes(q);
+                matchesSearch = titleMatch || excerptMatch;
+            }
+            return matchesCategory && matchesSearch;
         });
         
         if (filtered.length === 0) {
-            grid.innerHTML = '<div style="grid-column: span 12; text-align: center; padding: 40px; background: white; border-radius: 20px;">Không tìm thấy bài viết nào.</div>';
+            const emptyTitle = t.news_empty_title || 'Không tìm thấy bài viết nào';
+            const emptyDesc = t.news_empty_desc || 'Vui lòng thử lại với từ khóa hoặc bộ lọc danh mục khác.';
+            grid.innerHTML = `
+                <div style="grid-column: span 12; text-align: center; padding: 48px 24px; background: white; border-radius: 24px; border: 1px solid #E5E1D8; box-shadow: 0 4px 16px -6px rgba(15,23,42,0.06);">
+                    <div style="width: 52px; height: 52px; border-radius: 50%; background: #EEF4FF; color: #1E3A8A; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+                        <i data-lucide="search-x" class="w-6 h-6"></i>
+                    </div>
+                    <div style="font-weight: 700; font-size: 17px; color: #0F172A; margin-bottom: 6px;">${emptyTitle}</div>
+                    <div style="font-size: 13.5px; color: #64748B;">${emptyDesc}</div>
+                </div>
+            `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
             return;
         }
 
@@ -717,11 +766,10 @@
             
             // For non-hero cards, limit image height
             let imgStyle = isHero ? '' : 'height: 100%;';
-            const t = window.TRANSLATIONS && window.TRANSLATIONS[lang] ? window.TRANSLATIONS[lang] : (window.TRANSLATIONS ? window.TRANSLATIONS['vi'] : {});
             const badgeText = t.news_featured_badge || 'Bài viết tiêu điểm';
             const readMoreText = isHero ? (t.news_read_featured || 'Đọc bài viết tiêu điểm') : (art.readMore || t.news_read_more || 'Đọc tiếp');
             
-            let tagHtml = isHero ? `<span class="bento-card-tag" style="background: #0d9488; color: white;">${badgeText}</span>` : `<span class="bento-card-tag" style="font-size: 9px; padding: 4px 8px;">${art.category}</span>`;
+            let tagHtml = isHero ? `<span class="bento-card-tag" style="background: #265397; color: white;">${badgeText}</span>` : `<span class="bento-card-tag" style="font-size: 9px; padding: 4px 8px;">${art.category}</span>`;
             
             html += `
                 <article class="${cardClass}" data-aos="fade-up" data-aos-delay="${delay}" onclick="openSheetModal('${art.id}')">
@@ -764,6 +812,15 @@
                 renderNewsGrid(currentLang);
             });
         });
+
+        const searchInput = document.querySelector('.news-search-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                searchQuery = e.target.value.trim();
+                const currentLang = localStorage.getItem('beecare_lang') || 'vi';
+                renderNewsGrid(currentLang);
+            });
+        }
         
         const currentLang = localStorage.getItem('beecare_lang') || 'vi';
         renderNewsGrid(currentLang);
@@ -800,7 +857,7 @@
                     inList = false;
                 }
                 if (formatted.startsWith('"') && formatted.endsWith('"')) {
-                    html += `<p style="font-style: italic; color: #475569; border-left: 3px solid #0d9488; padding-left: 16px; margin-top: 24px;">${formatted}</p>`;
+                    html += `<p style="font-style: italic; color: #475569; border-left: 3px solid #265397; padding-left: 16px; margin-top: 24px;">${formatted}</p>`;
                 } else {
                     html += `<p>${formatted}</p>`;
                 }

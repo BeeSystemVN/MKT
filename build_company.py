@@ -79,14 +79,32 @@ custom_styles = """
 /* Key Stats Bar */
 .stats-container {
     max-width: 1140px;
-    margin: -35px auto 80px;
+    margin: 36px auto 28px;
     position: relative;
     z-index: 20;
     padding: 0 16px;
 }
+@media (max-width: 768px) {
+    .stats-container {
+        margin: 24px auto 18px;
+    }
+}
+
+.company-main {
+    background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 32px, #f8fafc 100%);
+    padding-top: 56px;
+    padding-bottom: 90px;
+}
+@media (max-width: 768px) {
+    .company-main {
+        background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 20px, #f8fafc 100%);
+        padding-top: 36px;
+        padding-bottom: 60px;
+    }
+}
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     background: #ffffff;
     border-radius: 24px;
     padding: 32px 24px;
@@ -94,10 +112,7 @@ custom_styles = """
     border: 1px solid rgba(226,232,240,0.9);
     gap: 20px;
 }
-@media (max-width: 1023px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); padding: 24px 20px; }
-}
-@media (max-width: 639px) {
+@media (max-width: 767px) {
     .stats-grid { grid-template-columns: 1fr; padding: 20px 16px; gap: 16px; }
 }
 .stat-card {
@@ -108,10 +123,7 @@ custom_styles = """
 .stat-card:last-child {
     border-right: none;
 }
-@media (max-width: 1023px) {
-    .stat-card:nth-child(2) { border-right: none; }
-}
-@media (max-width: 639px) {
+@media (max-width: 767px) {
     .stat-card { border-right: none; border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
     .stat-card:last-child { border-bottom: none; padding-bottom: 0; }
 }
@@ -537,11 +549,6 @@ main_content = """
         <div class="stat-desc" data-i18n="company_stat2_desc">Sinh hiệu, đơn thuốc & phân ca trực</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number text-emerald-600" data-i18n="company_stat3_num">R&D</div>
-        <div class="stat-label" data-i18n="company_stat3_title">Đội ngũ kỹ sư tại Hà Nội</div>
-        <div class="stat-desc" data-i18n="company_stat3_desc">Nghiên cứu & phát triển phần mềm y tế</div>
-      </div>
-      <div class="stat-card">
         <div class="stat-number text-amber-500" data-i18n="company_stat4_num">24/7</div>
         <div class="stat-label" data-i18n="company_stat4_title">Hỗ trợ kỹ thuật chuyên sâu</div>
         <div class="stat-desc" data-i18n="company_stat4_desc">Đồng hành liên tục cùng đơn vị vận hành</div>
@@ -549,7 +556,7 @@ main_content = """
     </div>
   </div>
 
-  <main style="background-color: #f8fafc; padding-bottom: 90px;">
+  <main class="company-main">
     <!-- ===================== 2. THÔNG ĐIỆP TỪ BAN LÃNH ĐẠO ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
       <div class="executive-card">
@@ -663,7 +670,7 @@ main_content = """
             Kế thừa chuẩn mực Nhật Bản, tối ưu riêng cho viện dưỡng lão Việt
           </h2>
           <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6" data-i18n="company_tech_desc">
-            Được tôi luyện qua tiêu chuẩn y tế khắt khe của Nhật Bản, đội ngũ kỹ sư HANIKI đã bản địa hóa toàn bộ quy trình chăm sóc thành giải pháp thuần Việt: thao tác một chạm trên điện thoại, đồng bộ thời gian thực và an toàn dữ liệu y tế đa tầng.
+            Được tôi luyện qua tiêu chuẩn y tế khắt khe của Nhật Bản, đội ngũ kỹ thuật HANIKI đã bản địa hóa toàn bộ quy trình chăm sóc thành giải pháp thuần Việt: thao tác một chạm trên điện thoại, đồng bộ thời gian thực và an toàn dữ liệu y tế đa tầng.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -825,7 +832,7 @@ main_content = """
           </div>
           <div class="p-5 sm:p-6">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1" data-i18n="company_office1_title">Tập thể công ty HANIKI</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="company_office1_desc">Đội ngũ kỹ sư, chuyên gia y tế và nhân sự trẻ trung, nhiệt huyết, cùng chung một sứ mệnh phụng sự cộng đồng.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="company_office1_desc">Đội ngũ kỹ thuật, chuyên gia y tế và nhân sự trẻ trung, nhiệt huyết, cùng chung một sứ mệnh phụng sự cộng đồng.</p>
           </div>
         </div>
 

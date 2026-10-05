@@ -2,11 +2,18 @@ window.TRANSLATIONS = window.TRANSLATIONS || { vi: {}, en: {}, ja: {} };
 
 Object.assign(window.TRANSLATIONS.vi, {
   "pricing_title_page": "Bảng giá phần mềm quản lý viện dưỡng lão | BeeCare",
-  "pricing_hero_badge": "Báo giá linh hoạt • Khảo sát tận nơi",
-  "pricing_hero_title": "Bảng giá giải pháp",
-  "pricing_hero_title_highlight": "BeeCare",
-  "pricing_hero_desc": "Lựa chọn gói giải pháp phù hợp với quy mô và lộ trình chuyển đổi số của viện dưỡng lão. Tối ưu chi phí, nâng cao năng suất điều dưỡng và gắn kết gia đình trọn vẹn.",
-  "pricing_hero_consult_tag": "Khảo sát thực tế tại viện • Báo giá linh hoạt theo số giường",
+  "pricing_hero_badge": "Chính sách báo giá & triển khai hệ thống",
+  "pricing_hero_title": "Báo Giá Gói Dịch Vụ Theo Quy Mô",
+  "pricing_hero_title_highlight": "",
+  "pricing_hero_desc": "Báo giá trọn gói bao gồm đầy đủ Web Admin, Mobile Staff, Mobile Family và Cloud Server. Không phát sinh chi phí ẩn, cam kết đồng hành và bảo hành miễn phí suốt thời gian hợp đồng.",
+  "pricing_hero_highlight1": "Đầy đủ 3 nền tảng (Web + 2 App Mobile)",
+  "pricing_hero_highlight2": "Hạ tầng Cloud bảo mật riêng",
+  "pricing_hero_highlight3": "Bảo hành & sửa lỗi 100% miễn phí",
+  "pricing_hero_btn_explore": "Xem chi tiết các gói",
+  "pricing_device_tag_ecosystem": "Hệ sinh thái 3 trong 1 đồng bộ",
+  "pricing_device_tag_web": "Web Admin Quản lý",
+  "pricing_device_tag_staff": "App Điều dưỡng",
+  "pricing_device_tag_family": "App Người thân",
 
   "pricing_stat1_num": "0đ",
   "pricing_stat1_title": "Chi phí khởi tạo",
@@ -16,14 +23,14 @@ Object.assign(window.TRANSLATIONS.vi, {
   "pricing_stat2_desc": "Tiêu chuẩn mã hóa y tế và lưu trữ Cloud an toàn",
   "pricing_stat3_num": "24/7",
   "pricing_stat3_title": "Đồng hành kỹ thuật",
-  "pricing_stat3_desc": "Đội ngũ kỹ sư hỗ trợ tại chỗ và giải đáp tức thì",
+  "pricing_stat3_desc": "Đội ngũ kỹ thuật hỗ trợ tại chỗ và giải đáp tức thì",
   "pricing_stat4_num": "30 ngày",
   "pricing_stat4_title": "Trải nghiệm miễn phí",
   "pricing_stat4_desc": "Dùng thử toàn diện tính năng trước khi quyết định",
 
   "pricing_badge_plans": "Gói dịch vụ bản quyền",
   "pricing_plans_title": "Bảng giá linh hoạt theo quy mô viện dưỡng lão",
-  "pricing_plans_desc": "Mọi gói dịch vụ đều được cập nhật tính năng liên tục, không phát sinh chi phí ẩn và có kỹ sư hỗ trợ riêng.",
+  "pricing_plans_desc": "Mọi gói dịch vụ đều được cập nhật tính năng liên tục, không phát sinh chi phí ẩn và có đội ngũ kỹ thuật hỗ trợ riêng.",
 
   "pricing_contact_quote": "Liên hệ",
   "pricing_quote_desc": "Báo giá linh hoạt theo số giường & quy mô viện",
@@ -88,7 +95,7 @@ Object.assign(window.TRANSLATIONS.vi, {
   "compare_staff_premium": "Không giới hạn",
 
   "compare_cat_ecosystem": "Hệ sinh thái ứng dụng",
-  "compare_web_admin": "Cổng Web Admin điều hành viện",
+  "compare_web_admin": "Cổng Web quản lý điều hành viện",
   "compare_staff_app": "App Điều dưỡng tại giường (iOS & Android)",
   "compare_family_app": "App Người thân kết nối gia đình (iOS & Android)",
 
@@ -110,18 +117,18 @@ Object.assign(window.TRANSLATIONS.vi, {
   "compare_cat_support": "Triển khai & Hỗ trợ kỹ thuật",
   "compare_onboarding": "Đào tạo & hướng dẫn nhân viên",
   "compare_onboarding_basic": "Hướng dẫn trực tuyến qua Zoom/Meet",
-  "compare_onboarding_pro": "Kỹ sư đến đào tạo trực tiếp tại viện",
+  "compare_onboarding_pro": "Đội ngũ kỹ thuật đến đào tạo trực tiếp tại viện",
   "compare_onboarding_premium": "Đào tạo tận nơi & chuyển giao toàn diện",
   "compare_migration": "Hỗ trợ di chuyển dữ liệu bệnh án cũ",
   "compare_migration_basic": "Cung cấp mẫu Excel",
-  "compare_migration_pro": "Kỹ sư hỗ trợ import",
+  "compare_migration_pro": "Đội ngũ kỹ thuật hỗ trợ import",
   "compare_migration_premium": "Di chuyển trọn gói 100%",
   "compare_sla": "Cam kết thời gian hoạt động hệ thống (SLA)",
   "compare_sla_val": "99.9% Uptime",
   "compare_support_channel": "Kênh tiếp nhận hỗ trợ kỹ thuật",
   "compare_support_basic": "Email & Giờ hành chính",
   "compare_support_pro": "Hotline riêng & Zalo hỗ trợ 24/7",
-  "compare_support_premium": "Kỹ sư phụ trách chuyên trách 24/7/365",
+  "compare_support_premium": "Đội ngũ kỹ thuật chuyên trách 24/7/365",
 
   "pricing_commit_badge": "Cam kết dịch vụ & Triển khai",
   "pricing_commit_title": "Chuyển giao chuẩn Nhật, đồng hành tận tâm tại từng cơ sở",
@@ -129,7 +136,7 @@ Object.assign(window.TRANSLATIONS.vi, {
   "pricing_commit_pill1": "Đào tạo tại cơ sở miễn phí",
   "pricing_commit_pill2": "Di chuyển dữ liệu EMR cũ",
   "pricing_commit_pill3": "Cam kết SLA khả dụng 99.9%",
-  "pricing_commit_pill4": "Kỹ sư hỗ trợ trực tiếp 24/7",
+  "pricing_commit_pill4": "Đội ngũ kỹ thuật hỗ trợ trực tiếp 24/7",
 
   "pricing_faq_badge": "Giải đáp thắc mắc",
   "pricing_faq_title": "Câu hỏi thường gặp về giải pháp & triển khai",
@@ -145,21 +152,28 @@ Object.assign(window.TRANSLATIONS.vi, {
   "pricing_faq_a3": "Dữ liệu được mã hóa đa tầng theo tiêu chuẩn bảo mật y tế quốc tế (AES-256 trên đường truyền và tại nơi lưu trữ), sao lưu định kỳ hàng ngày và phân quyền truy cập nghiêm ngặt. Chỉ nhân sự được viện phân quyền mới có thể truy xuất dữ liệu.",
 
   "pricing_faq_q4": "Điều dưỡng viên lớn tuổi chưa thạo công nghệ có thể sử dụng dễ dàng không?",
-  "pricing_faq_a4": "Giao diện BeeCare được thiết kế chuyên biệt theo tiêu chuẩn Kaigo Nhật Bản: nút bấm to, chữ rõ ràng, thao tác chạm đơn giản và hỗ trợ nhập liệu bằng giọng nói tiếng Việt. Kỹ sư HANIKI sẽ trực tiếp đào tạo cầm tay chỉ việc tại viện cho đến khi toàn bộ nhân sự tự tin sử dụng.",
+  "pricing_faq_a4": "Giao diện BeeCare được thiết kế chuyên biệt theo tiêu chuẩn Kaigo Nhật Bản: nút bấm to, chữ rõ ràng, thao tác chạm đơn giản và hỗ trợ nhập liệu bằng giọng nói tiếng Việt. Đội ngũ kỹ thuật HANIKI sẽ trực tiếp đào tạo cầm tay chỉ việc tại viện cho đến khi toàn bộ nhân sự tự tin sử dụng.",
 
   "pricing_cta_title": "Sẵn sàng nâng tầm quản lý viện dưỡng lão?",
-  "pricing_cta_desc": "Đăng ký ngay hôm nay để nhận 30 ngày trải nghiệm miễn phí toàn diện và được kỹ sư HANIKI khảo sát quy trình trực tiếp tại viện của bạn.",
+  "pricing_cta_desc": "Đăng ký ngay hôm nay để nhận 30 ngày trải nghiệm miễn phí toàn diện và được đội ngũ kỹ thuật HANIKI khảo sát quy trình trực tiếp tại viện của bạn.",
   "pricing_cta_btn1": "Đặt lịch tư vấn & Khảo sát",
-  "pricing_cta_btn2": "Gọi hotline 1900 6868"
+  "pricing_cta_btn2": "Gọi hotline 0988 123 531"
 });
 
 Object.assign(window.TRANSLATIONS.en, {
   "pricing_title_page": "Software Pricing & Plans | BeeCare",
-  "pricing_hero_badge": "Flexible Quotation • On-site Survey",
-  "pricing_hero_title": "BeeCare Software",
-  "pricing_hero_title_highlight": "Pricing",
-  "pricing_hero_desc": "Choose the optimal solution tailored to your nursing home scale and digital transformation roadmap. Optimize costs, enhance caregiver productivity, and keep families fully connected.",
-  "pricing_hero_consult_tag": "On-site Facility Survey • Tailored Quote by Bed Capacity",
+  "pricing_hero_badge": "Pricing Policy & System Deployment",
+  "pricing_hero_title": "Service Package Pricing by Scale",
+  "pricing_hero_title_highlight": "",
+  "pricing_hero_desc": "All-in-one package includes Web Admin, Mobile Staff, Mobile Family, and Cloud Server. No hidden fees, committed partnership and free warranty throughout the contract period.",
+  "pricing_hero_highlight1": "All 3 platforms (Web + 2 Mobile Apps)",
+  "pricing_hero_highlight2": "Dedicated secure Cloud infrastructure",
+  "pricing_hero_highlight3": "100% free warranty & bug fixes",
+  "pricing_hero_btn_explore": "Explore Pricing Plans",
+  "pricing_device_tag_ecosystem": "Synchronized 3-in-1 Ecosystem",
+  "pricing_device_tag_web": "Web Admin Portal",
+  "pricing_device_tag_staff": "Caregiver App",
+  "pricing_device_tag_family": "Family Care App",
 
   "pricing_stat1_num": "$0",
   "pricing_stat1_title": "Setup Fee",
@@ -184,7 +198,7 @@ Object.assign(window.TRANSLATIONS.en, {
 
   "plan_basic_badge": "Starter Plan",
   "plan_basic_title": "Basic",
-  "plan_basic_desc": "EMR health records digitalization and administrative portal for small-scale senior homes.",
+  "plan_basic_desc": "EMR health records digitalization and management web for small-scale senior homes.",
 
   "plan_pro_badge": "Most Popular",
   "plan_pro_title": "Standard",
@@ -241,7 +255,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "compare_staff_premium": "Unlimited",
 
   "compare_cat_ecosystem": "Application Ecosystem",
-  "compare_web_admin": "Web Admin Management Portal",
+  "compare_web_admin": "Management Web",
   "compare_staff_app": "Caregiver Bedside App (iOS & Android)",
   "compare_family_app": "Family Connect App (iOS & Android)",
 
@@ -303,16 +317,23 @@ Object.assign(window.TRANSLATIONS.en, {
   "pricing_cta_title": "Ready to Transform Your Senior Care Management?",
   "pricing_cta_desc": "Contact us today for a 30-day full-access trial and schedule an on-site workflow consultation with HANIKI engineers.",
   "pricing_cta_btn1": "Schedule Consultation & Survey",
-  "pricing_cta_btn2": "Call Hotline 1900 6868"
+  "pricing_cta_btn2": "Call Hotline 0988 123 531"
 });
 
 Object.assign(window.TRANSLATIONS.ja, {
   "pricing_title_page": "料金プラン | BeeCare 介護施設管理システム",
-  "pricing_hero_badge": "柔軟な料金体系 • 現地調査対応",
-  "pricing_hero_title": "BeeCareソリューション",
-  "pricing_hero_title_highlight": "料金プラン",
-  "pricing_hero_desc": "施設の規模とデジタル化ロードマップに合わせて最適なプランをお選びいただけます。運営コストを削減し、介護スタッフの負担を軽減、ご家族との信頼を深めます。",
-  "pricing_hero_consult_tag": "現地訪問ヒアリング • 施設規模に合わせた最適なお見積り",
+  "pricing_hero_badge": "料金ポリシー＆システム導入",
+  "pricing_hero_title": "施設規模に応じたサービスパッケージ料金",
+  "pricing_hero_title_highlight": "",
+  "pricing_hero_desc": "Web管理画面、スタッフ向けアプリ、ご家族向けアプリ、クラウドサーバーをすべて含むオールインワンパッケージ。隠れた費用はなく、契約期間中は専任サポートと無料保守をお約束します。",
+  "pricing_hero_highlight1": "3つのプラットフォーム全対応（Web＋スマホアプリ2種）",
+  "pricing_hero_highlight2": "専用の高セキュリティクラウドインフラ",
+  "pricing_hero_highlight3": "100%無料の保守・バグ修正サポート",
+  "pricing_hero_btn_explore": "料金プランの詳細を見る",
+  "pricing_device_tag_ecosystem": "シームレスな3-in-1エコシステム",
+  "pricing_device_tag_web": "Web管理画面",
+  "pricing_device_tag_staff": "介護スタッフアプリ",
+  "pricing_device_tag_family": "ご家族アプリ",
 
   "pricing_stat1_num": "0円",
   "pricing_stat1_title": "初期導入費用",
@@ -394,7 +415,7 @@ Object.assign(window.TRANSLATIONS.ja, {
   "compare_staff_premium": "無制限",
 
   "compare_cat_ecosystem": "対応アプリケーション",
-  "compare_web_admin": "施設運営Web管理ポータル",
+  "compare_web_admin": "施設運営 管理Web",
   "compare_staff_app": "ベッドサイド職員アプリ (iOS/Android)",
   "compare_family_app": "ご家族連携アプリ (iOS/Android)",
 
@@ -456,5 +477,5 @@ Object.assign(window.TRANSLATIONS.ja, {
   "pricing_cta_title": "介護施設のデジタル化をご検討ですか？",
   "pricing_cta_desc": "30日間の無料トライアルと、現場での実機デモ・業務フロー診断をいつでも承っております。",
   "pricing_cta_btn1": "現地デモ・相談を予約する",
-  "pricing_cta_btn2": "ホットライン 1900 6868"
+  "pricing_cta_btn2": "ホットライン 0988 123 531"
 });

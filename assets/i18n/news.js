@@ -2,7 +2,7 @@ window.TRANSLATIONS = window.TRANSLATIONS || { vi: {}, en: {}, ja: {} };
 
 Object.assign(window.TRANSLATIONS.vi, {
   "news_title_page": "Tin tức & sự kiện | BeeCare",
-  "news_hero_badge": "Tin tức & Hoạt động cộng đồng",
+  "news_hero_badge": "Tin tức & sự kiện",
   "news_hero_title": "Tin tức & Hoạt động BeeCare – HANIKI",
   "news_hero_desc": "Khám phá những câu chuyện ý nghĩa, chương trình thiện nguyện vì cộng đồng, nét đẹp văn hóa doanh nghiệp và cẩm nang chuyển đổi số viện dưỡng lão.",
   "news_cat_all": "Tất cả bài viết",
@@ -22,7 +22,7 @@ Object.assign(window.TRANSLATIONS.vi, {
 
 Object.assign(window.TRANSLATIONS.en, {
   "news_title_page": "News & Events | BeeCare",
-  "news_hero_badge": "News & Community Highlights",
+  "news_hero_badge": "News & Events",
   "news_hero_title": "BeeCare & HANIKI News & Activities",
   "news_hero_desc": "Discover inspiring stories, community charity initiatives, corporate culture highlights, and smart nursing home digitization guides.",
   "news_cat_all": "All articles",
@@ -42,7 +42,7 @@ Object.assign(window.TRANSLATIONS.en, {
 
 Object.assign(window.TRANSLATIONS.ja, {
   "news_title_page": "ニュース＆イベント | BeeCare",
-  "news_hero_badge": "ニュース＆社会貢献活動",
+  "news_hero_badge": "ニュース＆イベント",
   "news_hero_title": "BeeCare・HANIKI ニュース＆活動",
   "news_hero_desc": "社会貢献・チャリティー活動、企業文化、そしてスマート介護施設DXの最新ガイドをお届けします。",
   "news_cat_all": "すべての記事",
