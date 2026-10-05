@@ -1,17 +1,46 @@
 @import "tailwindcss";
 
-/* Custom CSS */
+/* BeeCare Design System - COLOR_PALETTE.md */
 
 @theme {
-  --color-primary: #2563eb;
-  --color-secondary: #7c3aed;
-  --font-sans: "Inter", sans-serif;
+  --color-primary: #265397;
+  --color-primary-hover: #204780;
+  --color-primary-dark: #193662;
+  --color-primary-light: #EEF1F7;
+
+  --color-secondary: #0284C7;
+  --color-secondary-hover: #0369A1;
+  --color-accent: #06B6D4;
+
+  --color-bg-body: #FBF7F3;
+  --color-bg-card: #F4F6FA;
+
+  --color-navy-950: #0C1E37;
+  --color-navy-900: #0F172A;
+  --color-navy-800: #1E293B;
+
+  --color-gray-600: #475569;
+  --color-gray-500: #64748B;
+  --color-gray-400: #94A3B8;
+  --color-gray-200: #E5E1D8;
+  --color-gray-100: #F1EFE9;
+
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  --font-sans: "Be Vietnam Pro", "Inter", sans-serif;
 }
 
-/* Optional reusable classes */
+/* Reusable components */
 @layer components {
-  .btn {
-    @apply px-6 py-3 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 transition;
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition;
+    background: linear-gradient(135deg, #265397 0%, #0284C7 100%);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #204780 0%, #0369A1 100%);
   }
 
   .container-custom {

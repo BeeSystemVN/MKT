@@ -188,8 +188,9 @@ custom_styles = """
     position: relative;
 }
 .news-main-bg::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 300px;
-    background: linear-gradient(to bottom, #0f172a 0%, #f8fafc 100%);
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 260px;
+    background: linear-gradient(to bottom, #204C88 0%, rgba(38, 83, 151, 0.45) 30%, rgba(2, 132, 199, 0.12) 65%, rgba(248, 250, 252, 0) 100%);
+    pointer-events: none;
 }
 
 .news-tab-filter-body {
@@ -200,19 +201,22 @@ custom_styles = """
     padding: 8px 20px;
     border-radius: 100px;
     font-size: 13.5px; font-weight: 600;
-    color: #475569;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    color: #334155;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
     transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 .news-tab-btn-body:hover {
-    color: #0f172a; border-color: #cbd5e1;
+    color: #265397; border-color: #93c5fd;
+    background: #ffffff;
 }
 .news-tab-btn-body.active {
-    background: #0f172a; color: #fff;
-    border-color: #0f172a;
-    box-shadow: 0 4px 12px rgba(15,23,42,0.2);
+    background: linear-gradient(135deg, #0284c7 0%, #265397 100%);
+    color: #fff;
+    border-color: #0284c7;
+    box-shadow: 0 4px 14px rgba(38, 83, 151, 0.35);
 }
 
 .bento-grid {

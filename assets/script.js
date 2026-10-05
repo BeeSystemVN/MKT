@@ -80,6 +80,8 @@ function switchAppTab(tabKey, btnEl) {
       if (p) {
         p.classList.remove('hidden');
         p.style.display = 'block';
+        p.style.opacity = '1';
+        p.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
       }
     });
   } else {
@@ -89,6 +91,8 @@ function switchAppTab(tabKey, btnEl) {
       if (key === tabKey) {
         panel.classList.remove('hidden');
         panel.style.display = 'block';
+        panel.style.opacity = '1';
+        panel.querySelectorAll('[data-aos]').forEach(el => el.classList.add('aos-animate'));
       } else {
         panel.classList.add('hidden');
         panel.style.display = 'none';
@@ -96,12 +100,23 @@ function switchAppTab(tabKey, btnEl) {
     });
   }
 
-  // Update 3D carousel positions after panel display change
+  // Update 3D carousel positions and cards instantly after panel display change
   if (tabKey === 'staff' || tabKey === 'all') {
-    if (window.staffCarousel) window.staffCarousel.updatePositions();
+    if (window.staffCarousel) {
+      window.staffCarousel.updatePositions();
+      window.staffCarousel.updateContentCard();
+    }
   }
   if (tabKey === 'family' || tabKey === 'all') {
-    if (window.familyCarousel) window.familyCarousel.updatePositions();
+    if (window.familyCarousel) {
+      window.familyCarousel.updatePositions();
+      window.familyCarousel.updateContentCard();
+    }
+  }
+
+  // Refresh AOS so viewport changes are tracked
+  if (typeof AOS !== 'undefined') {
+    try { AOS.refresh(); } catch (e) {}
   }
 
   // Re-init icons inside dynamic tabs
@@ -501,7 +516,7 @@ const SIM_SCENARIOS = [
     logs: [
       { time: "11:32:05.120", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "POST /vitals -> Cụ Đỗ Thị Hướng (P.204): HA 160/95 mmHg, SpO2 96%" },
       { time: "11:32:05.480", badge: "CORE_SERVER", color: "text-emerald-400 bg-emerald-950/80 border border-emerald-700/60", text: "WS Broadcast -> Alert [CRITICAL_RED] đến màn hình Bác sĩ trực viện" },
-      { time: "11:32:05.910", badge: "WEB_PORTAL", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Dr. Trần Văn Nam xác nhận -> Duyệt y lệnh Amlodipine 5mg uống ngay" },
+      { time: "11:32:05.910", badge: "WEB_MANAGEMENT", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Dr. Trần Văn Nam xác nhận -> Duyệt y lệnh Amlodipine 5mg uống ngay" },
       { time: "11:32:06.250", badge: "FAMILY_APP", color: "text-amber-400 bg-amber-950/80 border border-amber-700/60", text: "Push Notification gửi đến người thân -> Cập nhật biểu đồ theo dõi" }
     ],
     latency: "0.82 giây",
@@ -529,7 +544,7 @@ const SIM_SCENARIOS = [
       role: "Gia đình an tâm theo dõi"
     },
     logs: [
-      { time: "08:00:10.000", badge: "WEB_PORTAL", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Bác sĩ duyệt đơn thuốc tuần cho 45 cụ tầng 2" },
+      { time: "08:00:10.000", badge: "WEB_MANAGEMENT", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Bác sĩ duyệt đơn thuốc tuần cho 45 cụ tầng 2" },
       { time: "11:30:00.050", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "App điều dưỡng rung chuông báo cữ thuốc trưa P.204" },
       { time: "11:32:15.340", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "Quét mã QR giường cụ Hướng -> Đối chiếu ảnh viên thuốc -> Bấm Đã uống" },
       { time: "11:32:16.110", badge: "SYNC_EVENT", color: "text-emerald-400 bg-emerald-950/80 border border-emerald-700/60", text: "Đồng bộ 2 chiều: Dòng thời gian EMR trên Web & App Family đổi sang màu Xanh" }
@@ -562,7 +577,7 @@ const SIM_SCENARIOS = [
       { time: "11:45:20.100", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "Hộ lý chụp ảnh khay cơm trưa cụ Hướng -> Đánh giá tiêu thụ 90%" },
       { time: "11:45:21.050", badge: "AI_ENGINE", color: "text-amber-400 bg-amber-950/80 border border-amber-700/60", text: "RAG Pipeline nạp dữ liệu bữa ăn vào bộ nhớ ngữ cảnh người cao tuổi" },
       { time: "11:45:21.800", badge: "FAMILY_APP", color: "text-amber-400 bg-amber-950/80 border border-amber-700/60", text: "Gia đình xem ảnh khay cơm -> Trợ lý AI giải đáp dinh dưỡng trong 0.8s" },
-      { time: "11:45:22.400", badge: "WEB_PORTAL", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Bảng quản lý hoạt động & dinh dưỡng viện tự động cập nhật số liệu" }
+      { time: "11:45:22.400", badge: "WEB_MANAGEMENT", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Bảng quản lý hoạt động & dinh dưỡng viện tự động cập nhật số liệu" }
     ],
     latency: "0.95 giây",
     protocol: "WebSocket + AI Streaming"
@@ -579,7 +594,7 @@ const SIM_SCENARIOS = [
     web: {
       img: "assets/screenshots/web-report.png",
       badge: "3. Cổng Web: Gạch nợ tự động",
-      desc: "Webhook ngân hàng báo về Web Portal, khoản nợ được gạch tự động trong 3 giây. Hóa đơn điện tử gửi về email và lưu vào sổ quỹ.",
+      desc: "Webhook ngân hàng báo về Web quản lý, khoản nợ được gạch tự động trong 3 giây. Hóa đơn điện tử gửi về email và lưu vào sổ quỹ.",
       role: "Phòng Kế toán & Ban giám đốc"
     },
     family: {
@@ -590,7 +605,7 @@ const SIM_SCENARIOS = [
     },
     logs: [
       { time: "09:15:00.000", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "Ghi nhận 1 buổi vật lý trị liệu phục hồi chức năng P.204" },
-      { time: "09:15:01.200", badge: "WEB_PORTAL", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Dịch vụ tự động cộng vào bảng kê chi phí tháng của cụ Hướng" },
+      { time: "09:15:01.200", badge: "WEB_MANAGEMENT", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Dịch vụ tự động cộng vào bảng kê chi phí tháng của cụ Hướng" },
       { time: "09:20:10.500", badge: "FAMILY_APP", color: "text-amber-400 bg-amber-950/80 border border-amber-700/60", text: "Người nhà mở hóa đơn, quét mã VietQR ngân hàng Vietcombank" },
       { time: "09:20:13.200", badge: "BANK_WEBHOOK", color: "text-emerald-400 bg-emerald-950/80 border border-emerald-700/60", text: "Nhận tiền thành công! Tự động gạch nợ trên Web trong 2.7 giây" }
     ],
@@ -887,7 +902,7 @@ const CAROUSEL_I18N_DATA = {
         pill: "2. Đo sinh hiệu",
         chip: "Sinh hiệu & Cảnh báo",
         title: "2. Đo sinh hiệu tại giường",
-        desc: "Nhập nhanh huyết áp, mạch, SpO2, nhiệt độ và tự động cảnh báo đỏ khi phát hiện bất thường. Đồng bộ tức thì lên hồ sơ bệnh án EMR của bác sĩ.",
+        desc: "Nhập nhanh huyết áp, mạch, SpO2, nhiệt độ và tự động cảnh báo đỏ khi phát hiện bất thường.",
         highlights: ["Nhập 6 chỉ số dưới 30s", "Tự động cảnh báo ngưỡng đỏ", "Đồng bộ EMR tức thì"],
         src: "assets/screenshots/staff-vitals.png",
         caption: "Ghi nhận sinh hiệu tại giường – BeeCare Staff"
@@ -904,33 +919,33 @@ const CAROUSEL_I18N_DATA = {
       },
       {
         index: 3,
-        pill: "4. Phát thuốc 5Đ",
-        chip: "Cấp phát thuốc 5 Đúng",
-        title: "4. Checklist phát thuốc chống nhầm",
-        desc: "Chia cữ uống sáng - trưa - chiều - tối, đối soát ảnh viên thuốc và đánh dấu đã uống. Loại bỏ hoàn toàn nguy cơ quên hoặc cấp nhầm thuốc.",
-        highlights: ["Chuẩn y lệnh 5 Đúng", "Hình ảnh viên thuốc thực tế", "Ghi nhận cữ uống thời gian thực"],
+        pill: "4. Nhắc uống thuốc",
+        chip: "Nhắc uống thuốc đúng giờ",
+        title: "4. Nhắc và kiểm soát uống thuốc đúng giờ",
+        desc: "Tự động nhắc cữ sáng, trưa, chiều, tối kèm hình ảnh viên thuốc trực quan. Điều dưỡng kiểm tra và tích nhận tại giường, đảm bảo không quên cữ và không nhầm thuốc.",
+        highlights: ["Nhắc cữ sáng - trưa - tối", "Hình ảnh viên thuốc thực tế", "Xác nhận uống tại giường"],
         src: "assets/screenshots/staff-meds.png",
-        caption: "Checklist cấp phát thuốc chống nhầm – BeeCare Staff"
+        caption: "Nhắc và kiểm soát uống thuốc đúng giờ – BeeCare Staff"
       },
       {
         index: 4,
         pill: "5. Suất ăn & Nước",
         chip: "Dinh dưỡng & Bữa ăn",
-        title: "5. Chụp ảnh suất ăn & Chấm điểm",
-        desc: "Chụp ảnh khay cơm thật, ghi nhận tỷ lệ ăn hết 90% và lượng nước uống hàng ngày. Dữ liệu bữa ăn tự động gửi về ứng dụng của người thân.",
-        highlights: ["Chụp ảnh khay cơm thật", "Tỷ lệ khẩu phần & lượng nước", "Đánh giá dinh dưỡng mỗi ngày"],
+        title: "5. Ghi nhận khẩu phần & Dinh dưỡng",
+        desc: "Theo dõi chi tiết mức độ ăn từng bữa và lượng nước mỗi ngày. Dữ liệu tự động đồng bộ lên ứng dụng giúp người thân luôn yên tâm về chế độ ăn uống của cha mẹ.",
+        highlights: ["Theo dõi khẩu phần từng bữa", "Lượng nước uống mỗi ngày", "Tự động gửi đến người thân"],
         src: "assets/screenshots/staff-meal.png",
-        caption: "Ghi nhận suất ăn dinh dưỡng thực tế – BeeCare Staff"
+        caption: "Ghi nhận khẩu phần & dinh dưỡng thực tế – BeeCare Staff"
       },
       {
         index: 5,
         pill: "6. Bàn giao ca",
-        chip: "Bàn giao ca 3 phút",
-        title: "6. Biên bản bàn giao ca trực",
-        desc: "Tự động tổng hợp sự cố y tế và thuốc tồn đọng, ký bàn giao giữa 2 kíp trực nhanh chóng. Minh bạch trách nhiệm và tiết kiệm thời gian giao ca.",
-        highlights: ["Tổng hợp sự cố tự động", "Bàn giao thuốc tồn đọng", "Ký nhận điện tử giữa 2 ca"],
+        chip: "Bàn giao ca điện tử",
+        title: "6. Bàn giao ca trực điện tử",
+        desc: "Tổng hợp nhanh toàn bộ dặn dò y tế và công việc cần tiếp quản cho ca tiếp theo.",
+        highlights: ["Tổng hợp dặn dò y tế", "Tiếp quản công việc ca sau", "Ký duyệt điện tử tức thì"],
         src: "assets/screenshots/staff-handover.png",
-        caption: "Báo cáo bàn giao ca trực điện tử – BeeCare Staff"
+        caption: "Bàn giao ca trực điện tử – BeeCare Staff"
       }
     ],
     en: [
@@ -966,33 +981,33 @@ const CAROUSEL_I18N_DATA = {
       },
       {
         index: 3,
-        pill: "4. Medication 5R",
-        chip: "5-Rights Dispensing",
-        title: "4. Zero-Error Medication Checklist",
-        desc: "Scheduled Morning - Noon - Evening - Night rounds with pill reference photos and check-off verification to prevent medication errors.",
-        highlights: ["5-Rights medication safety", "Reference pill photo catalog", "Real-time dosage logs"],
+        pill: "4. Medication Reminders",
+        chip: "On-Time Medication",
+        title: "4. On-Time Medication Reminders & Control",
+        desc: "Automated morning, noon, evening, and night round alerts with visual pill reference photos. Caregivers verify and check off at the bedside, ensuring zero missed doses and no mix-ups.",
+        highlights: ["Scheduled round alerts", "Visual pill photo catalog", "Bedside check-off logs"],
         src: "assets/screenshots/staff-meds.png",
-        caption: "Medication Checklist – BeeCare Staff"
+        caption: "On-Time Medication Reminders & Control – BeeCare Staff"
       },
       {
         index: 4,
         pill: "5. Nutrition & Meals",
-        chip: "Nutrition Logging",
-        title: "5. Real Meal Photo & Nutrition Score",
-        desc: "Capture actual meal tray photos, rate meal consumption percentage, and record daily fluid intake synced directly to families.",
-        highlights: ["Real meal tray photo", "Portion & fluid intake log", "Daily nutrition analysis"],
+        chip: "Nutrition & Meals",
+        title: "5. Meal Portions & Nutrition Tracking",
+        desc: "Detailed tracking of meal consumption and daily fluid intake. Data syncs automatically to the app, giving families complete peace of mind about their parents' nutrition.",
+        highlights: ["Per-meal consumption tracking", "Daily fluid intake monitoring", "Automatic family sync"],
         src: "assets/screenshots/staff-meal.png",
-        caption: "Meal Nutrition Record – BeeCare Staff"
+        caption: "Meal Portions & Nutrition Tracking – BeeCare Staff"
       },
       {
         index: 5,
         pill: "6. Shift Handover",
-        chip: "3-Min Handover",
-        title: "6. Paperless Shift Handover Report",
-        desc: "Automated synthesis of medical incidents and pending medications with digital dual-signature handover between nurse shifts.",
-        highlights: ["Incident aggregation", "Pending medication report", "Electronic shift signature"],
+        chip: "Digital Handover",
+        title: "6. Digital Shift Handover",
+        desc: "Quickly compiles all medical instructions and handover tasks for the incoming shift.",
+        highlights: ["All-in-one medical notes", "Incoming shift task takeover", "Instant digital signature"],
         src: "assets/screenshots/staff-handover.png",
-        caption: "Shift Handover Report – BeeCare Staff"
+        caption: "Digital Shift Handover – BeeCare Staff"
       }
     ],
     ja: [
@@ -1011,7 +1026,7 @@ const CAROUSEL_I18N_DATA = {
         pill: "2. バイタル測定",
         chip: "バイタル＆早期警告",
         title: "2. ベッドサイドバイタル測定",
-        desc: "血圧、脈拍、SpO2、体温を30秒以内で入力。異常値を検知すると医師・管理者に自動で赤色アラートを通知します。",
+        desc: "血圧、脈拍、SpO2、体温を30秒以内で入力。異常値を検知すると自動で赤色アラートを通知します。",
         highlights: ["30秒で6項目バイタル入力", "異常値赤色アラート", "電子カルテ即時同期"],
         src: "assets/screenshots/staff-vitals.png",
         caption: "バイタル測定 – BeeCare Staff"
@@ -1028,33 +1043,33 @@ const CAROUSEL_I18N_DATA = {
       },
       {
         index: 3,
-        pill: "4. 服薬チェック",
-        chip: "誤薬防止5確認",
-        title: "4. 誤薬ゼロ服薬チェックリスト",
-        desc: "朝・昼・夕・就寝前の配薬を実物写真と照合しながら確実にチェック。誤薬や投薬漏れのリスクをゼロにします。",
-        highlights: ["5確認の服薬安全基準", "錠剤の実物写真照合", "リアルタイム投薬記録"],
+        pill: "4. 服薬リマインダー",
+        chip: "定時服薬管理",
+        title: "4. 定時服薬リマインダーと安全管理",
+        desc: "朝・昼・夕・就寝前の配薬を実物写真とともに自動通知。介護士がベッドサイドで照合・確認し、飲み忘れや誤薬を確実に防ぎます。",
+        highlights: ["各時間帯の定時リマインダー", "錠剤の実物写真照合", "ベッドサイド完了チェック"],
         src: "assets/screenshots/staff-meds.png",
-        caption: "服薬チェックリスト – BeeCare Staff"
+        caption: "定時服薬リマインダーと安全管理 – BeeCare Staff"
       },
       {
         index: 4,
         pill: "5. 食事・水分記録",
-        chip: "栄養＆食事管理",
-        title: "5. 食事トレイ写真＆摂取量記録",
-        desc: "実際の配膳トレイを写真撮影し、完食率や水分摂取量をベッドサイドで記録。ご家族のアプリへ自動通知されます。",
-        highlights: ["実物食事トレイの写真記録", "摂取率・水分量の把握", "毎食の栄養モニタリング"],
+        chip: "栄養と食事",
+        title: "5. 食事摂取量と栄養記録",
+        desc: "毎食の食事摂取量と毎日の水分量を詳細に記録。データはアプリに自動同期され、ご家族もご両親の栄養管理を安心して把握できます。",
+        highlights: ["毎食の摂取量トラッキング", "日々の水分摂取量管理", "ご家族アプリへ自動共有"],
         src: "assets/screenshots/staff-meal.png",
-        caption: "食事栄養記録 – BeeCare Staff"
+        caption: "食事摂取量と栄養記録 – BeeCare Staff"
       },
       {
         index: 5,
         pill: "6. 電子申し送り",
-        chip: "3分申し送り",
-        title: "6. 電子シフト申し送りレポート",
-        desc: "当直中の特記事項や残薬を自動集計し、2シフト間でデジタル署名申し送りを短時間で完了します。",
-        highlights: ["特記事項の自動集約", "残薬情報の引き継ぎ", "電子サイン申し送り"],
+        chip: "電子申し送り",
+        title: "6. 電子シフト申し送り",
+        desc: "次のシフトへ引き継ぐべき医療指示や担当業務の全記録を迅速に自動集約。",
+        highlights: ["医療指示の自動集約", "次シフトへの確実な引き継ぎ", "デジタル署名で即時完了"],
         src: "assets/screenshots/staff-handover.png",
-        caption: "電子申し送り – BeeCare Staff"
+        caption: "電子シフト申し送り – BeeCare Staff"
       }
     ]
   },
@@ -1105,8 +1120,8 @@ const CAROUSEL_I18N_DATA = {
         pill: "5. Viện phí VietQR",
         chip: "Thanh toán minh bạch",
         title: "5. Tra cứu hóa đơn và đóng phí",
-        desc: "Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR gạch nợ tức thì. Không cần phải đến tận viện để đóng phí hàng tháng.",
-        highlights: ["Sao kê viện phí từng ngày", "Thanh toán VietQR 1 chạm", "Gạch nợ tức thì tự động"],
+        desc: "Minh bạch viện phí từng ngày, thanh toán 1-chạm tiện lợi qua mã QR. Không cần phải đến tận viện để đóng phí hàng tháng.",
+        highlights: ["Sao kê viện phí từng ngày", "Thanh toán VietQR 1 chạm", "Tự động cập nhật hóa đơn"],
         src: "assets/screenshots/family-invoice.png",
         caption: "Bảng kê viện phí và mã thanh toán VietQR – BeeCare Family"
       },
@@ -1167,8 +1182,8 @@ const CAROUSEL_I18N_DATA = {
         pill: "5. Billing & VietQR",
         chip: "Transparent Billing",
         title: "5. Invoice Details & VietQR Payment",
-        desc: "Itemized daily fee transparency with 1-touch VietQR auto-reconciliation, eliminating the need to pay in-person.",
-        highlights: ["Itemized daily breakdown", "1-touch VietQR payment", "Instant receipt & balance update"],
+        desc: "Itemized daily fee transparency with convenient 1-touch VietQR payment, eliminating the need to pay in-person.",
+        highlights: ["Itemized daily breakdown", "1-touch VietQR payment", "Instant payment confirmation"],
         src: "assets/screenshots/family-invoice.png",
         caption: "Invoice Details & VietQR – BeeCare Family"
       },
@@ -1229,7 +1244,7 @@ const CAROUSEL_I18N_DATA = {
         pill: "5. 費用明細・QR決済",
         chip: "透明な費用管理",
         title: "5. 費用明細の照会・QRコード決済",
-        desc: "毎日のケア費用明細を透明に確認でき、VietQR決済コードで施設へ来所することなく1タップで即時支払えます。",
+        desc: "毎日のケア費用明細を透明に確認でき、VietQR決済コードで施設へ来所することなく1タップで支払えます。",
         highlights: ["日別明細の透明な確認", "VietQRによる簡単決済", "リアルタイム入金確認"],
         src: "assets/screenshots/family-invoice.png",
         caption: "費用明細・QR決済 – BeeCare Family"
@@ -1787,10 +1802,135 @@ function updateLangIndicator() {
   });
 }
 
+// ==================== HERO COVER BANNER SLIDER (BEE CARE ADS) ====================
+function initCoverSlider() {
+  const slider = document.getElementById('hero-banner-slider');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.cover-slide');
+  const prevBtn = document.getElementById('cover-slider-prev');
+  const nextBtn = document.getElementById('cover-slider-next');
+  const dots = slider.querySelectorAll('.cover-dot');
+  const counterEl = document.getElementById('cover-counter');
+  const totalSlides = slides.length;
+  if (totalSlides === 0) return;
+
+  let currentCoverIdx = 0;
+  let coverTimer = null;
+  const AUTOPLAY_INTERVAL = 5000;
+
+  function showSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentCoverIdx = index;
+
+    slides.forEach((slide, i) => {
+      if (i === currentCoverIdx) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === currentCoverIdx) {
+        dot.classList.add('cover-dot-active');
+      } else {
+        dot.classList.remove('cover-dot-active');
+      }
+    });
+
+    if (counterEl) {
+      counterEl.textContent = `${currentCoverIdx + 1}/${totalSlides}`;
+    }
+  }
+
+  function nextSlide() {
+    showSlide(currentCoverIdx + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentCoverIdx - 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    coverTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (coverTimer) {
+      clearInterval(coverTimer);
+      coverTimer = null;
+    }
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      prevSlide();
+      startAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      nextSlide();
+      startAutoplay();
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetIdx = parseInt(dot.getAttribute('data-slide'), 10);
+      if (!isNaN(targetIdx)) {
+        showSlide(targetIdx);
+        startAutoplay();
+      }
+    });
+  });
+
+  slider.addEventListener('mouseenter', stopAutoplay);
+  slider.addEventListener('mouseleave', startAutoplay);
+
+  // Touch Swipe for mobile & tablet
+  let touchStartX = 0;
+  let touchEndX = 0;
+  slider.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartX = e.touches[0].screenX;
+      stopAutoplay();
+    }
+  }, { passive: true });
+
+  slider.addEventListener('touchend', (e) => {
+    if (e.changedTouches && e.changedTouches[0]) {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+      }
+      startAutoplay();
+    }
+  }, { passive: true });
+
+  showSlide(0);
+  startAutoplay();
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
+  initCoverSlider();
   // Ensure indicator positioned after layout
   requestAnimationFrame(() => updateLangIndicator());
 });
 
 window.addEventListener('resize', () => updateLangIndicator());
+
