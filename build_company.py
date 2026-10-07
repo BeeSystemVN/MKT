@@ -501,18 +501,7 @@ main_content = """
   <!-- ===================== 1. HERO SECTION ===================== -->
   <section class="company-hero">
     <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
-        <span data-i18n="company_hero_badge">Kinh nghiệm chuẩn Nhật – Phát triển tại thị trường Việt Nam</span>
-      </div>
-      
-      <!-- H1 Main Title -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight">
-        <span data-i18n="company_hero_title">HANIKI & hành trình kiến tạo hệ sinh thái BeeCare</span>
-      </h1>
-      
-      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto mb-4 leading-relaxed" data-i18n="company_hero_desc">
-        Kế thừa hơn 6 năm kinh nghiệm thực chiến phát triển phần mềm điều dưỡng chuẩn mực tại Nhật Bản, HANIKI mang đến hệ sinh thái BeeCare thuần Việt, giúp các viện dưỡng lão số hóa toàn diện khâu vận hành và gắn kết trọn vẹn niềm tin với gia đình.
-      </p>
+      <h1 class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;" data-i18n="company_hero_title">CÔNG TY TNHH HANIKI</h1>
 
       <!-- Sảnh Đón Tiếp -->
       <div class="hero-backdrop-card" data-aos="zoom-in" data-aos-delay="150">
@@ -524,7 +513,7 @@ main_content = """
         <div class="hero-backdrop-caption">
           <div>
             <div class="text-xs uppercase tracking-widest text-teal-300 font-bold mb-1" data-i18n="company_hq_badge">Trụ sở điều hành</div>
-            <div class="text-white font-extrabold text-base sm:text-lg" data-i18n="company_hq_title">Công ty TNHH HANIKI – Tòa nhà Handico Tower, Phạm Hùng, Hà Nội</div>
+            <div class="text-white font-extrabold text-base sm:text-lg" data-i18n="company_hq_title">Công ty TNHH HANIKI – Phú Mỹ, Từ Liêm, Hà Nội</div>
           </div>
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-white font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -874,7 +863,7 @@ main_content = """
           </div>
           <div class="p-5 sm:p-6">
             <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-1" data-i18n="company_office4_title">Không gian làm việc linh hoạt</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="company_office4_desc">Khu vực làm việc mở với trang thiết bị cao cấp tại tòa nhà Handico, tạo cảm hứng sáng tạo tối đa.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" data-i18n="company_office4_desc">Khu vực làm việc mở với trang thiết bị cao cấp tại văn phòng trụ sở Hà Nội, tạo cảm hứng sáng tạo tối đa.</p>
           </div>
         </div>
       </div>
@@ -905,7 +894,7 @@ main_content = """
               <div>
                 <div class="text-[11px] text-slate-500 font-semibold uppercase" data-i18n="company_legal_hq">Trụ sở điều hành</div>
                 <div class="text-xs sm:text-sm font-bold text-slate-900 leading-snug" data-i18n="company_legal_hq_val">
-                  Tầng 30, Tòa nhà Handico, KĐT Mễ Trì Hạ, Đường Phạm Hùng, Quận Nam Từ Liêm, TP. Hà Nội
+                  Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội
                 </div>
               </div>
             </div>
@@ -983,14 +972,14 @@ main_content = """
         <!-- Google Maps -->
         <div class="map-embed-wrap">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.468766440816!2d105.77970541533202!3d21.016692893660525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab0d69594b35%3A0x56c7da1281efdc2f!2sHandico%20Tower!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn"
+            src="https://maps.google.com/maps?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Bản đồ văn phòng Tòa nhà Handico Tower - Công ty TNHH HANIKI"
+            title="Bản đồ văn phòng trụ sở Hà Nội - Công ty TNHH HANIKI"
             class="w-full h-full"
           ></iframe>
           <a

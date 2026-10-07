@@ -71,19 +71,21 @@
     }
     .stats-grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 960px;
+      margin: 0 auto;
       background: #ffffff;
       border-radius: 20px;
-      padding: 16px 20px;
+      padding: 16px 24px;
       box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.07);
       border: 1px solid rgba(226, 232, 240, 0.95);
-      gap: 16px;
+      gap: 20px;
     }
-    @media (max-width: 1023px) {
+    @media (max-width: 768px) {
       .stats-grid-3 {
         grid-template-columns: 1fr;
-        padding: 24px 20px;
-        gap: 18px;
+        padding: 20px 18px;
+        gap: 16px;
       }
     }
     .contact-comm-card {
@@ -165,18 +167,19 @@
       line-height: 1.6;
     }
 
-    /* Contact Main Form Card (Compact 1-Page Viewport Design) */
+    /* Contact Main Form Card - Premium HealthTech Design */
     .contact-form-card {
       background: #ffffff;
-      border-radius: 20px;
-      padding: 20px 22px;
+      border-radius: 24px;
+      padding: 28px 28px;
       border: 1px solid #e2e8f0;
-      box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 20px 50px -12px rgba(38, 83, 151, 0.08), 0 0 1px 1px rgba(38, 83, 151, 0.04);
+      position: relative;
     }
     @media (max-width: 639px) {
       .contact-form-card {
-        padding: 16px 14px;
-        border-radius: 16px;
+        padding: 20px 16px;
+        border-radius: 20px;
       }
     }
 
@@ -195,100 +198,136 @@
       pointer-events: none !important;
     }
 
-    /* Form Header Spacing - Compact */
+    /* Form Header Spacing */
     .contact-form-header {
-      margin-bottom: 12px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f1f5f9;
     }
     .contact-form-title {
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 800;
       color: #0f172a;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-bottom: 2px;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin-top: 6px;
+      margin-bottom: 4px;
     }
     @media (max-width: 639px) {
       .contact-form-title {
-        font-size: 16.5px;
+        font-size: 18px;
       }
     }
     .contact-form-desc {
-      font-size: 12px;
+      font-size: 13px;
       color: #64748b;
-      line-height: 1.4;
+      line-height: 1.5;
     }
 
-    /* Main Form Steps Stack - Tight 11px vertical gap */
+    /* Main Form Steps Stack */
     .contact-form-inner {
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 16px;
     }
 
     /* Form Step Container */
     .form-step {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 8px;
     }
     .form-step-label {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #1e293b;
       line-height: 1.35;
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #EEF2F6;
+      color: #265397;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
     }
 
-    /* Scale selector cards (Step 1) - Compact height */
+    /* Scale selector cards (Step 1) */
     .scale-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 7px;
+      gap: 10px;
     }
     @media (max-width: 639px) {
       .scale-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
+        gap: 8px;
       }
     }
     .scale-card {
       position: relative;
       cursor: pointer;
-      border: 1.5px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 6px 8px;
-      background: #ffffff;
-      transition: all 0.18s ease;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 12px 8px 10px;
+      background: #FAFAFC;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      min-height: 44px;
+      min-height: 74px;
       user-select: none;
     }
     .scale-card:hover {
-      border-color: #265397;
-      background: #EEF1F7;
+      border-color: #94A3B8;
+      background: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.05);
     }
     .scale-card.active {
       border-color: #265397;
-      background: #EEF1F7;
-      box-shadow: 0 0 0 1.5px #265397, 0 3px 8px -2px rgba(38, 83, 151, 0.2);
+      background: #F0F4FA;
+      box-shadow: 0 0 0 1.5px #265397, 0 6px 16px -3px rgba(38, 83, 151, 0.18);
+      transform: translateY(-1px);
+    }
+    .scale-card-icon {
+      width: 20px;
+      height: 20px;
+      color: #64748B;
+      margin-bottom: 5px;
+      transition: all 0.2s ease;
+    }
+    .scale-card:hover .scale-card-icon {
+      color: #265397;
+    }
+    .scale-card.active .scale-card-icon {
+      color: #265397;
+      transform: scale(1.1);
     }
     .scale-title {
       font-size: 12px;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 1px;
-      line-height: 1.2;
+      margin-bottom: 2px;
+      line-height: 1.25;
       transition: color 0.18s ease;
     }
     .scale-card.active .scale-title {
       color: #193662;
+      font-weight: 800;
     }
     .scale-sub {
-      font-size: 10.5px;
+      font-size: 11px;
       color: #64748b;
       line-height: 1.2;
       transition: color 0.18s ease;
@@ -297,77 +336,112 @@
       color: #265397;
       font-weight: 600;
     }
+    .scale-popular-badge {
+      position: absolute;
+      top: -7px;
+      right: 8px;
+      background: linear-gradient(135deg, #0284c7, #265397);
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 9999px;
+      letter-spacing: 0.02em;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35);
+      pointer-events: none;
+    }
 
-    /* Consultation Method Pills (Step 2) - Compact height */
+    /* Consultation Method Pills (Step 2) */
     .method-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 7px;
+      gap: 10px;
     }
     @media (max-width: 639px) {
       .method-grid {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 8px;
       }
     }
     .method-pill {
       cursor: pointer;
-      border: 1.5px solid #E5E1D8;
-      border-radius: 10px;
-      padding: 6px 10px;
-      background: #ffffff;
-      transition: all 0.18s ease;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 9999px;
+      padding: 10px 14px;
+      background: #FAFAFC;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      font-size: 12px;
+      gap: 7px;
+      font-size: 12.5px;
       font-weight: 600;
       color: #334155;
-      min-height: 36px;
+      min-height: 42px;
       text-align: center;
       user-select: none;
     }
     .method-pill:hover {
-      border-color: #265397;
-      background: #EEF1F7;
+      border-color: #94A3B8;
+      background: #ffffff;
+      transform: translateY(-1px);
+    }
+    .method-pill:not(.active) .method-icon-onsite {
+      color: #0d9488 !important;
+      stroke: #0d9488 !important;
+    }
+    .method-pill:not(.active) .method-icon-online {
+      color: #0284c7 !important;
+      stroke: #0284c7 !important;
+    }
+    .method-pill:not(.active) .method-icon-docs {
+      color: #d97706 !important;
+      stroke: #d97706 !important;
     }
     .method-pill.active {
       border-color: #265397;
       background: #265397;
-      color: #ffffff;
-      box-shadow: 0 3px 10px -2px rgba(38, 83, 151, 0.35);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px -2px rgba(38, 83, 151, 0.35);
     }
-    .method-pill.active i {
+    .method-pill.active,
+    .method-pill.active * {
       color: #ffffff !important;
     }
+    .method-pill.active svg,
+    .method-pill.active i,
+    .method-pill.active .lucide,
+    .method-pill.active [data-lucide] {
+      color: #ffffff !important;
+      stroke: #ffffff !important;
+    }
 
-    /* Step 3: Fields Grid & Inputs - Compact */
+    /* Step 3: Fields Grid & Inputs */
     .fields-stack {
       display: flex;
       flex-direction: column;
-      gap: 7px;
+      gap: 12px;
     }
     .fields-row {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+      gap: 12px;
     }
     @media (max-width: 639px) {
       .fields-row {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 10px;
       }
     }
     .contact-field-group {
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
+      gap: 4px;
     }
     .contact-field-label {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
-      color: #475569;
+      color: #334155;
       display: flex;
       align-items: center;
       gap: 3px;
@@ -377,89 +451,101 @@
     }
     .contact-input-icon {
       position: absolute;
-      left: 10px;
+      left: 13px;
       top: 50%;
       transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       color: #94a3b8;
       pointer-events: none;
       transition: color 0.2s ease;
     }
     .contact-input-icon-top {
       position: absolute;
-      left: 10px;
-      top: 10px;
-      width: 14px;
-      height: 14px;
+      left: 13px;
+      top: 13px;
+      width: 16px;
+      height: 16px;
       color: #94a3b8;
       pointer-events: none;
       transition: color 0.2s ease;
     }
     .contact-input {
       width: 100%;
-      min-height: 36px;
-      border: 1.5px solid #E5E1D8;
-      border-radius: 9px;
-      padding: 6px 10px 6px 32px;
-      font-size: 12px;
+      min-height: 44px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 10px 14px 10px 40px;
+      font-size: 13px;
       color: #0f172a;
-      background: #ffffff;
-      transition: all 0.18s ease;
+      background: #F8FAFC;
+      transition: all 0.2s ease;
       font-family: inherit;
+    }
+    .contact-input:hover {
+      border-color: #CBD5E1;
+      background: #ffffff;
     }
     .contact-input:focus {
       outline: none;
       border-color: #265397;
-      box-shadow: 0 0 0 2.5px rgba(38, 83, 151, 0.12);
+      background: #ffffff;
+      box-shadow: 0 0 0 3.5px rgba(38, 83, 151, 0.12);
     }
     .contact-input-wrap:focus-within .contact-input-icon,
     .contact-input-wrap:focus-within .contact-input-icon-top {
       color: #265397;
     }
 
-    /* Submit Button & Privacy Note - Compact */
+    /* Submit Button & Trust Bar */
     .submit-wrap {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      padding-top: 2px;
+      gap: 10px;
+      padding-top: 4px;
     }
     .contact-submit-btn {
       width: 100%;
-      min-height: 40px;
-      padding: 8px 18px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #265397 0%, #0284c7 100%);
+      min-height: 48px;
+      padding: 12px 24px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #183C6F 0%, #265397 50%, #0284c7 100%);
       color: #ffffff;
-      font-size: 13px;
+      font-size: 14.5px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       border: none;
       cursor: pointer;
-      box-shadow: 0 3px 10px -2px rgba(38, 83, 151, 0.35);
-      transition: all 0.18s ease;
+      box-shadow: 0 6px 20px -3px rgba(38, 83, 151, 0.4), 0 2px 6px -1px rgba(2, 132, 199, 0.3);
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
       font-family: inherit;
     }
     .contact-submit-btn:hover {
-      background: linear-gradient(135deg, #204780 0%, #0369a1 100%);
-      transform: translateY(-1px);
-      box-shadow: 0 5px 14px -2px rgba(38, 83, 151, 0.45);
+      background: linear-gradient(135deg, #142F57 0%, #1f4682 50%, #0369a1 100%);
+      transform: translateY(-1.5px);
+      box-shadow: 0 10px 25px -4px rgba(38, 83, 151, 0.5), 0 4px 10px -2px rgba(2, 132, 199, 0.4);
     }
     .contact-submit-btn:active {
       transform: translateY(0);
     }
-    .contact-privacy-note {
+    .contact-trust-bar {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding-top: 2px;
+    }
+    .contact-trust-item {
+      display: inline-flex;
+      align-items: center;
       gap: 5px;
-      font-size: 10.5px;
+      font-size: 11.5px;
       color: #64748b;
-      text-align: center;
+      font-weight: 500;
     }
 
     /* Info Sidebar Cards */
@@ -807,12 +893,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
         
-        <!-- CỤM TRÁI: Logo BeeCare -->
+        <!-- CỤM TRÁI: Logo HNK -->
         <div class="flex items-center gap-3 shrink-0">
-          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
-            <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
-            </span>
+          <a href="index.html" class="nav-brand-wrap" aria-label="HNK - HANIKI">
+            <img src="assets/logo-hnk.png" alt="Logo HNK" class="nav-brand-logo-img" />
           </a>
         </div>
 
@@ -916,18 +1000,6 @@
   <div class="stats-container" data-aos="fade-up" data-aos-delay="100">
     <div class="stats-grid-3">
       
-      <!-- Comm 1: Phản hồi 30 phút -->
-      <div class="contact-comm-card">
-        <div class="comm-icon-wrap bg-teal-50 text-teal-600">
-          <i data-lucide="clock" class="w-6 h-6"></i>
-        </div>
-        <div>
-          <div class="text-xs font-semibold text-slate-500 mb-0.5" data-i18n="contact_comm1_title">Cam kết phản hồi</div>
-          <div class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1" data-i18n="contact_comm1_val">Trong vòng 30 phút</div>
-          <div class="text-xs text-slate-500" data-i18n="contact_comm1_sub">Kể từ khi tiếp nhận đăng ký</div>
-        </div>
-      </div>
-
       <!-- Comm 2: Khảo sát tận nơi -->
       <div class="contact-comm-card">
         <div class="comm-icon-wrap bg-sky-50 text-sky-600">
@@ -965,43 +1037,40 @@
           
           <!-- Form Header -->
           <div class="contact-form-header">
-            <div class="flex items-center justify-between gap-2 mb-1.5">
-              <div class="section-badge !mb-0 !py-0.5 !px-2.5 !text-[11px]">
-                <i data-lucide="calendar-check" class="w-3 h-3"></i>
+            <div class="mb-2">
+              <div class="section-badge !mb-0 !py-1 !px-3 !text-[11.5px] inline-flex">
+                <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
                 <span data-i18n="contact_form_badge">Đăng ký tư vấn</span>
               </div>
-              <span class="text-[11px] font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full border border-teal-200/60 inline-flex items-center gap-1">
-                <i data-lucide="clock" class="w-3 h-3 text-teal-600"></i>
-                <span data-i18n="contact_trust_speed">Cam kết kết nối tư vấn trong 30 phút</span>
-              </span>
             </div>
             <h2 class="contact-form-title">
               <span data-i18n="contact_form_title">Đăng ký tư vấn & trải nghiệm demo</span>
             </h2>
-            <p class="contact-form-desc" data-i18n="contact_form_desc">
-              Để lại thông tin, chuyên gia BeeCare sẽ liên hệ hỗ trợ bạn trong 30 phút.
-            </p>
           </div>
 
-          <form id="contact-form" class="contact-form-inner">
+          <form id="contact-form" class="contact-form-inner" onsubmit="event.preventDefault(); handleContactSubmit(); return false;">
             
             <!-- STEP 1: Resident Scale Selector -->
             <div class="form-step">
-              <label class="form-step-label" data-i18n="contact_step1_label">
-                1. Quy mô người cao tuổi tại cơ sở:
+              <label class="form-step-label">
+                <span class="step-badge">1</span>
+                <span data-i18n="contact_step1_label">Quy mô người cao tuổi tại cơ sở:</span>
               </label>
               <div class="scale-grid">
                 
                 <!-- Under 30 -->
                 <div class="scale-card" onclick="selectScale(this)">
                   <input type="radio" name="facility_scale" value="under_30" class="sr-only" />
+                  <i data-lucide="home" class="scale-card-icon"></i>
                   <div class="scale-title" data-i18n="contact_scale_under30_title">Dưới 30 người</div>
                   <div class="scale-sub" data-i18n="contact_scale_under30_sub">Viện gia đình</div>
                 </div>
 
                 <!-- 30 - 50 (Default Active) -->
                 <div class="scale-card active" onclick="selectScale(this)">
+                  <span class="scale-popular-badge">★ Phổ biến</span>
                   <input type="radio" name="facility_scale" value="30_50" checked class="sr-only" />
+                  <i data-lucide="building" class="scale-card-icon"></i>
                   <div class="scale-title" data-i18n="contact_scale_3050_title">30 – 50 người</div>
                   <div class="scale-sub" data-i18n="contact_scale_3050_sub">Phổ biến nhất</div>
                 </div>
@@ -1009,6 +1078,7 @@
                 <!-- 50 - 100 -->
                 <div class="scale-card" onclick="selectScale(this)">
                   <input type="radio" name="facility_scale" value="50_100" class="sr-only" />
+                  <i data-lucide="shield-plus" class="scale-card-icon"></i>
                   <div class="scale-title" data-i18n="contact_scale_50100_title">50 – 100 người</div>
                   <div class="scale-sub" data-i18n="contact_scale_50100_sub">Quy mô vừa</div>
                 </div>
@@ -1016,6 +1086,7 @@
                 <!-- Over 100 -->
                 <div class="scale-card" onclick="selectScale(this)">
                   <input type="radio" name="facility_scale" value="over_100" class="sr-only" />
+                  <i data-lucide="network" class="scale-card-icon"></i>
                   <div class="scale-title" data-i18n="contact_scale_over100_title">Trên 100 người</div>
                   <div class="scale-sub" data-i18n="contact_scale_over100_sub">Chuỗi cơ sở</div>
                 </div>
@@ -1025,25 +1096,26 @@
 
             <!-- STEP 2: Preferred Consultation Method -->
             <div class="form-step">
-              <label class="form-step-label" data-i18n="contact_step2_label">
-                2. Hình thức tư vấn mong muốn:
+              <label class="form-step-label">
+                <span class="step-badge">2</span>
+                <span data-i18n="contact_step2_label">Hình thức tư vấn mong muốn:</span>
               </label>
               <div class="method-grid">
                 
                 <div class="method-pill active" onclick="selectMethod(this)">
-                  <i data-lucide="building" class="w-3.5 h-3.5 text-teal-600"></i>
+                  <i data-lucide="map-pin" class="w-4 h-4 method-icon-onsite"></i>
                   <span data-i18n="contact_method_onsite">Khảo sát tại viện</span>
                   <input type="radio" name="consult_method" value="onsite" checked class="sr-only" />
                 </div>
 
                 <div class="method-pill" onclick="selectMethod(this)">
-                  <i data-lucide="video" class="w-3.5 h-3.5 text-sky-600"></i>
+                  <i data-lucide="video" class="w-4 h-4 method-icon-online"></i>
                   <span data-i18n="contact_method_online">Demo online (Meet)</span>
                   <input type="radio" name="consult_method" value="online" class="sr-only" />
                 </div>
 
                 <div class="method-pill" onclick="selectMethod(this)">
-                  <i data-lucide="file-text" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <i data-lucide="file-text" class="w-4 h-4 method-icon-docs"></i>
                   <span data-i18n="contact_method_docs">Báo giá qua Email / Zalo</span>
                   <input type="radio" name="consult_method" value="docs" class="sr-only" />
                 </div>
@@ -1053,8 +1125,9 @@
 
             <!-- STEP 3: Contact Representative Information -->
             <div class="form-step">
-              <label class="form-step-label" data-i18n="contact_step3_label">
-                3. Thông tin người liên hệ:
+              <label class="form-step-label">
+                <span class="step-badge">3</span>
+                <span data-i18n="contact_step3_label">Thông tin người liên hệ:</span>
               </label>
 
               <div class="fields-stack">
@@ -1121,7 +1194,7 @@
                   </label>
                   <div class="contact-input-wrap">
                     <i data-lucide="message-square" class="contact-input-icon-top"></i>
-                    <textarea id="contact-msg" name="message" rows="1" class="contact-input resize-none !min-h-[36px] !h-[36px] !py-2"
+                    <textarea id="contact-msg" name="message" rows="2" class="contact-input resize-none !min-h-[70px] !h-[70px] !py-2.5"
                       data-i18n-placeholder="contact_placeholder_msg" placeholder="Mô tả số giường hoặc bài toán quản lý cần tối ưu..."></textarea>
                   </div>
                 </div>
@@ -1129,20 +1202,75 @@
               </div>
             </div>
 
-            <!-- Submit Button & Privacy Note -->
+            <!-- Submit Button & Trust Bar -->
             <div class="submit-wrap">
-              <button type="submit" id="contact-submit-btn" class="contact-submit-btn">
-                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <button type="button" id="contact-submit-btn" class="contact-submit-btn" onclick="handleContactSubmit()">
+                <i data-lucide="send" class="w-4 h-4"></i>
                 <span data-i18n="contact_submit_btn">Gửi yêu cầu tư vấn ngay</span>
               </button>
 
-              <div class="contact-privacy-note">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i>
-                <span data-i18n="contact_privacy_note">Cam kết bảo mật thông tin theo tiêu chuẩn dữ liệu y tế.</span>
+              <div class="contact-trust-bar">
+                <span class="contact-trust-item">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5 text-teal-600 shrink-0"></i>
+                  <span data-i18n="contact_privacy_note">Cam kết bảo mật thông tin theo tiêu chuẩn dữ liệu y tế.</span>
+                </span>
+                <span class="contact-trust-item">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500 shrink-0"></i>
+                  <span>Miễn phí khảo sát & demo 1-1</span>
+                </span>
               </div>
             </div>
 
           </form>
+
+          <!-- SUCCESS CONFIRMATION CARD (Replaces form on submit) -->
+          <div id="contact-success-card" class="contact-success-card" style="display: none;">
+            <div class="success-badge-icon">
+              <i data-lucide="check" class="w-9 h-9 stroke-[2.5]"></i>
+            </div>
+            
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight" data-i18n="contact_success_title">
+              Gửi yêu cầu tư vấn thành công!
+            </h3>
+            
+            <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-lg mx-auto leading-relaxed" data-i18n="contact_success_desc">
+              Cảm ơn quý vị! Yêu cầu tư vấn đã được gửi thành công. Nhân viên BeeCare sẽ liên hệ sớm nhất.
+            </p>
+
+            <!-- Tóm tắt thông tin đã ghi nhận -->
+            <div class="contact-summary-box">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2 flex items-center gap-1.5">
+                <i data-lucide="clipboard-check" class="w-3.5 h-3.5 text-teal-600"></i>
+                <span data-i18n="contact_summary_title">Thông tin đã ghi nhận</span>
+              </div>
+              <div class="contact-summary-row">
+                <span class="text-slate-500" data-i18n="contact_summary_facility">Cơ sở / Viện:</span>
+                <strong id="success-summary-facility" class="text-slate-900 font-semibold text-right">--</strong>
+              </div>
+              <div class="contact-summary-row">
+                <span class="text-slate-500" data-i18n="contact_summary_phone">Số điện thoại:</span>
+                <strong id="success-summary-phone" class="text-slate-900 font-semibold text-right">--</strong>
+              </div>
+              <div class="contact-summary-row">
+                <span class="text-slate-500" data-i18n="contact_summary_method">Hình thức:</span>
+                <span id="success-summary-method" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-200">--</span>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mt-6">
+              <button type="button" id="contact-reset-btn" onclick="resetContactForm()"
+                class="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-all duration-200">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span data-i18n="contact_success_btn_reset">Gửi thêm yêu cầu khác</span>
+              </button>
+              <a href="tel:0988123531"
+                class="min-h-[44px] inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold text-sm shadow-md shadow-teal-600/25 transition-all duration-200">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                <span>Hotline: 0988 123 531</span>
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -1161,7 +1289,7 @@
               <div>
                 <div class="text-xs font-bold text-slate-700" data-i18n="contact_corp_addr_label">Trụ sở công nghệ Hà Nội</div>
                 <div class="text-xs text-slate-600 leading-relaxed mt-0.5" data-i18n="contact_corp_addr_val">
-                  Tầng 30, Tòa nhà Handico Tower, Đường Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, TP. Hà Nội
+                  Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội
                 </div>
               </div>
             </div>
@@ -1244,7 +1372,7 @@
             </a>
 
             <!-- 2. Facebook -->
-            <a href="https://facebook.com/beecare.vn" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.facebook.com/profile.php?id=61582996425862" target="_blank" rel="noopener noreferrer"
               class="social-channel-item brand-fb">
               <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="36" height="36" rx="8" fill="#1877F2"/>
@@ -1308,14 +1436,14 @@
           </div>
         </div>
 
-        <!-- Card 3: Bản đồ vị trí trụ sở Handico Tower -->
+        <!-- Card 3: Bản đồ vị trí trụ sở Hà Nội -->
         <div class="contact-info-card overflow-hidden p-0 border border-slate-200">
           <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
             <div class="flex items-center gap-2 text-xs font-bold">
               <i data-lucide="map" class="w-4 h-4 text-teal-400"></i>
-              <span data-i18n="contact_map_title">Vị trí trụ sở Tòa nhà Handico Tower</span>
+              <span data-i18n="contact_map_title">Vị trí trụ sở Hà Nội</span>
             </div>
-            <a href="https://maps.google.com/?q=Handico+Tower+Pham+Hung+Me+Tri+Nam+Tu+Liem+Hanoi" target="_blank" rel="noopener noreferrer"
+            <a href="https://maps.google.com/?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội" target="_blank" rel="noopener noreferrer"
               class="text-xs text-teal-300 hover:text-white flex items-center gap-1 font-semibold transition-colors">
               <span data-i18n="contact_map_open">Mở trên Google Maps</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
@@ -1323,9 +1451,9 @@
           </div>
           <div class="relative w-full h-[220px] bg-slate-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.3809635038837!2d105.7801869758728!3d21.01743668816434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5394ef342f%3A0xe54d896ee81c3c97!2zVMOyYSBuaMOgIEhBTkRJQ08gVE9XRVI!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn"
+              src="https://maps.google.com/maps?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" title="Bản đồ Tòa nhà Handico Tower">
+              referrerpolicy="no-referrer-when-downgrade" title="Bản đồ vị trí trụ sở Hà Nội">
             </iframe>
           </div>
         </div>
@@ -1419,8 +1547,8 @@
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4">
         <a href="#booking-form"
-          class="min-h-[48px] inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-teal-500/30 transition-all duration-200 hover:-translate-y-0.5">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
+          class="min-h-[48px] inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5">
+          <i data-lucide="calendar-check" class="w-4 h-4 text-teal-300"></i>
           <span data-i18n="contact_cta_btn_book">Đăng ký tư vấn miễn phí</span>
         </a>
         <a href="tel:0988123531"
@@ -1464,11 +1592,11 @@
             </a>
             <span class="footer-contact-item">
               <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
-              <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
+              <span data-i18n="footer_address">Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội</span>
             </span>
           </div>
           <div class="footer-social-row">
-            <a href="https://facebook.com/beecare.vn" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+            <a href="https://www.facebook.com/profile.php?id=61582996425862" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
@@ -1550,11 +1678,6 @@
               </a>
             </div>
           </div>
-          <div style="font-size:11.5px;color:#475569;line-height:1.7">
-            <strong style="color:#64748b"><span data-i18n="footer_partner">Đối tác chiến lược:</span></strong><br>
-            <span data-i18n="footer_partner_1">Hệ thống Viện dưỡng lão Diên Hồng</span><br>
-            <span data-i18n="footer_partner_2">Chuẩn chăm sóc Kaigo Nhật Bản</span>
-          </div>
         </div>
 
       </div><!-- /.footer-grid -->
@@ -1586,13 +1709,12 @@
     </div>
   </div>
 
-  <!-- Toast Notification -->
-  <div id="toast"
-    class="fixed bottom-6 right-6 z-50 transform translate-x-full opacity-0 transition-all duration-300 bg-slate-900 border border-teal-500 text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 max-w-md">
+  <!-- Toast Notification (Top-Center High-Priority Z-Index 99999) -->
+  <div id="toast" role="status" aria-live="polite">
     <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
       <i data-lucide="check-circle-2" class="w-5 h-5"></i>
     </div>
-    <div id="toast-msg" class="text-sm font-medium text-slate-200">
+    <div id="toast-msg" class="text-sm font-medium text-slate-100">
       <span data-i18n="toast_success">Yêu cầu đã được gửi thành công!</span>
     </div>
   </div>
@@ -1631,37 +1753,175 @@
       if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
-    // Form Submission & Multilingual Toast
-    document.addEventListener("DOMContentLoaded", () => {
+    // Global Form Submission & Success Card Handlers
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbze3xdXYn9IHzcMSN3lw-G4SVLxjG_xpNox9jLhMLSqqhfIIZLwZLcCkvoHfcR01ZmI/exec';
+
+    async function handleContactSubmit(e) {
+      if (e && e.preventDefault) e.preventDefault();
       const form = document.getElementById('contact-form');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const lang = localStorage.getItem('beecare_lang') || 'vi';
-          const msgs = {
-            vi: 'Cảm ơn quý vị! Yêu cầu tư vấn đã được gửi thành công. Chuyên gia BeeCare sẽ liên hệ trong vòng 30 phút.',
-            en: 'Thank you! Your consultation request has been submitted successfully. A BeeCare specialist will contact you within 30 minutes.',
-            ja: 'ありがとうございます！導入相談のお申し込みを受け付けました。30分以内に専門担当者よりご連絡いたします。'
-          };
-          if (typeof showToast === 'function') {
-            showToast(msgs[lang] || msgs.vi);
+      const submitBtn = document.getElementById('contact-submit-btn');
+      if (!form) return;
+
+      const lang = localStorage.getItem('beecare_lang') || 'vi';
+
+      // Validation messages
+      const valAlerts = {
+        vi: 'Vui lòng điền đầy đủ các thông tin có dấu sao (*) trước khi gửi.',
+        en: 'Please fill in all required fields marked with an asterisk (*).',
+        ja: '必須項目（*）をすべてご入力の上、送信してください。'
+      };
+
+      // Validate required fields
+      const nameInput = form.querySelector('#contact-name');
+      const phoneInput = form.querySelector('#contact-phone');
+      const emailInput = form.querySelector('#contact-email');
+      const facilityInput = form.querySelector('#contact-facility');
+
+      const requiredInputs = [
+        { el: nameInput, name: 'name' },
+        { el: phoneInput, name: 'phone' },
+        { el: emailInput, name: 'email' },
+        { el: facilityInput, name: 'facility' }
+      ];
+
+      let hasEmpty = false;
+      for (const item of requiredInputs) {
+        if (!item.el || !item.el.value.trim()) {
+          if (item.el) {
+            item.el.style.borderColor = '#ef4444';
+            item.el.style.backgroundColor = '#fef2f2';
+            if (!hasEmpty) item.el.focus();
+            item.el.addEventListener('input', () => {
+              item.el.style.borderColor = '';
+              item.el.style.backgroundColor = '';
+            }, { once: true });
           }
-          form.reset();
-          // Reset default selections
-          const cards = document.querySelectorAll('.scale-card');
-          if (cards.length > 1) selectScale(cards[1]);
-          const methods = document.querySelectorAll('.method-pill');
-          if (methods.length > 0) selectMethod(methods[0]);
-        });
+          hasEmpty = true;
+        }
       }
 
-      // Title listener on language change
-      window.addEventListener('languageChanged', (e) => {
-        const lang = e.detail && e.detail.lang ? e.detail.lang : (localStorage.getItem('beecare_lang') || 'vi');
-        if (window.TRANSLATIONS && window.TRANSLATIONS[lang] && window.TRANSLATIONS[lang]['contact_title_page']) {
-          document.title = window.TRANSLATIONS[lang]['contact_title_page'];
+      if (hasEmpty) {
+        if (typeof showToast === 'function') {
+          showToast(valAlerts[lang] || valAlerts.vi);
         }
+        return;
+      }
+
+      const msgs = {
+        vi: 'Cảm ơn quý vị! Yêu cầu tư vấn đã được gửi thành công. Nhân viên BeeCare sẽ liên hệ sớm nhất.',
+        en: 'Thank you! Your consultation request has been submitted successfully. A BeeCare staff member will contact you shortly.',
+        ja: 'ありがとうございます！導入相談のお申し込みを受け付けました。BeeCare担当スタッフより速やかにご連絡いたします。'
+      };
+      const loadingText = {
+        vi: 'Đang gửi thông tin...',
+        en: 'Submitting request...',
+        ja: '送信中...'
+      };
+
+      // Collect form values
+      const scaleChecked = form.querySelector('input[name="facility_scale"]:checked');
+      const methodChecked = form.querySelector('input[name="consult_method"]:checked');
+      
+      const payload = {
+        name: nameInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        email: emailInput.value.trim(),
+        facility: facilityInput.value.trim(),
+        scale: scaleChecked ? scaleChecked.value : '30_50',
+        method: methodChecked ? methodChecked.value : 'onsite',
+        message: form.querySelector('#contact-msg') ? form.querySelector('#contact-msg').value.trim() : '',
+        lang: lang
+      };
+
+      // Button loading state (gentle 300ms transition)
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.85';
+        submitBtn.innerHTML = `<span class="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span> <span>${loadingText[lang] || loadingText.vi}</span>`;
+      }
+
+      // 1. Send data to Google Sheet in background (Non-blocking - zero user wait time)
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).catch(err => {
+        console.warn('Background submission note:', err);
       });
+
+      // 2. Instant responsive transition (300ms) to Success Card
+      setTimeout(() => {
+        // Restore button state for future use
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.innerHTML = originalBtnHtml;
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        // Update summary in success card
+        const successCard = document.getElementById('contact-success-card');
+        const summaryFacility = document.getElementById('success-summary-facility');
+        const summaryPhone = document.getElementById('success-summary-phone');
+        const summaryMethod = document.getElementById('success-summary-method');
+
+        if (summaryFacility) summaryFacility.textContent = payload.facility || '--';
+        if (summaryPhone) summaryPhone.textContent = payload.phone || '--';
+        if (summaryMethod) {
+          const methodMap = {
+            vi: { onsite: 'Khảo sát tại viện (Trực tiếp)', online: 'Demo online (Meet)', docs: 'Báo giá qua Email / Zalo' },
+            en: { onsite: 'On-site Survey (Direct)', online: 'Online Demo (Meet)', docs: 'Quotation via Email / Zalo' },
+            ja: { onsite: '施設訪問調査（対面）', online: 'オンラインデモ（Meet）', docs: '資料・見積送付（Email/Zalo）' }
+          };
+          summaryMethod.textContent = (methodMap[lang] && methodMap[lang][payload.method]) || (methodMap.vi[payload.method] || payload.method);
+        }
+
+        // Switch from form to success card
+        form.style.display = 'none';
+        if (successCard) {
+          successCard.style.display = 'block';
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        // Scroll smoothly to card header
+        const bookingFormElem = document.getElementById('booking-form');
+        if (bookingFormElem) {
+          bookingFormElem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Trigger prominent top toast
+        if (typeof showToast === 'function') {
+          showToast(msgs[lang] || msgs.vi);
+        }
+      }, 300);
+    }
+
+    function resetContactForm() {
+      const form = document.getElementById('contact-form');
+      const successCard = document.getElementById('contact-success-card');
+      if (form) form.reset();
+      const cards = document.querySelectorAll('.scale-card');
+      if (cards.length > 1) selectScale(cards[1]);
+      const methods = document.querySelectorAll('.method-pill');
+      if (methods.length > 0) selectMethod(methods[0]);
+      
+      if (successCard) successCard.style.display = 'none';
+      if (form) form.style.display = 'block';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      const bookingFormElem = document.getElementById('booking-form');
+      if (bookingFormElem) {
+        bookingFormElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Title listener on language change
+    window.addEventListener('languageChanged', (e) => {
+      const lang = e.detail && e.detail.lang ? e.detail.lang : (localStorage.getItem('beecare_lang') || 'vi');
+      if (window.TRANSLATIONS && window.TRANSLATIONS[lang] && window.TRANSLATIONS[lang]['contact_title_page']) {
+        document.title = window.TRANSLATIONS[lang]['contact_title_page'];
+      }
     });
   </script>
 

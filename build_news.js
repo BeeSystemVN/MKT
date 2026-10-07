@@ -113,8 +113,6 @@ let mainContent = `
             </span>
             <div class="flex items-center gap-3 text-xs text-slate-500 mb-3">
               <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${articles[0].date}</span>
-              <span>•</span>
-              <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> ${articles[0].readTime}</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-snug mb-4 group-hover:text-teal-600 transition-colors font-heading">
               ${articles[0].title}
@@ -148,8 +146,6 @@ for (let i = 1; i < articles.length; i++) {
             <div class="p-6">
               <div class="flex items-center gap-4 text-xs text-slate-500 mb-3">
                 <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> \${art.date}</span>
-                <span>•</span>
-                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> \${art.readTime}</span>
               </div>
               <h3 class="text-lg font-bold text-slate-900 leading-snug mb-3 group-hover:text-teal-600 transition-colors font-heading">
                 \${art.title}

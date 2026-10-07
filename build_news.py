@@ -459,7 +459,6 @@ main_content += f"""
           <div class="bento-body">
             <div class="bento-meta">
               <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art1['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art1['readTime']}</span>
             </div>
             <h2 class="bento-title">{art1['title']}</h2>
             <p class="bento-excerpt">{art1['excerpt']}</p>
@@ -482,7 +481,6 @@ main_content += f"""
           <div class="bento-body">
             <div class="bento-meta">
               <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art2['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art2['readTime']}</span>
             </div>
             <h2 class="bento-title" style="font-size: 20px;">{art2['title']}</h2>
             <p class="bento-excerpt">{art2['excerpt']}</p>
@@ -505,7 +503,6 @@ main_content += f"""
           <div class="bento-body">
             <div class="bento-meta">
               <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-teal-600"></i> {art3['date']}</span>
-              <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> {art3['readTime']}</span>
             </div>
             <h2 class="bento-title" style="font-size: 20px;">{art3['title']}</h2>
             <p class="bento-excerpt">{art3['excerpt']}</p>
@@ -622,7 +619,6 @@ modal_script = f"""
                 <h2 class="sheet-title">${{article.title}}</h2>
                 <div class="sheet-meta-bar">
                     <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4 text-slate-400"></i> ${{article.date}}</span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-slate-400"></i> ${{article.readTime}}</span>
                 </div>
                 <div class="sheet-body">
                     ${{bodyHtml}}

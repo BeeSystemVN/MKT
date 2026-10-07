@@ -346,18 +346,21 @@ function handleNewsletter(e) {
 function showToast(msg) {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toast-msg');
-  if (!toast || !toastMsg) return;
+  if (!toast) return;
+  if (toastMsg) toastMsg.textContent = msg;
 
-  toastMsg.textContent = msg;
+  // Add active classes for both new top-center CSS and legacy tailwind styles
+  toast.classList.add('show', 'toast-active');
   toast.classList.remove('translate-x-full', 'opacity-0');
   toast.classList.add('translate-x-0', 'opacity-100');
   
-  setTimeout(() => {
+  if (window.toastTimer) clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    toast.classList.remove('show', 'toast-active', 'translate-x-0', 'opacity-100');
     toast.classList.add('translate-x-full', 'opacity-0');
-    toast.classList.remove('translate-x-0', 'opacity-100');
-  }, 4000);
+  }, 4500);
 
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 // ---- LIGHTBOX MODAL ----

@@ -28,96 +28,29 @@
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <style>
-    /* ===================== COMPANY HERO STYLES (MATCH DESIGN) ===================== */
-    .company-hero-section {
-      padding-top: 112px;
-      padding-bottom: 12px;
+    /* ===================== COMPANY HERO COVER BANNER ===================== */
+    .company-hero-banner-section {
       position: relative;
-    }
-    @media (max-width: 768px) {
-      .company-hero-section {
-        padding-top: 96px;
-      }
-    }
-    .company-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 6px 18px;
-      border-radius: 9999px;
-      background: #EEF4FF;
-      border: 1px solid #BFDBFE;
-      color: #1E3A8A;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(30, 58, 138, 0.04);
-      transition: all 0.25s ease;
-    }
-    .company-hero-badge:hover {
-      background: #E0EDFF;
-      border-color: #93C5FD;
-    }
-    .company-hero-title {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-      margin-bottom: 14px;
-      text-transform: uppercase;
-      background: linear-gradient(135deg, #1A4F9C 0%, #265397 45%, #0284C7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: inline-block;
-    }
-    @media (min-width: 640px) {
-      .company-hero-title { font-size: 36px; }
-    }
-    @media (min-width: 1024px) {
-      .company-hero-title { font-size: 42px; }
-    }
-    .company-hero-desc {
-      font-size: 14px;
-      color: #475569;
-      line-height: 1.68;
-      max-width: 820px;
-      margin: 0 auto 32px;
-      font-weight: 400;
-    }
-    @media (min-width: 640px) {
-      .company-hero-desc { font-size: 14.5px; }
-    }
-    .company-hero-desc strong {
-      color: #0F172A;
-      font-weight: 700;
-    }
-    .company-hero-backdrop-wrap {
-      position: relative;
-      border-radius: 20px;
+      width: 100%;
+      background-color: #0b1a30;
       overflow: hidden;
-      box-shadow: 0 12px 35px -8px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(15, 23, 42, 0.03);
-      border: 1px solid #E2E8F0;
-      background: #F8FAFC;
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto;
+      padding-top: 0;
     }
-    @media (min-width: 640px) {
-      .company-hero-backdrop-wrap { border-radius: 24px; }
-    }
-    .company-hero-backdrop-img {
+    .company-hero-banner-inner {
+      position: relative;
       width: 100%;
-      height: auto;
       aspect-ratio: 1672 / 941;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0b1a30;
     }
-    .company-hero-backdrop-wrap:hover .company-hero-backdrop-img {
-      transform: scale(1.01);
+    .company-hero-banner-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
     }
 
     /* Key Stats Bar */
@@ -438,6 +371,19 @@
         aspect-ratio: 16 / 10;
       }
     }
+    .workplace-dual-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3px;
+      background: #e2e8f0;
+      width: 100%;
+    }
+    @media (max-width: 639px) {
+      .workplace-dual-photo-grid {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+    }
     .workplace-photo-img {
       width: 100%;
       height: 100%;
@@ -445,7 +391,8 @@
       display: block;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .workplace-card:hover .workplace-photo-img {
+    .workplace-card:hover .workplace-photo-img,
+    .workplace-photo-wrap:hover .workplace-photo-img {
       transform: scale(1.04);
     }
     .workplace-photo-badge {
@@ -510,7 +457,7 @@
       font-weight: 700;
       color: #0f172a;
       line-height: 1.35;
-      margin-bottom: 6px;
+      margin-bottom: 0;
       letter-spacing: -0.01em;
       transition: color 0.2s ease;
     }
@@ -683,12 +630,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
         
-        <!-- CỤM TRÁI: Chữ BeeCare -->
+        <!-- CỤM TRÁI: Logo HNK -->
         <div class="flex items-center gap-3 shrink-0">
-          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
-            <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
-            </span>
+          <a href="index.html" class="nav-brand-wrap" aria-label="HNK - HANIKI">
+            <img src="assets/logo-hnk.png" alt="Logo HNK" class="nav-brand-logo-img" />
           </a>
         </div>
 
@@ -765,34 +710,16 @@
     </div>
   </nav>
 
-  <!-- ===================== 1. HERO SECTION (MATCH DESIGN) ===================== -->
-  <section class="company-hero-section max-w-6xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto relative z-10 mb-6 sm:mb-8">
-      
-      <!-- Badge -->
-      <div class="company-hero-badge">
-        <i data-lucide="globe" class="w-3.5 h-3.5 text-[#1e3a8a] shrink-0"></i>
-        <span data-i18n="company_hero_badge">KINH NGHIỆM CHUẨN NHẬT – PHÁT TRIỂN TẠI THỊ TRƯỜNG VIỆT NAM</span>
-      </div>
-
-      <!-- H1 Main Title -->
-      <h1 class="company-hero-title font-heading" data-i18n="company_hero_title">
-        CÔNG TY TNHH HANIKI
-      </h1>
-
-      <!-- Description Paragraph -->
-      <p class="company-hero-desc" data-i18n-html="company_hero_desc_html">
-        Kế thừa hơn <strong class="font-bold text-slate-900">6 năm kinh nghiệm thực chiến</strong> phát triển phần mềm điều dưỡng (<strong class="font-bold text-slate-900">Kaigo</strong>) chuẩn mực tại Nhật Bản, HANIKI mang đến <strong class="font-bold text-slate-900">Hệ sinh thái BeeCare</strong> thuần Việt, giúp các viện dưỡng lão số hóa toàn diện vận hành và gắn kết bền chặt niềm tin với gia đình.
-      </p>
-    </div>
-
-    <!-- Ảnh Backdrop Nhận Diện Thương Hiệu HANIKI -->
-    <div class="company-hero-backdrop-wrap">
+  <!-- ===================== 1. HERO COVER BANNER (FULL WIDTH LIKE HOME PAGE) ===================== -->
+  <section class="company-hero-banner-section" aria-label="Sảnh lễ tân CÔNG TY TNHH HANIKI">
+    <h1 class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0;" data-i18n="company_hero_title">CÔNG TY TNHH HANIKI</h1>
+    <div class="company-hero-banner-inner">
       <img
-        src="assets/company/backdrop-cong-ty.png"
-        alt="Không gian nhận diện thương hiệu và sảnh đón tiếp CÔNG TY TNHH HANIKI"
-        class="company-hero-backdrop-img"
+        src="assets/company/sanh-le-tan-haniki.png"
+        alt="Sảnh lễ tân sang trọng hiện đại CÔNG TY TNHH HANIKI – Kết nối giá trị, Kiến tạo tương lai"
+        class="company-hero-banner-img select-none pointer-events-none"
         loading="eager"
+        fetchpriority="high"
       />
     </div>
   </section>
@@ -1036,46 +963,34 @@
 
     <!-- ===================== 6. MÔI TRƯỜNG LÀM VIỆC & R&D ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
         <div class="section-badge">
           <i data-lucide="users" class="w-3.5 h-3.5"></i>
-          <span data-i18n="company_work_badge">Không gian làm việc & Đội ngũ</span>
+          <span data-i18n="company_work_badge">Không gian làm việc</span>
         </div>
-        <h2 class="section-heading whitespace-normal md:whitespace-nowrap" data-i18n="company_work_title">
-          Không gian làm việc tại HANIKI
-        </h2>
-        <p class="section-subtext" data-i18n="company_work_desc">
-          Hình ảnh thực tế hoạt động nghiên cứu phát triển và văn hóa doanh nghiệp tại HANIKI
-        </p>
       </div>
 
       <!-- Photo Bento Grid (Ý tưởng 1: Modern Bento Tech-Cards) -->
       <div class="workplace-bento-grid">
         
-        <!-- Ảnh 1: Tập thể nhân sự HANIKI (Hero 8 cột, 16:9) -->
+        <!-- Ảnh 1: Ảnh chụp tập thể nhân viên HANIKI (Hero 8 cột, 16:9) -->
         <article class="workplace-card workplace-card-hero"
-          onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Tập thể nhân sự HANIKI – Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội')">
+          onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Ảnh chụp tập thể nhân viên HANIKI – Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội')">
           <div class="workplace-photo-wrap workplace-photo-wrap-hero">
-            <img src="assets/company/tap-the-haniki.jpg" alt="Tập thể nhân sự HANIKI" class="workplace-photo-img" loading="lazy" />
-            <div class="workplace-photo-badge">
-              <i data-lucide="users" class="w-3.5 h-3.5 text-primary"></i>
-              <span data-i18n="company_photo1_badge">Đội ngũ kỹ thuật</span>
-            </div>
+            <img src="assets/company/tap-the-haniki.jpg" alt="Ảnh chụp tập thể nhân viên HANIKI" class="workplace-photo-img" loading="lazy" />
             <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
               <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
             </button>
           </div>
           <div class="workplace-card-body">
             <div>
-              <h3 class="workplace-card-title" data-i18n="company_photo1_title">Tập thể nhân sự HANIKI</h3>
-              <p class="workplace-card-desc" data-i18n="company_photo1_desc">Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội.</p>
+              <h3 class="workplace-card-title" data-i18n="company_photo1_title">Ảnh chụp tập thể nhân viên HANIKI</h3>
             </div>
             <div class="workplace-card-footer">
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
                 <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
               </span>
-              <span class="text-xs text-slate-400 font-medium">HANIKI HQ · 2026</span>
             </div>
           </div>
         </article>
@@ -1085,10 +1000,6 @@
           onclick="openLightbox('assets/company/hop-ky-thuat-san-pham.jpg', 'Họp kỹ thuật & Phân tích tính năng')">
           <div class="workplace-photo-wrap workplace-photo-wrap-standard">
             <img src="assets/company/hop-ky-thuat-san-pham.jpg" alt="Họp kỹ thuật & Phân tích tính năng" class="workplace-photo-img" loading="lazy" />
-            <div class="workplace-photo-badge">
-              <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-600"></i>
-              <span data-i18n="company_photo2_badge">R&D & Thiết kế</span>
-            </div>
             <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
               <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
             </button>
@@ -1096,14 +1007,12 @@
           <div class="workplace-card-body">
             <div>
               <h3 class="workplace-card-title" data-i18n="company_photo2_title">Họp kỹ thuật & Phân tích tính năng</h3>
-              <p class="workplace-card-desc" data-i18n="company_photo2_desc">Thảo luận tối ưu trải nghiệm người dùng và quy trình thao tác điều dưỡng.</p>
             </div>
             <div class="workplace-card-footer">
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
                 <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
               </span>
-              <span class="text-xs text-slate-400 font-medium">R&D Lab</span>
             </div>
           </div>
         </article>
@@ -1113,10 +1022,6 @@
           onclick="openLightbox('assets/company/dao-tao-demo-he-thong.jpg', 'Đào tạo & Thử nghiệm giải pháp')">
           <div class="workplace-photo-wrap workplace-photo-wrap-standard">
             <img src="assets/company/dao-tao-demo-he-thong.jpg" alt="Đào tạo & Thử nghiệm giải pháp" class="workplace-photo-img" loading="lazy" />
-            <div class="workplace-photo-badge">
-              <i data-lucide="check-check" class="w-3.5 h-3.5 text-emerald-600"></i>
-              <span data-i18n="company_photo3_badge">Kiểm thử hệ thống</span>
-            </div>
             <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
               <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
             </button>
@@ -1124,70 +1029,45 @@
           <div class="workplace-card-body">
             <div>
               <h3 class="workplace-card-title" data-i18n="company_photo3_title">Đào tạo & Thử nghiệm giải pháp</h3>
-              <p class="workplace-card-desc" data-i18n="company_photo3_desc">Kiểm thử các luồng dữ liệu đồng bộ giữa Cổng quản trị và Ứng dụng di động.</p>
             </div>
             <div class="workplace-card-footer">
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
                 <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
               </span>
-              <span class="text-xs text-slate-400 font-medium">QA & Testing</span>
             </div>
           </div>
         </article>
 
-        <!-- Ảnh 4: Khu vực nghiên cứu (4 cột, 16:10) -->
-        <article class="workplace-card workplace-card-col4"
-          onclick="openLightbox('assets/company/van-phong-lap-trinh-1.jpg', 'Khu vực nghiên cứu phần mềm')">
-          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
-            <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực nghiên cứu phần mềm" class="workplace-photo-img" loading="lazy" />
-            <div class="workplace-photo-badge">
-              <i data-lucide="building" class="w-3.5 h-3.5 text-blue-600"></i>
-              <span data-i18n="company_photo4_badge">Môi trường làm việc</span>
+        <!-- Ảnh 4: Khu vực văn phòng làm việc (Gộp 2 góc ảnh, Hero 8 cột) -->
+        <article class="workplace-card workplace-card-hero">
+          <div class="workplace-dual-photo-grid">
+            <!-- Góc nhìn 1 -->
+            <div class="workplace-photo-wrap workplace-photo-wrap-standard relative cursor-pointer"
+              onclick="openLightbox('assets/company/van-phong-lap-trinh-1.jpg', 'Khu vực văn phòng làm việc – Góc nhìn 1')">
+              <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực văn phòng làm việc – Góc 1" class="workplace-photo-img" loading="lazy" />
+              <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh góc 1" aria-label="Phóng to ảnh góc 1">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </button>
             </div>
-            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
-              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-            </button>
+            <!-- Góc nhìn 2 -->
+            <div class="workplace-photo-wrap workplace-photo-wrap-standard relative cursor-pointer"
+              onclick="openLightbox('assets/company/van-phong-lap-trinh-2.jpg', 'Khu vực văn phòng làm việc – Góc nhìn 2')">
+              <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Khu vực văn phòng làm việc – Góc 2" class="workplace-photo-img" loading="lazy" />
+              <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh góc 2" aria-label="Phóng to ảnh góc 2">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
           </div>
           <div class="workplace-card-body">
             <div>
-              <h3 class="workplace-card-title" data-i18n="company_photo4_title">Khu vực nghiên cứu phần mềm</h3>
-              <p class="workplace-card-desc" data-i18n="company_photo4_desc">Không gian làm việc mở, năng động tại văn phòng Handico Phạm Hùng.</p>
+              <h3 class="workplace-card-title" data-i18n="company_photo4_title">Khu vực văn phòng làm việc</h3>
             </div>
             <div class="workplace-card-footer">
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
                 <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
               </span>
-              <span class="text-xs text-slate-400 font-medium">Handico Tower</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Ảnh 5: Hạ tầng Cloud (4 cột, 16:10) -->
-        <article class="workplace-card workplace-card-col4"
-          onclick="openLightbox('assets/company/van-phong-lap-trinh-2.jpg', 'Hạ tầng Cloud & Giám sát hệ thống')">
-          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
-            <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Hạ tầng Cloud & Giám sát hệ thống" class="workplace-photo-img" loading="lazy" />
-            <div class="workplace-photo-badge">
-              <i data-lucide="shield-check" class="w-3.5 h-3.5 text-indigo-600"></i>
-              <span data-i18n="company_photo5_badge">Hạ tầng & Bảo mật</span>
-            </div>
-            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
-              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-          <div class="workplace-card-body">
-            <div>
-              <h3 class="workplace-card-title" data-i18n="company_photo5_title">Hạ tầng Cloud & Giám sát hệ thống</h3>
-              <p class="workplace-card-desc" data-i18n="company_photo5_desc">Đội ngũ kỹ thuật giám sát hệ thống, tối ưu độ ổn định và an toàn dữ liệu.</p>
-            </div>
-            <div class="workplace-card-footer">
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
-              </span>
-              <span class="text-xs text-slate-400 font-medium">24/7 Ops</span>
             </div>
           </div>
         </article>
@@ -1207,9 +1087,6 @@
         <h2 class="section-heading whitespace-normal md:whitespace-nowrap" data-i18n="company_part_title">
           Đối tác đồng hành cùng BeeCare
         </h2>
-        <p class="section-subtext" data-i18n="company_part_desc">
-          Đồng hành chiến lược cùng chuỗi viện dưỡng lão tiên phong Diên Hồng và các tổ chức cố vấn Kaigo, công nghệ y tế hàng đầu Nhật Bản.
-        </p>
       </div>
 
       <!-- 3-Card Symmetrical Grid (Tinh tế, Cân đối & Hiện đại) -->
@@ -1426,7 +1303,7 @@
                 <div>
                   <div class="text-xs font-bold text-slate-400 tracking-wide mb-0.5" data-i18n="company_legal_addr_label">Trụ sở điều hành</div>
                   <div class="text-slate-800 text-sm font-medium leading-relaxed" data-i18n="company_legal_addr_val">
-                    Tầng 30, Tòa nhà Handico Tower, Đường Phạm Hùng, Phường Mễ Trì, Quận Nam Từ Liêm, TP. Hà Nội
+                    Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội
                   </div>
                 </div>
               </div>
@@ -1479,17 +1356,17 @@
           </div>
         </div>
 
-        <!-- Cột Phải: Bản Đồ Google Maps Handico Tower -->
+        <!-- Cột Phải: Bản Đồ Google Maps Trụ Sở -->
         <div class="h-[360px] lg:h-auto min-h-[360px] relative border-t lg:border-t-0 lg:border-l border-slate-200">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.475451239849!2d105.77977461533182!3d21.01365319367098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134535496464619%3A0xcf824e4f1dc0b06!2sHandico%20Tower!5e0!3m2!1sen!2s!4v1689304910238!5m2!1sen!2s!4v1689304910238!5m2!1sen!2s"
+            src="https://maps.google.com/maps?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Bản đồ chỉ dẫn đến trụ sở HANIKI tại Handico Tower"
+            title="Bản đồ chỉ dẫn đến trụ sở HANIKI"
           ></iframe>
         </div>
 
@@ -1562,11 +1439,11 @@
             </a>
             <span class="footer-contact-item">
               <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
-              <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
+              <span data-i18n="footer_address">Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội</span>
             </span>
           </div>
           <div class="footer-social-row">
-            <a href="https://facebook.com/beecare.vn" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+            <a href="https://www.facebook.com/profile.php?id=61582996425862" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
@@ -1647,11 +1524,6 @@
                 <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
-          </div>
-          <div style="font-size:11.5px;color:#475569;line-height:1.7">
-            <strong style="color:#64748b"><span data-i18n="footer_partner">Đối tác chiến lược:</span></strong><br>
-            <span data-i18n="footer_partner_1">Hệ thống Viện dưỡng lão Diên Hồng</span><br>
-            <span data-i18n="footer_partner_2">Chuẩn chăm sóc Kaigo Nhật Bản</span>
           </div>
         </div>
 

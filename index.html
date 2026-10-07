@@ -24,7 +24,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261005_v10" />
+  <link rel="stylesheet" href="assets/style.css?v=20261006_v3" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <!-- Preload primary showcase screenshots for instant zero-latency tab switching -->
@@ -64,12 +64,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
         
-        <!-- CỤM TRÁI: Chữ BeeCare thiết kế mới (Bỏ logo ảnh, Bỏ khẩu hiệu Diên Hồng) -->
+        <!-- CỤM TRÁI: Logo HNK -->
         <div class="flex items-center gap-3 shrink-0">
-          <a href="index.html" class="nav-brand-wrap" aria-label="BeeCare">
-            <span class="brand-text-logo">
-              <span class="brand-bee">Bee</span><span class="brand-care">Care</span>
-            </span>
+          <a href="index.html" class="nav-brand-wrap" aria-label="HNK - HANIKI">
+            <img src="assets/logo-hnk.png" alt="Logo HNK" class="nav-brand-logo-img" />
           </a>
         </div>
 
@@ -103,7 +101,7 @@
           </div>
 
           <!-- Primary CTA Button -->
-          <a href="contact.html" class="nav-cta-btn">
+          <a href="contact.html" class="nav-cta-btn hidden sm:inline-flex">
             <i data-lucide="calendar-check" class="w-4 h-4"></i>
             <span class="hidden sm:inline" data-i18n="nav_demo">Đăng ký demo</span>
             <span class="sm:hidden" data-i18n="nav_demo_mobile">Demo</span>
@@ -162,7 +160,7 @@
         </div>
         <!-- Slide 3: Ảnh bìa 3 (Chăm sóc toàn diện với AI & VietQR) -->
         <div class="cover-slide" data-index="2">
-          <img src="assets/banners/banner-3.jpg" alt="Chăm sóc người cao tuổi toàn diện với AI – BeeCare" class="select-none pointer-events-none" loading="lazy">
+          <img src="assets/banners/banner-3.png" alt="Chăm sóc người cao tuổi toàn diện với AI – BeeCare" class="select-none pointer-events-none" loading="lazy">
         </div>
       </div>
 
@@ -203,7 +201,6 @@
       <!-- Main Headline (Sentence case, Balanced & Harmonious) -->
       <div class="hero-headline-wrap" data-aos="fade-up" data-aos-delay="100">
         <h1 class="hero-main-title">
-          <span class="hero-title-lead" data-i18n="hero_title_lead">BeeCare </span>
           <span class="hero-title-gradient" data-i18n="hero_title">Quản lý viện dưỡng lão thông minh</span>
         </h1>
       </div>
@@ -211,9 +208,11 @@
       <!-- 5. High-Conversion CTA Buttons -->
       <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="200">
         <a href="contact.html" class="hero-cta-primary">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-950 flex-shrink-0"></i>
           <span data-i18n="hero_cta_demo">Đăng ký trải nghiệm</span>
         </a>
         <a href="contact.html" class="hero-cta-secondary">
+          <i data-lucide="arrow-right" class="w-4 h-4 text-white flex-shrink-0"></i>
           <span data-i18n="hero_cta_sim">Sử dụng ngay</span>
         </a>
       </div>
@@ -1616,11 +1615,11 @@
             </a>
             <span class="footer-contact-item">
               <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
-              <span data-i18n="footer_address">Tầng 30 Handico Tower, Mễ Trì, Nam Từ Liêm, Hà Nội</span>
+              <span data-i18n="footer_address">Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội</span>
             </span>
           </div>
           <div class="footer-social-row">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+            <a href="https://www.facebook.com/profile.php?id=61582996425862" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
               <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
             <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
@@ -1701,11 +1700,6 @@
                 <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
               </a>
             </div>
-          </div>
-          <div style="font-size:11.5px;color:#475569;line-height:1.7">
-            <strong style="color:#64748b"><span data-i18n="footer_partner">Đối tác chiến lược:</span></strong><br>
-            <span data-i18n="footer_partner_1">Hệ thống Viện dưỡng lão Diên Hồng</span><br>
-            <span data-i18n="footer_partner_2">Chuẩn chăm sóc Kaigo Nhật Bản</span>
           </div>
         </div>
 
