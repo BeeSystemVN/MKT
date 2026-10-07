@@ -802,66 +802,63 @@ function crossfadeHeroDevice(containerId, imgPrefix, slide, isPhone = false) {
   const imgA = document.getElementById(imgPrefix + '-a');
   const imgB = document.getElementById(imgPrefix + '-b');
   const container = document.getElementById(containerId);
-  if (!imgA || !imgB) return;
+  if (!imgA || !imgB || !slide) return;
 
-  const aIsFront = imgA.classList.contains('is-front');
-  const frontImg = aIsFront ? imgA : imgB;
-  const backImg = aIsFront ? imgB : imgA;
+  // Determine current front and back images safely
+  let frontImg = imgA.classList.contains('is-front') ? imgA : (imgB.classList.contains('is-front') ? imgB : imgA);
+  let backImg = (frontImg === imgA) ? imgB : imgA;
 
-  // 1. Preload image before swapping to prevent blank flash
+  // Ensure frontImg is strictly visible
+  frontImg.classList.add('is-front');
+  frontImg.classList.remove('is-back');
+
+  // Preload and verify image
   const preImg = new Image();
   preImg.src = slide.src;
 
-  const doSwap = () => {
-    // Reset animations by removing & re-adding classes (force reflow)
-    backImg.classList.remove('is-front', 'is-back');
-    frontImg.classList.remove('is-front', 'is-back');
-
-    // 2. Assign new image to the back buffer
+  const performSafeSwap = () => {
+    // 1. Prepare backImg with new source
     backImg.src = slide.src;
     backImg.alt = slide.caption;
 
-    // 3. Force browser to acknowledge class removal before adding (triggers CSS animation restart)
-    void backImg.offsetWidth;
-    void frontImg.offsetWidth;
+    // 2. Perform clean crossfade: backImg comes to front, frontImg goes to back
+    backImg.classList.remove('is-back');
+    backImg.classList.add('is-front');
 
-    // 4. Apply new states: back becomes front (slide-in), front becomes back (slide-out)
-    requestAnimationFrame(() => {
-      backImg.classList.add('is-front');
-      frontImg.classList.add('is-back');
-    });
-  };
+    frontImg.classList.remove('is-front');
+    frontImg.classList.add('is-back');
 
-  // If already decoded, swap immediately; else wait for load
-  if (preImg.complete) {
-    doSwap();
-  } else {
-    preImg.onload = doSwap;
-    preImg.onerror = doSwap; // fallback even on error
-  }
-
-  // 5. Update Lightbox click handler
-  const safeCaption = slide.caption.replace(/'/g, "\\'");
-  const clickHandler = `openLightbox('${slide.src}', '${safeCaption}')`;
-  if (container) {
-    container.setAttribute('onclick', clickHandler);
-    if (isPhone) {
-      const phoneParent = container.closest('.phone-3d');
-      if (phoneParent) {
-        phoneParent.setAttribute('onclick', clickHandler);
+    // 3. Update Lightbox click handler
+    const safeCaption = slide.caption.replace(/'/g, "\\'");
+    const clickHandler = `openLightbox('${slide.src}', '${safeCaption}')`;
+    if (container) {
+      container.setAttribute('onclick', clickHandler);
+      if (isPhone) {
+        const phoneParent = container.closest('.phone-3d');
+        if (phoneParent) {
+          phoneParent.setAttribute('onclick', clickHandler);
+        }
       }
     }
+  };
+
+  if (preImg.complete && preImg.naturalWidth > 0) {
+    performSafeSwap();
+  } else {
+    preImg.onload = () => {
+      performSafeSwap();
+    };
+    preImg.onerror = () => {
+      // On error, keep current frontImg untouched! Never show a blank screen!
+      console.warn('Hero device image failed to load:', slide.src);
+    };
   }
 }
 
-// Asynchronous staggered rotation: Exactly 1 device transitions per tick
+// Asynchronous staggered rotation: Alternating between the 2 flanking phones
 function tickHeroDevices() {
-  const turn = heroTickStep % 3;
+  const turn = heroTickStep % 2;
   if (turn === 0) {
-    // Laptop: Web admin
-    heroLapIdx = (heroLapIdx + 1) % HERO_SLIDES_LAPTOP.length;
-    crossfadeHeroDevice('laptop-hero-box', 'laptop-hero-screen', HERO_SLIDES_LAPTOP[heroLapIdx], false);
-  } else if (turn === 1) {
     // Phone trái: App người thân
     heroFamIdx = (heroFamIdx + 1) % HERO_SLIDES_FAMILY.length;
     crossfadeHeroDevice('family-hero-box', 'family-hero-screen', HERO_SLIDES_FAMILY[heroFamIdx], true);
@@ -873,15 +870,100 @@ function tickHeroDevices() {
   heroTickStep++;
 }
 
-// Ticker interval: 700ms per staggered step (Each device holds its image for ~2.1s — faster, more dynamic)
-let heroRotationTimer = setInterval(tickHeroDevices, 700);
+// Ticker interval: 3200ms per staggered step (only if hero 3D devices exist)
+const hasHeroDevices = document.getElementById('family-hero-box') || document.getElementById('staff-hero-box');
+let heroRotationTimer = null;
+if (hasHeroDevices) {
+  heroRotationTimer = setInterval(tickHeroDevices, 3200);
+}
+
+// Pause rotation when tab is hidden to avoid race conditions/desync in background
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    if (heroRotationTimer) {
+      clearInterval(heroRotationTimer);
+      heroRotationTimer = null;
+    }
+  } else if (hasHeroDevices) {
+    const v = document.getElementById('hero-beecare-video');
+    if (!v || v.paused) {
+      if (!heroRotationTimer) {
+        heroRotationTimer = setInterval(tickHeroDevices, 3200);
+      }
+    }
+  }
+});
 
 const heroStageEl = document.querySelector('.stage-3d');
-if (heroStageEl) {
-  heroStageEl.addEventListener('mouseenter', () => clearInterval(heroRotationTimer));
+if (heroStageEl && hasHeroDevices) {
+  heroStageEl.addEventListener('mouseenter', () => {
+    if (heroRotationTimer) clearInterval(heroRotationTimer);
+  });
   heroStageEl.addEventListener('mouseleave', () => {
-    clearInterval(heroRotationTimer);
-    heroRotationTimer = setInterval(tickHeroDevices, 700);
+    const v = document.getElementById('hero-beecare-video');
+    if (!v || v.paused) {
+      clearInterval(heroRotationTimer);
+      heroRotationTimer = setInterval(tickHeroDevices, 3200);
+    }
+  });
+}
+
+// ==================== HERO CENTERED VIDEO PLAYER IN 3D COMPUTER MOCKUP ====================
+function initHeroVideo() {
+  const video = document.getElementById('hero-beecare-video');
+  const playBtn = document.getElementById('hero-video-play-btn');
+  const laptop3d = document.getElementById('hero-laptop-3d');
+  const stage3d = document.querySelector('.stage-3d');
+  if (!video) return;
+
+  const togglePlay = () => {
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  };
+
+  if (playBtn) {
+    playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlay();
+    });
+  }
+
+  // Clicking video viewport toggles play
+  video.addEventListener('click', () => {
+    if (!video.controls) {
+      togglePlay();
+    }
+  });
+
+  video.addEventListener('play', () => {
+    video.controls = true;
+    if (playBtn) playBtn.classList.add('is-playing');
+    if (laptop3d) laptop3d.classList.add('video-playing');
+    if (stage3d) stage3d.classList.add('video-playing');
+    if (heroRotationTimer) clearInterval(heroRotationTimer);
+  });
+
+  video.addEventListener('pause', () => {
+    if (playBtn) playBtn.classList.remove('is-playing');
+    if (laptop3d) laptop3d.classList.remove('video-playing');
+    if (stage3d) stage3d.classList.remove('video-playing');
+    if (hasHeroDevices) {
+      clearInterval(heroRotationTimer);
+      heroRotationTimer = setInterval(tickHeroDevices, 3200);
+    }
+  });
+
+  video.addEventListener('ended', () => {
+    if (playBtn) playBtn.classList.remove('is-playing');
+    if (laptop3d) laptop3d.classList.remove('video-playing');
+    if (stage3d) stage3d.classList.remove('video-playing');
+    if (hasHeroDevices) {
+      clearInterval(heroRotationTimer);
+      heroRotationTimer = setInterval(tickHeroDevices, 3200);
+    }
   });
 }
 
@@ -1930,7 +2012,9 @@ function initCoverSlider() {
 
 window.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
+  initHeroVideo();
   initCoverSlider();
+  if (typeof lucide !== 'undefined') lucide.createIcons();
   // Ensure indicator positioned after layout
   requestAnimationFrame(() => updateLangIndicator());
 });

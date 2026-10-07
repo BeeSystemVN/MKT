@@ -24,7 +24,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261006_v3" />
+  <link rel="stylesheet" href="assets/style.css?v=20261007_v20" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <!-- Preload primary showcase screenshots for instant zero-latency tab switching -->
@@ -150,9 +150,9 @@
       
       <!-- Slide Track -->
       <div id="cover-slider-track" class="relative w-full h-full">
-        <!-- Slide 1: Chăm sóc thông minh, kết nối yêu thương -->
+        <!-- Slide 1: Bộ giao diện BeeCare hiện đại -->
         <div class="cover-slide active" data-index="0">
-          <img src="assets/banners/banner-web.png" alt="BeeCare – Chăm sóc thông minh, kết nối yêu thương" class="select-none pointer-events-none" loading="eager" fetchpriority="high">
+          <img src="assets/banners/banner-modern-ui.png" alt="BeeCare – Bộ giao diện quản lý viện dưỡng lão hiện đại" class="select-none pointer-events-none" loading="eager" fetchpriority="high">
         </div>
         <!-- Slide 2: Ảnh trên cùng (Hệ sinh thái công nghệ quản lý và chăm sóc toàn diện) -->
         <div class="cover-slide" data-index="1">
@@ -191,10 +191,10 @@
   </section>
 
   <section id="home" class="hero-section flex flex-col items-center justify-center relative pb-16 overflow-hidden">
-    <!-- Ambient Light Glows - Radiant sapphire & medical sky blue -->
-    <div class="absolute top-6 left-1/2 -translate-x-1/2 w-[880px] h-[450px] bg-sky-400/35 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute top-36 right-10 w-[500px] h-[500px] bg-cyan-400/30 rounded-full blur-[130px] pointer-events-none"></div>
-    <div class="absolute top-44 left-10 w-[460px] h-[460px] bg-blue-500/32 rounded-full blur-[120px] pointer-events-none"></div>
+    <!-- Ambient Light Glows - Warm apricot & peach ambient radiance -->
+    <div class="absolute top-6 left-1/2 -translate-x-1/2 w-[880px] h-[450px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-36 right-10 w-[500px] h-[500px] bg-rose-200/25 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute top-44 left-10 w-[460px] h-[460px] bg-orange-200/25 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10 w-full mb-8 sm:mb-10">
       
@@ -211,94 +211,34 @@
           <i data-lucide="sparkles" class="w-4 h-4 text-amber-950 flex-shrink-0"></i>
           <span data-i18n="hero_cta_demo">Đăng ký trải nghiệm</span>
         </a>
-        <a href="contact.html" class="hero-cta-secondary">
-          <i data-lucide="arrow-right" class="w-4 h-4 text-white flex-shrink-0"></i>
+        <a href="contact.html" class="hero-cta-secondary group">
           <span data-i18n="hero_cta_sim">Sử dụng ngay</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-[#265397] flex-shrink-0"></i>
         </a>
       </div>
 
     </div>
 
-    <!-- 3D HERO STAGE: LAPTOP IN CENTER + 2 TILTED PHONES -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20" data-aos="zoom-in" data-aos-delay="350">
-      <div class="stage-3d relative flex items-center justify-center min-h-[440px] sm:min-h-[540px] pb-16 sm:pb-24 lg:pb-28">
+    <!-- 3D HERO STAGE: LAPTOP IN CENTER + 2 FLANKING UPRIGHT PHONES -->
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 mb-14 sm:mb-18" data-aos="zoom-in" data-aos-delay="300">
+      
+      <!-- Video Section Heading -->
+      <div class="text-center mb-6 sm:mb-8">
+        <h2 class="hero-video-title text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight" data-i18n="hero_video_title">
+          Cách vận hành viện dưỡng lão thông minh cùng BeeCare
+        </h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-2 max-w-2xl mx-auto font-normal" data-i18n="hero_video_subtitle">
+          Khám phá trực quan quy trình số hóa toàn diện: từ theo dõi sinh hiệu, kê đơn thuốc đến kết nối người thân 24/7.
+        </p>
+      </div>
+
+      <!-- 3D Stage: Center Laptop Video + 2 Flanking Upright Phones (Flexbox layout) -->
+      <div class="stage-3d relative flex items-end justify-center pb-8 sm:pb-12">
         
-        <!-- Centerpiece: 3D Laptop with Real Dashboard (Expanded & Panoramic) -->
-        <div class="laptop-3d relative z-10 w-full max-w-5xl">
-          <div class="laptop-3d-lid">
-            <div class="laptop-3d-screen">
-              <!-- Laptop Camera Bar -->
-              <div class="laptop-camera-bar">
-                <span class="laptop-camera-lens"></span>
-                <span class="laptop-camera-indicator"></span>
-              </div>
-              <!-- Real Web Management Dashboard inside 3D Laptop -->
-                            <!-- Realistic MacBook Browser Bar -->
-              <div class="macbook-browser-bar">
-                <div class="macbook-dots">
-                  <span class="mac-dot mac-dot-red"></span>
-                  <span class="mac-dot mac-dot-yellow"></span>
-                  <span class="mac-dot mac-dot-green"></span>
-                </div>
-                <div class="macbook-address-bar">
-                  <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
-                  <span class="text-[11px] font-mono text-slate-300">beecare.vn</span>
-                </div>
-                <div class="macbook-actions hidden sm:flex items-center gap-2.5 text-slate-400 w-[60px] justify-end">
-                  <i data-lucide="share-2" class="w-3 h-3 hover:text-white transition-colors cursor-pointer"></i>
-                  <i data-lucide="rotate-cw" class="w-3 h-3 hover:text-white transition-colors cursor-pointer"></i>
-                </div>
-              </div>
-
-              <div id="laptop-hero-box" class="hero-screen-crossfade relative cursor-pointer group w-full h-full" onclick="openLightbox('assets/screenshots/web-dashboard.png', 'Bảng điều khiển tổng quan viện dưỡng lão - Web admin')">
-                <img id="laptop-hero-screen-a" src="assets/screenshots/web-dashboard.png" alt="Cổng web quản lý" 
-                  class="crossfade-img is-front laptop-screen-content w-full h-full object-cover object-top">
-                <img id="laptop-hero-screen-b" src="assets/screenshots/web-dashboard.png" alt="Cổng web quản lý" 
-                  class="crossfade-img is-back laptop-screen-content w-full h-full object-cover object-top">
-                <div class="laptop-glare pointer-events-none"></div>
-                <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg text-white text-[11px] font-semibold flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity z-20 pointer-events-none">
-                  <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-teal-400"></i> <span data-i18n="click_to_zoom">Bấm để phóng to</span>
-                </div>
-              </div>
-              <!-- Floating 3D Badge: Centered in exact center of laptop screen -->
-              <div class="float-3d-badge float-3d-badge-center-screen">
-                <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold shadow-sm shrink-0">
-                  <i data-lucide="qr-code" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="text-xs font-bold text-slate-900" data-i18n="badge_payment_title">Thanh toán chi phí</div>
-                  <div class="text-[11px] text-slate-500 font-medium" data-i18n="badge_payment_desc">Minh bạch, nhanh chóng & an toàn</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Precision Machined Aluminum Hinge -->
-          <div class="macbook-hinge"></div>
-
-          <!-- Authentic MacBook Pro Unibody Base with Precision CNC Notch -->
-          <div class="macbook-unibody-base">
-            <div class="macbook-base-top-bevel"></div>
-            <div class="macbook-thumb-notch"></div>
-            <div class="macbook-base-reflection"></div>
-            <div class="macbook-front-lip"></div>
-          </div>
-          <div class="laptop-contact-shadow"></div>
-          <div class="laptop-shadow"></div>
-          <div class="laptop-ambient-glow"></div>
-
-          <!-- Label pill: Web Admin -->
-          <div class="text-center mt-5">
-            <span class="hero-device-pill hero-device-pill--web">
-              <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span data-i18n="hero_device_web">Web admin</span>
-            </span>
-          </div>
-        </div>
-
-        <!-- Flanking Left: 3D iPhone tilted towards right (Family App with AI) -->
-        <div class="phone-3d phone-tilt-left z-20 cursor-pointer hidden md:block"
+        <!-- Flanking Left: iPhone Upright (Family App with AI) -->
+        <div class="phone-3d phone-tilt-left z-20 cursor-pointer hidden lg:block flex-shrink-0"
           onclick="openLightbox('assets/screenshots/family-home-2.png', 'Trang chủ hồ sơ sức khỏe người cao tuổi - App người thân')">
-          <div class="phone-3d-case border-amber-400/80">
+          <div class="phone-3d-case w-full">
             <span class="phone-btn-left-1"></span>
             <span class="phone-btn-left-2"></span>
             <span class="phone-btn-left-3"></span>
@@ -318,17 +258,102 @@
             </div>
           </div>
           <!-- Label pill -->
-          <div class="text-center mt-3">
+          <div class="text-center mt-3.5">
             <span class="hero-device-pill hero-device-pill--family">
               <i data-lucide="home" class="w-4 h-4"></i> <span data-i18n="hero_device_family">App người thân</span>
             </span>
           </div>
         </div>
 
-        <!-- Flanking Right: 3D iPhone tilted towards left (Staff Bedside Vitals) -->
-        <div class="phone-3d phone-tilt-right z-20 cursor-pointer hidden md:block"
+        <!-- Centerpiece: 3D MacBook Pro Computer Video Display -->
+        <div class="laptop-video-container relative z-10 mx-0">
+          <div id="hero-laptop-3d" class="laptop-3d relative z-10 w-full">
+            <!-- MacBook Screen Lid -->
+            <div class="laptop-3d-lid">
+              <div class="laptop-3d-screen laptop-video-screen">
+                
+                <!-- Integrated Webcam -->
+                <div class="laptop-camera-bar">
+                  <span class="laptop-camera-lens"></span>
+                  <span class="laptop-camera-indicator"></span>
+                </div>
+
+                <!-- Realistic Safari / macOS Browser Topbar -->
+                <div class="macbook-browser-bar">
+                  <div class="macbook-dots">
+                    <span class="mac-dot mac-dot-red"></span>
+                    <span class="mac-dot mac-dot-yellow"></span>
+                    <span class="mac-dot mac-dot-green"></span>
+                  </div>
+                  <div class="macbook-address-bar">
+                    <i data-lucide="lock" class="w-3 h-3 text-emerald-600"></i>
+                    <span class="text-[11px] font-mono text-slate-700 font-medium">haniki.vn/video-demo</span>
+                  </div>
+                  <div class="macbook-actions hidden sm:flex items-center gap-2.5 text-slate-500 w-[60px] justify-end">
+                    <i data-lucide="share-2" class="w-3 h-3 hover:text-slate-800 transition-colors cursor-pointer"></i>
+                    <i data-lucide="rotate-cw" class="w-3 h-3 hover:text-slate-800 transition-colors cursor-pointer"></i>
+                  </div>
+                </div>
+
+                <!-- Video Screen Viewport -->
+                <div class="laptop-video-viewport relative w-full h-full flex-1 bg-black overflow-hidden group">
+                  <video id="hero-beecare-video" 
+                    class="w-full h-full object-cover block cursor-pointer" 
+                    preload="metadata" 
+                    playsinline 
+                    poster="assets/beecare-video-poster.jpg">
+                    <source src="Beecare video giới thiệu.mp4" type="video/mp4">
+                    <source src="Beecare%20video%20gi%E1%BB%9Bi%20thi%E1%BB%87u.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ phát thẻ video HTML5.
+                  </video>
+
+                  <!-- Big Centered Play Button (Disappears when playing) -->
+                  <button id="hero-video-play-btn" 
+                    type="button"
+                    class="hero-video-play-btn"
+                    aria-label="Phát video giới thiệu BeeCare">
+                    <span class="hero-play-pulse-ring"></span>
+                    <span class="hero-play-btn-core">
+                      <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white translate-x-0.5 fill-current" viewBox="0 0 24 24">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                    </span>
+                  </button>
+
+                  <!-- Screen Glass Reflection Glare -->
+                  <div class="laptop-glare pointer-events-none"></div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Precision Machined Aluminum Hinge -->
+            <div class="macbook-hinge"></div>
+
+            <!-- Authentic MacBook Pro Unibody Base with Precision CNC Notch -->
+            <div class="macbook-unibody-base">
+              <div class="macbook-base-top-bevel"></div>
+              <div class="macbook-thumb-notch"></div>
+              <div class="macbook-base-reflection"></div>
+              <div class="macbook-front-lip"></div>
+            </div>
+            <div class="laptop-contact-shadow"></div>
+            <div class="laptop-shadow"></div>
+            <div class="laptop-ambient-glow"></div>
+          </div>
+
+          <!-- Label pill: Web Admin -->
+          <div class="text-center mt-3.5">
+            <span class="hero-device-pill hero-device-pill--web">
+              <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span data-i18n="hero_device_web">Web admin</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Flanking Right: iPhone Upright (Staff Bedside Vitals) -->
+        <div class="phone-3d phone-tilt-right z-20 cursor-pointer hidden lg:block flex-shrink-0"
           onclick="openLightbox('assets/screenshots/staff-residents.png', 'Danh sách người cao tuổi phụ trách - App nhân viên')">
-          <div class="phone-3d-case border-teal-400/80">
+          <div class="phone-3d-case w-full">
             <span class="phone-btn-left-1"></span>
             <span class="phone-btn-left-2"></span>
             <span class="phone-btn-left-3"></span>
@@ -348,7 +373,7 @@
             </div>
           </div>
           <!-- Label pill -->
-          <div class="text-center mt-3">
+          <div class="text-center mt-3.5">
             <span class="hero-device-pill hero-device-pill--staff">
               <i data-lucide="users" class="w-4 h-4"></i> <span data-i18n="hero_device_staff">App nhân viên</span>
             </span>
@@ -357,19 +382,17 @@
 
       </div>
 
+    </div>
+
       <!-- ===================== QUICK TRI-APP SUMMARY STRIP ===================== -->
-      <div class="tri-app-summary-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="tri-app-summary-strip max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full" data-aos="fade-up" data-aos-delay="200">
         <div class="tri-app-summary-header text-center max-w-2xl mx-auto">
-          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/25 mb-3">
-            <i data-lucide="layers" class="w-3.5 h-3.5 text-teal-400"></i>
-            <span data-i18n="hero_apps_summary_tag">Bộ 3 giải pháp công nghệ kết nối liền mạch</span>
-          </span>
-          <h3 class="text-white font-heading font-extrabold text-xl sm:text-2xl" data-i18n="hero_apps_summary_title">
+          <h3 class="text-slate-900 font-heading font-extrabold text-xl sm:text-2xl" data-i18n="hero_apps_summary_title">
             Một nền tảng – Ba ứng dụng chuyên sâu
           </h3>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           
           <!-- Card 1: Web Management -->
           <div class="app-summary-card app-summary-card--web group">
@@ -419,14 +442,14 @@
                   <i data-lucide="stethoscope" class="w-5 h-5"></i>
                 </div>
                 <span class="app-summary-card__badge" data-i18n="hero_sum_staff_badge">
-                  Điều dưỡng tại giường
+                  Điều dưỡng
                 </span>
               </div>
               <h4 class="app-summary-card__title" data-i18n="hero_sum_staff_title">
                 App nhân viên
               </h4>
               <p class="app-summary-card__desc" data-i18n="hero_sum_staff_desc">
-                Trợ thủ tác nghiệp tại giường bệnh: Ghi nhận sinh hiệu tức thì, phát thuốc chuẩn y lệnh và bàn giao ca không giấy tờ.
+                Trợ thủ tác nghiệp: Ghi nhận sinh hiệu tức thì, phát thuốc chuẩn y lệnh và bàn giao ca không giấy tờ.
               </p>
               <ul class="app-summary-card__features">
                 <li class="app-summary-card__feature-item">
@@ -490,7 +513,6 @@
 
         </div>
       </div>
-    </div>
   </section>
 
     <!-- ===================== SECTION 1: HỆ SINH THÁI QUẢN LÝ VIỆN DƯỠNG LÃO TOÀN DIỆN ===================== -->
@@ -499,11 +521,7 @@
       
       <!-- Unified Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
-        <span class="section-tag mb-3">
-          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          <span data-i18n="eco_badge">Hệ sinh thái 3 nền tảng</span>
-        </span>
-        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
           <span data-i18n="eco_title">Hệ sinh thái quản lý viện dưỡng lão toàn diện</span>
         </h2>
 
@@ -536,11 +554,7 @@
         
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="section-tag mb-3">
-          <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
-          <span data-i18n="panel_web_badge">Cổng quản trị web</span>
-        </span>
-        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">
           <span data-i18n="panel_web_title">BeeCare Web trên máy tính</span>
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_web_desc">
@@ -590,12 +604,12 @@
                   <span class="mac-dot mac-dot-green"></span>
                 </div>
                 <div class="macbook-address-bar">
-                  <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
-                  <span id="laptop-screen-url" class="macbook-url text-[11px] font-mono text-slate-300">beecare.vn/admin/dashboard</span>
+                  <i data-lucide="lock" class="w-3 h-3 text-emerald-600"></i>
+                  <span id="laptop-screen-url" class="macbook-url text-[11px] font-mono text-slate-700 font-medium">beecare.vn/admin/dashboard</span>
                 </div>
-                <div class="macbook-actions hidden sm:flex items-center gap-2.5 text-slate-400 w-[60px] justify-end">
-                  <i data-lucide="share-2" class="w-3 h-3 hover:text-white transition-colors cursor-pointer" title="Chia sẻ"></i>
-                  <i data-lucide="rotate-cw" class="w-3 h-3 hover:text-white transition-colors cursor-pointer" title="Tải lại"></i>
+                <div class="macbook-actions hidden sm:flex items-center gap-2.5 text-slate-500 w-[60px] justify-end">
+                  <i data-lucide="share-2" class="w-3 h-3 hover:text-slate-800 transition-colors cursor-pointer" title="Chia sẻ"></i>
+                  <i data-lucide="rotate-cw" class="w-3 h-3 hover:text-slate-800 transition-colors cursor-pointer" title="Tải lại"></i>
                 </div>
               </div>
 
@@ -682,15 +696,11 @@
       <div id="staff-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-10">
-            <span class="section-tag mb-3">
-              <i data-lucide="heart-pulse" class="w-3.5 h-3.5"></i>
-              <span data-i18n="panel_staff_badge">Ứng dụng điều dưỡng tại giường</span>
-            </span>
-            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
-              <span data-i18n="panel_staff_title">Nghiệp vụ điều dưỡng chuẩn hóa tại giường bệnh</span>
+            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
+              <span data-i18n="panel_staff_title">Trợ thủ điều dưỡng số hóa – Thêm thời gian chăm sóc người cao tuổi</span>
             </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_staff_desc">
-              Trợ thủ tại giường bệnh giúp giảm 70% thủ tục giấy tờ, loại bỏ nhầm lẫn thuốc và đồng bộ EMR tức thì. Tương thích mượt mà trên iPhone, iPad, Samsung Galaxy & Google Pixel.
+              Cắt giảm 70% thủ tục giấy tờ, loại bỏ 100% rủi ro nhầm thuốc và tự động đồng bộ bệnh án EMR theo thời gian thực ngay tại giường bệnh.
             </p>
           </div>
 
@@ -1078,11 +1088,7 @@
       <div id="family-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center max-w-3xl mx-auto mb-10">
-            <span class="section-tag-amber mb-3">
-              <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
-              <span data-i18n="panel_family_badge">Ứng dụng người thân</span>
-            </span>
-            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-2">
+            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
               <span data-i18n="panel_family_title">Kết nối gia đình & Đồng hành chăm sóc 24/7</span>
             </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_family_desc">
@@ -1474,11 +1480,7 @@
   <section id="benefits" class="section-padding bg-gradient-to-b from-[#F4F6FA] to-[#FBF7F3] border-t border-[#E5E1D8]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-        <span class="section-tag mb-3">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span data-i18n="ben_badge">Hiệu quả giải pháp</span>
-        </span>
-        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">
           <span data-i18n="ben_title">Giá trị đem lại cho các bên</span>
         </h2>
       </div>
@@ -1527,11 +1529,7 @@
   <section id="faq" class="section-padding bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10" data-aos="fade-up">
-        <span class="section-tag mb-3">
-          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-          <span data-i18n="idx_faq_badge">Hỏi và đáp</span>
-        </span>
-        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900 mt-2">
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">
           <span data-i18n="idx_faq_title"><span data-i18n="nav_faq">Câu hỏi thường gặp</span> về hệ sinh thái BeeCare</span>
         </h2>
       </div>
@@ -1750,8 +1748,8 @@
 
   <!-- Scripts -->
   <script src="assets/i18n/common.js?v=20261005_v5"></script>
-  <script src="assets/i18n/home.js?v=20261005_v5"></script>
-  <script src="assets/script.js?v=20261005_v5"></script>
+  <script src="assets/i18n/home.js?v=20261007_v3"></script>
+  <script src="assets/script.js?v=20261007_v11"></script>
 </body>
 
 </html>

@@ -24,17 +24,17 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261005_v7" />
+  <link rel="stylesheet" href="assets/style.css?v=20261007_v9" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <style>
     /* ===================== CONTACT PAGE STYLES ===================== */
     .company-hero {
-      background: linear-gradient(140deg, #183C6F 0%, #204C88 40%, #265397 72%, #0284C7 100%);
+      background: linear-gradient(135deg, #f97316 0%, #fb923c 28%, #fdba74 68%, #fed7aa 100%) !important;
       position: relative;
       overflow: hidden;
-      padding-top: 115px;
-      padding-bottom: 55px;
+      padding-top: 130px;
+      padding-bottom: 75px;
       color: white;
       text-align: center;
     }
@@ -45,7 +45,7 @@
       left: -15%;
       width: 750px;
       height: 750px;
-      background: radial-gradient(circle, rgba(2, 132, 199, 0.35) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, transparent 65%) !important;
       border-radius: 50%;
       pointer-events: none;
     }
@@ -56,7 +56,7 @@
       right: -15%;
       width: 650px;
       height: 650px;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(254, 240, 138, 0.45) 0%, transparent 65%) !important;
       border-radius: 50%;
       pointer-events: none;
     }
@@ -978,18 +978,19 @@
     <div class="max-w-5xl mx-auto px-4 relative z-10" data-aos="fade-up">
       
       <!-- Top Badge -->
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-teal-300 px-4 py-1.5 rounded-full text-xs font-bold border border-teal-500/20 mb-5 tracking-wide shadow-sm">
-        <i data-lucide="headphones" class="w-3.5 h-3.5"></i>
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold border border-white/30 mb-5 tracking-wide shadow-sm">
+        <i data-lucide="headphones" class="w-3.5 h-3.5 text-amber-200"></i>
         <span data-i18n="contact_hero_badge">Kênh tư vấn & triển khai toàn quốc</span>
       </div>
       
-      <!-- H1 Main Headline (Sentence case, concise, 1 line) -->
-      <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 font-heading tracking-tight leading-tight whitespace-normal md:whitespace-nowrap">
-        <span data-i18n="contact_hero_title">Đăng ký tư vấn</span>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300" data-i18n="contact_hero_title_highlight">BeeCare</span>
+      <!-- H1 Main Headline styled like pricing page -->
+      <h1 class="pricing-hero-title text-center">
+        <span class="pricing-hero-title-gradient">
+          <span data-i18n="contact_hero_title">Đăng ký tư vấn</span> <span data-i18n="contact_hero_title_highlight">BeeCare</span>
+        </span>
       </h1>
       
-      <p class="text-slate-200 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto leading-relaxed" data-i18n="contact_hero_desc">
+      <p class="text-orange-50/95 text-sm sm:text-base md:text-lg font-normal max-w-3xl mx-auto leading-relaxed" style="text-shadow: 0 1px 6px rgba(154, 52, 18, 0.22);" data-i18n="contact_hero_desc">
         Nhận ngay buổi demo trực quan toàn diện hệ sinh thái BeeCare và được đội ngũ chuyên gia lắng nghe, giải đáp chi tiết mọi bài toán vận hành thực tế cho cơ sở của bạn.
       </p>
 
@@ -1921,6 +1922,58 @@
       const lang = e.detail && e.detail.lang ? e.detail.lang : (localStorage.getItem('beecare_lang') || 'vi');
       if (window.TRANSLATIONS && window.TRANSLATIONS[lang] && window.TRANSLATIONS[lang]['contact_title_page']) {
         document.title = window.TRANSLATIONS[lang]['contact_title_page'];
+      }
+    });
+
+    // Auto pre-fill from Pricing Calculator URL params
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const plan = urlParams.get('plan');
+        const nct = parseInt(urlParams.get('nct') || urlParams.get('residents'), 10);
+        const setup = urlParams.get('setup');
+
+        if (plan || !isNaN(nct) || setup) {
+          // Preselect scale card
+          if (!isNaN(nct)) {
+            let scaleVal = '30_50';
+            if (nct < 30) scaleVal = 'under_30';
+            else if (nct <= 50) scaleVal = '30_50';
+            else if (nct <= 100) scaleVal = '50_100';
+            else scaleVal = 'over_100';
+
+            const scaleRadio = document.querySelector(`input[name="facility_scale"][value="${scaleVal}"]`);
+            if (scaleRadio) {
+              const card = scaleRadio.closest('.scale-card');
+              if (card) selectScale(card);
+            }
+          }
+
+          // Preselect consultation method
+          if (setup) {
+            const methodVal = setup === 'onsite' ? 'onsite' : 'online';
+            const methodRadio = document.querySelector(`input[name="consult_method"][value="${methodVal}"]`);
+            if (methodRadio) {
+              const pill = methodRadio.closest('.method-pill');
+              if (pill) selectMethod(pill);
+            }
+          }
+
+          // Prefill message
+          const msgEl = document.getElementById('contact-msg');
+          if (msgEl && !msgEl.value) {
+            const planNames = {
+              basic: 'Gói Cơ bản',
+              pro: 'Gói Nâng cao',
+              vip: 'Gói VIP'
+            };
+            const planName = planNames[plan] || (plan ? `Gói ${plan.toUpperCase()}` : 'Gói giải pháp');
+            const nctText = !isNaN(nct) ? ` cho ${nct} người cao tuổi` : '';
+            msgEl.value = `Tôi quan tâm đến ${planName}${nctText} của BeeCare. Vui lòng liên hệ tư vấn chi tiết và gửi báo giá phù hợp với quy mô cơ sở của chúng tôi.`;
+          }
+        }
+      } catch (err) {
+        console.warn('URL params parse error:', err);
       }
     });
   </script>
