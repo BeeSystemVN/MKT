@@ -912,12 +912,14 @@ if (heroStageEl && hasHeroDevices) {
 function initHeroVideo() {
   const video = document.getElementById('hero-beecare-video');
   const playBtn = document.getElementById('hero-video-play-btn');
+  const videoCover = document.getElementById('hero-video-cover');
   const laptop3d = document.getElementById('hero-laptop-3d');
   const stage3d = document.querySelector('.stage-3d');
   if (!video) return;
 
   const togglePlay = () => {
     if (video.paused) {
+      if (videoCover) videoCover.classList.add('is-hidden');
       video.play().catch(() => {});
     } else {
       video.pause();
@@ -926,6 +928,13 @@ function initHeroVideo() {
 
   if (playBtn) {
     playBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      togglePlay();
+    });
+  }
+
+  if (videoCover) {
+    videoCover.addEventListener('click', (e) => {
       e.stopPropagation();
       togglePlay();
     });
@@ -940,6 +949,7 @@ function initHeroVideo() {
 
   video.addEventListener('play', () => {
     video.controls = true;
+    if (videoCover) videoCover.classList.add('is-hidden');
     if (playBtn) playBtn.classList.add('is-playing');
     if (laptop3d) laptop3d.classList.add('video-playing');
     if (stage3d) stage3d.classList.add('video-playing');
@@ -957,6 +967,9 @@ function initHeroVideo() {
   });
 
   video.addEventListener('ended', () => {
+    video.controls = false;
+    video.currentTime = 0;
+    if (videoCover) videoCover.classList.remove('is-hidden');
     if (playBtn) playBtn.classList.remove('is-playing');
     if (laptop3d) laptop3d.classList.remove('video-playing');
     if (stage3d) stage3d.classList.remove('video-playing');
@@ -964,6 +977,36 @@ function initHeroVideo() {
       clearInterval(heroRotationTimer);
       heroRotationTimer = setInterval(tickHeroDevices, 3200);
     }
+  });
+}
+
+// ==================== MOBILE HERO DEVICE TABS CONTROLLER (< 1024px) ====================
+function initHeroDeviceTabs() {
+  const tabsContainer = document.getElementById('hero-device-tabs');
+  const stage3d = document.querySelector('.stage-3d');
+  const video = document.getElementById('hero-beecare-video');
+  if (!tabsContainer || !stage3d) return;
+
+  const tabButtons = tabsContainer.querySelectorAll('.hero-device-tab');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const device = btn.getAttribute('data-device');
+      
+      tabButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      stage3d.setAttribute('data-active-device', device);
+
+      // Pause video when switching away from laptop
+      if (device !== 'web' && video && !video.paused) {
+        video.pause();
+      }
+
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
   });
 }
 
@@ -2013,6 +2056,7 @@ function initCoverSlider() {
 window.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
   initHeroVideo();
+  initHeroDeviceTabs();
   initCoverSlider();
   if (typeof lucide !== 'undefined') lucide.createIcons();
   // Ensure indicator positioned after layout

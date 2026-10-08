@@ -24,7 +24,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261007_v20" />
+  <link rel="stylesheet" href="assets/style.css?v=20261008_v28" />
   <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
 
   <!-- Preload primary showcase screenshots for instant zero-latency tab switching -->
@@ -158,9 +158,9 @@
         <div class="cover-slide" data-index="1">
           <img src="assets/banners/banner-2.png" alt="BeeCare – Hệ sinh thái công nghệ quản lý và chăm sóc toàn diện" class="select-none pointer-events-none" loading="lazy">
         </div>
-        <!-- Slide 3: Ảnh bìa 3 (Chăm sóc toàn diện với AI & VietQR) -->
+        <!-- Slide 3: Không gian văn phòng Bee Care hiện đại -->
         <div class="cover-slide" data-index="2">
-          <img src="assets/banners/banner-3.png" alt="Chăm sóc người cao tuổi toàn diện với AI – BeeCare" class="select-none pointer-events-none" loading="lazy">
+          <img src="assets/banners/banner-modern-office.png?v=20261008_v2" alt="Không gian văn phòng BeeCare hiện đại" class="select-none pointer-events-none" loading="lazy">
         </div>
       </div>
 
@@ -232,11 +232,27 @@
         </p>
       </div>
 
+      <!-- Mobile / Tablet Device Switcher Tabs (< 1024px) -->
+      <div class="hero-device-tabs lg:hidden" id="hero-device-tabs">
+        <button type="button" class="hero-device-tab active" data-device="web" aria-label="Xem Web admin">
+          <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+          <span data-i18n="hero_device_web">Web admin</span>
+        </button>
+        <button type="button" class="hero-device-tab" data-device="staff" aria-label="Xem App nhân viên">
+          <i data-lucide="stethoscope" class="w-4 h-4"></i>
+          <span data-i18n="hero_device_staff">App nhân viên</span>
+        </button>
+        <button type="button" class="hero-device-tab" data-device="family" aria-label="Xem App người thân">
+          <i data-lucide="home" class="w-4 h-4"></i>
+          <span data-i18n="hero_device_family">App người thân</span>
+        </button>
+      </div>
+
       <!-- 3D Stage: Center Laptop Video + 2 Flanking Upright Phones (Flexbox layout) -->
-      <div class="stage-3d relative flex items-end justify-center pb-8 sm:pb-12">
+      <div class="stage-3d relative flex items-end justify-center pb-8 sm:pb-12" data-active-device="web">
         
         <!-- Flanking Left: iPhone Upright (Family App with AI) -->
-        <div class="phone-3d phone-tilt-left z-20 cursor-pointer hidden lg:block flex-shrink-0"
+        <div class="phone-3d phone-tilt-left z-20 cursor-pointer flex-shrink-0"
           onclick="openLightbox('assets/screenshots/family-home-2.png', 'Trang chủ hồ sơ sức khỏe người cao tuổi - App người thân')">
           <div class="phone-3d-case w-full">
             <span class="phone-btn-left-1"></span>
@@ -296,16 +312,175 @@
                 </div>
 
                 <!-- Video Screen Viewport -->
-                <div class="laptop-video-viewport relative w-full h-full flex-1 bg-black overflow-hidden group">
+                <div class="laptop-video-viewport relative w-full h-full flex-1 bg-white overflow-hidden group">
                   <video id="hero-beecare-video" 
                     class="w-full h-full object-cover block cursor-pointer" 
                     preload="metadata" 
                     playsinline 
-                    poster="assets/beecare-video-poster.jpg">
+                    poster="assets/beecare-video-poster-white.png?v=20261008">
                     <source src="Beecare video giới thiệu.mp4" type="video/mp4">
                     <source src="Beecare%20video%20gi%E1%BB%9Bi%20thi%E1%BB%87u.mp4" type="video/mp4">
                     Trình duyệt của bạn không hỗ trợ phát thẻ video HTML5.
                   </video>
+
+                  <!-- White Standby Cover with BeeCare Logo & Rich Medical Tech Line Art -->
+                  <div id="hero-video-cover" class="hero-video-cover" aria-label="Bìa chờ BeeCare">
+                    <!-- Layer 1: Background Vector Line-Art (Curves, Hexagons, ECG, Waves, Dots) -->
+                    <svg class="hero-video-cover__svg" viewBox="0 0 1200 675" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <!-- Gradients -->
+                        <linearGradient id="waveGradBlue1" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#265397" stop-opacity="0.35" />
+                          <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.4" />
+                          <stop offset="100%" stop-color="#0284C7" stop-opacity="0.1" />
+                        </linearGradient>
+                        <linearGradient id="waveGradCyan1" x1="0%" y1="100%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3" />
+                          <stop offset="50%" stop-color="#265397" stop-opacity="0.35" />
+                          <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.25" />
+                        </linearGradient>
+                        <linearGradient id="ecgGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#265397" stop-opacity="0" />
+                          <stop offset="40%" stop-color="#06B6D4" stop-opacity="0.85" />
+                          <stop offset="100%" stop-color="#265397" stop-opacity="0.1" />
+                        </linearGradient>
+                        <linearGradient id="ecgGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#265397" stop-opacity="0.1" />
+                          <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.85" />
+                          <stop offset="100%" stop-color="#EF4444" stop-opacity="0" />
+                        </linearGradient>
+                        <!-- Pattern: Micro Blueprint Dots -->
+                        <pattern id="coverDots" width="32" height="32" patternUnits="userSpaceOnUse">
+                          <circle cx="2" cy="2" r="1.1" fill="#265397" fill-opacity="0.08" />
+                        </pattern>
+                      </defs>
+
+                      <!-- Background Blueprint Dot Matrix -->
+                      <rect width="100%" height="100%" fill="url(#coverDots)" />
+
+                      <!-- Hexagon Honeycomb Cluster Left -->
+                      <g class="honeycomb-cluster honeycomb-left" stroke="#265397" stroke-width="1.3" stroke-opacity="0.16" fill="rgba(240, 246, 255, 0.45)">
+                        <polygon points="120,70 151,88 151,124 120,142 89,124 89,88" />
+                        <polygon points="175,102 206,120 206,156 175,174 144,156 144,120" />
+                        <polygon points="65,102 96,120 96,156 65,174 34,156 34,120" stroke-opacity="0.1" fill="none" />
+                        <polygon points="120,166 151,184 151,220 120,238 89,220 89,184" />
+                        <polygon points="175,198 206,216 206,252 175,270 144,252 144,216" stroke-opacity="0.12" fill="none" />
+                        <polygon points="65,230 96,248 96,284 65,302 34,284 34,248" stroke-opacity="0.1" fill="none" />
+                      </g>
+
+                      <!-- Hexagon Honeycomb Cluster Right -->
+                      <g class="honeycomb-cluster honeycomb-right" stroke="#265397" stroke-width="1.3" stroke-opacity="0.16" fill="rgba(240, 246, 255, 0.45)">
+                        <polygon points="1080,70 1111,88 1111,124 1080,142 1049,124 1049,88" />
+                        <polygon points="1025,102 1056,120 1056,156 1025,174 994,156 994,120" />
+                        <polygon points="1135,102 1166,120 1166,156 1135,174 1104,156 1104,120" stroke-opacity="0.1" fill="none" />
+                        <polygon points="1080,166 1111,184 1111,220 1080,238 1049,220 1049,184" />
+                        <polygon points="1025,198 1056,216 1056,252 1025,270 994,252 994,216" stroke-opacity="0.12" fill="none" />
+                        <polygon points="1135,230 1166,248 1166,284 1135,302 1104,284 1104,248" stroke-opacity="0.1" fill="none" />
+                      </g>
+
+                      <!-- Flowing Stream of Bio-Waves (Top-Left to Center & Bottom-Right) -->
+                      <g fill="none" stroke-linecap="round">
+                        <!-- Upper Wave Stream -->
+                        <path d="M -60 160 C 200 90, 380 260, 600 320 C 820 380, 980 180, 1260 220" stroke="url(#waveGradBlue1)" stroke-width="2" />
+                        <path d="M -60 180 C 210 110, 390 280, 600 338 C 810 396, 990 200, 1260 240" stroke="url(#waveGradCyan1)" stroke-width="1.6" stroke-dasharray="8 6" />
+                        <path d="M -60 200 C 220 130, 400 300, 600 356 C 800 412, 1000 220, 1260 260" stroke="#06B6D4" stroke-opacity="0.22" stroke-width="1.2" />
+                        <path d="M -60 220 C 230 150, 410 320, 600 374 C 790 428, 1010 240, 1260 280" stroke="#265397" stroke-opacity="0.15" stroke-width="1" />
+
+                        <!-- Lower Wave Stream -->
+                        <path d="M -60 540 C 240 560, 420 380, 600 356 C 780 332, 940 520, 1260 480" stroke="url(#waveGradCyan1)" stroke-width="2" />
+                        <path d="M -60 520 C 230 540, 410 360, 600 338 C 790 316, 950 500, 1260 460" stroke="url(#waveGradBlue1)" stroke-width="1.6" stroke-dasharray="10 8" />
+                        <path d="M -60 500 C 220 520, 400 340, 600 320 C 800 300, 960 480, 1260 440" stroke="#0284C7" stroke-opacity="0.2" stroke-width="1.2" />
+                        <path d="M -60 480 C 210 500, 390 320, 600 302 C 810 284, 970 460, 1260 420" stroke="#265397" stroke-opacity="0.14" stroke-width="1" />
+                      </g>
+
+                      <!-- ECG Heartbeat Pulse Lines (Left & Right Flanks) -->
+                      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Left ECG Pulse -->
+                        <path d="M 60 338 L 190 338 L 205 310 L 215 372 L 232 278 L 248 358 L 260 322 L 272 338 L 380 338" stroke="url(#ecgGradLeft)" stroke-width="2.5" />
+                        <circle cx="232" cy="278" r="3.5" fill="#06B6D4" fill-opacity="0.85" />
+                        <!-- Right ECG Pulse -->
+                        <path d="M 820 338 L 928 338 L 940 312 L 952 368 L 968 282 L 984 354 L 995 324 L 1005 338 L 1140 338" stroke="url(#ecgGradRight)" stroke-width="2.5" />
+                        <circle cx="968" cy="282" r="3.5" fill="#F59E0B" fill-opacity="0.85" />
+                      </g>
+
+                      <!-- Concentric Radar / Audio Pulse Rings around Center Play Button (cx=600, cy=338) -->
+                      <g fill="none">
+                        <circle cx="600" cy="338" r="54" stroke="#0284C7" stroke-width="1.5" stroke-opacity="0.32" stroke-dasharray="5 5" class="radar-ring-inner" />
+                        <circle cx="600" cy="338" r="82" stroke="#265397" stroke-width="1.2" stroke-opacity="0.22" />
+                        <circle cx="600" cy="338" r="115" stroke="#06B6D4" stroke-width="1" stroke-opacity="0.18" stroke-dasharray="8 8" class="radar-ring-outer" />
+                        <circle cx="600" cy="338" r="150" stroke="#265397" stroke-width="0.8" stroke-opacity="0.1" />
+                      </g>
+                    </svg>
+
+                    <!-- Layer 2: 4 Floating Line-Art Metric Badges (Corners) -->
+                    <!-- Top Left: Vitals Heartbeat Badge -->
+                    <div class="hero-video-badge hero-video-badge--top-left">
+                      <div class="hero-video-badge__icon-box hero-video-badge__icon-box--cyan">
+                        <svg class="w-4 h-4 text-cyan-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                      </div>
+                      <div class="hero-video-badge__text">
+                        <span class="hero-video-badge__val" data-i18n="video_cover_badge_vitals_val">75 bpm</span>
+                        <span class="hero-video-badge__lbl" data-i18n="video_cover_badge_vitals_lbl">Sinh hiệu thời gian thực</span>
+                      </div>
+                    </div>
+
+                    <!-- Top Right: Safe Medication Badge -->
+                    <div class="hero-video-badge hero-video-badge--top-right">
+                      <div class="hero-video-badge__icon-box hero-video-badge__icon-box--emerald">
+                        <svg class="w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                      </div>
+                      <div class="hero-video-badge__text">
+                        <span class="hero-video-badge__val" data-i18n="video_cover_badge_meds_val">100%</span>
+                        <span class="hero-video-badge__lbl" data-i18n="video_cover_badge_meds_lbl">Cấp phát thuốc an toàn</span>
+                      </div>
+                    </div>
+
+                    <!-- Bottom Left: Family Connection Badge -->
+                    <div class="hero-video-badge hero-video-badge--bottom-left">
+                      <div class="hero-video-badge__icon-box hero-video-badge__icon-box--amber">
+                        <svg class="w-4 h-4 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </div>
+                      <div class="hero-video-badge__text">
+                        <span class="hero-video-badge__val" data-i18n="video_cover_badge_family_val">24/7</span>
+                        <span class="hero-video-badge__lbl" data-i18n="video_cover_badge_family_lbl">Kết nối người thân</span>
+                      </div>
+                    </div>
+
+                    <!-- Bottom Right: AI Assistant Badge -->
+                    <div class="hero-video-badge hero-video-badge--bottom-right">
+                      <div class="hero-video-badge__icon-box hero-video-badge__icon-box--blue">
+                        <svg class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                          <path d="M5 3v4"></path>
+                          <path d="M19 17v4"></path>
+                          <path d="M3 5h4"></path>
+                          <path d="M17 19h4"></path>
+                        </svg>
+                      </div>
+                      <div class="hero-video-badge__text">
+                        <span class="hero-video-badge__val" data-i18n="video_cover_badge_ai_val">AI Care</span>
+                        <span class="hero-video-badge__lbl" data-i18n="video_cover_badge_ai_lbl">Trợ lý sức khỏe thông minh</span>
+                      </div>
+                    </div>
+
+                    <!-- Layer 3: Central Brand Core (Logo & Tagline) -->
+                    <div class="hero-video-cover__content">
+                      <img src="assets/logo-horizontal.png" alt="BeeCare Logo" class="hero-video-cover__logo select-none pointer-events-none" />
+                      <div class="hero-video-cover__tagline-wrap">
+                        <span class="hero-video-cover__tagline" data-i18n="video_cover_tagline">Hệ sinh thái quản lý viện dưỡng lão thông minh</span>
+                      </div>
+                    </div>
+                  </div>
 
                   <!-- Big Centered Play Button (Disappears when playing) -->
                   <button id="hero-video-play-btn" 
@@ -314,7 +489,7 @@
                     aria-label="Phát video giới thiệu BeeCare">
                     <span class="hero-play-pulse-ring"></span>
                     <span class="hero-play-btn-core">
-                      <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white translate-x-0.5 fill-current" viewBox="0 0 24 24">
+                      <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#265397] translate-x-0.5 fill-current" viewBox="0 0 24 24">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                       </svg>
                     </span>
@@ -351,7 +526,7 @@
         </div>
 
         <!-- Flanking Right: iPhone Upright (Staff Bedside Vitals) -->
-        <div class="phone-3d phone-tilt-right z-20 cursor-pointer hidden lg:block flex-shrink-0"
+        <div class="phone-3d phone-tilt-right z-20 cursor-pointer flex-shrink-0"
           onclick="openLightbox('assets/screenshots/staff-residents.png', 'Danh sách người cao tuổi phụ trách - App nhân viên')">
           <div class="phone-3d-case w-full">
             <span class="phone-btn-left-1"></span>
@@ -521,12 +696,8 @@
       
       <!-- Unified Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
-        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
-          <span data-i18n="eco_title">Hệ sinh thái quản lý viện dưỡng lão toàn diện</span>
-        </h2>
-
         <!-- 3 App Interactive Selector Tabs -->
-        <div class="app-tabs-container flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-6 py-1 px-1 max-w-full mx-auto">
+        <div class="app-tabs-container flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 py-1 px-1 max-w-full mx-auto">
           <button class="app-tab-btn active" onclick="switchAppTab('all', this)" id="tab-btn-all" title="Xem đồng thời cả 3 ứng dụng">
             <i data-lucide="layout-grid" class="w-4 h-4 text-blue-600"></i>
             <span data-i18n="eco_tab_all">Xem tất cả</span>
@@ -1626,12 +1797,7 @@
                 <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
               </svg>
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube" aria-label="YouTube BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn" aria-label="LinkedIn BeeCare">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
+
           </div>
         </div>
 
@@ -1639,26 +1805,26 @@
         <div>
           <div class="footer-col-title" data-i18n="footer_col_eco">Hệ sinh thái</div>
           <div style="display:flex;flex-direction:column;gap:8px">
-            <a href="#ecosystem" class="footer-eco-chip footer-eco-chip--teal">
+            <div class="footer-eco-chip footer-eco-chip--teal">
               <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
               <span data-i18n="footer_eco_web">Cổng Web Admin</span>
-            </a>
-            <a href="#ecosystem" class="footer-eco-chip footer-eco-chip--cyan">
+            </div>
+            <div class="footer-eco-chip footer-eco-chip--cyan">
               <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
               <span data-i18n="footer_eco_staff">App Điều dưỡng Staff</span>
-            </a>
-            <a href="#ecosystem" class="footer-eco-chip footer-eco-chip--amber">
+            </div>
+            <div class="footer-eco-chip footer-eco-chip--amber">
               <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
               <span data-i18n="footer_eco_family">App Người thân Family</span>
-            </a>
+            </div>
           </div>
           <div style="margin-top:20px">
             <div class="footer-col-title" data-i18n="footer_col_feat">Tính năng nổi bật</div>
-            <ul class="footer-nav-list">
-              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat1">Quản lý hồ sơ EMR</span></a></li>
-              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat2">Đo sinh hiệu tại giường</span></a></li>
-              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat3">Trợ lý AI 24/7</span></a></li>
-              <li><a href="index.html#ecosystem"><span data-i18n="footer_feat4">Thanh toán VietQR</span></a></li>
+            <ul class="footer-feat-list">
+              <li><span data-i18n="footer_feat1">Quản lý hồ sơ EMR</span></li>
+              <li><span data-i18n="footer_feat2">Đo sinh hiệu tại giường</span></li>
+              <li><span data-i18n="footer_feat3">Trợ lý AI 24/7</span></li>
+              <li><span data-i18n="footer_feat4">Thanh toán VietQR</span></li>
             </ul>
           </div>
         </div>
@@ -1748,8 +1914,8 @@
 
   <!-- Scripts -->
   <script src="assets/i18n/common.js?v=20261005_v5"></script>
-  <script src="assets/i18n/home.js?v=20261007_v3"></script>
-  <script src="assets/script.js?v=20261007_v11"></script>
+  <script src="assets/i18n/home.js?v=20261008_v4"></script>
+  <script src="assets/script.js?v=20261008_v13"></script>
 </body>
 
 </html>

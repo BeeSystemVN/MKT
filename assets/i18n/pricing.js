@@ -15,8 +15,8 @@ Object.assign(window.TRANSLATIONS.vi, {
   "pricing_card1_desc": "Phù hợp từ viện nhỏ đến chuỗi dưỡng lão",
   "pricing_card2_title": "Minh bạch chi phí",
   "pricing_card2_desc": "Tính theo số lượng người cao tuổi thực tế",
-  "pricing_card3_title": "Bảo hành trọn đời",
-  "pricing_card3_desc": "Cập nhật tính năng & hỗ trợ kỹ thuật 24/7",
+  "pricing_card3_title": "Nâng cấp miễn phí",
+  "pricing_card3_desc": "Liên tục cập nhật tính năng và công nghệ mới",
   "pricing_hero_highlight1": "3 gói dịch vụ: Cơ bản, Nâng cao, VIP",
   "pricing_hero_highlight2": "Tính phí theo khối 10 NCT minh bạch",
   "pricing_hero_highlight3": "Bảo hành & hỗ trợ kỹ thuật 24/7",
@@ -104,7 +104,7 @@ Object.assign(window.TRANSLATIONS.vi, {
   "feat_premium_1": "App Người thân (Family App): Kết nối gia đình theo dõi 24/7",
   "feat_premium_2": "Xem kết quả sinh hiệu & nhật ký hình ảnh hoạt động mỗi ngày",
   "feat_premium_3": "Trợ lý AI y tế giải đáp thắc mắc sức khỏe người cao tuổi",
-  "feat_premium_4": "Cổng thanh toán tự động VietQR & đối soát viện phí tức thì",
+  "feat_premium_4": "Cổng thanh toán QRcode",
   "feat_premium_5": "Kênh trao đổi trực tiếp giữa gia đình & bác sĩ phụ trách",
   "feat_premium_6": "Đội ngũ kỹ thuật hỗ trợ chuyên trách ưu tiên 24/7",
 
@@ -314,7 +314,62 @@ Object.assign(window.TRANSLATIONS.vi, {
   "doc_modal_tab_basic": "Gói Cơ bản",
   "doc_modal_tab_pro": "Gói Nâng cao",
   "doc_modal_tab_vip": "Gói VIP",
-  "doc_modal_tab_custom": "Phiếu dự toán của viện"
+  "doc_modal_tab_custom": "Phiếu dự toán của viện",
+
+  /* Comparison Table Section */
+  "compare_badge": "Bảng so sánh chi tiết",
+  "compare_title": "So sánh chi tiết tính năng theo từng gói",
+  "compare_desc": "Xem và đối chiếu đầy đủ các tính năng, phân hệ và quyền lợi kỹ thuật giữa 3 gói giải pháp BeeCare.",
+  "compare_scroll_hint": "Vuốt ngang để xem toàn bộ bảng so sánh",
+  "compare_col_feature": "Nghiệp vụ & Tính năng",
+  "compare_col_basic_sub": "EMR & Chăm sóc nội trú",
+  "compare_col_pro_sub": "Bán trú Daycare & Nội trú",
+  "compare_col_vip_sub": "Hệ sinh thái 3 App + AI",
+  "compare_btn_choose": "Chọn gói này",
+
+  /* Group 1: Platforms */
+  "compare_grp_platforms": "1. Nền tảng ứng dụng (Platforms)",
+  "compare_f_web_admin": "Web Quản trị viện (Admin Dashboard)",
+  "compare_f_web_admin_sub": "Dành cho Ban Giám đốc & khối văn phòng quản lý toàn diện",
+  "compare_f_app_staff": "App Mobile Điều dưỡng & Nhân viên",
+  "compare_f_app_staff_sub": "Ghi nhận chỉ số, quy trình chăm sóc tại giường & chấm công",
+  "compare_f_app_family": "App Mobile Gia đình & Người thân",
+  "compare_f_app_family_sub": "Theo dõi sức khỏe 24/7, nhận ảnh hoạt động & viện phí",
+
+  /* Group 2: Inpatient & Medical */
+  "compare_grp_medical": "2. Nghiệp vụ Quản lý Nội trú & Y tế",
+  "compare_f_emr": "Hồ sơ bệnh án điện tử (EMR) & Tiền sử bệnh",
+  "compare_f_contracts": "Quản lý hợp đồng tiếp nhận & phân bổ phòng / giường",
+  "compare_f_careplan": "Kế hoạch chăm sóc chi tiết theo ca trực",
+  "compare_f_vitals": "Ghi nhận chỉ số sinh hiệu tại giường (HA, SpO2, Tim...)",
+  "compare_f_alerts": "Cảnh báo chỉ số bất thường & Bàn giao ca điện tử",
+  "compare_f_reports": "Báo cáo thống kê sức khỏe & viện phí định kỳ",
+
+  /* Group 3: Daycare */
+  "compare_grp_daycare": "3. Phân hệ Chăm sóc Bán trú (Daycare)",
+  "compare_f_pickup": "Quản lý danh sách đón / trả NCT theo ngày & buổi",
+  "compare_f_qr_checkin": "Điểm danh đón / trả NCT tự động trên App Mobile",
+  "compare_f_schedule": "Lập lịch hoạt động, sinh hoạt & phục hồi chức năng",
+  "compare_f_meals": "Quản lý thực đơn, suất ăn theo buổi & theo dõi dinh dưỡng",
+  "compare_f_daycare_billing": "Quản lý viện phí bán trú theo ngày / tuần / tháng",
+
+  /* Group 4: Family & High-Tech */
+  "compare_grp_tech": "4. Kết nối Người thân & Công nghệ cao",
+  "compare_f_family_portal": "Cổng thông tin gia đình theo dõi sức khỏe NCT 24/7",
+  "compare_f_activity_diary": "Nhật ký hình ảnh hoạt động & suất ăn gửi về gia đình",
+  "compare_f_ai_assistant": "Trợ lý AI Y tế hỗ trợ giải đáp nhanh sức khỏe",
+  "compare_f_vietqr": "Cổng thanh toán QRcode",
+  "compare_f_direct_chat": "Kênh trao đổi trực tiếp giữa gia đình & bác sĩ phụ trách",
+
+  /* Group 5: Service & Support */
+  "compare_grp_support": "5. Dịch vụ & Hỗ trợ kỹ thuật",
+  "compare_f_kaigo": "Đào tạo quy trình vận hành chuẩn Kaigo (Nhật Bản)",
+  "compare_f_support_business": "Hỗ trợ kỹ thuật định kỳ trong giờ hành chính",
+  "compare_f_support_247": "Đội ngũ kỹ thuật hỗ trợ chuyên trách ưu tiên 24/7",
+  
+  "compare_val_basic": "Cơ bản",
+  "compare_val_pro": "Chuyên sâu",
+  "compare_val_vip": "Toàn diện 24/7"
 });
 
 /* ========================================================
@@ -332,8 +387,8 @@ Object.assign(window.TRANSLATIONS.en, {
   "pricing_card1_desc": "Tailored for small homes to healthcare chains",
   "pricing_card2_title": "Transparent Cost",
   "pricing_card2_desc": "Charged per actual senior resident",
-  "pricing_card3_title": "Lifetime Warranty",
-  "pricing_card3_desc": "Continuous feature updates & 24/7 support",
+  "pricing_card3_title": "Free Upgrades",
+  "pricing_card3_desc": "Continuous feature updates & new technologies",
   "pricing_hero_highlight1": "3 licensed packages: Basic, Advanced, VIP",
   "pricing_hero_highlight2": "Transparent 10-resident block calculation",
   "pricing_hero_highlight3": "100% free warranty & 24/7 support",
@@ -421,7 +476,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "feat_premium_1": "Family Mobile App: 24/7 senior health connection for families",
   "feat_premium_2": "Live vitals updates & daily activity photo diary",
   "feat_premium_3": "AI Medical Assistant answering family inquiries based on real data",
-  "feat_premium_4": "Automated VietQR payment gateway & instant reconciliation",
+  "feat_premium_4": "QRcode digital payment gateway",
   "feat_premium_5": "Direct two-way messaging channel with facility doctors",
   "feat_premium_6": "Dedicated technical account manager & 24/7 priority SLA",
 
@@ -631,7 +686,62 @@ Object.assign(window.TRANSLATIONS.en, {
   "doc_modal_tab_basic": "Basic Plan",
   "doc_modal_tab_pro": "Advanced Plan",
   "doc_modal_tab_vip": "VIP Plan",
-  "doc_modal_tab_custom": "Facility Custom Estimate"
+  "doc_modal_tab_custom": "Facility Custom Estimate",
+
+  /* Comparison Table Section */
+  "compare_badge": "Detailed Comparison Table",
+  "compare_title": "Compare Features Across Packages",
+  "compare_desc": "Review and contrast full feature sets, operational modules, and technical privileges among BeeCare packages.",
+  "compare_scroll_hint": "Swipe horizontally to view full comparison table",
+  "compare_col_feature": "Operations & Features",
+  "compare_col_basic_sub": "EMR & Inpatient Care",
+  "compare_col_pro_sub": "Daycare & Inpatient Care",
+  "compare_col_vip_sub": "All 3 Apps + AI Ecosystem",
+  "compare_btn_choose": "Choose Plan",
+
+  /* Group 1: Platforms */
+  "compare_grp_platforms": "1. Application Platforms",
+  "compare_f_web_admin": "Web Admin Dashboard",
+  "compare_f_web_admin_sub": "For facility directors and administration management",
+  "compare_f_app_staff": "Caregiver & Staff Mobile App",
+  "compare_f_app_staff_sub": "Point-of-care vital logging, care routines, and shift check-in",
+  "compare_f_app_family": "Family & Guardian Mobile App",
+  "compare_f_app_family_sub": "24/7 vital monitoring, daily activity photos, and digital billing",
+
+  /* Group 2: Inpatient & Medical */
+  "compare_grp_medical": "2. Inpatient Care & Medical Management",
+  "compare_f_emr": "Electronic Medical Records (EMR) & Medical History",
+  "compare_f_contracts": "Admission contracts & room/bed allocation management",
+  "compare_f_careplan": "Detailed care routines and shift-based task planning",
+  "compare_f_vitals": "Point-of-care vital sign logging (BP, SpO2, Pulse, Glucose)",
+  "compare_f_alerts": "Abnormal vital alerts & digital shift handovers",
+  "compare_f_reports": "Health analytics and periodical facility billing reports",
+
+  /* Group 3: Daycare */
+  "compare_grp_daycare": "3. Senior Daycare Nursing Module",
+  "compare_f_pickup": "Daily and session-based senior check-in & pick-up management",
+  "compare_f_qr_checkin": "Automated attendance & pick-up tracking via Mobile App",
+  "compare_f_schedule": "Activity scheduling, exercises, and daytime rehabilitation",
+  "compare_f_meals": "Meal plan management and nutritional tracking per session",
+  "compare_f_daycare_billing": "Flexible daycare fee schedules (Daily / Weekly / Monthly)",
+
+  /* Group 4: Family & High-Tech */
+  "compare_grp_tech": "4. Family Engagement & Advanced Tech",
+  "compare_f_family_portal": "24/7 dedicated family health monitoring portal",
+  "compare_f_activity_diary": "Daily activity photo log and meal photo updates for families",
+  "compare_f_ai_assistant": "Medical AI assistant for quick eldercare Q&A",
+  "compare_f_vietqr": "QRcode digital payment gateway",
+  "compare_f_direct_chat": "Direct messaging channel between families and doctors/nurses",
+
+  /* Group 5: Service & Support */
+  "compare_grp_support": "5. Services & Engineering Support",
+  "compare_f_kaigo": "Kaigo standard eldercare operational training (Japan)",
+  "compare_f_support_business": "Standard technical support during business hours",
+  "compare_f_support_247": "Dedicated 24/7 priority technical support engineering team",
+  
+  "compare_val_basic": "Basic",
+  "compare_val_pro": "In-depth",
+  "compare_val_vip": "Comprehensive 24/7"
 });
 
 /* ========================================================
@@ -649,13 +759,13 @@ Object.assign(window.TRANSLATIONS.ja, {
   "pricing_card1_desc": "小規模施設から大規模施設グループまで対応",
   "pricing_card2_title": "明朗な費用体系",
   "pricing_card2_desc": "実際の入居者数に応じた安心の従量課金",
-  "pricing_card3_title": "永年保守・サポート",
-  "pricing_card3_desc": "定期的な機能更新と24時間365日の技術対応",
+  "pricing_card3_title": "無料アップデート",
+  "pricing_card3_desc": "新機能の定期追加と最新テクノロジーの提供",
   "pricing_hero_highlight1": "3つの正規プラン：ベーシック、アドバンス、VIP",
   "pricing_hero_highlight2": "10名単位切り上げによる明朗な計算ルール",
   "pricing_hero_highlight3": "100%無料の保守・24時間サポート",
   "pricing_hero_btn_explore": "3つのプランを見る",
-  "pricing_hero_btn_contact": "料金のお問い合わせ",
+  "pricing_hero_btn_contact": "お問い合わせ",
   "pricing_hero_btn_calc": "概算費用シミュレーター",
   "pricing_device_tag_ecosystem": "シームレスな3-in-1エコシステム",
   "pricing_device_tag_web": "Web管理画面",
@@ -738,7 +848,7 @@ Object.assign(window.TRANSLATIONS.ja, {
   "feat_premium_1": "ご家族アプリ：24時間リアルタイム健康・生活状況確認",
   "feat_premium_2": "バイタル測定結果閲覧および日々の活動写真タイムライン",
   "feat_premium_3": "AI医療アシスタントによるご家族からの健康相談自動回答",
-  "feat_premium_4": "VietQR自動決済および施設費用の一括自動消込",
+  "feat_premium_4": "QRコード決済ゲートウェイ連携",
   "feat_premium_5": "ご家族と施設担当医師との直接メッセージング機能",
   "feat_premium_6": "専任担当者による24時間365日の最優先技術サポート",
 
@@ -948,5 +1058,60 @@ Object.assign(window.TRANSLATIONS.ja, {
   "doc_modal_tab_basic": "ベーシックプラン",
   "doc_modal_tab_pro": "アドバンスプラン",
   "doc_modal_tab_vip": "VIPプラン",
-  "doc_modal_tab_custom": "施設独自試算書"
+  "doc_modal_tab_custom": "施設独自試算書",
+
+  /* Comparison Table Section */
+  "compare_badge": "機能比較詳細表",
+  "compare_title": "プラン別機能の詳細比較",
+  "compare_desc": "BeeCareの各プランに含まれる機能、システム構成、サポート体制を詳細に対比できます。",
+  "compare_scroll_hint": "横にスワイプして比較表全体を表示できます",
+  "compare_col_feature": "業務・機能項目",
+  "compare_col_basic_sub": "EMR・施設入居ケア",
+  "compare_col_pro_sub": "デイサービス・入居併用",
+  "compare_col_vip_sub": "3アプリ統合・医療AI",
+  "compare_btn_choose": "このプランを選択",
+
+  /* Group 1: Platforms */
+  "compare_grp_platforms": "1. アプリケーション・プラットフォーム",
+  "compare_f_web_admin": "施設統合管理Webシステム",
+  "compare_f_web_admin_sub": "経営陣・施設管理者向け総合ダッシュボード",
+  "compare_f_app_staff": "看護・介護スタッフ専用モバイルアプリ",
+  "compare_f_app_staff_sub": "ベッドサイドバイタル記録、介護ケア実施記録、勤怠打刻",
+  "compare_f_app_family": "ご家族専用モバイルアプリ",
+  "compare_f_app_family_sub": "24時間健康確認、日常活動写真アルバム、電子請求書",
+
+  /* Group 2: Inpatient & Medical */
+  "compare_grp_medical": "2. 入居介護・医療記録業務",
+  "compare_f_emr": "電子カルテ（EMR）・既往歴・服薬履歴管理",
+  "compare_f_contracts": "入退居契約・ベッド・居室割り当て管理",
+  "compare_f_careplan": "シフトごとの詳細個別ケアプラン作成・実行",
+  "compare_f_vitals": "ベッドサイドバイタルサイン即時記録（血圧・SpO2・脈拍等）",
+  "compare_f_alerts": "バイタル異常値自動アラート・電子申し送り記録",
+  "compare_f_reports": "定期健康統計レポート・施設利用料集計",
+
+  /* Group 3: Daycare */
+  "compare_grp_daycare": "3. 通所介護（デイサービス）機能",
+  "compare_f_pickup": "送迎便別・利用枠別の通所者受け入れ管理",
+  "compare_f_qr_checkin": "モバイルアプリによる自動送迎出欠打刻",
+  "compare_f_schedule": "レクリエーション・日中リハビリテーション活動スケジュール",
+  "compare_f_meals": "時間帯別食事管理および栄養摂取モニタリング",
+  "compare_f_daycare_billing": "日割り・週割り・月割りの柔軟な通所利用料計算",
+
+  /* Group 4: Family & High-Tech */
+  "compare_grp_tech": "4. ご家族連携・先端テクノロジー",
+  "compare_f_family_portal": "ご家族向け24時間健康見守りポータル",
+  "compare_f_activity_diary": "毎日の活動写真・食事写真の日報共有機能",
+  "compare_f_ai_assistant": "介護・健康相談対応 医療AIアシスタント",
+  "compare_f_vietqr": "QRコード決済ゲートウェイ連携",
+  "compare_f_direct_chat": "ご家族と主治医・担当介護士間のダイレクト連絡帳",
+
+  /* Group 5: Service & Support */
+  "compare_grp_support": "5. 導入サポート・技術保守",
+  "compare_f_kaigo": "日本式介護（Kaigo）標準オペレーション研修",
+  "compare_f_support_business": "営業時間内通常テクニカルサポート",
+  "compare_f_support_247": "24時間365日対応 専任優先エンジニアサポート",
+  
+  "compare_val_basic": "標準",
+  "compare_val_pro": "専任指導",
+  "compare_val_vip": "完全伴走 24/7"
 });
