@@ -204,19 +204,6 @@
           <span class="hero-title-gradient" data-i18n="hero_title">Quản lý viện dưỡng lão thông minh</span>
         </h1>
       </div>
-
-      <!-- 5. High-Conversion CTA Buttons -->
-      <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="200">
-        <a href="contact.html" class="hero-cta-primary">
-          <i data-lucide="sparkles" class="w-4 h-4 text-amber-950 flex-shrink-0"></i>
-          <span data-i18n="hero_cta_demo">Đăng ký trải nghiệm</span>
-        </a>
-        <a href="contact.html" class="hero-cta-secondary group">
-          <span data-i18n="hero_cta_sim">Sử dụng ngay</span>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-[#265397] flex-shrink-0"></i>
-        </a>
-      </div>
-
     </div>
 
     <!-- 3D HERO STAGE: LAPTOP IN CENTER + 2 FLANKING UPRIGHT PHONES -->
@@ -238,13 +225,13 @@
           <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
           <span data-i18n="hero_device_web">Web admin</span>
         </button>
-        <button type="button" class="hero-device-tab" data-device="staff" aria-label="Xem App nhân viên">
+        <button type="button" class="hero-device-tab" data-device="staff" aria-label="Xem App Nhân viên">
           <i data-lucide="stethoscope" class="w-4 h-4"></i>
-          <span data-i18n="hero_device_staff">App nhân viên</span>
+          <span data-i18n="hero_device_staff">App Nhân viên</span>
         </button>
-        <button type="button" class="hero-device-tab" data-device="family" aria-label="Xem App người thân">
+        <button type="button" class="hero-device-tab" data-device="family" aria-label="Xem App Family">
           <i data-lucide="home" class="w-4 h-4"></i>
-          <span data-i18n="hero_device_family">App người thân</span>
+          <span data-i18n="hero_device_family">App Family</span>
         </button>
       </div>
 
@@ -550,7 +537,7 @@
           <!-- Label pill -->
           <div class="text-center mt-3.5">
             <span class="hero-device-pill hero-device-pill--staff">
-              <i data-lucide="users" class="w-4 h-4"></i> <span data-i18n="hero_device_staff">App nhân viên</span>
+              <i data-lucide="users" class="w-4 h-4"></i> <span data-i18n="hero_device_staff">App Nhân viên</span>
             </span>
           </div>
         </div>
@@ -602,10 +589,6 @@
                 </li>
               </ul>
             </div>
-            <button onclick="navigateToApp('web')" class="app-summary-btn app-summary-btn--web">
-              <span data-i18n="hero_sum_web_action">Khám phá Web admin</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-            </button>
           </div>
 
           <!-- Card 2: Staff Bedside App -->
@@ -621,7 +604,7 @@
                 </span>
               </div>
               <h4 class="app-summary-card__title" data-i18n="hero_sum_staff_title">
-                App nhân viên
+                App Nhân viên
               </h4>
               <p class="app-summary-card__desc" data-i18n="hero_sum_staff_desc">
                 Trợ thủ tác nghiệp: Ghi nhận sinh hiệu tức thì, phát thuốc chuẩn y lệnh và bàn giao ca không giấy tờ.
@@ -641,10 +624,6 @@
                 </li>
               </ul>
             </div>
-            <button onclick="navigateToApp('staff')" class="app-summary-btn app-summary-btn--staff">
-              <span data-i18n="hero_sum_staff_action">Khám phá App nhân viên</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-            </button>
           </div>
 
           <!-- Card 3: Family Mobile App -->
@@ -660,7 +639,7 @@
                 </span>
               </div>
               <h4 class="app-summary-card__title" data-i18n="hero_sum_family_title">
-                App người thân
+                App Family
               </h4>
               <p class="app-summary-card__desc" data-i18n="hero_sum_family_desc">
                 Đồng hành cùng cha mẹ từ xa: Theo dõi sức khỏe liên tục, xem khoảnh khắc mỗi ngày và thanh toán viện phí 1 chạm.
@@ -680,10 +659,6 @@
                 </li>
               </ul>
             </div>
-            <button onclick="navigateToApp('family')" class="app-summary-btn app-summary-btn--family">
-              <span data-i18n="hero_sum_family_action">Khám phá App người thân</span>
-              <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
-            </button>
           </div>
 
         </div>
@@ -691,11 +666,11 @@
   </section>
 
     <!-- ===================== SECTION 1: HỆ SINH THÁI QUẢN LÝ VIỆN DƯỠNG LÃO TOÀN DIỆN ===================== -->
-  <section id="ecosystem" class="section-padding bg-[#FBF7F3] relative border-t border-[#E5E1D8] ecosystem-mode-all">
+  <section id="ecosystem" class="section-padding bg-[#FBF7F3] relative ecosystem-mode-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Unified Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-10" data-aos="fade-up">
+      <div class="text-center max-w-4xl mx-auto ecosystem-tabs-header" data-aos="fade-up">
         <!-- 3 App Interactive Selector Tabs -->
         <div class="app-tabs-container flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 py-1 px-1 max-w-full mx-auto">
           <button class="app-tab-btn active" onclick="switchAppTab('all', this)" id="tab-btn-all" title="Xem đồng thời cả 3 ứng dụng">
@@ -708,11 +683,11 @@
           </button>
           <button class="app-tab-btn" onclick="switchAppTab('staff', this)" id="tab-btn-staff">
             <i data-lucide="stethoscope" class="w-4 h-4 text-cyan-600"></i>
-            <span data-i18n="hero_device_staff">App nhân viên</span>
+            <span data-i18n="hero_device_staff">App Nhân viên</span>
           </button>
           <button class="app-tab-btn" onclick="switchAppTab('family', this)" id="tab-btn-family">
             <i data-lucide="smartphone" class="w-4 h-4 text-amber-500"></i>
-            <span data-i18n="hero_device_family">App người thân</span>
+            <span data-i18n="hero_device_family">App Family</span>
           </button>
         </div>
       </div>
@@ -724,16 +699,18 @@
       <div id="web-showcase">
         
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <h2 class="font-heading font-bold text-3xl sm:text-4xl text-slate-900">
-          <span data-i18n="panel_web_title">BeeCare Web trên máy tính</span>
+      <div class="text-center max-w-3xl mx-auto mb-6">
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900">
+          <span data-i18n="panel_web_title">Web admin</span>
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_web_desc">
-          Bấm các nút dưới đây để thay đổi trực tiếp màn hình thực tế bên trong khung laptop 3D.
+          Trung tâm điều hành số hóa toàn diện: Quản lý bệnh án EMR, sơ đồ phòng giường, ca trực và báo cáo số liệu.
         </p>
+      </div>
 
+      <div class="text-center max-w-5xl mx-auto mb-8 sm:mb-9">
         <!-- Interactive Screen Switcher Tabs -->
-        <div class="screen-tabs-container flex flex-wrap justify-center gap-2.5 mt-6">
+        <div class="screen-tabs-container flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
           <button class="screen-tab-btn active" onclick="switchLaptopScreen('assets/screenshots/web-dashboard.png', TRANSLATIONS[currentLang]['panel_web_tab1'] || 'Bảng điều khiển tổng quan', this)">
             <i data-lucide="layout-dashboard" class="w-4 h-4"></i> <span data-i18n="panel_web_tab1">Bảng điều khiển tổng quan</span>
           </button>
@@ -745,9 +722,6 @@
           </button>
           <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-shifts.png', TRANSLATIONS[currentLang]['panel_web_tab4'] || 'Quản lý ca trực', this)">
             <i data-lucide="clock" class="w-4 h-4"></i> <span data-i18n="panel_web_tab4">Quản lý ca trực</span>
-          </button>
-          <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-report.png', TRANSLATIONS[currentLang]['panel_web_tab5'] || 'Báo cáo tổng quan viện', this)">
-            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> <span data-i18n="panel_web_tab5">Báo cáo tổng quan viện</span>
           </button>
           <button class="screen-tab-btn" onclick="switchLaptopScreen('assets/screenshots/web-admission.png', TRANSLATIONS[currentLang]['panel_web_tab6'] || 'Tiếp nhận người cao tuổi', this)">
             <i data-lucide="user-plus" class="w-4 h-4"></i> <span data-i18n="panel_web_tab6">Tiếp nhận người cao tuổi</span>
@@ -785,7 +759,7 @@
               </div>
 
               <!-- Screen viewport -->
-              <div class="laptop-screen-viewport relative cursor-pointer group" onclick="openLightbox(document.getElementById('laptop-main-screen').src, document.getElementById('laptop-screen-title').textContent)">
+              <div class="laptop-screen-viewport relative cursor-pointer group" onclick="openLaptopLightbox()">
                 <img id="laptop-main-screen" src="assets/screenshots/web-dashboard.png" alt="Màn hình Web quản lý"
                   class="laptop-screen-content w-full h-full object-cover object-top transition-all duration-300">
                 <div class="laptop-glare pointer-events-none"></div>
@@ -813,48 +787,6 @@
           <div class="laptop-shadow"></div>
           <div class="laptop-ambient-glow"></div>
         </div>
-
-        <!-- Current screen title caption -->
-        <div class="text-center relative z-10 mt-6 sm:mt-8 mb-4">
-          <span id="laptop-screen-title" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-slate-700 text-xs font-bold border border-slate-200 shadow-sm" data-i18n="panel_web_tab1">
-            Bảng điều khiển tổng quan viện
-          </span>
-        </div>
-      </div>
-
-      <!-- Quick 4 Features of Web Management -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 sm:mt-12">
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
-            <i data-lucide="file-text" class="w-5 h-5"></i>
-          </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat1_title">Bệnh án điện tử EMR</h4>
-          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat1_desc">Lưu trữ tiền sử bệnh, dị ứng, phác đồ điều trị và sinh hiệu trọn đời.</p>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
-            <i data-lucide="building-2" class="w-5 h-5"></i>
-          </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat2_title">Sơ đồ phòng và giường</h4>
-          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat2_desc">Quản lý trực quan theo tòa nhà, tầng, phòng và tình trạng từng giường.</p>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
-            <i data-lucide="pill" class="w-5 h-5"></i>
-          </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat3_title">Quản lý cấp phát thuốc</h4>
-          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat3_desc">Kê đơn thông minh, chia cữ uống sáng - trưa - chiều - tối, chống sót liều.</p>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold mb-3">
-            <i data-lucide="clock" class="w-5 h-5"></i>
-          </div>
-          <h4 class="font-heading font-bold text-slate-900 text-base mb-1" data-i18n="panel_web_feat4_title">Phân ca và bàn giao ca</h4>
-          <p class="text-slate-600 text-xs" data-i18n="panel_web_feat4_desc">Xếp lịch kíp trực tự động, tổng hợp biên bản bàn giao ca điện tử 3 phút.</p>
-        </div>
       </div>
 
     </div>
@@ -863,12 +795,12 @@
     </div>
 
 <!-- PANEL 2: STAFF APP -->
-    <div id="panel-app-staff" class="app-panel pt-6">
+    <div id="panel-app-staff" class="app-panel">
       <div id="staff-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-10">
-            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
-              <span data-i18n="panel_staff_title">Trợ thủ điều dưỡng số hóa – Thêm thời gian chăm sóc người cao tuổi</span>
+          <div class="text-center max-w-3xl mx-auto mb-6">
+            <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900">
+              <span data-i18n="panel_staff_title">App Nhân viên</span>
             </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_staff_desc">
               Cắt giảm 70% thủ tục giấy tờ, loại bỏ 100% rủi ro nhầm thuốc và tự động đồng bộ bệnh án EMR theo thời gian thực ngay tại giường bệnh.
@@ -1054,12 +986,6 @@
               <button class="carousel-nav-btn next-btn" onclick="staffCarousel.next()" aria-label="Màn hình tiếp theo" data-i18n-label="common_aria_next">
                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
               </button>
-            </div>
-
-            <!-- Synchronized Feature Spotlight Card -->
-            <div class="carousel-feature-card" id="staff-feature-card">
-              <h3 class="carousel-card-title" data-i18n="panel_staff_f1_title">1. Danh sách người cao tuổi</h3>
-              <p class="carousel-card-desc" data-i18n="panel_staff_f1_desc">Hiển thị trực quan theo số phòng, cấp độ chăm sóc và cảnh báo sức khỏe cần lưu ý.</p>
             </div>
 
             <!-- Bottom Progress Dots & Autoplay Controller -->
@@ -1255,12 +1181,12 @@
     </div>
 
     <!-- PANEL 3: FAMILY APP -->
-    <div id="panel-app-family" class="app-panel pt-6">
+    <div id="panel-app-family" class="app-panel">
       <div id="family-showcase">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-10">
-            <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900">
-              <span data-i18n="panel_family_title">Kết nối gia đình & Đồng hành chăm sóc 24/7</span>
+          <div class="text-center max-w-3xl mx-auto mb-6">
+            <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900">
+              <span data-i18n="panel_family_title">App Family</span>
             </h2>
             <p class="text-slate-600 text-sm sm:text-base mt-2" data-i18n="panel_family_desc">
               Cầu nối minh bạch và an tâm tuyệt đối: theo dõi sinh hiệu, hình ảnh sinh hoạt, hóa đơn viện phí và trò chuyện cùng trợ lý AI mọi lúc mọi nơi trên iOS, Android và máy tính bảng.
@@ -1446,12 +1372,6 @@
               <button class="carousel-nav-btn next-btn family-nav-btn" onclick="familyCarousel.next()" aria-label="Màn hình tiếp theo" data-i18n-label="common_aria_next">
                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
               </button>
-            </div>
-
-            <!-- Synchronized Feature Spotlight Card -->
-            <div class="carousel-feature-card" id="family-feature-card">
-              <h3 class="carousel-card-title" data-i18n="panel_family_f1_title">1. Hỏi đáp tình hình cha mẹ 24/7</h3>
-              <p class="carousel-card-desc" data-i18n="panel_family_f1_desc">AI tự động đọc sinh hiệu và thực đơn để giải đáp ngay cho con cái mọi lúc mọi nơi.</p>
             </div>
 
             <!-- Bottom Progress Dots & Autoplay Controller -->
@@ -1873,7 +1793,6 @@
       <div class="footer-bottom">
         <div class="footer-copyright">
           © 2026 <a href="index.html">BeeCare</a> – <span data-i18n="footer_dev_by_prefix">Phát triển bởi</span> <a href="company.html"><span data-i18n="footer_dev_by_suffix">CÔNG TY TNHH HANIKI</span></a>.
-          <span data-i18n="footer_coop">Đồng hành cùng Viện dưỡng lão Diên Hồng.</span>
         </div>
         <div class="footer-bottom-links">
           <a href="terms.html"><span data-i18n="footer_terms">Điều khoản sử dụng</span></a>

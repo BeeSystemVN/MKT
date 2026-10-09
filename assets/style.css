@@ -4254,10 +4254,11 @@ footer {
 /* Device screen tab switch buttons */
 .screen-tab-btn {
   padding: 8px 16px;
-  border-radius: 10px;
+  min-height: 44px;
+  border-radius: 9999px;
   font-size: 13px;
   font-weight: 600;
-  border: 1px solid #cbd5e1;
+  border: 1.5px solid #cbd5e1;
   background: #ffffff;
   color: #475569;
   transition: all 0.25s ease;
@@ -4265,14 +4266,23 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-.screen-tab-btn:hover,
+.screen-tab-btn:hover {
+  color: #265397;
+  border-color: #265397;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
 .screen-tab-btn.active {
   background: var(--primary, #265397);
   color: #ffffff;
   border-color: var(--primary, #265397);
   box-shadow: 0 4px 14px rgba(38, 83, 151, 0.25);
+  transform: translateY(-1px);
 }
 
 /* Device Label Pills */
@@ -5052,6 +5062,17 @@ footer {
   stroke: #204780 !important;
 }
 
+/* Master Ecosystem Tabs Header */
+.ecosystem-tabs-header {
+  margin-bottom: 22px !important;
+}
+
+@media (max-width: 640px) {
+  .ecosystem-tabs-header {
+    margin-bottom: 16px !important;
+  }
+}
+
 .app-panel {
   display: block;
 }
@@ -5062,9 +5083,9 @@ footer {
 
 /* Ecosystem All View Mode */
 .ecosystem-mode-all .app-panel:not(:first-child) {
-  border-top: 1px solid #E5E1D8;
-  padding-top: 4rem;
-  margin-top: 4rem;
+  padding-top: 3.5rem;
+  margin-top: 3.5rem;
+  border-top: 1px dashed rgba(203, 213, 225, 0.6);
 }
 
 .ecosystem-mode-all .staff-next-btn {
@@ -5366,7 +5387,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 11px;
-  margin-bottom: 26px;
+  margin-bottom: 0;
   list-style: none;
   padding: 0;
 }
@@ -6515,7 +6536,7 @@ h2.font-heading,
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 24px;
 }
 
 .carousel-dots-container {
@@ -9226,5 +9247,9 @@ h2.font-heading,
   background: #E0F2FE;
   color: #0369A1;
   border: 1px solid #BAE6FD;
+}
+
+.gap-3\.5 {
+  gap: 14px !important;
 }
 

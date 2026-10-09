@@ -422,7 +422,17 @@ function filterGallery(category) {
 }
 
 // ---- INTERACTIVE 3D SCREEN SWITCHERS ----
+let currentLaptopTitle = 'Bảng điều khiển tổng quan viện dưỡng lão - Web admin';
+
+function openLaptopLightbox() {
+  const laptopImg = document.getElementById('laptop-main-screen');
+  if (laptopImg) {
+    openLightbox(laptopImg.src, currentLaptopTitle || 'Bảng điều khiển tổng quan viện dưỡng lão - Web admin');
+  }
+}
+
 function switchLaptopScreen(imgSrc, title, triggerBtn) {
+  currentLaptopTitle = title;
   const laptopImg = document.getElementById('laptop-main-screen');
   const laptopCaption = document.getElementById('laptop-screen-title');
   const laptopUrl = document.getElementById('laptop-screen-url');

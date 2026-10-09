@@ -126,17 +126,23 @@
   <!-- ===================== PRELOADER ===================== -->
   <div id="preloader">
     <div class="flex flex-col items-center gap-5">
-      <div class="relative flex items-center justify-center">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-          style="animation: heartbeat 1.3s ease-in-out infinite;">
-          <path
-            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-            fill="#265397" />
+      <div class="preloader-heart-wrap">
+        <svg class="preloader-heart-icon" width="68" height="68" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="heart-outline-path" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          <path class="heart-pulse-path" d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
         </svg>
-        <span class="absolute w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+        <span class="absolute w-2.5 h-2.5 bg-amber-400 rounded-full animate-ping pointer-events-none" style="top: 35%; left: 58%;"></span>
       </div>
-      <div class="text-white font-heading text-2xl font-bold tracking-wide flex items-center gap-2">
-        <span class="text-sky-400">Bee</span><span class="text-amber-400">Care</span>
+
+      <svg class="ecg-line" viewBox="0 0 260 60">
+        <path class="ecg-path"
+          d="M0,30 L40,30 L50,30 L55,10 L60,50 L65,5 L72,55 L78,30 L120,30 L130,30 L135,10 L140,50 L145,5 L152,55 L158,30 L200,30 L210,30 L215,10 L220,50 L225,5 L232,55 L238,30 L260,30" />
+      </svg>
+
+      <div class="preloader-brand-wrap">
+        <div class="preloader-brand-logo">
+          <span class="preloader-bee">Bee</span><span class="preloader-care">Care</span>
+        </div>
       </div>
     </div>
   </div>
@@ -284,14 +290,36 @@
   <footer class="site-footer">
     <div class="site-footer-inner">
       <div class="footer-grid">
-        <div class="footer-brand-col">
-          <a href="index.html" class="footer-logo-wrap">
-            <span class="footer-logo-brand"><span class="footer-logo-bee">Bee</span><span class="footer-logo-care">Care</span><span class="footer-logo-dot"></span></span>
+        <!-- Cột 1: Brand + Thông tin liên hệ -->
+        <div>
+          <a href="index.html" class="footer-brand-logo">
+            <div class="footer-brand-icon">
+              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+            </div>
+            <div>
+              <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
+            </div>
           </a>
-          <p class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</p>
-          <p class="footer-desc" data-i18n="footer_desc">
-            Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.
-          </p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <div class="footer-company-badge">
+            <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
+            <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
+          </div>
+          <div class="footer-contact-row">
+            <a href="tel:0988123531" class="footer-contact-item">
+              <i data-lucide="phone" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              Hotline: <strong style="color:#38bdf8">0988 123 531</strong>
+            </a>
+            <a href="mailto:trang.haniki@gmail.com" class="footer-contact-item">
+              <i data-lucide="mail" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              trang.haniki@gmail.com
+            </a>
+            <span class="footer-contact-item">
+              <i data-lucide="map-pin" style="width:14px;height:14px;color:#0284c7;flex-shrink:0"></i>
+              <span data-i18n="footer_address">Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội</span>
+            </span>
+          </div>
         </div>
 
         <div>
