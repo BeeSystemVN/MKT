@@ -59,6 +59,14 @@ if (scrollBtn) {
   scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
+// ---- SCROLL TO HERO VIDEO ----
+function scrollToHeroVideo() {
+  const videoHeading = document.querySelector('.hero-video-title');
+  if (videoHeading) {
+    videoHeading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
 // ---- ECOSYSTEM APP TABS SWITCHER ----
 function switchAppTab(tabKey, btnEl) {
   // Update Tab buttons
@@ -145,7 +153,7 @@ function handleAppHash() {
   } else if (hash === '#family-showcase') {
     switchAppTab('family', document.getElementById('tab-btn-family'));
   } else if (hash === '#ecosystem') {
-    switchAppTab('all', document.getElementById('tab-btn-all'));
+    switchAppTab('web', document.getElementById('tab-btn-web'));
   }
 }
 window.addEventListener('DOMContentLoaded', handleAppHash);
@@ -271,7 +279,7 @@ function sendAIMessage(presetText) {
       Chỉ số của cụ rất ổn định so với phác đồ tuần qua ạ!`;
     } else if (lower.includes('ăn') || lower.includes('cơm') || lower.includes('thực đơn') || lower.includes('cháo')) {
       reply = `Dạ trưa nay lúc <strong>11:30</strong>, cụ đã dùng xong bữa trưa dinh dưỡng gồm: <strong>Cháo sườn hầm hạt sen + canh rau ngót thịt bằm</strong>. 
-      <br>Điều dưỡng ghi nhận cụ <strong>ăn hết 100% khẩu phần</strong>, uống đủ 200ml nước ấm và tinh thần rất vui vẻ, đã được chụp ảnh lưu lại trong mục Nhật ký ạ!`;
+      <br>Điều dưỡng ghi nhận cụ <strong>ăn hết trọn vẹn khẩu phần</strong>, uống đủ 200ml nước ấm và tinh thần rất vui vẻ, đã được chụp ảnh lưu lại trong mục Nhật ký ạ!`;
     } else if (lower.includes('thuốc') || lower.includes('uống thuốc')) {
       reply = `Dạ theo đơn thuốc của Bác sĩ Trưởng, cụ Mai đã được cấp phát và uống thuốc huyết áp liều sáng lúc <strong>08:30</strong> (đã được kiểm tra mã vạch đối soát). Liều buổi tối dự kiến lúc <strong>19:00</strong> sau bữa ăn ạ!`;
     } else {
@@ -422,12 +430,12 @@ function filterGallery(category) {
 }
 
 // ---- INTERACTIVE 3D SCREEN SWITCHERS ----
-let currentLaptopTitle = 'Bảng điều khiển tổng quan viện dưỡng lão - Web admin';
+let currentLaptopTitle = 'Bảng điều khiển tổng quan viện dưỡng lão - Web quản lý';
 
 function openLaptopLightbox() {
   const laptopImg = document.getElementById('laptop-main-screen');
   if (laptopImg) {
-    openLightbox(laptopImg.src, currentLaptopTitle || 'Bảng điều khiển tổng quan viện dưỡng lão - Web admin');
+    openLightbox(laptopImg.src, currentLaptopTitle || 'Bảng điều khiển tổng quan viện dưỡng lão - Web quản lý');
   }
 }
 
@@ -439,12 +447,12 @@ function switchLaptopScreen(imgSrc, title, triggerBtn) {
   if (!laptopImg) return;
 
   const urlMap = {
-    'web-dashboard.png': 'beecare.vn/admin/dashboard',
-    'web-rooms.png': 'beecare.vn/admin/rooms-beds',
-    'web-timeline.png': 'beecare.vn/admin/emr-timeline',
-    'web-shifts.png': 'beecare.vn/admin/shifts-duty',
-    'web-report.png': 'beecare.vn/admin/analytics-report',
-    'web-admission.png': 'beecare.vn/admin/patient-admission'
+    'web-dashboard.png': 'haniki.vn',
+    'web-rooms.png': 'haniki.vn/admin/rooms-beds',
+    'web-timeline.png': 'haniki.vn/admin/emr-timeline',
+    'web-shifts.png': 'haniki.vn/admin/shifts-duty',
+    'web-report.png': 'haniki.vn/admin/analytics-report',
+    'web-admission.png': 'haniki.vn/admin/patient-admission'
   };
 
   laptopImg.style.opacity = '0';
@@ -472,6 +480,20 @@ function switchLaptopScreen(imgSrc, title, triggerBtn) {
       parent.querySelectorAll('.screen-tab-btn').forEach(btn => btn.classList.remove('active'));
     }
     triggerBtn.classList.add('active');
+
+    // Auto-center active tab in horizontal scroll on mobile/tablet
+    try {
+      if (parent && parent.scrollWidth > parent.clientWidth) {
+        const navRect = parent.getBoundingClientRect();
+        const btnRect = triggerBtn.getBoundingClientRect();
+        const offsetDiff = btnRect.left - navRect.left + parent.scrollLeft;
+        const targetScrollLeft = offsetDiff - (parent.clientWidth / 2) + (triggerBtn.offsetWidth / 2);
+        parent.scrollTo({
+          left: Math.max(0, targetScrollLeft),
+          behavior: 'smooth'
+        });
+      }
+    } catch (err) {}
   }
 }
 
@@ -515,14 +537,14 @@ const SIM_SCENARIOS = [
       role: "Điều dưỡng viên tại giường"
     },
     web: {
-      img: "assets/screenshots/web-dashboard.png",
+      img: "assets/screenshots/web-dashboard.png?v=20261020_v3",
       badge: "2. Cổng Web: Bác sĩ xử trí",
       desc: "Chuông báo đỏ nhấp nháy trên bảng điều khiển toàn viện. Bác sĩ trực mở hồ sơ EMR và duyệt chỉ định uống 1 liều Amlodipine 5mg.",
       role: "Bác sĩ trực viện & Ban giám đốc"
     },
     family: {
       img: "assets/screenshots/family-vitals-bp.png",
-      badge: "3. App Family: Thông báo tức thì",
+      badge: "3. App người thân: Thông báo tức thì",
       desc: "Điện thoại con cái nhận push: 'Huyết áp mẹ lúc 11:32 tăng nhẹ (160/95), bác sĩ trực đã xử trí ổn định, mẹ đang nghỉ ngơi'.",
       role: "Con cái người cao tuổi"
     },
@@ -552,7 +574,7 @@ const SIM_SCENARIOS = [
     },
     family: {
       img: "assets/screenshots/family-home-2.png",
-      badge: "3. App Family: Xác nhận đã uống",
+      badge: "3. App người thân: Xác nhận đã uống",
       desc: "Trang chủ ứng dụng người thân hiện dấu tích xanh: 'Mẹ đã uống xong thuốc cữ trưa lúc 11:32 an toàn'.",
       role: "Gia đình an tâm theo dõi"
     },
@@ -560,7 +582,7 @@ const SIM_SCENARIOS = [
       { time: "08:00:10.000", badge: "WEB_MANAGEMENT", color: "text-teal-400 bg-teal-950/80 border border-teal-700/60", text: "Bác sĩ duyệt đơn thuốc tuần cho 45 cụ tầng 2" },
       { time: "11:30:00.050", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "App điều dưỡng rung chuông báo cữ thuốc trưa P.204" },
       { time: "11:32:15.340", badge: "STAFF_APP", color: "text-cyan-400 bg-cyan-950/80 border border-cyan-700/60", text: "Quét mã QR giường cụ Hướng -> Đối chiếu ảnh viên thuốc -> Bấm Đã uống" },
-      { time: "11:32:16.110", badge: "SYNC_EVENT", color: "text-emerald-400 bg-emerald-950/80 border border-emerald-700/60", text: "Đồng bộ 2 chiều: Dòng thời gian EMR trên Web & App Family đổi sang màu Xanh" }
+      { time: "11:32:16.110", badge: "SYNC_EVENT", color: "text-emerald-400 bg-emerald-950/80 border border-emerald-700/60", text: "Đồng bộ 2 chiều: Dòng thời gian EMR trên Web quản lý & App người thân đổi sang màu Xanh" }
     ],
     latency: "0.76 giây",
     protocol: "REST API + WebSocket"
@@ -582,7 +604,7 @@ const SIM_SCENARIOS = [
     },
     family: {
       img: "assets/screenshots/family-ai.png",
-      badge: "2. App Family: Xem ảnh & Trợ lý AI",
+      badge: "2. App người thân: Xem ảnh & Trợ lý AI",
       desc: "Gia đình ngắm nhìn ảnh mẹ ăn ngon miệng. Người con hỏi Trợ lý AI: 'Trưa nay mẹ ăn có đủ đạm không?', AI phân tích chi tiết chỉ số.",
       role: "Con cái người cao tuổi"
     },
@@ -612,7 +634,7 @@ const SIM_SCENARIOS = [
     },
     family: {
       img: "assets/screenshots/family-invoice.png",
-      badge: "2. App Family: Thanh toán VietQR",
+      badge: "2. App người thân: Thanh toán VietQR",
       desc: "Gia đình nhận hóa đơn viện phí trên điện thoại với mã VietQR nhúng sẵn số tiền chính xác và thanh toán 1 chạm từ bất kỳ ngân hàng nào.",
       role: "Người nhà thanh toán viện phí"
     },
@@ -771,11 +793,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ==================== HERO 3D DEVICES ASYNC CROSSFADE ROTATION ====================
 const HERO_SLIDES_LAPTOP = [
-  { src: "assets/screenshots/web-dashboard.png", caption: "Bảng điều khiển tổng quan viện dưỡng lão - Web admin" },
-  { src: "assets/screenshots/web-timeline.png", caption: "Dòng thời gian y tế & Bệnh án điện tử EMR - Web admin" },
-  { src: "assets/screenshots/web-residents.png", caption: "Danh sách người cao tuổi & phòng ở - Web admin" },
-  { src: "assets/screenshots/web-activities.png", caption: "Quản lý dinh dưỡng & hoạt động viện - Web admin" },
-  { src: "assets/screenshots/web-report.png", caption: "Báo cáo viện phí & tài chính minh bạch - Web admin" }
+  { src: "assets/screenshots/web-dashboard.png?v=20261020_v3", caption: "Bảng điều khiển tổng quan viện dưỡng lão - Web quản lý" },
+  { src: "assets/screenshots/web-timeline.png", caption: "Dòng thời gian y tế & Bệnh án điện tử EMR - Web quản lý" },
+  { src: "assets/screenshots/web-residents.png", caption: "Danh sách người cao tuổi & phòng ở - Web quản lý" },
+  { src: "assets/screenshots/web-activities.png", caption: "Quản lý dinh dưỡng & hoạt động viện - Web quản lý" },
+  { src: "assets/screenshots/web-report.png", caption: "Báo cáo viện phí & tài chính minh bạch - Web quản lý" }
 ];
 
 const HERO_SLIDES_FAMILY = [
@@ -1576,6 +1598,20 @@ class Phone3DCarousel {
     pills.forEach((p, idx) => {
       if (idx === this.activeIndex) {
         p.classList.add('active');
+        // Auto-center active pill when horizontal scroll is active on mobile/tablet
+        try {
+          const navContainer = p.closest('.carousel-pills-nav');
+          if (navContainer && navContainer.scrollWidth > navContainer.clientWidth) {
+            const navRect = navContainer.getBoundingClientRect();
+            const pillRect = p.getBoundingClientRect();
+            const offsetDiff = pillRect.left - navRect.left + navContainer.scrollLeft;
+            const targetScrollLeft = offsetDiff - (navContainer.clientWidth / 2) + (p.offsetWidth / 2);
+            navContainer.scrollTo({
+              left: Math.max(0, targetScrollLeft),
+              behavior: 'smooth'
+            });
+          }
+        } catch (err) {}
       } else {
         p.classList.remove('active');
       }
@@ -1801,6 +1837,34 @@ function initPhoneCarousels() {
     dotsContainerId: 'family-carousel-dots'
   });
   window.familyCarousel = familyCarousel;
+
+  initPillsScrollDrag();
+}
+
+function initPillsScrollDrag() {
+  document.querySelectorAll('.carousel-pills-nav, .screen-tabs-container').forEach(nav => {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    nav.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - nav.offsetLeft;
+      scrollLeft = nav.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    nav.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - nav.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      nav.scrollLeft = scrollLeft - walk;
+    });
+  });
 }
 
 if (document.readyState === 'loading') {
@@ -1890,9 +1954,9 @@ function setLanguage(lang) {
 
   // Update page title
   const titles = {
-    vi: 'BeeCare – Quản lý viện dưỡng lão thông minh',
-    en: 'BeeCare – Smart Nursing Home Management',
-    ja: 'BeeCare – 介護施設管理システム'
+    vi: 'BeeCare by HANIKI – Quản lý viện dưỡng lão thông minh',
+    en: 'BeeCare by HANIKI – Smart Nursing Home Management',
+    ja: 'BeeCare by HANIKI – 介護施設管理システム'
   };
   const pathname = window.location.pathname.toLowerCase();
   let pageTitle = null;

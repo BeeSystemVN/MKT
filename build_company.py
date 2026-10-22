@@ -972,7 +972,7 @@ main_content = """
         <!-- Google Maps -->
         <div class="map-embed-wrap">
           <iframe
-            src="https://maps.google.com/maps?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=21.029063,105.769688&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style="border:0;"

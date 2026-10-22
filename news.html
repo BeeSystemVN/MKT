@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tin tức & sự kiện | BeeCare</title>
+  <title>Tin tức & sự kiện | BeeCare by HANIKI</title>
   <meta name="description"
     content="BeeCare – Phần mềm quản lý viện dưỡng lão thông minh. Cổng web quản lý, app điều dưỡng tại giường và app người thân tích hợp trợ lý AI." />
 
@@ -24,8 +24,8 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261005_v9" />
-  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+  <link rel="stylesheet" href="assets/style.css?v=20261022_v5" />
+  <link rel="icon" href="assets/app_icon_512x512.png?v=20261020_v2" type="image/png">
 
 <style>
 /* ===================== HERO SECTION (WARM IVORY MATCHING COMPANY PAGE) ===================== */
@@ -124,19 +124,30 @@
     position: relative;
 }
 
+.news-tab-filter-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 20;
+}
+
 .news-tab-filter-body {
     display: inline-flex;
+    align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
     background: #ffffff;
     padding: 6px;
     border-radius: 100px;
     border: 1px solid #E2E8F0;
     box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s ease;
 }
 .news-tab-btn-body {
-    padding: 8px 22px;
+    padding: 10px 22px;
     border-radius: 100px;
     font-size: 13.5px;
     font-weight: 600;
@@ -144,6 +155,15 @@
     background: transparent;
     border: 1px solid transparent;
     transition: all 0.25s ease;
+    white-space: nowrap;
+    cursor: pointer;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
 }
 .news-tab-btn-body:hover {
     color: #265397;
@@ -154,6 +174,46 @@
     color: #ffffff;
     border-color: #0284c7;
     box-shadow: 0 4px 14px rgba(38, 83, 151, 0.3);
+}
+
+/* Mobile & Small Screens (< 640px): Tự động chuyển thành Thẻ Chip độc lập chống tràn viền và chống che chữ 100% */
+@media (max-width: 639px) {
+    .news-tab-filter-wrapper {
+        padding: 0 12px;
+        margin-bottom: 20px;
+        overflow: visible;
+    }
+    .news-tab-filter-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+    }
+    .news-tab-btn-body {
+        background: #ffffff;
+        border: 1px solid #E2E8F0;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        padding: 9px 18px;
+        font-size: 13px;
+        min-height: 42px;
+        flex-shrink: 0;
+    }
+    .news-tab-btn-body:hover {
+        background: #F8FAFC;
+        border-color: #CBD5E1;
+    }
+    .news-tab-btn-body.active {
+        background: linear-gradient(135deg, #0284c7 0%, #265397 100%);
+        color: #ffffff;
+        border-color: transparent;
+        box-shadow: 0 4px 12px rgba(38, 83, 151, 0.28);
+    }
 }
 
 .bento-grid {
@@ -479,22 +539,25 @@
         <span data-i18n="news_hero_badge">Tin tức & sự kiện</span>
       </h1>
 
-      <!-- Search Box (Refined Light Design) -->
+      <!-- Search Box (Tạm thời ẩn theo yêu cầu) -->
+      <!--
       <div class="news-search-box mt-2">
         <input type="text" placeholder="Tìm kiếm bài viết theo từ khóa..." class="news-search-input" data-i18n-placeholder="news_search_placeholder" />
         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
       </div>
+      -->
 
     </div>
   </section>
 
   <!-- Bento Grid Main Content -->
   <main class="news-main-bg pb-24 pt-2 md:pt-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-center items-center relative z-20">
-       <div class="news-tab-filter-body">
-          <button class="news-tab-btn-body active" data-filter="all" data-i18n="news_cat_all">Tất cả bài viết</button>
-          <button class="news-tab-btn-body" data-filter="Thiện Nguyện & Cộng Đồng" data-i18n="news_cat_charity">Thiện nguyện & Xã hội</button>
-          <button class="news-tab-btn-body" data-filter="Văn Hóa Doanh Nghiệp" data-i18n="news_cat_culture">Văn hóa doanh nghiệp</button>
+    <!-- Tab Filter Bar -->
+    <div class="news-tab-filter-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+       <div class="news-tab-filter-body" role="tablist" aria-label="Bộ lọc danh mục tin tức">
+          <button class="news-tab-btn-body active" role="tab" aria-selected="true" data-filter="all" data-i18n="news_cat_all">Tất cả bài viết</button>
+          <button class="news-tab-btn-body" role="tab" aria-selected="false" data-filter="Thiện Nguyện & Cộng Đồng" data-i18n="news_cat_charity">Thiện nguyện và cộng đồng</button>
+          <button class="news-tab-btn-body" role="tab" aria-selected="false" data-filter="Văn Hóa Doanh Nghiệp" data-i18n="news_cat_culture">Văn hóa doanh nghiệp</button>
        </div>
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -516,14 +579,14 @@
       </div>
   </div>
 <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
-  <div class="mobile-cta flex md:hidden items-center justify-between gap-3">
-    <a href="tel:0988123531" class="flex-1 py-3 px-4 rounded-xl bg-slate-100 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 border border-slate-200">
-      <i data-lucide="phone-call" class="w-4 h-4 text-teal-600"></i>
-      <span data-i18n="idx_mobile_call">Gọi 0988 123 531</span>
+  <div class="mobile-cta flex md:hidden items-center justify-between gap-2">
+    <a href="tel:0988123531" class="mobile-cta-btn-call" title="Gọi tư vấn: 0988 123 531">
+      <i data-lucide="phone-call" class="w-4 h-4 text-sky-600 shrink-0"></i>
+      <span data-i18n="nav_call_counsel">Gọi tư vấn</span>
     </a>
-    <a href="#demo" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md">
-      <i data-lucide="calendar-check" class="w-4 h-4"></i>
-      <span data-i18n="nav_demo">Đăng ký demo</span>
+    <a href="contact.html" class="mobile-cta-btn-trial" title="Đăng ký dùng thử BeeCare miễn phí">
+      <i data-lucide="calendar-check" class="w-4 h-4 shrink-0"></i>
+      <span data-i18n="nav_demo_cta">Đăng ký demo</span>
     </a>
   </div>
 
@@ -536,14 +599,14 @@
         <div>
           <a href="index.html" class="footer-brand-logo">
             <div class="footer-brand-icon">
-              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+              <img src="assets/logo_bee_blue.png?v=20261020" alt="BeeCare logo">
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
@@ -572,7 +635,9 @@
                 <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
               </svg>
             </a>
-
+            <a href="https://www.tiktok.com/@beesystemvietnam?lang=en" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="TikTok" aria-label="TikTok BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.46 6.27 6.27 0 0 0 1.88-4.46V8.34a8.16 8.16 0 0 0 4.89 1.62V6.69z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -582,7 +647,7 @@
           <div style="display:flex;flex-direction:column;gap:8px">
             <div class="footer-eco-chip footer-eco-chip--teal">
               <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
-              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+              <span data-i18n="footer_eco_web">Web quản lý</span>
             </div>
             <div class="footer-eco-chip footer-eco-chip--cyan">
               <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
@@ -590,7 +655,7 @@
             </div>
             <div class="footer-eco-chip footer-eco-chip--amber">
               <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
-              <span data-i18n="footer_eco_family">App Người thân Family</span>
+              <span data-i18n="footer_eco_family">App người thân</span>
             </div>
           </div>
           <div style="margin-top:20px">
@@ -687,9 +752,9 @@
   </button>
 
   <!-- Scripts -->
-  <script src="assets/i18n/common.js?v=20261003_v2"></script>
-  <script src="assets/i18n/news.js?v=20261003_v2"></script>
-  <script src="assets/script.js?v=20261003_v2"></script>
+  <script src="assets/i18n/common.js?v=20261022_v5"></script>
+  <script src="assets/i18n/news.js?v=20261022_v5"></script>
+  <script src="assets/script.js?v=20261022_v5"></script>
 
 <!-- Premium Modal Script -->
 <script>
@@ -790,8 +855,12 @@
         
         btns.forEach(btn => {
             btn.addEventListener('click', function() {
-                btns.forEach(b => b.classList.remove('active'));
+                btns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-selected', 'false');
+                });
                 this.classList.add('active');
+                this.setAttribute('aria-selected', 'true');
                 
                 currentFilter = this.getAttribute('data-filter');
                 const currentLang = localStorage.getItem('beecare_lang') || 'vi';

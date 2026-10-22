@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Câu hỏi thường gặp về giải pháp BeeCare | FAQ</title>
+  <title>Câu hỏi thường gặp | BeeCare by HANIKI</title>
   <meta name="description"
     content="Giải đáp tất cả các thắc mắc về triển khai, thời gian đào tạo, thiết bị tương thích, bảo mật EMR và chi phí phần mềm quản lý viện dưỡng lão BeeCare." />
 
@@ -24,8 +24,8 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261003_v9" />
-  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+  <link rel="stylesheet" href="assets/style.css?v=20261022_v5" />
+  <link rel="icon" href="assets/app_icon_512x512.png?v=20261020_v2" type="image/png">
 
   <style>
     .faq-hero {
@@ -119,7 +119,7 @@
       line-height: 1.7;
     }
     .faq-card-item.open .faq-body-content {
-      max-height: 500px;
+      max-height: 800px;
       padding: 0 24px 22px;
       transition: max-height 0.4s ease-in-out, padding 0.3s ease;
     }
@@ -174,6 +174,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-[80px] sm:h-[86px]">
         
+        <!-- CỤM TRÁI: Logo HNK -->
         <div class="flex items-center gap-3 shrink-0">
           <a href="index.html" class="nav-brand-wrap" aria-label="HNK - HANIKI">
             <img src="assets/logo-hnk.png" alt="Logo HNK" class="nav-brand-logo-img" />
@@ -268,7 +269,7 @@
           <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
         </button>
         <div class="faq-body-content">
-          Toàn bộ quy trình chỉ mất từ 3 đến 5 ngày làm việc. Hệ thống BeeCare được thiết kế theo tư duy chạm trực quan chuẩn Kaigo, thân thiện tuyệt đối với nhân sự điều dưỡng ở mọi độ tuổi, chỉ cần 1 buổi hướng dẫn là có thể thao tác thành thạo tại giường bệnh.
+          Toàn bộ quy trình chỉ mất từ 3–5 ngày làm việc. Hệ thống BeeCare được thiết kế theo tư duy chạm trực quan chuẩn Kaigo, thân thiện với nhân sự điều dưỡng ở mọi độ tuổi, giúp nhân sự sử dụng thành thạo tại giường bệnh chỉ sau 3–5 ngày làm việc.
         </div>
       </div>
 
@@ -294,11 +295,49 @@
           <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
         </button>
         <div class="faq-body-content">
-          BeeCare áp dụng kiến trúc Cloud bảo mật nhiều lớp chuẩn y tế, mã hóa dữ liệu đầu cuối (End-to-End Encryption), sao lưu tự động hàng ngày và phân quyền truy cập chặt chẽ giữa các vai trò (Ban giám đốc, Bác sĩ, Điều dưỡng, Gia đình). Cơ sở hoàn toàn sở hữu và kiểm soát dữ liệu của mình.
+          BeeCare áp dụng kiến trúc Cloud bảo mật nhiều lớp chuẩn y tế: mã hóa dữ liệu khi truyền tải và khi lưu trữ, sao lưu tự động hàng ngày và phân quyền truy cập chặt chẽ theo vai trò (Ban giám đốc, Bác sĩ, Điều dưỡng, Gia đình). Cơ sở hoàn toàn sở hữu và kiểm soát dữ liệu của mình.
         </div>
       </div>
 
-      <!-- FAQ 5 -->
+      <!-- FAQ 5 (Mới: Nghị định 13/2023/NĐ-CP) -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Hệ thống BeeCare có tuân thủ Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu sức khỏe và thông tin cá nhân nhạy cảm không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          <p class="mb-2"><strong>Có, tuân thủ 100%.</strong> BeeCare xác định dữ liệu bệnh án EMR, hồ sơ sinh hiệu và nhật ký chăm sóc là <em>Dữ liệu cá nhân nhạy cảm</em> theo Điều 2 Nghị định 13/2023/NĐ-CP và bảo vệ nghiêm ngặt qua 4 lớp:</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-600">
+            <li><strong>Lưu trữ tại Việt Nam:</strong> Toàn bộ dữ liệu đặt tại Data Center chuẩn Tier III trong nước (Viettel IDC / VNPT), đáp ứng đầy đủ Luật An ninh mạng & Nghị định 53/2022/NĐ-CP.</li>
+            <li><strong>Mã hóa đa tầng:</strong> Mã hóa chuẩn AES-256 ở trạng thái lưu trữ (at rest) và giao thức bảo mật TLS 1.3 khi truyền tải (in transit).</li>
+            <li><strong>Cơ chế chấp thuận minh bạch (Consent):</strong> Tích hợp sẵn quy trình lấy sự đồng ý điện tử của người cao tuổi hoặc người giám hộ hợp pháp (người thân) khi tiếp nhận vào viện.</li>
+            <li><strong>Phân quyền & Nhật ký kiểm toán (RBAC & Audit Log):</strong> Chỉ nhân sự y tế phụ trách trực tiếp mới xem được hồ sơ. Toàn bộ thao tác truy cập, chỉnh sửa đều được ghi nhận dấu vết thời gian thực phục vụ thanh tra y tế.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ 6 (Mới: Quyền xuất dữ liệu khi ngừng hợp đồng) -->
+      <div class="faq-card-item">
+        <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
+          <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
+            Nếu viện ngừng sử dụng phần mềm, chúng tôi có được xuất toàn bộ dữ liệu lịch sử ra không và có mất phí không?
+          </span>
+          <i data-lucide="chevron-down" class="faq-arrow-icon"></i>
+        </button>
+        <div class="faq-body-content">
+          <p class="mb-2"><strong>Viện sở hữu 100% dữ liệu và được xuất trọn vẹn hoàn toàn MIỄN PHÍ.</strong> BeeCare cam kết chính sách chống Vendor Lock-in (không giữ dữ liệu làm con tin) tuyệt đối minh bạch:</p>
+          <ul class="list-disc pl-5 space-y-1.5 text-slate-600">
+            <li><strong>Định dạng chuẩn quốc tế:</strong> Hỗ trợ xuất toàn bộ hồ sơ EMR, bệnh án, chỉ số sinh hiệu, nhật ký chăm sóc và viện phí ra file <strong>Excel (.xlsx), CSV, PDF (hồ sơ in ấn) và cấu trúc dữ liệu mở JSON/XML</strong>.</li>
+            <li><strong>Chuyên viên hỗ trợ trọn gói:</strong> Kỹ thuật viên BeeCare trực tiếp phối hợp đóng gói, đối soát và bàn giao toàn bộ dữ liệu cho viện trong vòng 5 – 7 ngày làm việc.</li>
+            <li><strong>Thời gian đệm an toàn (Buffer time):</strong> Sau khi kết thúc hợp đồng, hệ thống vẫn duy trì quyền truy cập "chỉ đọc" (Read-only) trong <strong>30 ngày</strong> để viện kiểm tra và sao lưu hoàn chỉnh.</li>
+            <li><strong>Cam kết tiêu hủy bảo mật:</strong> Sau khi bàn giao xong, hệ thống tiến hành xóa sạch dữ liệu trên máy chủ Cloud và cấp <strong>Biên bản xác nhận tiêu hủy dữ liệu</strong> có đóng dấu pháp nhân của HANIKI.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
       <div class="faq-card-item">
         <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
           <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
@@ -311,7 +350,7 @@
         </div>
       </div>
 
-      <!-- FAQ 6 -->
+      <!-- FAQ 8 -->
       <div class="faq-card-item">
         <button type="button" class="faq-header-btn" onclick="toggleFaqCard(this)">
           <span class="text-base sm:text-lg font-bold text-slate-900 pr-2">
@@ -344,10 +383,10 @@
           <i data-lucide="calendar-check" class="w-4 h-4 text-teal-300"></i>
           <span>Đăng ký tư vấn miễn phí</span>
         </a>
-        <a href="tel:0988123531"
+        <a href="pricing.html"
           class="min-h-[46px] inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5">
-          <i data-lucide="phone-call" class="w-4 h-4 text-teal-300"></i>
-          <span>Gọi hotline: 0988 123 531</span>
+          <i data-lucide="tag" class="w-4 h-4 text-teal-300"></i>
+          <span>Xem bảng giá giải pháp</span>
         </a>
       </div>
     </div>
@@ -361,14 +400,14 @@
         <div>
           <a href="index.html" class="footer-brand-logo">
             <div class="footer-brand-icon">
-              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+              <img src="assets/logo_bee_blue.png?v=20261020" alt="BeeCare logo">
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
@@ -387,6 +426,20 @@
               <span data-i18n="footer_address">Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội</span>
             </span>
           </div>
+          <div class="footer-social-row">
+            <a href="https://www.facebook.com/profile.php?id=61582996425862" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook" aria-label="Facebook BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://zalo.me/0988123531" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Zalo" aria-label="Zalo BeeCare">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.5 12C2.5 6.753 6.753 2.5 12 2.5C17.247 2.5 21.5 6.753 21.5 12C21.5 17.247 17.247 21.5 12 21.5C10.36 21.5 8.816 21.084 7.468 20.354L3.5 21.5L4.764 17.728C3.344 16.148 2.5 14.17 2.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@beesystemvietnam?lang=en" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="TikTok" aria-label="TikTok BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.46 6.27 6.27 0 0 0 1.88-4.46V8.34a8.16 8.16 0 0 0 4.89 1.62V6.69z"/></svg>
+            </a>
+          </div>
         </div>
 
         <div>
@@ -394,7 +447,7 @@
           <div style="display:flex;flex-direction:column;gap:8px">
             <div class="footer-eco-chip footer-eco-chip--teal">
               <i data-lucide="layout-dashboard" style="width:13px;height:13px"></i>
-              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+              <span data-i18n="footer_eco_web">Web quản lý</span>
             </div>
             <div class="footer-eco-chip footer-eco-chip--cyan">
               <i data-lucide="stethoscope" style="width:13px;height:13px"></i>
@@ -402,7 +455,7 @@
             </div>
             <div class="footer-eco-chip footer-eco-chip--amber">
               <i data-lucide="heart-handshake" style="width:13px;height:13px"></i>
-              <span data-i18n="footer_eco_family">App Người thân Family</span>
+              <span data-i18n="footer_eco_family">App người thân</span>
             </div>
           </div>
         </div>
@@ -467,8 +520,8 @@
     }
   </script>
 
-  <script src="assets/i18n/common.js?v=20261003_v6"></script>
-  <script src="assets/script.js?v=20261003_v6"></script>
+  <script src="assets/i18n/common.js?v=20261022_v5"></script>
+  <script src="assets/script.js?v=20261022_v5"></script>
 </body>
 
 </html>

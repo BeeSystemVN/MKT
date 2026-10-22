@@ -24,15 +24,15 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261007_v4" />
-  <link rel="icon" href="assets/app_icon_512x512.png" type="image/png">
+  <link rel="stylesheet" href="assets/style.css?v=20261022_v5" />
+  <link rel="icon" href="assets/app_icon_512x512.png?v=20261020_v2" type="image/png">
 
   <style>
     /* ===================== COMPANY HERO COVER BANNER ===================== */
     .company-hero-banner-section {
       position: relative;
       width: 100%;
-      background-color: #0b1a30;
+      background-color: #FBF7F3;
       overflow: hidden;
       padding-top: 0;
     }
@@ -43,7 +43,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #0b1a30;
+      background-color: #FBF7F3;
+    }
+    .company-hero-banner-inner::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: clamp(80px, 22vw, 220px);
+      background: linear-gradient(
+        to bottom,
+        rgba(251, 247, 243, 0) 0%,
+        rgba(251, 247, 243, 0.2) 25%,
+        rgba(251, 247, 243, 0.6) 55%,
+        rgba(251, 247, 243, 0.92) 85%,
+        #FBF7F3 100%
+      );
+      pointer-events: none;
+      z-index: 5;
     }
     .company-hero-banner-img {
       width: 100%;
@@ -69,14 +87,14 @@
 
     /* Company Main Content with Soft Gradient Transition */
     .company-main {
-      background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 32px, #f8fafc 100%);
-      padding-top: 56px;
+      background: #FBF7F3;
+      padding-top: 40px;
       padding-bottom: 90px;
     }
     @media (max-width: 768px) {
       .company-main {
-        background: linear-gradient(180deg, #FBF7F3 0px, #f8fafc 20px, #f8fafc 100%);
-        padding-top: 36px;
+        background: #FBF7F3;
+        padding-top: 28px;
         padding-bottom: 60px;
       }
     }
@@ -212,105 +230,113 @@
       margin-bottom: 24px;
     }
 
-    /* Vision & Mission Cards */
-    .vm-grid {
+    /* ===================== IDEA 2: TIERED VISION, MISSION & VALUES ===================== */
+    /* Top Tier: Split Banner Card */
+    .tier-vm-banner {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 6px 24px -4px rgba(15, 23, 42, 0.04);
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
-    @media (min-width: 868px) {
-      .vm-grid {
+    .tier-vm-banner:hover {
+      box-shadow: 0 16px 36px -8px rgba(38, 83, 151, 0.08);
+      border-color: #cbd5e1;
+    }
+    @media (min-width: 1024px) {
+      .tier-vm-banner {
         grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
       }
     }
-    .vm-card-redesign {
-      background: #ffffff;
-      border-radius: 26px;
-      padding: 38px 32px;
-      border: 1px solid rgba(226, 232, 240, 0.85);
-      box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.04);
+    .tier-vm-col {
+      padding: 30px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
     }
     @media (max-width: 639px) {
-      .vm-card-redesign {
-        padding: 28px 20px;
+      .tier-vm-col {
+        padding: 22px 20px;
       }
     }
-    .vm-card-redesign:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 45px -10px rgba(38, 83, 151, 0.12), 0 4px 16px rgba(15, 23, 42, 0.04);
+    .tier-vm-col-mission {
+      position: relative;
     }
-    .vm-card-accent-teal::before {
+    @media (min-width: 1024px) {
+      .tier-vm-col-mission::after {
+        content: '';
+        position: absolute;
+        top: 24px;
+        bottom: 24px;
+        right: 0;
+        width: 1px;
+        background: #f1f5f9;
+      }
+    }
+    @media (max-width: 1023px) {
+      .tier-vm-col-mission {
+        border-bottom: 1px solid #f1f5f9;
+      }
+    }
+    .tier-vm-col-mission::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
+      top: 0; left: 0; right: 0;
+      height: 4px;
       background: #265397;
     }
-    .vm-card-accent-sky::before {
+    .tier-vm-col-vision::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
+      top: 0; left: 0; right: 0;
+      height: 4px;
       background: #0284c7;
     }
 
-    /* Core Values Cards */
-    .values-grid {
+    /* Bottom Tier: 4-Column Horizontal Values Grid */
+    .tier-values-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
+      margin-top: 24px;
+      align-items: stretch;
     }
-    @media (min-width: 640px) {
-      .values-grid {
+    @media (max-width: 1023px) {
+      .tier-values-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 20px;
       }
     }
-    @media (min-width: 1024px) {
-      .values-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+    @media (max-width: 639px) {
+      .tier-values-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 16px;
       }
     }
-    .value-card {
+    .tier-value-card {
       background: #ffffff;
-      border-radius: 22px;
-      padding: 32px 24px;
-      border: 1px solid #E5E1D8;
-      box-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.03);
-      transition: all 0.35s ease;
+      border-radius: 20px;
+      padding: 24px 22px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.03);
       display: flex;
       flex-direction: column;
-      text-align: center;
+      height: 100%;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
     }
-    .value-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 35px -8px rgba(38, 83, 151, 0.12);
+    .tier-value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(38, 83, 151, 0.1);
       border-color: #cbd5e1;
     }
 
-    /* Workplace Bento Tech-Cards (Ý tưởng 1: Hiện đại, sáng rõ, công nghệ cao) */
-    .workplace-bento-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 24px;
-    }
-    @media (max-width: 1023px) {
-      .workplace-bento-grid {
-        gap: 20px;
-      }
-    }
+    /* Workplace Showcase (Hero tập thể lớn trên + Grid 4 ảnh đồng đều bên dưới) */
     .workplace-card {
       background: #ffffff;
       border-radius: 22px;
@@ -319,7 +345,6 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: 100%;
       cursor: pointer;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
     }
@@ -328,30 +353,10 @@
       box-shadow: 0 20px 42px -10px rgba(38, 83, 151, 0.12), 0 4px 16px rgba(15, 23, 42, 0.04);
       border-color: #cbd5e1;
     }
+
+    /* 1. Hero Card: Ảnh chụp tập thể nhân viên HANIKI (To, Rõ nét, Toàn cảnh) */
     .workplace-card-hero {
-      grid-column: span 8;
-    }
-    .workplace-card-side {
-      grid-column: span 4;
-    }
-    .workplace-card-col4 {
-      grid-column: span 4;
-    }
-    @media (max-width: 1023px) {
-      .workplace-card-hero {
-        grid-column: span 12;
-      }
-      .workplace-card-side,
-      .workplace-card-col4 {
-        grid-column: span 6;
-      }
-    }
-    @media (max-width: 639px) {
-      .workplace-card-hero,
-      .workplace-card-side,
-      .workplace-card-col4 {
-        grid-column: span 12;
-      }
+      width: 100%;
     }
     .workplace-photo-wrap {
       position: relative;
@@ -361,35 +366,164 @@
     }
     .workplace-photo-wrap-hero {
       aspect-ratio: 16 / 9;
+      max-height: 520px;
     }
-    .workplace-photo-wrap-standard {
-      aspect-ratio: 16 / 10;
+    @media (min-width: 1024px) {
+      .workplace-photo-wrap-hero {
+        aspect-ratio: 21 / 10;
+        max-height: 480px;
+      }
     }
     @media (max-width: 639px) {
-      .workplace-photo-wrap-hero,
-      .workplace-photo-wrap-standard {
+      .workplace-photo-wrap-hero {
         aspect-ratio: 16 / 10;
       }
     }
-    .workplace-dual-photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3px;
-      background: #e2e8f0;
-      width: 100%;
+    .workplace-card-body-hero {
+      padding: 20px 24px 22px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #ffffff;
     }
-    @media (max-width: 639px) {
-      .workplace-dual-photo-grid {
-        grid-template-columns: 1fr;
-        gap: 3px;
+    .workplace-hero-meta {
+      flex: 1;
+    }
+    .workplace-card-hero-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+    @media (min-width: 640px) {
+      .workplace-card-hero-title {
+        font-size: 20px;
       }
     }
+    .workplace-hero-footer {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+      flex-shrink: 0;
+    }
+    @media (max-width: 639px) {
+      .workplace-card-body-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 18px 18px;
+        gap: 10px;
+      }
+      .workplace-hero-footer {
+        width: 100%;
+        margin-top: 8px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f5f9;
+      }
+    }
+
+    /* 2. Standard Grid: 4 ảnh còn lại bằng nhau cả về chiều cao thẻ và tỷ lệ ảnh */
+    .workplace-grid-standard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-top: 24px;
+    }
+    @media (max-width: 1023px) {
+      .workplace-grid-standard {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+      }
+    }
+    @media (max-width: 639px) {
+      .workplace-grid-standard {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 16px;
+      }
+    }
+
+    .workplace-card-standard {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+    }
+    .workplace-card-standard .workplace-photo-wrap-standard {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+    }
+    .workplace-card-standard .workplace-card-body {
+      padding: 16px 18px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ffffff;
+    }
+    .workplace-card-standard .workplace-card-text {
+      margin-bottom: 8px;
+    }
+    .workplace-card-standard .workplace-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+      min-height: 42px;
+      display: flex;
+      align-items: flex-start;
+      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
+    }
+    @media (min-width: 1024px) and (max-width: 1279px) {
+      .workplace-card-standard .workplace-card-title {
+        font-size: 13.5px;
+        line-height: 1.35;
+        min-height: 38px;
+      }
+    }
+    .workplace-card:hover .workplace-card-title,
+    .workplace-card:hover .workplace-card-hero-title {
+      color: #265397;
+    }
+    .workplace-card-desc {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    .workplace-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 12px;
+      font-weight: 600;
+      color: #265397;
+      transition: color 0.2s ease;
+    }
+    .workplace-card:hover .workplace-card-footer {
+      color: #0284c7;
+    }
+
+    /* Ảnh và hiệu ứng tương tác */
     .workplace-photo-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
       transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .workplace-photo-wrap-hero .workplace-photo-img {
+      object-position: center 30%;
     }
     .workplace-card:hover .workplace-photo-img,
     .workplace-photo-wrap:hover .workplace-photo-img {
@@ -438,60 +572,6 @@
       background: #265397;
       color: #ffffff;
       transform: scale(1.08);
-    }
-    .workplace-card-body {
-      padding: 18px 22px 20px;
-      background: #ffffff;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    @media (max-width: 639px) {
-      .workplace-card-body {
-        padding: 16px 18px 18px;
-      }
-    }
-    .workplace-card-title {
-      font-size: 16.5px;
-      font-weight: 700;
-      color: #0f172a;
-      line-height: 1.35;
-      margin-bottom: 0;
-      letter-spacing: -0.01em;
-      transition: color 0.2s ease;
-    }
-    .workplace-card-hero .workplace-card-title {
-      font-size: 19px;
-    }
-    @media (min-width: 640px) {
-      .workplace-card-hero .workplace-card-title {
-        font-size: 20px;
-      }
-    }
-    .workplace-card:hover .workplace-card-title {
-      color: #265397;
-    }
-    .workplace-card-desc {
-      font-size: 13px;
-      color: #64748b;
-      line-height: 1.55;
-      font-weight: 400;
-    }
-    .workplace-card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid #f1f5f9;
-      font-size: 12px;
-      font-weight: 600;
-      color: #265397;
-      transition: color 0.2s ease;
-    }
-    .workplace-card:hover .workplace-card-footer {
-      color: #0284c7;
     }
 
     /* Strategic Partners Grid & Flagship Showcase */
@@ -724,27 +804,6 @@
     </div>
   </section>
 
-  <!-- ===================== 2. STATS BAR ===================== -->
-  <div class="stats-container" data-aos="fade-up" data-aos-delay="200">
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number text-teal-600" data-i18n="company_stat1_num">3</div>
-        <div class="stat-label" data-i18n="company_stat1_title">Nền tảng đồng bộ</div>
-        <div class="stat-desc" data-i18n="company_stat1_desc">Web Admin, App Điều Dưỡng & App Người Thân</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number text-sky-600" data-i18n="company_stat2_num">100%</div>
-        <div class="stat-label" data-i18n="company_stat2_title">Quy trình số hóa</div>
-        <div class="stat-desc" data-i18n="company_stat2_desc">Sinh hiệu, đơn thuốc & phân ca trực</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number text-amber-500" data-i18n="company_stat4_num">24/7</div>
-        <div class="stat-label" data-i18n="company_stat4_title">Hỗ trợ kỹ thuật chuyên sâu</div>
-        <div class="stat-desc" data-i18n="company_stat4_desc">Đồng hành liên tục cùng đơn vị vận hành</div>
-      </div>
-    </div>
-  </div>
-
   <main class="company-main">
 
     <!-- ===================== 3. EXECUTIVE LEADERSHIP MESSAGE ===================== -->
@@ -803,157 +862,139 @@
       </div>
     </section>
 
-    <!-- ===================== 4. TẦM NHÌN & SỨ MỆNH ===================== -->
+    <!-- ===================== 4. SỨ MỆNH & GIÁ TRỊ CỐT LÕI (Ý TƯỞNG 2: TẦNG PHÂN CẤP) ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
         <div class="section-badge">
           <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-          <span data-i18n="company_vm_badge">Tầm nhìn & Sứ mệnh</span>
+          <span data-i18n="company_vm_badge">Định hướng & Giá trị</span>
         </div>
         <h2 class="section-heading whitespace-normal md:whitespace-nowrap" data-i18n="company_vm_title">
-          Hiện đại hóa quy trình chăm sóc
+          Sứ mệnh phụng sự & Giá trị cốt lõi
         </h2>
         <p class="section-subtext" data-i18n="company_vm_desc">
-          Lắng nghe thực tế tại cơ sở dưỡng lão để kiến tạo giải pháp công nghệ thiết thực và bền vững
+          Lắng nghe thực tế tại cơ sở dưỡng lão để kiến tạo giải pháp công nghệ thấu cảm, minh bạch và an toàn
         </p>
       </div>
 
-      <div class="vm-grid">
+      <!-- TẦNG 1: BANNER KÉP TẦM NHÌN & SỨ MỆNH (SPLIT CARD) -->
+      <div class="tier-vm-banner">
         
-        <!-- Sứ Mệnh Phụng Sự (Card Redesign 1) -->
-        <div class="vm-card-redesign vm-card-accent-teal">
+        <!-- Cột Trái: Sứ Mệnh Phụng Sự -->
+        <div class="tier-vm-col tier-vm-col-mission">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-600 mb-6">
-              <i data-lucide="target" class="w-7 h-7"></i>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-600 shrink-0 shadow-sm">
+                <i data-lucide="target" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-teal-700 tracking-wide uppercase" data-i18n="company_mission_badge">Sứ mệnh phụng sự</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 leading-snug font-heading" data-i18n="company_mission_title">
+                  Số hóa toàn diện & nâng tầm dưỡng lão Việt
+                </h3>
+              </div>
             </div>
-            <div class="text-xs font-bold text-teal-600 tracking-wide mb-2" data-i18n="company_mission_badge">
-              Sứ mệnh phụng sự
-            </div>
-            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-3 font-heading" style="line-height: 1.35;" data-i18n="company_mission_title">
-              Số hóa toàn diện & nâng tầm dưỡng lão Việt
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6" data-i18n="company_mission_desc">
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4" data-i18n="company_mission_desc">
               Giúp nhân viên điều dưỡng giảm bớt gánh nặng sổ sách hành chính để toàn tâm chăm sóc người cao tuổi bằng sự ân cần. Đồng thời tạo cầu nối thông tin kịp thời, minh bạch giúp người thân an tâm gửi gắm cha mẹ.
             </p>
           </div>
           
-          <div class="space-y-3 pt-4 text-sm text-slate-700 font-medium">
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_mission_item1">Minh bạch hóa lịch trình sinh hoạt, y lệnh dùng thuốc và thông tin viện phí</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-3 border-t border-slate-100 text-xs text-slate-700 font-medium">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="company_mission_item1">Minh bạch hóa lịch trình sinh hoạt & y lệnh</span>
             </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_mission_item2">Nâng cao năng suất và hỗ trợ nhân viên điều dưỡng thao tác thuận tiện ngay tại giường</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_mission_item3">Gắn kết trọn vẹn niềm tin giữa viện dưỡng lão, người cao tuổi và gia đình</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600 shrink-0"></i>
+              <span data-i18n="company_mission_item2">Hỗ trợ thao tác thuận tiện ngay tại giường</span>
             </div>
           </div>
         </div>
 
-        <!-- Tầm Nhìn Chiến Lược (Card Redesign 2) -->
-        <div class="vm-card-redesign vm-card-accent-sky">
+        <!-- Cột Phải: Tầm Nhìn Phát Triển -->
+        <div class="tier-vm-col tier-vm-col-vision">
           <div>
-            <div class="w-14 h-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 mb-6">
-              <i data-lucide="eye" class="w-7 h-7"></i>
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 shrink-0 shadow-sm">
+                <i data-lucide="eye" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-sky-700 tracking-wide uppercase" data-i18n="company_vision_badge">Tầm nhìn phát triển</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 leading-snug font-heading" data-i18n="company_vision_title">
+                  Doanh nghiệp số 1 về quản lý dưỡng lão
+                </h3>
+              </div>
             </div>
-            <div class="text-xs font-bold text-sky-600 tracking-wide mb-2" data-i18n="company_vision_badge">
-              Tầm nhìn phát triển
-            </div>
-            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-3 font-heading" style="line-height: 1.35;" data-i18n="company_vision_title">
-              Doanh nghiệp số 1 về quản lý dưỡng lão
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6" data-i18n="company_vision_desc">
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4" data-i18n="company_vision_desc">
               Xây dựng phần mềm quản lý viện dưỡng lão tin cậy, thiết thực và dễ sử dụng hàng đầu tại Việt Nam; giúp các cơ sở dưỡng lão tối ưu hóa vận hành, kiểm soát chặt chẽ thông tin và nâng cao chất lượng phục vụ người cao tuổi.
             </p>
           </div>
           
-          <div class="space-y-3 pt-4 text-sm text-slate-700 font-medium">
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_vision_item1">Hạn chế ghi chép thủ công, số hóa biểu đồ theo dõi sinh hiệu và bàn giao ca trực</span>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-3 border-t border-slate-100 text-xs text-slate-700 font-medium">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600 shrink-0"></i>
+              <span data-i18n="company_vision_item1">Số hóa theo dõi sinh hiệu & giao ca trực</span>
             </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_vision_item2">Hỗ trợ nhắc lịch chăm sóc, cảnh báo y tế sớm và quản lý chi phí minh bạch</span>
-            </div>
-            <div class="flex items-start gap-3">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-sky-600 shrink-0 mt-0.5"></i>
-              <span data-i18n="company_vision_item3">Mở rộng kết nối toàn diện với các cơ sở dưỡng lão hàng đầu trên toàn quốc</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600 shrink-0"></i>
+              <span data-i18n="company_vision_item3">Kết nối hệ sinh thái dưỡng lão toàn quốc</span>
             </div>
           </div>
         </div>
 
       </div>
-    </section>
 
-    <!-- ===================== 5. GIÁ TRỊ CỐT LÕI ===================== -->
-    <section class="section-wrapper" data-aos="fade-up">
-      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-        <div class="section-badge">
-          <i data-lucide="award" class="w-3.5 h-3.5"></i>
-          <span data-i18n="company_cv_badge">Giá trị cốt lõi</span>
-        </div>
-        <h2 class="section-heading whitespace-normal md:whitespace-nowrap" data-i18n="company_cv_title">
-          Nguyên tắc phát triển sản phẩm
-        </h2>
-        <p class="section-subtext" data-i18n="company_cv_desc">
-          Mỗi cải tiến phần mềm đều xuất phát từ sự thấu hiểu sâu sắc người dùng và đạo đức nghề y
-        </p>
-      </div>
-
-      <div class="values-grid">
+      <!-- TẦNG 2: 4 THẺ GIÁ TRỊ CỐT LÕI DÀN HÀNG NGANG (4 CỘT ĐỀU NHAU) -->
+      <div class="tier-values-grid">
         
         <!-- Giá trị 1 -->
-        <div class="value-card">
-          <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 border border-rose-100 flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="heart" class="w-7 h-7"></i>
+        <div class="tier-value-card">
+          <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-500 border border-rose-100 flex items-center justify-center mb-3 shrink-0 shadow-xs">
+            <i data-lucide="heart" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading" data-i18n="company_cv1_title">
+          <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5 font-heading" data-i18n="company_cv1_title">
             Thấu cảm & nhân văn
-          </h3>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="company_cv1_desc">
+          </h4>
+          <p class="text-slate-600 text-xs leading-relaxed" data-i18n="company_cv1_desc">
             Lắng nghe nhu cầu thực tế của người cao tuổi, gia đình và nhân viên điều dưỡng để xây dựng tính năng thiết thực.
           </p>
         </div>
 
         <!-- Giá trị 2 -->
-        <div class="value-card">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="shield-check" class="w-7 h-7"></i>
+        <div class="tier-value-card">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center mb-3 shrink-0 shadow-xs">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading" data-i18n="company_cv2_title">
+          <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5 font-heading" data-i18n="company_cv2_title">
             Minh bạch & chính xác
-          </h3>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="company_cv2_desc">
+          </h4>
+          <p class="text-slate-600 text-xs leading-relaxed" data-i18n="company_cv2_desc">
             Mọi chỉ số sinh hiệu, lịch dùng thuốc và chi phí đều được ghi nhận rõ ràng, trung thực và tức thì.
           </p>
         </div>
 
         <!-- Giá trị 3 -->
-        <div class="value-card">
-          <div class="w-14 h-14 rounded-2xl bg-cyan-50 text-cyan-600 border border-cyan-100 flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="lock" class="w-7 h-7"></i>
+        <div class="tier-value-card">
+          <div class="w-11 h-11 rounded-xl bg-cyan-50 text-cyan-600 border border-cyan-100 flex items-center justify-center mb-3 shrink-0 shadow-xs">
+            <i data-lucide="lock" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading" data-i18n="company_cv3_title">
+          <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5 font-heading" data-i18n="company_cv3_title">
             Ổn định & bảo mật
-          </h3>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="company_cv3_desc">
+          </h4>
+          <p class="text-slate-600 text-xs leading-relaxed" data-i18n="company_cv3_desc">
             Hạ tầng máy chủ tin cậy, lưu trữ an toàn hồ sơ sức khỏe và đảm bảo vận hành liên tục 24/7.
           </p>
         </div>
 
         <!-- Giá trị 4 -->
-        <div class="value-card">
-          <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-500 border border-amber-100 flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+        <div class="tier-value-card">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-500 border border-amber-100 flex items-center justify-center mb-3 shrink-0 shadow-xs">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2 font-heading" data-i18n="company_cv4_title">
+          <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1.5 font-heading" data-i18n="company_cv4_title">
             Đồng hành tận tâm
-          </h3>
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed" data-i18n="company_cv4_desc">
+          </h4>
+          <p class="text-slate-600 text-xs leading-relaxed" data-i18n="company_cv4_desc">
             Hỗ trợ đào tạo tại chỗ, hướng dẫn sử dụng chi tiết và luôn sẵn sàng hỗ trợ kỹ thuật khi viện cần.
           </p>
         </div>
@@ -961,7 +1002,7 @@
       </div>
     </section>
 
-    <!-- ===================== 6. MÔI TRƯỜNG LÀM VIỆC & R&D ===================== -->
+    <!-- ===================== 5. MÔI TRƯỜNG LÀM VIỆC & R&D ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
       <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
         <div class="section-badge">
@@ -970,33 +1011,42 @@
         </div>
       </div>
 
-      <!-- Photo Bento Grid (Ý tưởng 1: Modern Bento Tech-Cards) -->
-      <div class="workplace-bento-grid">
-        
-        <!-- Ảnh 1: Ảnh chụp tập thể nhân viên HANIKI (Hero 8 cột, 16:9) -->
-        <article class="workplace-card workplace-card-hero"
-          onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Ảnh chụp tập thể nhân viên HANIKI – Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội')">
-          <div class="workplace-photo-wrap workplace-photo-wrap-hero">
-            <img src="assets/company/tap-the-haniki.jpg" alt="Ảnh chụp tập thể nhân viên HANIKI" class="workplace-photo-img" loading="lazy" />
-            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+      <!-- 1. Ảnh chụp tập thể nhân viên HANIKI (Hero to nổi bật, sắc nét trên cùng) -->
+      <article class="workplace-card workplace-card-hero"
+        onclick="openLightbox('assets/company/tap-the-haniki.jpg', 'Ảnh chụp tập thể nhân viên HANIKI – Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội')">
+        <div class="workplace-photo-wrap workplace-photo-wrap-hero">
+          <img src="assets/company/tap-the-haniki.jpg" alt="Ảnh chụp tập thể nhân viên HANIKI" class="workplace-photo-img" loading="lazy" />
+          <span class="workplace-photo-badge">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-primary"></i>
+            <span data-i18n="company_photo1_badge">Đội ngũ kỹ thuật</span>
+          </span>
+          <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+        <div class="workplace-card-body workplace-card-body-hero">
+          <div class="workplace-hero-meta">
+            <h3 class="workplace-card-title workplace-card-hero-title" data-i18n="company_photo1_title">
+              Ảnh chụp tập thể nhân viên HANIKI
+            </h3>
+            <p class="workplace-card-desc mt-1 sm:mt-1.5" data-i18n="company_photo1_desc">
+              Đội ngũ kỹ thuật công nghệ nhiệt huyết tại trụ sở Hà Nội.
+            </p>
+          </div>
+          <div class="workplace-card-footer workplace-hero-footer">
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
               <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-            </button>
+              <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+            </span>
           </div>
-          <div class="workplace-card-body">
-            <div>
-              <h3 class="workplace-card-title" data-i18n="company_photo1_title">Ảnh chụp tập thể nhân viên HANIKI</h3>
-            </div>
-            <div class="workplace-card-footer">
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
-              </span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Ảnh 2: Họp kỹ thuật & Phân tích tính năng (Side 4 cột, 16:10) -->
-        <article class="workplace-card workplace-card-side"
+      <!-- 2. Grid 4 ảnh còn lại: Chiều cao thẻ bằng nhau và tỷ lệ ảnh đồng bộ chuẩn xác -->
+      <div class="workplace-grid-standard">
+        
+        <!-- Ảnh 2: Họp kỹ thuật & Phân tích tính năng -->
+        <article class="workplace-card workplace-card-standard"
           onclick="openLightbox('assets/company/hop-ky-thuat-san-pham.jpg', 'Họp kỹ thuật & Phân tích tính năng')">
           <div class="workplace-photo-wrap workplace-photo-wrap-standard">
             <img src="assets/company/hop-ky-thuat-san-pham.jpg" alt="Họp kỹ thuật & Phân tích tính năng" class="workplace-photo-img" loading="lazy" />
@@ -1005,7 +1055,7 @@
             </button>
           </div>
           <div class="workplace-card-body">
-            <div>
+            <div class="workplace-card-text">
               <h3 class="workplace-card-title" data-i18n="company_photo2_title">Họp kỹ thuật & Phân tích tính năng</h3>
             </div>
             <div class="workplace-card-footer">
@@ -1017,8 +1067,8 @@
           </div>
         </article>
 
-        <!-- Ảnh 3: Đào tạo & Demo (4 cột, 16:10) -->
-        <article class="workplace-card workplace-card-col4"
+        <!-- Ảnh 3: Đào tạo & Thử nghiệm giải pháp -->
+        <article class="workplace-card workplace-card-standard"
           onclick="openLightbox('assets/company/dao-tao-demo-he-thong.jpg', 'Đào tạo & Thử nghiệm giải pháp')">
           <div class="workplace-photo-wrap workplace-photo-wrap-standard">
             <img src="assets/company/dao-tao-demo-he-thong.jpg" alt="Đào tạo & Thử nghiệm giải pháp" class="workplace-photo-img" loading="lazy" />
@@ -1027,7 +1077,7 @@
             </button>
           </div>
           <div class="workplace-card-body">
-            <div>
+            <div class="workplace-card-text">
               <h3 class="workplace-card-title" data-i18n="company_photo3_title">Đào tạo & Thử nghiệm giải pháp</h3>
             </div>
             <div class="workplace-card-footer">
@@ -1039,29 +1089,40 @@
           </div>
         </article>
 
-        <!-- Ảnh 4: Khu vực văn phòng làm việc (Gộp 2 góc ảnh, Hero 8 cột) -->
-        <article class="workplace-card workplace-card-hero">
-          <div class="workplace-dual-photo-grid">
-            <!-- Góc nhìn 1 -->
-            <div class="workplace-photo-wrap workplace-photo-wrap-standard relative cursor-pointer"
-              onclick="openLightbox('assets/company/van-phong-lap-trinh-1.jpg', 'Khu vực văn phòng làm việc – Góc nhìn 1')">
-              <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực văn phòng làm việc – Góc 1" class="workplace-photo-img" loading="lazy" />
-              <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh góc 1" aria-label="Phóng to ảnh góc 1">
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-            <!-- Góc nhìn 2 -->
-            <div class="workplace-photo-wrap workplace-photo-wrap-standard relative cursor-pointer"
-              onclick="openLightbox('assets/company/van-phong-lap-trinh-2.jpg', 'Khu vực văn phòng làm việc – Góc nhìn 2')">
-              <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Khu vực văn phòng làm việc – Góc 2" class="workplace-photo-img" loading="lazy" />
-              <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh góc 2" aria-label="Phóng to ảnh góc 2">
-                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
+        <!-- Ảnh 4: Không gian văn phòng làm việc -->
+        <article class="workplace-card workplace-card-standard"
+          onclick="openLightbox('assets/company/van-phong-lap-trinh-1.jpg', 'Không gian văn phòng làm việc – Trụ sở Hà Nội')">
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/van-phong-lap-trinh-1.jpg" alt="Khu vực văn phòng làm việc" class="workplace-photo-img" loading="lazy" />
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
           <div class="workplace-card-body">
-            <div>
+            <div class="workplace-card-text">
               <h3 class="workplace-card-title" data-i18n="company_photo4_title">Khu vực văn phòng làm việc</h3>
+            </div>
+            <div class="workplace-card-footer">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="company_photo_zoom_hint">Phóng to xem chi tiết</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Ảnh 5: Khu vực làm việc -->
+        <article class="workplace-card workplace-card-standard"
+          onclick="openLightbox('assets/company/van-phong-lap-trinh-2.jpg', 'Khu vực làm việc – BeeCare')">
+          <div class="workplace-photo-wrap workplace-photo-wrap-standard">
+            <img src="assets/company/van-phong-lap-trinh-2.jpg" alt="Khu vực làm việc" class="workplace-photo-img" loading="lazy" />
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+          <div class="workplace-card-body">
+            <div class="workplace-card-text">
+              <h3 class="workplace-card-title" data-i18n="company_photo5_title">Khu vực làm việc</h3>
             </div>
             <div class="workplace-card-footer">
               <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
@@ -1075,7 +1136,7 @@
       </div>
     </section>
 
-    <!-- ===================== 7. ĐỐI TÁC CHIẾN LƯỢC & CỐ VẤN QUỐC TẾ ===================== -->
+    <!-- ===================== 6. ĐỐI TÁC CHIẾN LƯỢC & CỐ VẤN QUỐC TẾ ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
       
       <!-- Section Header -->
@@ -1128,7 +1189,7 @@
 
             <!-- Narrative -->
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4" data-i18n="company_dienhong_desc">
-              Hệ thống viện dưỡng lão Diên Hồng là đối tác chiến lược toàn diện của BeeCare. Toàn bộ các cơ sở thuộc hệ thống Diên Hồng đã số hóa 100% quy trình điều dưỡng, triển khai bệnh án điện tử EMR tại giường và kết nối dòng thời gian sinh hoạt minh bạch tới hàng nghìn gia đình người cao tuổi.
+              Hệ thống viện dưỡng lão Diên Hồng là đối tác chiến lược toàn diện của BeeCare. Toàn bộ các cơ sở thuộc hệ thống Diên Hồng đã số hóa toàn diện quy trình điều dưỡng, triển khai bệnh án điện tử EMR tại giường và kết nối dòng thời gian sinh hoạt minh bạch tới hàng nghìn gia đình người cao tuổi.
             </p>
           </div>
 
@@ -1346,7 +1407,7 @@
         <!-- Cột Phải: Bản Đồ Google Maps Trụ Sở -->
         <div class="h-[360px] lg:h-auto min-h-[360px] relative border-t lg:border-t-0 lg:border-l border-slate-200">
           <iframe
-            src="https://maps.google.com/maps?q=44c+ngõ+4+đường+Phú+Mỹ+Từ+Liêm+Hà+Nội&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=21.029063,105.769688&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style="border:0;"
@@ -1403,14 +1464,14 @@
         <div>
           <a href="index.html" class="footer-brand-logo">
             <div class="footer-brand-icon">
-              <img src="assets/logo_bee_care_hd.png" alt="BeeCare logo">
+              <img src="assets/logo_bee_blue.png?v=20261020" alt="BeeCare logo">
             </div>
             <div>
               <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý thông minh</div>
+              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý</div>
             </div>
           </a>
-          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão thông minh. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
+          <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>
             <span data-i18n="footer_dev_by">Phát triển bởi CÔNG TY TNHH HANIKI</span>
@@ -1439,7 +1500,9 @@
                 <text x="12" y="15" fill="currentColor" font-family="'Be Vietnam Pro', -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="-0.5">Zalo</text>
               </svg>
             </a>
-
+            <a href="https://www.tiktok.com/@beesystemvietnam?lang=en" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="TikTok" aria-label="TikTok BeeCare">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.46 6.27 6.27 0 0 0 1.88-4.46V8.34a8.16 8.16 0 0 0 4.89 1.62V6.69z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -1449,7 +1512,7 @@
           <div style="display:flex;flex-direction:column;gap:8px">
             <div class="footer-eco-chip footer-eco-chip--teal">
               <i data-lucide="layout-dashboard" style="width:13px;height:13px;flex-shrink:0"></i>
-              <span data-i18n="footer_eco_web">Cổng Web Admin</span>
+              <span data-i18n="footer_eco_web">Web quản lý</span>
             </div>
             <div class="footer-eco-chip footer-eco-chip--cyan">
               <i data-lucide="stethoscope" style="width:13px;height:13px;flex-shrink:0"></i>
@@ -1457,7 +1520,7 @@
             </div>
             <div class="footer-eco-chip footer-eco-chip--amber">
               <i data-lucide="heart-handshake" style="width:13px;height:13px;flex-shrink:0"></i>
-              <span data-i18n="footer_eco_family">App Người thân Family</span>
+              <span data-i18n="footer_eco_family">App người thân</span>
             </div>
           </div>
           <div style="margin-top:20px">
@@ -1526,6 +1589,18 @@
     </div>
   </footer>
 
+  <!-- ===================== MOBILE QUICK-ACTION STICKY BAR ===================== -->
+  <div class="mobile-cta flex md:hidden items-center justify-between gap-2">
+    <a href="tel:0988123531" class="mobile-cta-btn-call" title="Gọi tư vấn: 0988 123 531">
+      <i data-lucide="phone-call" class="w-4 h-4 text-sky-600 shrink-0"></i>
+      <span data-i18n="nav_call_counsel">Gọi tư vấn</span>
+    </a>
+    <a href="contact.html" class="mobile-cta-btn-trial" title="Đăng ký dùng thử BeeCare miễn phí">
+      <i data-lucide="calendar-check" class="w-4 h-4 shrink-0"></i>
+      <span data-i18n="nav_demo_cta">Đăng ký demo</span>
+    </a>
+  </div>
+
   <!-- ===================== LIGHTBOX MODAL ===================== -->
   <div id="lightbox-modal">
     <div class="relative max-w-5xl w-full flex flex-col items-center">
@@ -1554,9 +1629,9 @@
   </button>
 
   <!-- Scripts -->
-  <script src="assets/i18n/common.js?v=20261003_v8"></script>
-  <script src="assets/i18n/company.js?v=20261005_v7"></script>
-  <script src="assets/script.js?v=20261003_v8"></script>
+  <script src="assets/i18n/common.js?v=20261022_v5"></script>
+  <script src="assets/i18n/company.js?v=20261022_v5"></script>
+  <script src="assets/script.js?v=20261022_v5"></script>
 </body>
 
 </html>
