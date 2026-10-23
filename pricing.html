@@ -1085,15 +1085,6 @@
 
   <!-- ===================== PAGE LOGIC SCRIPTS ===================== -->
   <script>
-    // FAQ Accordion Handler
-    function toggleFaq(btn) {
-      const card = btn.closest('.faq-item-card');
-      const isOpen = card.classList.contains('open');
-      document.querySelectorAll('.faq-item-card').forEach(c => c.classList.remove('open'));
-      if (!isOpen) {
-        card.classList.add('open');
-      }
-    }
 
     // Listen for languageChanged to update page title correctly
     document.addEventListener("DOMContentLoaded", () => {
