@@ -185,6 +185,11 @@
     }
 
     /* Executive Leadership Card */
+    .executive-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
     .executive-card {
       background: #ffffff;
       border-radius: 28px;
@@ -195,9 +200,49 @@
       grid-template-columns: 380px 1fr;
       gap: 48px;
       align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .executive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.1);
+      border-color: #cbd5e1;
+    }
+    .executive-card.reverse {
+      grid-template-columns: 1fr 380px;
+    }
+    @media (max-width: 1199px) {
+      .executive-card {
+        grid-template-columns: 320px 1fr;
+        gap: 36px;
+        padding: 36px;
+      }
+      .executive-card.reverse {
+        grid-template-columns: 1fr 320px;
+        gap: 36px;
+        padding: 36px;
+      }
     }
     @media (max-width: 1023px) {
-      .executive-card { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      .executive-card,
+      .executive-card.reverse {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 28px;
+      }
+      /* On mobile & tablet, photo is always on top for natural readability */
+      .executive-card.reverse .executive-photo-wrap {
+        order: -1;
+      }
+    }
+    @media (max-width: 639px) {
+      .executive-card,
+      .executive-card.reverse {
+        padding: 24px 20px;
+        border-radius: 22px;
+      }
+      .executive-stack {
+        gap: 24px;
+      }
     }
     .executive-photo-wrap {
       position: relative;
@@ -224,10 +269,11 @@
       padding: 20px 22px;
       background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.5) 70%, transparent 100%);
       color: white;
+      z-index: 2;
     }
     .executive-quote-box {
-      margin-top: 22px;
-      margin-bottom: 24px;
+      margin-top: 14px;
+      margin-bottom: 18px;
     }
 
     /* ===================== IDEA 2: TIERED VISION, MISSION & VALUES ===================== */
@@ -808,55 +854,171 @@
 
     <!-- ===================== 3. EXECUTIVE LEADERSHIP MESSAGE ===================== -->
     <section class="section-wrapper" data-aos="fade-up">
-      <div class="executive-card">
+      <div class="executive-stack">
         
-        <!-- Chân Dung Tổng Giám Đốc -->
-        <div class="executive-photo-wrap group cursor-pointer" onclick="openLightbox('assets/company/tong-giam-doc-mac-duy-hung.jpg', 'Ông Mạc Duy Hưng – Founder & CEO HANIKI & BeeCare')">
-          <img
-            src="assets/company/tong-giam-doc-mac-duy-hung.jpg"
-            alt="Tổng giám đốc Mạc Duy Hưng – Công ty TNHH HANIKI"
-            loading="lazy"
-          />
-          <div class="executive-photo-badge">
-            <div class="text-white font-extrabold text-lg sm:text-xl" data-i18n="company_ceo_name">Ông Mạc Duy Hưng</div>
-            <div class="text-teal-300 text-xs sm:text-sm font-semibold mt-0.5" data-i18n="company_ceo_role">Founder & CEO • Công ty TNHH HANIKI</div>
+        <!-- Leader 1: Tổng Giám Đốc (Ảnh bên Trái, Lời ngỏ bên Phải) -->
+        <div class="executive-card">
+          <!-- Chân Dung Tổng Giám Đốc -->
+          <div class="executive-photo-wrap group cursor-pointer" onclick="openLightbox('assets/company/tong-giam-doc-mac-duy-hung.jpg', 'Ông Mạc Duy Hưng – Founder & CEO HANIKI & BeeCare')">
+            <img
+              src="assets/company/tong-giam-doc-mac-duy-hung.jpg"
+              alt="Tổng giám đốc Mạc Duy Hưng – Công ty TNHH HANIKI"
+              loading="lazy"
+              style="object-position: center 30%;"
+            />
+            <div class="executive-photo-badge">
+              <div class="text-white font-extrabold text-lg sm:text-xl" data-i18n="company_ceo_name">Ông Mạc Duy Hưng</div>
+              <div class="text-teal-300 text-xs sm:text-sm font-semibold mt-0.5" data-i18n="company_ceo_role">Founder & CEO • Công ty TNHH HANIKI</div>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh" style="position:absolute;top:14px;right:14px;z-index:3;">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+          <!-- Lời Ngỏ & Thông Điệp -->
+          <div>
+            <div class="section-badge">
+              <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+              <span data-i18n="company_lead_badge">Ban lãnh đạo</span>
+            </div>
+            <h2 class="section-heading" data-i18n="company_lead_title">
+              Tâm huyết vì sự phát triển của y tế dưỡng lão
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4" data-i18n="company_lead_desc">
+              Đội ngũ sáng lập mong muốn ứng dụng công nghệ để nâng cao chất lượng phụng dưỡng người cao tuổi.
+            </p>
+
+            <div class="executive-quote-box relative bg-slate-50 border-l-4 border-teal-500 rounded-r-2xl p-5 sm:p-6 shadow-sm">
+              <blockquote class="text-slate-700 italic text-sm sm:text-base leading-relaxed" data-i18n="company_ceo_quote">
+                "Chăm sóc người cao tuổi là công việc đòi hỏi sự kiên nhẫn, tận tụy và trách nhiệm cao. Chúng tôi phát triển BeeCare với mong muốn ứng dụng công nghệ để hỗ trợ đắc lực cho điều dưỡng viên, giảm bớt áp lực ghi chép thủ công để họ có thêm thời gian lắng nghe và chăm sóc các cụ chu đáo hơn."
+              </blockquote>
+            </div>
+
+            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-5" data-i18n="company_ceo_subtext">
+              Mỗi tính năng của BeeCare đều được xây dựng dựa trên khảo sát thực tế quy trình vận hành và tiếp thu ý kiến đóng góp từ các y bác sĩ, điều dưỡng viên tại cơ sở dưỡng lão.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-50 text-teal-800 text-xs font-semibold border border-teal-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-teal-600"></i>
+                <span data-i18n="company_ceo_tag1">Thiết kế sát thực tế quy trình</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-semibold border border-sky-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-600"></i>
+                <span data-i18n="company_ceo_tag2">Đồng hành triển khai tận nơi</span>
+              </span>
+            </div>
           </div>
         </div>
 
-        <!-- Lời Ngỏ & Thông Điệp -->
-        <div>
-          <div class="section-badge">
-            <i data-lucide="quote" class="w-3.5 h-3.5"></i>
-            <span data-i18n="company_lead_badge">Ban lãnh đạo</span>
+        <!-- Leader 2: Giám Đốc (Nằm dưới Tổng Giám Đốc, Lời ngỏ bên Trái, Ảnh bên Phải) -->
+        <div class="executive-card reverse">
+          <!-- Lời Ngỏ & Thông Điệp (Bên Trái) -->
+          <div>
+            <div class="section-badge">
+              <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i>
+              <span data-i18n="company_director_badge">Ban điều hành</span>
+            </div>
+            <h2 class="section-heading" data-i18n="company_director_title">
+              Thấu cảm thực tế, chuẩn hóa quy trình phụng dưỡng
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4" data-i18n="company_director_desc">
+              Lắng nghe và đồng hành sát sao cùng các viện dưỡng lão để mang đến giải pháp công nghệ nhân văn, an toàn và dễ sử dụng.
+            </p>
+
+            <div class="executive-quote-box relative bg-slate-50 border-l-4 border-amber-500 rounded-r-2xl p-5 sm:p-6 shadow-sm">
+              <blockquote class="text-slate-700 italic text-sm sm:text-base leading-relaxed" data-i18n="company_director_quote">
+                "Mỗi giải pháp của BeeCare đều xuất phát từ sự thấu hiểu sâu sắc thực tế tại các viện dưỡng lão. Chúng tôi luôn đồng hành sát sao cùng cơ sở, chuẩn hóa từng quy trình chăm sóc để mang lại sự an tâm trọn vẹn cho gia đình và sự ấm áp cho người cao tuổi."
+              </blockquote>
+            </div>
+
+            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-5" data-i18n="company_director_subtext">
+              Chịu trách nhiệm điều hành vận hành tổng thể, phát triển mạng lưới đối tác viện dưỡng lão và trực tiếp giám sát các dự án khảo sát, chuyển giao công nghệ tại cơ sở.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 text-xs font-semibold border border-amber-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span data-i18n="company_director_tag1">Điều hành & Quản trị vận hành</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 text-rose-800 text-xs font-semibold border border-rose-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-rose-600"></i>
+                <span data-i18n="company_director_tag2">Đồng hành đối tác & Khách hàng</span>
+              </span>
+            </div>
           </div>
-          <h2 class="section-heading" data-i18n="company_lead_title">
-            Tâm huyết vì sự phát triển của y tế dưỡng lão
-          </h2>
-          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4" data-i18n="company_lead_desc">
-            Đội ngũ sáng lập mong muốn ứng dụng công nghệ để nâng cao chất lượng phụng dưỡng người cao tuổi.
-          </p>
 
-          <div class="executive-quote-box relative bg-slate-50 border-l-4 border-teal-500 rounded-r-2xl p-5 sm:p-6 shadow-sm">
-            <blockquote class="text-slate-700 italic text-sm sm:text-base leading-relaxed" data-i18n="company_ceo_quote">
-              "Chăm sóc người cao tuổi là công việc đòi hỏi sự kiên nhẫn, tận tụy và trách nhiệm cao. Chúng tôi phát triển BeeCare với mong muốn ứng dụng công nghệ để hỗ trợ đắc lực cho điều dưỡng viên, giảm bớt áp lực ghi chép thủ công để họ có thêm thời gian lắng nghe và chăm sóc các cụ chu đáo hơn."
-            </blockquote>
+          <!-- Chân Dung Giám Đốc (Bên Phải) -->
+          <div class="executive-photo-wrap group cursor-pointer" onclick="openLightbox('assets/company/giam-doc-tran-thi-huyen-trang.png', 'Bà Trần Thị Huyền Trang – Giám Đốc HANIKI & BeeCare')">
+            <img
+              src="assets/company/giam-doc-tran-thi-huyen-trang.png"
+              alt="Giám đốc Trần Thị Huyền Trang – Công ty TNHH HANIKI"
+              loading="lazy"
+              style="object-position: center 70%;"
+            />
+            <div class="executive-photo-badge">
+              <div class="text-white font-extrabold text-lg sm:text-xl" data-i18n="company_director_name">Bà Trần Thị Huyền Trang</div>
+              <div class="text-amber-300 text-xs sm:text-sm font-semibold mt-0.5" data-i18n="company_director_role">Giám Đốc • Công ty TNHH HANIKI</div>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh" style="position:absolute;top:14px;right:14px;z-index:3;">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Leader 3: Phó Giám Đốc (Ảnh bên Trái, Lời ngỏ bên Phải) -->
+        <div class="executive-card">
+          <!-- Chân Dung Phó Giám Đốc -->
+          <div class="executive-photo-wrap group cursor-pointer" onclick="openLightbox('assets/company/pho-giam-doc-tran-ngoc-chinh.jpg?v=20261023_v2', 'Ông Trần Ngọc Chỉnh – Phó Giám Đốc HANIKI & BeeCare')">
+            <img
+              src="assets/company/pho-giam-doc-tran-ngoc-chinh.jpg?v=20261023_v2"
+              alt="Phó giám đốc Trần Ngọc Chỉnh – Công ty TNHH HANIKI"
+              loading="lazy"
+              style="object-position: center 55%;"
+            />
+            <div class="executive-photo-badge">
+              <div class="text-white font-extrabold text-lg sm:text-xl" data-i18n="company_deputy_name">Ông Trần Ngọc Chỉnh</div>
+              <div class="text-sky-300 text-xs sm:text-sm font-semibold mt-0.5" data-i18n="company_deputy_role">Phó Giám Đốc • Công ty TNHH HANIKI</div>
+            </div>
+            <button type="button" class="workplace-zoom-btn" title="Phóng to ảnh" aria-label="Phóng to ảnh" style="position:absolute;top:14px;right:14px;z-index:3;">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+            </button>
           </div>
 
-          <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-5" data-i18n="company_ceo_subtext">
-            Mỗi tính năng của BeeCare đều được xây dựng dựa trên khảo sát thực tế quy trình vận hành và tiếp thu ý kiến đóng góp từ các y bác sĩ, điều dưỡng viên tại cơ sở dưỡng lão.
-          </p>
+          <!-- Lời Ngỏ & Thông Điệp (Bên Phải) -->
+          <div>
+            <div class="section-badge">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+              <span data-i18n="company_deputy_badge">Ban điều hành</span>
+            </div>
+            <h2 class="section-heading" data-i18n="company_deputy_title">
+              Đồng hành công nghệ, đảm bảo an toàn vận hành y tế
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4" data-i18n="company_deputy_desc">
+              Trực tiếp chỉ đạo triển khai kỹ thuật, kiểm soát chất lượng vận hành và đảm bảo tính bảo mật ổn định cho các viện dưỡng lão.
+            </p>
 
-          <div class="flex flex-wrap items-center gap-3 pt-1">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-50 text-teal-800 text-xs font-semibold border border-teal-200/60">
-              <i data-lucide="check" class="w-3.5 h-3.5 text-teal-600"></i>
-              <span data-i18n="company_ceo_tag1">Thiết kế sát thực tế quy trình</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-semibold border border-sky-200/60">
-              <i data-lucide="check" class="w-3.5 h-3.5 text-sky-600"></i>
-              <span data-i18n="company_ceo_tag2">Đồng hành triển khai tận nơi</span>
-            </span>
+            <div class="executive-quote-box relative bg-slate-50 border-l-4 border-sky-500 rounded-r-2xl p-5 sm:p-6 shadow-sm">
+              <blockquote class="text-slate-700 italic text-sm sm:text-base leading-relaxed" data-i18n="company_deputy_quote">
+                "Mục tiêu cao nhất của chúng tôi là đảm bảo phần mềm hoạt động ổn định, dữ liệu sức khỏe của các cụ luôn được bảo mật tuyệt đối và việc hỗ trợ các viện dưỡng lão diễn ra kịp thời, chu đáo trong từng ca trực."
+              </blockquote>
+            </div>
+
+            <p class="text-slate-500 text-xs sm:text-sm leading-relaxed mb-5" data-i18n="company_deputy_subtext">
+              Phụ trách quản trị kỹ thuật, quy trình chuẩn hóa an toàn thông tin EMR và trực tiếp điều phối đội ngũ kỹ thuật đồng hành cùng các cơ sở dưỡng lão trên toàn quốc.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-sky-50 text-sky-800 text-xs font-semibold border border-sky-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-sky-600"></i>
+                <span data-i18n="company_deputy_tag1">Quản trị kỹ thuật & An toàn EMR</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-800 text-xs font-semibold border border-indigo-200/60">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-600"></i>
+                <span data-i18n="company_deputy_tag2">Tối ưu quy trình & Hỗ trợ cơ sở</span>
+              </span>
+            </div>
           </div>
-
         </div>
 
       </div>
@@ -1319,7 +1481,7 @@
               Cam kết đồng hành toàn diện
             </h4>
             <p class="text-xs sm:text-sm text-slate-500 mt-0.5" data-i18n="company_part_trust_desc">
-              Khảo sát tận viện · Cài đặt dữ liệu mẫu · Đào tạo cầm tay chỉ việc · Hỗ trợ kỹ thuật 24/7
+              Khảo sát tận viện · Cài đặt dữ liệu mẫu · Đào tạo cầm tay chỉ việc · Hỗ trợ kỹ thuật giờ hành chính (T2 – T7)
             </p>
           </div>
         </div>
@@ -1394,9 +1556,9 @@
                   <i data-lucide="clock" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <div class="text-xs font-bold text-slate-400 tracking-wide mb-0.5" data-i18n="company_legal_hours_label">Thời gian làm việc</div>
+                  <div class="text-xs font-bold text-slate-400 tracking-wide mb-0.5" data-i18n="company_legal_hours_label">Thời gian làm việc & hỗ trợ</div>
                   <div class="text-slate-800 text-xs sm:text-sm font-medium" data-i18n="company_legal_hours_val">
-                    Thứ Hai – Thứ Bảy: 8:00 – 18:00
+                    Thứ Hai – Thứ Bảy: 8:00 – 18:00 (Giờ hành chính)
                   </div>
                 </div>
               </div>
@@ -1556,8 +1718,7 @@
               <span data-i18n="footer_support_hours">Giờ hỗ trợ</span>
             </div>
             <div style="font-size:12px;color:#64748b;line-height:1.6">
-              <span data-i18n="footer_hours_days">Thứ 2 – Thứ 7:</span> <strong style="color:#94a3b8">8:00 – 18:00</strong><br>
-              <span data-i18n="footer_hours_cloud">Giám sát cloud:</span> <strong style="color:#38bdf8">24/7 365 ngày</strong>
+              <span data-i18n="footer_hours_days">Thứ Hai – Thứ Bảy: 8:00 – 18:00 (Giờ hành chính)</span>
             </div>
             <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
               <a href="contact.html" style="display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#0f172a;font-size:12.5px;font-weight:700;text-decoration:none;transition:opacity 0.2s ease">
