@@ -7345,14 +7345,19 @@ h2.font-heading,
 }
 @media (min-width: 768px) {
     .pricing-card-popular {
-        transform: scale(1.05) translateY(-14px);
-        transform-origin: center center;
+        margin-top: -10px !important;
+        transform: none !important;
+    }
+    .pricing-card-popular:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 30px 65px -12px rgba(245, 158, 11, 0.32), 0 0 0 1px rgba(245, 158, 11, 0.22) !important;
     }
 }
 @media (max-width: 767px) {
     .pricing-card-popular {
         padding: 38px 24px !important;
-        margin: 16px 0;
+        margin: 16px 0 16px 0 !important;
+        transform: none !important;
     }
 }
 .pricing-card-popular .vm-icon-box {
@@ -7407,21 +7412,22 @@ h2.font-heading,
 }
 .popular-ribbon {
     position: absolute;
-    top: 0;
-    right: 28px;
+    top: -12px;
+    right: 20px;
     background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
     color: #ffffff;
     font-size: 12px;
     font-weight: 700;
     text-transform: none !important;
     letter-spacing: 0.2px;
-    padding: 7px 18px;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 6px 18px rgba(245, 158, 11, 0.35);
+    padding: 5px 14px;
+    border-radius: 9999px;
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.32);
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     overflow: hidden;
+    z-index: 20;
 }
 .popular-ribbon::after {
     content: '';
