@@ -7339,17 +7339,17 @@ h2.font-heading,
     box-shadow: 0 25px 60px -12px rgba(245, 158, 11, 0.28), 0 0 0 1px rgba(245, 158, 11, 0.15) !important;
     position: relative;
     z-index: 10;
-    padding: 44px 34px !important;
+    padding: 38px 32px !important;
     border-radius: 28px !important;
     background: #ffffff !important;
 }
 @media (min-width: 768px) {
     .pricing-card-popular {
-        margin-top: -10px !important;
+        margin-top: 0 !important;
         transform: none !important;
     }
     .pricing-card-popular:hover {
-        transform: translateY(-3px) !important;
+        transform: translateY(-4px) !important;
         box-shadow: 0 30px 65px -12px rgba(245, 158, 11, 0.32), 0 0 0 1px rgba(245, 158, 11, 0.22) !important;
     }
 }
@@ -10413,6 +10413,150 @@ h2.font-heading,
   border-color: #94A3B8;
   transform: translateY(-1.5px);
   color: #0F172A !important;
+}
+
+/* ===================== IN-CARD COMPARISON LIST ===================== */
+/* Standardization classes for razor-sharp row alignment */
+.card-plan-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-plan-desc {
+  min-height: 64px;
+}
+
+.card-plan-price-block {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-plan-platform-wrap {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.card-compare-box {
+  margin-top: 0;
+  padding-top: 18px;
+  border-top: 1px solid #F1F5F9;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-compare-head {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.card-compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-compare-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  min-height: 42px;
+}
+
+.card-compare-item.included {
+  color: #1E293B;
+  font-weight: 500;
+}
+
+.card-compare-item.highlight-pro {
+  color: #78350F;
+  font-weight: 600;
+}
+
+.card-compare-item.highlight-vip {
+  color: #0369A1;
+  font-weight: 600;
+}
+
+.card-compare-item.not-included {
+  color: #94A3B8;
+  opacity: 0.65;
+}
+
+.card-compare-item.not-included span {
+  text-decoration: line-through;
+  text-decoration-color: #CBD5E1;
+}
+
+.card-compare-icon-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #16A34A;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.card-compare-icon-pro {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.card-compare-icon-vip {
+  background: #E0F2FE;
+  color: #0284C7;
+}
+
+.card-compare-icon-dash {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #94A3B8;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-compare-badge {
+  display: inline-block;
+  padding: 1.5px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.card-compare-badge-pro {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.card-compare-badge-vip {
+  background: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
 }
 
 

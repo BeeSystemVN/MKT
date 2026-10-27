@@ -426,7 +426,25 @@ Object.assign(window.TRANSLATIONS.vi, {
   
   "compare_val_basic": "Cơ bản",
   "compare_val_pro": "Chuyên sâu",
-  "compare_val_vip": "Toàn diện 24/7"
+  "compare_val_vip": "Toàn diện 24/7",
+
+  /* In-card Comparison Checklist */
+  "card_cmp_head": "So sánh tính năng & khác biệt:",
+  "card_badge_diff_pro": "+2 Khác biệt",
+  "card_badge_diff_vip": "+Trọn bộ Daycare",
+  "cmp_item_emr": "Web Admin: Quản lý hồ sơ bệnh án EMR",
+  "cmp_item_nurse": "App Điều dưỡng: Kế hoạch & sinh hiệu",
+  "cmp_item_family": "App Người thân: Theo dõi sức khỏe 24/7",
+  "cmp_item_qr": "Thanh toán viện phí QR",
+  "cmp_item_comm": "Kênh chat y tế & Hóa đơn viện phí QR",
+  "cmp_item_daycare": "Phân hệ Bán trú Daycare: Đón trả & điểm danh",
+  "cmp_item_rehab": "Lịch phục hồi chức năng & sinh hoạt ngày",
+  "cmp_item_kaigo_basic": "Hỗ trợ kỹ thuật trong giờ hành chính",
+  "cmp_item_kaigo_pro": "Hỗ trợ kỹ thuật 24/7 trong suốt sử dụng",
+  "cmp_item_kaigo_vip": "Chuyển giao toàn diện quy trình chuẩn Kaigo",
+  "plan_btn_basic": "Tư vấn gói Cơ bản",
+  "plan_btn_pro": "Chọn gói Nâng cao",
+  "plan_btn_vip": "Tư vấn gói VIP"
 });
 
 /* ========================================================
@@ -855,7 +873,25 @@ Object.assign(window.TRANSLATIONS.en, {
   
   "compare_val_basic": "Basic",
   "compare_val_pro": "In-depth",
-  "compare_val_vip": "Comprehensive 24/7"
+  "compare_val_vip": "Comprehensive 24/7",
+
+  /* In-card Comparison Checklist */
+  "card_cmp_head": "Feature & tier comparison:",
+  "card_badge_diff_pro": "+2 Additions",
+  "card_badge_diff_vip": "+Full Daycare",
+  "cmp_item_emr": "Web Admin: EMR & facility management",
+  "cmp_item_nurse": "Nurse App: Care plans & vitals logging",
+  "cmp_item_family": "Family App: 24/7 vitals & photo diary",
+  "cmp_item_qr": "QRCode hospital fee payment",
+  "cmp_item_comm": "Doctor chat channel & QRCode digital billing",
+  "cmp_item_daycare": "Daycare Module: Pick-up & attendance",
+  "cmp_item_rehab": "Daytime rehab & activities schedule",
+  "cmp_item_kaigo_basic": "Technical support during business hours",
+  "cmp_item_kaigo_pro": "24/7 continuous technical support",
+  "cmp_item_kaigo_vip": "Comprehensive Kaigo operational handover",
+  "plan_btn_basic": "Inquire Basic",
+  "plan_btn_pro": "Select Advanced",
+  "plan_btn_vip": "Inquire VIP"
 });
 
 /* ========================================================
@@ -1284,5 +1320,23 @@ Object.assign(window.TRANSLATIONS.ja, {
   
   "compare_val_basic": "標準",
   "compare_val_pro": "専任指導",
-  "compare_val_vip": "完全伴走 24/7"
+  "compare_val_vip": "完全伴走 24/7",
+
+  /* In-card Comparison Checklist */
+  "card_cmp_head": "機能と相違点の比較:",
+  "card_badge_diff_pro": "+2つの追加機能",
+  "card_badge_diff_vip": "+デイケア完備",
+  "cmp_item_emr": "管理Web：電子カルテ＆入所管理",
+  "cmp_item_nurse": "介護App：ケアプラン＆バイタル記録",
+  "cmp_item_family": "家族App：24時間バイタル＆写真共有",
+  "cmp_item_qr": "QRコード決済・医療費請求",
+  "cmp_item_comm": "医療チャット＆QR電子請求",
+  "cmp_item_daycare": "デイケア機能：送迎・出欠管理",
+  "cmp_item_rehab": "日中リハビリ＆活動スケジュール",
+  "cmp_item_kaigo_basic": "営業時間内の基本技術サポート",
+  "cmp_item_kaigo_pro": "24時間年中無休テクニカルサポート",
+  "cmp_item_kaigo_vip": "日本式介護標準マニュアルの全面移転",
+  "plan_btn_basic": "ベーシックプランを相談",
+  "plan_btn_pro": "アドバンスプランを選択",
+  "plan_btn_vip": "VIPプランを相談"
 });

@@ -272,7 +272,6 @@
   <main class="bg-slate-50 relative pb-20">
 
     <!-- ===================== 3. PRICING CARDS SECTION ===================== -->
-    <!-- ===================== 3. PRICING CARDS SECTION ===================== -->
     <section id="plans" class="section-wrapper scroll-mt-24" data-aos="fade-up">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <h2 class="section-heading" data-i18n="pricing_plans_title">
@@ -288,7 +287,7 @@
         
         <!-- CARD 1: CƠ BẢN (BASIC) -->
         <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
-          <div>
+          <div class="card-plan-top">
             <!-- Header Icon & Badge -->
             <div class="flex items-center justify-between mb-4">
               <div class="vm-icon-box bg-slate-100 text-slate-700 border border-slate-200">
@@ -300,60 +299,66 @@
             </div>
 
             <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_basic_title">Cơ bản</h3>
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-5" data-i18n="plan_basic_desc">
+            <p class="card-plan-desc text-sm text-slate-600 leading-relaxed mb-5" data-i18n="plan_basic_desc">
               Phần mềm quản lý dành cho Admin (Web app) và Phần mềm cho nhân viên (Mobile app) cho viện quy mô nhỏ.
             </p>
 
             <!-- Price Block: Liên hệ báo giá -->
-            <div class="mb-5 pb-5 border-b border-slate-100">
-              <div class="text-xs text-slate-500 font-medium mb-1.5" data-i18n="plan_basic_fixed_label">Chi phí bản quyền</div>
-              <div class="flex items-baseline gap-1.5">
-                <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="plan_basic_price">Liên hệ báo giá</span>
+            <div class="card-plan-price-block mb-5 pb-5 border-b border-slate-100">
+              <div>
+                <div class="text-xs text-slate-500 font-medium mb-1.5" data-i18n="plan_basic_fixed_label">Chi phí bản quyền</div>
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="plan_basic_price">Liên hệ báo giá</span>
+                </div>
+                <div class="text-xs text-slate-500 font-medium mt-2 leading-relaxed" data-i18n="plan_basic_sub">
+                  Báo giá theo quy mô & nhu cầu thực tế của viện
+                </div>
               </div>
-              <div class="text-xs text-slate-500 font-medium mt-2 leading-relaxed" data-i18n="plan_basic_sub">
-                Báo giá theo quy mô & nhu cầu thực tế của viện
-              </div>
-              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 mt-3 border border-slate-200">
-                <i data-lucide="layers" class="w-3.5 h-3.5 text-slate-500"></i>
-                <span data-i18n="plan_basic_platforms">Web Admin + App Điều dưỡng Mobile</span>
+              <div class="card-plan-platform-wrap mt-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                  <i data-lucide="layers" class="w-3.5 h-3.5 text-slate-500"></i>
+                  <span data-i18n="plan_basic_platforms">Web Admin + App Điều dưỡng Mobile</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Features List -->
-            <div>
-              <div class="text-xs font-bold text-slate-900 tracking-wide mb-4" data-i18n="pricing_features_basic_head">
-                Tính năng bao gồm:
+          <!-- In-Card Comparison (Cơ bản) -->
+          <div class="card-compare-box">
+            <div class="card-compare-head text-slate-800">
+              <span data-i18n="card_cmp_head">So sánh tính năng & khác biệt:</span>
+            </div>
+            <div class="card-compare-list">
+              <!-- 1. Web Admin -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_emr">Web Admin: Quản lý hồ sơ bệnh án EMR</span>
               </div>
-              <ul class="space-y-3 text-sm text-slate-700">
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_1">Web Admin: Quản lý hồ sơ bệnh án EMR & lịch sử điều trị</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_2">Quản lý hợp đồng dịch vụ, tiếp nhận & phân bổ phòng giường</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_3">App Điều dưỡng: Kế hoạch chăm sóc chi tiết theo ca trực</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_4">Ghi nhận chỉ số sinh hiệu tại giường (Huyết áp, SpO2, Tim...)</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_5">Cảnh báo chỉ số bất thường & bàn giao ca trực điện tử</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_6">Báo cáo thống kê chỉ số sức khỏe & viện phí định kỳ</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_basic_7">Hỗ trợ kỹ thuật 24/7 hoàn toàn miễn phí</span>
-                </li>
-              </ul>
+              <!-- 2. Nurse App -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_nurse">App Điều dưỡng: Kế hoạch & sinh hiệu</span>
+              </div>
+              <!-- 3. Family App -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_family">App Người thân: Theo dõi sức khỏe 24/7</span>
+              </div>
+              <!-- 4. QR Payment -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_qr">Thanh toán viện phí QR</span>
+              </div>
+              <!-- 5. Daycare Module -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_daycare">Phân hệ Bán trú Daycare: Đón trả & điểm danh</span>
+              </div>
+              <!-- 6. Daytime Rehab -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_rehab">Lịch phục hồi chức năng & sinh hoạt ngày</span>
+              </div>
             </div>
           </div>
         </div>
@@ -366,7 +371,7 @@
             <span data-i18n="pricing_popular">Phổ biến nhất</span>
           </div>
 
-          <div>
+          <div class="card-plan-top">
             <!-- Header Icon & Badge -->
             <div class="flex items-center justify-between mb-4">
               <div class="vm-icon-box bg-amber-50 text-amber-600 border border-amber-200">
@@ -378,63 +383,73 @@
             </div>
 
             <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_pro_title">Nâng cao</h3>
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-5" data-i18n="plan_pro_desc">
+            <p class="card-plan-desc text-sm text-slate-600 leading-relaxed mb-5" data-i18n="plan_pro_desc">
               Mở rộng kết nối người thân gia đình qua Family App theo dõi sức khỏe và viện phí 24/7.
             </p>
 
             <!-- Price Block: Liên hệ báo giá -->
-            <div class="mb-5 pb-5 border-b border-slate-100">
-              <div class="text-xs text-amber-800 font-medium mb-1.5" data-i18n="plan_pro_fixed_label">Chi phí bản quyền</div>
-              <div class="flex items-baseline gap-1.5">
-                <span class="text-2xl sm:text-3xl font-extrabold text-amber-600 font-heading tracking-tight" data-i18n="plan_pro_price">Liên hệ báo giá</span>
+            <div class="card-plan-price-block mb-5 pb-5 border-b border-slate-100">
+              <div>
+                <div class="text-xs text-amber-800 font-medium mb-1.5" data-i18n="plan_pro_fixed_label">Chi phí bản quyền</div>
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-2xl sm:text-3xl font-extrabold text-amber-600 font-heading tracking-tight" data-i18n="plan_pro_price">Liên hệ báo giá</span>
+                </div>
+                <div class="text-xs text-amber-700 font-medium mt-2 leading-relaxed" data-i18n="plan_pro_sub">
+                  Báo giá theo quy mô & nhu cầu thực tế của viện
+                </div>
               </div>
-              <div class="text-xs text-amber-700 font-medium mt-2 leading-relaxed" data-i18n="plan_pro_sub">
-                Báo giá theo quy mô & nhu cầu thực tế của viện
-              </div>
-              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 mt-3 border border-amber-200">
-                <i data-lucide="users" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span data-i18n="plan_pro_platforms">Web Admin + App Điều dưỡng + App Người thân</span>
+              <div class="card-plan-platform-wrap mt-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">
+                  <i data-lucide="users" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <span data-i18n="plan_pro_platforms">Web Admin + App Điều dưỡng + App Người thân</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Features List -->
-            <div>
-              <div class="text-xs font-bold text-amber-900 tracking-wide mb-4" data-i18n="pricing_features_pro_head">
-                Bao gồm gói Cơ bản, cộng thêm:
+          <!-- In-Card Comparison (Nâng cao) -->
+          <div class="card-compare-box">
+            <div class="card-compare-head text-amber-900">
+              <span data-i18n="card_cmp_head">So sánh tính năng & khác biệt:</span>
+            </div>
+            <div class="card-compare-list">
+              <!-- 1. Web Admin -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_emr">Web Admin: Quản lý hồ sơ bệnh án EMR</span>
               </div>
-              <ul class="space-y-3 text-sm text-slate-700">
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_1">App Người thân (Family App): Kết nối gia đình theo dõi 24/7</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_2">Xem kết quả sinh hiệu & nhật ký hình ảnh hoạt động mỗi ngày</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_3">Cổng thông tin gia đình minh bạch lịch trình & y lệnh</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_4">Kênh trao đổi trực tiếp giữa gia đình & bác sĩ phụ trách</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_5">Hóa đơn viện phí điện tử & thông báo nhắc nợ tự động</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_pro_6">Hỗ trợ kỹ thuật 24/7 trong suốt quá trình sử dụng</span>
-                </li>
-              </ul>
+              <!-- 2. Nurse App -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_nurse">App Điều dưỡng: Kế hoạch & sinh hiệu</span>
+              </div>
+              <!-- 3. Family App (DIFFERENCE / HIGHLIGHT) -->
+              <div class="card-compare-item highlight-pro">
+                <span class="card-compare-icon-check card-compare-icon-pro"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_family">App Người thân: Theo dõi sức khỏe 24/7</span>
+              </div>
+              <!-- 4. QR Payment (DIFFERENCE / HIGHLIGHT) -->
+              <div class="card-compare-item highlight-pro">
+                <span class="card-compare-icon-check card-compare-icon-pro"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_qr">Thanh toán viện phí QR</span>
+              </div>
+              <!-- 5. Daycare Module -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_daycare">Phân hệ Bán trú Daycare: Đón trả & điểm danh</span>
+              </div>
+              <!-- 6. Daytime Rehab -->
+              <div class="card-compare-item not-included">
+                <span class="card-compare-icon-dash"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
+                <span data-i18n="cmp_item_rehab">Lịch phục hồi chức năng & sinh hoạt ngày</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- CARD 3: VIP (ALL-IN-ONE ECOSYSTEM) -->
         <div class="vm-card" data-aos="fade-up" data-aos-delay="300">
-          <div>
+          <div class="card-plan-top">
             <!-- Header Icon & Badge -->
             <div class="flex items-center justify-between mb-4">
               <div class="vm-icon-box bg-sky-50 text-sky-600 border border-sky-100">
@@ -446,388 +461,72 @@
             </div>
 
             <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-heading" data-i18n="plan_premium_title">VIP</h3>
-            <p class="text-sm text-slate-600 leading-relaxed min-h-[44px] mb-5" data-i18n="plan_premium_desc">
+            <p class="card-plan-desc text-sm text-slate-600 leading-relaxed mb-5" data-i18n="plan_premium_desc">
               Trọn bộ 3 nền tảng Web + Mobile cùng Phân hệ Bán trú (Daycare) chuyên sâu.
             </p>
 
             <!-- Price Block: Liên hệ báo giá -->
-            <div class="mb-5 pb-5 border-b border-slate-100">
-              <div class="text-xs text-slate-500 font-medium mb-1.5" data-i18n="plan_premium_fixed_label">Chi phí bản quyền</div>
-              <div class="flex items-baseline gap-1.5">
-                <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="plan_premium_price">Liên hệ báo giá</span>
+            <div class="card-plan-price-block mb-5 pb-5 border-b border-slate-100">
+              <div>
+                <div class="text-xs text-slate-500 font-medium mb-1.5" data-i18n="plan_premium_fixed_label">Chi phí bản quyền</div>
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading tracking-tight" data-i18n="plan_premium_price">Liên hệ báo giá</span>
+                </div>
+                <div class="text-xs text-slate-500 font-medium mt-2 leading-relaxed" data-i18n="plan_premium_sub">
+                  Báo giá theo quy mô & nhu cầu thực tế của viện
+                </div>
               </div>
-              <div class="text-xs text-slate-500 font-medium mt-2 leading-relaxed" data-i18n="plan_premium_sub">
-                Báo giá theo quy mô & nhu cầu thực tế của viện
-              </div>
-              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-50 text-sky-800 mt-3 border border-sky-200">
-                <i data-lucide="crown" class="w-3.5 h-3.5 text-sky-600"></i>
-                <span data-i18n="plan_premium_platforms">Web Admin + App Điều dưỡng + App Người thân + Mode Bán trú</span>
+              <div class="card-plan-platform-wrap mt-3">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-200">
+                  <i data-lucide="crown" class="w-3.5 h-3.5 text-sky-600"></i>
+                  <span data-i18n="plan_premium_platforms">Web Admin + App Điều dưỡng + App Người thân + Mode Bán trú</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            <!-- Features List -->
-            <div>
-              <div class="text-xs font-bold text-slate-900 tracking-wide mb-4" data-i18n="pricing_features_premium_head">
-                Bao gồm gói Nâng cao, cộng thêm:
+          <!-- In-Card Comparison (VIP) -->
+          <div class="card-compare-box">
+            <div class="card-compare-head text-sky-900">
+              <span data-i18n="card_cmp_head">So sánh tính năng & khác biệt:</span>
+            </div>
+            <div class="card-compare-list">
+              <!-- 1. Web Admin -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_emr">Web Admin: Quản lý hồ sơ bệnh án EMR</span>
               </div>
-              <ul class="space-y-3 text-sm text-slate-700">
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_1">Mode Bán trú (Daycare): Quản lý đón trả NCT theo ngày & buổi</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_2">Lập lịch hoạt động, sinh hoạt & phục hồi chức năng ban ngày</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_3">Quản lý thực đơn, suất ăn theo buổi & theo dõi chế độ dinh dưỡng</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_4">Điểm danh đón/trả NCT bán trú tự động trên App Mobile</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_5">Quản lý viện phí bán trú linh hoạt theo gói ngày, tuần hoặc tháng</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5"></i>
-                  <span data-i18n="feat_premium_6">Đào tạo & chuyển giao quy trình vận hành bán trú chuẩn Kaigo</span>
-                </li>
-              </ul>
+              <!-- 2. Nurse App -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_nurse">App Điều dưỡng: Kế hoạch & sinh hiệu</span>
+              </div>
+              <!-- 3. Family App -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check card-compare-icon-vip"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_family">App Người thân: Theo dõi sức khỏe 24/7</span>
+              </div>
+              <!-- 4. QR Payment -->
+              <div class="card-compare-item included">
+                <span class="card-compare-icon-check card-compare-icon-vip"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_qr">Thanh toán viện phí QR</span>
+              </div>
+              <!-- 5. Daycare Module (DIFFERENCE / HIGHLIGHT) -->
+              <div class="card-compare-item highlight-vip">
+                <span class="card-compare-icon-check card-compare-icon-vip"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_daycare">Phân hệ Bán trú Daycare: Đón trả & điểm danh</span>
+              </div>
+              <!-- 6. Daytime Rehab (DIFFERENCE / HIGHLIGHT) -->
+              <div class="card-compare-item highlight-vip">
+                <span class="card-compare-icon-check card-compare-icon-vip"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
+                <span data-i18n="cmp_item_rehab">Lịch phục hồi chức năng & sinh hoạt ngày</span>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- ===================== COMPARISON TABLE (OPTION A - MODERN FLAT) ===================== -->
-      <div id="compare-table" class="pricing-compare-wrap max-w-6xl mx-auto pt-10 sm:pt-14" data-aos="fade-up">
-        
-        <!-- Section Title & Badge -->
-        <div class="text-center max-w-3xl mx-auto mb-8">
-          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-heading mb-3" data-i18n="compare_title">
-            So sánh chi tiết tính năng theo từng gói
-          </h3>
-          <p class="text-sm text-slate-600 leading-relaxed" data-i18n="compare_desc">
-            Xem và đối chiếu đầy đủ các tính năng, phân hệ và quyền lợi kỹ thuật giữa 3 gói giải pháp BeeCare.
-          </p>
-        </div>
-
-        <!-- Mobile Scroll Hint -->
-        <div class="md:hidden flex items-center justify-center gap-1.5 text-xs text-slate-500 mb-3">
-          <i data-lucide="arrow-left-right" class="w-3.5 h-3.5 text-slate-400"></i>
-          <span data-i18n="compare_scroll_hint">Vuốt ngang để xem toàn bộ bảng so sánh</span>
-        </div>
-
-        <!-- Card Container with Table -->
-        <div class="compare-card-container">
-          <div class="compare-table-wrapper">
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <!-- Feature Column Header -->
-                  <th class="compare-th compare-th-feature">
-                    <div class="compare-feature-head">
-                      <h4 class="text-base sm:text-lg font-bold text-slate-900 font-heading mb-1" data-i18n="compare_col_feature">
-                        Nghiệp vụ & Tính năng
-                      </h4>
-                      <p class="text-xs text-slate-500">
-                        Đối chiếu chi tiết quyền lợi giữa các gói giải pháp
-                      </p>
-                    </div>
-                  </th>
-
-                  <!-- Basic Package Header -->
-                  <th class="compare-th compare-th-basic">
-                    <div class="compare-plan-head">
-                      <div class="compare-top-ribbon-slot">
-                        <span class="compare-ribbon compare-ribbon-basic" data-i18n="plan_basic_badge">Gói khởi đầu</span>
-                      </div>
-                      <div class="compare-plan-icon compare-plan-icon-basic">
-                        <i data-lucide="building-2" class="w-5 h-5"></i>
-                      </div>
-                      <h4 class="compare-plan-title compare-plan-title-basic" data-i18n="plan_basic_title">Cơ bản</h4>
-                      <div class="compare-plan-desc compare-plan-desc-basic" data-i18n="compare_col_basic_sub">Web Admin + Mobile App nhân viên</div>
-                    </div>
-                  </th>
-
-                  <!-- Pro Package Header (Teal Highlight) -->
-                  <th class="compare-th compare-th-pro">
-                    <div class="compare-plan-head">
-                      <div class="compare-top-ribbon-slot">
-                        <span class="compare-ribbon compare-ribbon-popular">
-                          <i data-lucide="flame" class="w-3 h-3 text-amber-900"></i>
-                          <span data-i18n="pricing_popular">Phổ biến nhất</span>
-                        </span>
-                      </div>
-                      <div class="compare-plan-icon compare-plan-icon-pro">
-                        <i data-lucide="users" class="w-5 h-5"></i>
-                      </div>
-                      <h4 class="compare-plan-title compare-plan-title-pro" data-i18n="plan_pro_title">Nâng cao</h4>
-                      <div class="compare-plan-desc compare-plan-desc-pro" data-i18n="compare_col_pro_sub">+ Mobile App Người thân (Family App)</div>
-                    </div>
-                  </th>
-
-                  <!-- VIP Package Header (Sky Highlight) -->
-                  <th class="compare-th compare-th-vip">
-                    <div class="compare-plan-head">
-                      <div class="compare-top-ribbon-slot">
-                        <span class="compare-ribbon compare-ribbon-vip">
-                          <i data-lucide="crown" class="w-3 h-3 text-sky-600"></i>
-                          <span data-i18n="plan_premium_badge">Hệ sinh thái toàn diện</span>
-                        </span>
-                      </div>
-                      <div class="compare-plan-icon compare-plan-icon-vip">
-                        <i data-lucide="crown" class="w-5 h-5"></i>
-                      </div>
-                      <h4 class="compare-plan-title compare-plan-title-vip" data-i18n="plan_premium_title">VIP</h4>
-                      <div class="compare-plan-desc compare-plan-desc-vip" data-i18n="compare_col_vip_sub">Trọn bộ 3 App + Mode Bán trú Daycare</div>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <!-- ================= GROUP 1: PLATFORMS ================= -->
-                <tr class="compare-group-row">
-                  <td colspan="4">
-                    <div class="flex items-center gap-2">
-                      <i data-lucide="smartphone" class="w-4 h-4 text-primary"></i>
-                      <span data-i18n="compare_grp_platforms">1. Nền tảng ứng dụng (Platforms)</span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature">
-                    <div class="font-semibold text-slate-800" data-i18n="compare_f_web_admin">Web Quản trị viện (Admin Dashboard)</div>
-                    <div class="text-xs text-slate-500 mt-0.5" data-i18n="compare_f_web_admin_sub">Dành cho Ban Giám đốc & khối văn phòng quản lý toàn diện</div>
-                  </td>
-                  <td class="compare-td">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-pro">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-vip">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature">
-                    <div class="font-semibold text-slate-800" data-i18n="compare_f_app_staff">App Mobile Điều dưỡng & Nhân viên</div>
-                    <div class="text-xs text-slate-500 mt-0.5" data-i18n="compare_f_app_staff_sub">Ghi nhận chỉ số, quy trình chăm sóc tại giường & chấm công</div>
-                  </td>
-                  <td class="compare-td">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-pro">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-vip">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature">
-                    <div class="font-semibold text-slate-800" data-i18n="compare_f_app_family">App Mobile Gia đình & Người thân</div>
-                    <div class="text-xs text-slate-500 mt-0.5" data-i18n="compare_f_app_family_sub">Theo dõi sức khỏe 24/7, nhận ảnh hoạt động & viện phí</div>
-                  </td>
-                  <td class="compare-td">
-                    <span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-pro">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                  <td class="compare-td compare-td-vip">
-                    <span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span>
-                  </td>
-                </tr>
-
-                <!-- ================= GROUP 2: INPATIENT & MEDICAL ================= -->
-                <tr class="compare-group-row">
-                  <td colspan="4">
-                    <div class="flex items-center gap-2">
-                      <i data-lucide="activity" class="w-4 h-4 text-emerald-600"></i>
-                      <span data-i18n="compare_grp_medical">2. Nghiệp vụ Quản lý Nội trú & Y tế</span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_emr">
-                    Hồ sơ bệnh án điện tử (EMR) & Tiền sử bệnh
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_contracts">
-                    Quản lý hợp đồng tiếp nhận & phân bổ phòng / giường
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_careplan">
-                    Kế hoạch chăm sóc chi tiết theo ca trực
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_vitals">
-                    Ghi nhận chỉ số sinh hiệu tại giường (HA, SpO2, Tim...)
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_alerts">
-                    Cảnh báo chỉ số bất thường & Bàn giao ca điện tử
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_reports">
-                    Báo cáo thống kê sức khỏe & viện phí định kỳ
-                  </td>
-                  <td class="compare-td"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <!-- ================= GROUP 3: DAYCARE ================= -->
-                <tr class="compare-group-row">
-                  <td colspan="4">
-                    <div class="flex items-center gap-2">
-                      <i data-lucide="sun-medium" class="w-4 h-4 text-amber-500"></i>
-                      <span data-i18n="compare_grp_daycare">3. Phân hệ Chăm sóc Bán trú (Daycare)</span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_pickup">
-                    Quản lý danh sách đón / trả NCT theo ngày & buổi
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_qr_checkin">
-                    Điểm danh đón / trả NCT tự động trên App Mobile
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_schedule">
-                    Lập lịch hoạt động, sinh hoạt & phục hồi chức năng
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_meals">
-                    Quản lý thực đơn, suất ăn theo buổi & theo dõi dinh dưỡng
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_daycare_billing">
-                    Quản lý viện phí bán trú theo ngày / tuần / tháng
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <!-- ================= GROUP 4: FAMILY & HIGH TECH ================= -->
-                <tr class="compare-group-row">
-                  <td colspan="4">
-                    <div class="flex items-center gap-2">
-                      <i data-lucide="heart-handshake" class="w-4 h-4 text-sky-600"></i>
-                      <span data-i18n="compare_grp_tech">4. Kết nối Người thân & Công nghệ cao</span>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_family_portal">
-                    Cổng thông tin gia đình theo dõi sức khỏe NCT 24/7
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_activity_diary">
-                    Nhật ký hình ảnh hoạt động & suất ăn gửi về gia đình
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_ai_assistant">
-                    Trợ lý AI Y tế hỗ trợ giải đáp nhanh sức khỏe
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_vietqr">
-                    Cổng thanh toán QRcode
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-                <tr class="compare-row">
-                  <td class="compare-td compare-td-feature" data-i18n="compare_f_direct_chat">
-                    Kênh trao đổi trực tiếp giữa gia đình & bác sĩ phụ trách
-                  </td>
-                  <td class="compare-td"><span class="compare-cross-badge"><i data-lucide="minus" class="w-3.5 h-3.5 stroke-[2]"></i></span></td>
-                  <td class="compare-td compare-td-pro"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                  <td class="compare-td compare-td-vip"><span class="compare-check-badge"><i data-lucide="check" class="w-3.5 h-3.5 stroke-[2.5]"></i></span></td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
     </section>
 
 
