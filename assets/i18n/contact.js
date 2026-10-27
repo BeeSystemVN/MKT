@@ -1,4 +1,4 @@
-window.TRANSLATIONS = window.TRANSLATIONS || { vi: {}, en: {}, ja: {} };
+﻿window.TRANSLATIONS = window.TRANSLATIONS || { vi: {}, en: {}, ja: {} };
 
 Object.assign(window.TRANSLATIONS.vi, {
   "contact_hero_badge": "Kênh tư vấn & triển khai toàn quốc",
@@ -44,7 +44,7 @@ Object.assign(window.TRANSLATIONS.vi, {
   "contact_corp_badge": "Pháp nhân nghiên cứu & vận hành",
   "contact_corp_name": "Công ty TNHH HANIKI",
   "contact_corp_sub": "Đơn vị chủ quản phát triển hệ sinh thái y tế số BeeCare",
-  "contact_corp_addr_label": "Trụ sở công nghệ Hà Nội",
+  "contact_corp_addr_label": "Trụ sở Công ty TNHH HANIKI",
   "contact_corp_addr_val": "Tầng 04 tòa nhà số 44c ngõ 4 đường Phú Mỹ, phường Từ Liêm, TP. Hà Nội",
   "contact_corp_hotline_label": "Kênh kết nối & hotline",
   "contact_badge_online": "Sẵn sàng hỗ trợ",
@@ -64,7 +64,7 @@ Object.assign(window.TRANSLATIONS.vi, {
   "contact_corp_hours_val": "Thứ Hai – Thứ Bảy: 8:00 – 18:00 (Giờ hành chính).",
   "contact_corp_btn_call": "Gọi tư vấn: 0988 123 531",
   "contact_corp_btn_zalo": "Nhắn tin Zalo tư vấn",
-  "contact_map_title": "Vị trí trụ sở Hà Nội",
+  "contact_map_title": "Vị trí trụ sở Công ty TNHH HANIKI",
   "contact_map_open": "Mở trên Google Maps",
   "contact_faq_badge": "Giải đáp thắc mắc",
   "contact_faq_title": "Câu hỏi thường gặp trước khi triển khai BeeCare",
