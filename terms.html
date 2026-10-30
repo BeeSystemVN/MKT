@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 
 <head>
@@ -24,7 +24,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/output.css?v=20261002_v5" />
-  <link rel="stylesheet" href="assets/style.css?v=20261027_v4" />
+  <link rel="stylesheet" href="assets/style.css?v=20261029_v3" />
   <link rel="icon" href="assets/app_icon_512x512.png?v=20261020_v2" type="image/png">
 
   <style>
@@ -293,15 +293,33 @@
       <div class="footer-grid">
         <!-- Cột 1: Brand + Thông tin liên hệ -->
         <div>
-          <a href="index.html" class="footer-brand-logo">
-            <div class="footer-brand-icon">
-              <img src="assets/logo_bee_blue.png?v=20261020" alt="BeeCare logo">
-            </div>
-            <div>
-              <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
-              <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý</div>
-            </div>
-          </a>
+          <div class="footer-brand-row">
+            <a href="index.html" class="footer-brand-logo" title="BeeCare – Hệ sinh thái quản lý">
+              <div class="footer-brand-icon">
+                <img src="assets/logo_bee_blue.png?v=20261020" alt="BeeCare logo">
+              </div>
+              <div>
+                <div class="footer-brand-name"><span class="bee">Bee</span><span class="care">Care</span></div>
+                <div class="footer-tagline" data-i18n="footer_tagline">Hệ sinh thái quản lý</div>
+              </div>
+            </a>
+
+            <!-- Component bên phải cạnh: Back trắng chữ Cam - Danh sách các viện -->
+            <a href="company.html#partners" class="footer-facility-card" title="Danh sách các viện dưỡng lão đối tác">
+              <div class="footer-facility-icon">
+                <svg class="w-5 h-5 text-[#FF7300]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V7l7-4 7 4v14"></path>
+                  <path d="M9 10a3 3 0 0 1 6 0c0 2-3 4-3 4s-3-2-3-4Z" fill="currentColor" fill-opacity="0.18"></path>
+                  <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="footer-facility-title" data-i18n="footer_facility_title">Danh sách các viện</div>
+                <div class="footer-facility-tagline" data-i18n="footer_facility_sub">Cơ sở kết nối</div>
+              </div>
+            </a>
+          </div>
           <p class="footer-desc" data-i18n="footer_desc">Phần mềm quản lý viện dưỡng lão. Kết nối Web quản lý, App Điều dưỡng & App Người thân với trợ lý AI tích hợp.</p>
           <div class="footer-company-badge">
             <i data-lucide="building-2" style="width:12px;height:12px;flex-shrink:0"></i>

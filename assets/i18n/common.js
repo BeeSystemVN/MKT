@@ -72,7 +72,19 @@ Object.assign(window.TRANSLATIONS.vi, {
   "idx_mobile_call": "Gọi 0988 123 531",
   "faq_title_page": "Câu hỏi thường gặp | BeeCare by HANIKI",
   "privacy_title_page": "Chính sách bảo mật | BeeCare by HANIKI",
-  "terms_title_page": "Điều khoản sử dụng | BeeCare by HANIKI"
+  "terms_title_page": "Điều khoản sử dụng | BeeCare by HANIKI",
+  "header_brand_title": "BeeCare",
+  "header_brand_sub": "Hệ sinh thái quản lý",
+  "header_nh_title": "Danh sách các viện",
+  "header_nh_subtitle": "Cơ sở kết nối",
+  "header_nh_badge_text": "Mạng lưới 15+ cơ sở dưỡng lão toàn quốc",
+  "header_nh_hotline": "Hotline kết nối: 0988 123 531",
+  "header_nh_dd_heading": "Cơ sở viện dưỡng lão tiêu biểu",
+  "header_nh_dd_sub": "Đang vận hành hệ sinh thái y tế số BeeCare",
+  "header_nh_call_facility": "Gọi tư vấn",
+  "header_nh_all_facilities": "Xem toàn bộ mạng lưới cơ sở",
+  "footer_facility_title": "Danh sách các viện",
+  "footer_facility_sub": "Cơ sở kết nối"
 });
 
 Object.assign(window.TRANSLATIONS.en, {
@@ -146,7 +158,19 @@ Object.assign(window.TRANSLATIONS.en, {
   "idx_mobile_call": "Call 0988 123 531",
   "faq_title_page": "Frequently Asked Questions | BeeCare by HANIKI",
   "privacy_title_page": "Privacy Policy | BeeCare by HANIKI",
-  "terms_title_page": "Terms of Service | BeeCare by HANIKI"
+  "terms_title_page": "Terms of Service | BeeCare by HANIKI",
+  "header_brand_title": "BeeCare",
+  "header_brand_sub": "Management ecosystem",
+  "header_nh_title": "Facility directory",
+  "header_nh_subtitle": "Partner facilities",
+  "header_nh_badge_text": "Network of 15+ nursing homes nationwide",
+  "header_nh_hotline": "Hotline: 0988 123 531",
+  "header_nh_dd_heading": "Featured partner facilities",
+  "header_nh_dd_sub": "Operating on BeeCare digital healthcare ecosystem",
+  "header_nh_call_facility": "Call facility",
+  "header_nh_all_facilities": "View all partner facilities",
+  "footer_facility_title": "Facility directory",
+  "footer_facility_sub": "Connected partners"
 });
 
 Object.assign(window.TRANSLATIONS.ja, {
@@ -220,6 +244,18 @@ Object.assign(window.TRANSLATIONS.ja, {
   "idx_mobile_call": "電話 0988 123 531",
   "faq_title_page": "よくある質問 | BeeCare by HANIKI",
   "privacy_title_page": "プライバシーポリシー | BeeCare by HANIKI",
-  "terms_title_page": "利用規約 | BeeCare by HANIKI"
+  "terms_title_page": "利用規約 | BeeCare by HANIKI",
+  "header_brand_title": "BeeCare",
+  "header_brand_sub": "管理エコシステム",
+  "header_nh_title": "提携施設一覧",
+  "header_nh_subtitle": "連携施設",
+  "header_nh_badge_text": "BeeCare導入 全国15以上の提携施設",
+  "header_nh_hotline": "施設相談: 0988 123 531",
+  "header_nh_dd_heading": "主要な提携老人ホーム",
+  "header_nh_dd_sub": "BeeCareデジタル医療システム導入済み",
+  "header_nh_call_facility": "施設へ電話",
+  "header_nh_all_facilities": "全提携施設一覧を見る",
+  "footer_facility_title": "提携施設一覧",
+  "footer_facility_sub": "連携施設"
 });
 

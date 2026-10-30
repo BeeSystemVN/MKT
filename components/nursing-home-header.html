@@ -1,0 +1,205 @@
+<!-- ==========================================================================
+     COMPONENT: THANH HEADER MÀU XANH CÓ 2 Ô PILL:
+     - Ô Trái: BeeCare - Hệ sinh thái quản lý (back trắng, logo BeeCare)
+     - Ô Phải: Danh sách các viện (back trắng, chữ Cam, biểu tượng viện dưỡng lão)
+     ========================================================================== -->
+<div class="nh-header-bar" id="nhHeaderBar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="nh-header-inner">
+
+      <!-- Cụm Các Thẻ Pill Bên Trái -->
+      <div class="nh-header-left-cluster">
+        
+        <!-- Ô 1: Brand Card BeeCare (Theo đúng ảnh mẫu) -->
+        <a href="index.html" class="nh-header-pill nh-header-pill-brand" title="BeeCare – Hệ sinh thái quản lý">
+          <div class="nh-brand-icon">
+            <img src="assets/logo_bee_blue.png" alt="BeeCare Logo" class="w-6 h-6 object-contain" />
+          </div>
+          <div class="nh-header-pill-text">
+            <span class="nh-brand-title" data-i18n="header_brand_title">BeeCare</span>
+            <span class="nh-brand-sub" data-i18n="header_brand_sub">Hệ sinh thái quản lý</span>
+          </div>
+        </a>
+
+        <!-- Ô 2: Component bên phải ô này: Back Trắng Chữ Cam - Danh Sách Các Viện -->
+        <div class="nh-pill-dropdown-wrap" id="nhPillWrap">
+          
+          <button type="button" class="nh-header-pill nh-header-pill-facility" id="nhPillBtn" aria-expanded="false" aria-haspopup="true" onclick="toggleNhDropdown(event)">
+            <!-- Biểu tượng Viện Dưỡng Lão màu cam -->
+            <div class="nh-facility-icon">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V7l7-4 7 4v14"></path>
+                <path d="M9 10a3 3 0 0 1 6 0c0 2-3 4-3 4s-3-2-3-4Z" fill="currentColor" fill-opacity="0.2"></path>
+                <path d="M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path>
+              </svg>
+            </div>
+            <!-- Chữ Cam nổi bật trên nền trắng -->
+            <div class="nh-header-pill-text">
+              <span class="nh-facility-title" data-i18n="header_nh_title">Danh sách các viện</span>
+              <span class="nh-facility-sub" data-i18n="header_nh_subtitle">Cơ sở kết nối</span>
+            </div>
+            <!-- Mũi tên Dropdown màu cam -->
+            <i data-lucide="chevron-down" class="w-4 h-4 nh-pill-arrow-orange"></i>
+          </button>
+
+          <!-- Dropdown Menu Danh Sách Các Viện -->
+          <div class="nh-dropdown-menu" id="nhDropdownMenu">
+            <div class="nh-dropdown-header">
+              <div>
+                <div class="nh-dropdown-title" data-i18n="header_nh_dd_heading">Cơ sở viện dưỡng lão tiêu biểu</div>
+                <div class="text-[11px] text-slate-500" data-i18n="header_nh_dd_sub">Đang vận hành hệ sinh thái y tế số BeeCare</div>
+              </div>
+              <span class="nh-dropdown-count-badge">6 cơ sở</span>
+            </div>
+
+            <!-- Danh sách các viện -->
+            <div class="nh-facility-list">
+              
+              <!-- Viện 1: Diên Hồng Cơ sở 1 -->
+              <a href="tel:0968660115" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Viện dưỡng lão Diên Hồng – Cơ sở 1</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>KĐT Nam An Khánh, Hoài Đức, Hà Nội</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">EMR tại giường</span>
+                    <span class="nh-facility-tag tag-teal">Nội trú 24/7</span>
+                    <span class="nh-facility-tag">0968 660 115</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Viện 2: Diên Hồng Cơ sở 2 -->
+              <a href="tel:0968660115" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Viện dưỡng lão Diên Hồng – Cơ sở 2</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>Tam Trinh, P. Yên Sở, Q. Hoàng Mai, Hà Nội</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">Phục hồi chức năng</span>
+                    <span class="nh-facility-tag tag-teal">Bán trú Daycare</span>
+                    <span class="nh-facility-tag">0968 660 115</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Viện 3: Diên Hồng Cơ sở 3 -->
+              <a href="tel:0968660115" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="building-2" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Viện dưỡng lão Diên Hồng – Cơ sở 3</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>Thanh Liệt, Huyện Thanh Trì, TP. Hà Nội</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">Theo dõi sinh hiệu AI</span>
+                    <span class="nh-facility-tag tag-teal">Chăm sóc đặc biệt</span>
+                    <span class="nh-facility-tag">0968 660 115</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Viện 4: Nozomi Care -->
+              <a href="tel:0988123531" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Nozomi Care Việt Nam</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>Tây Hồ, TP. Hà Nội</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">Chuẩn Kaigo Nhật Bản</span>
+                    <span class="nh-facility-tag tag-teal">Phục hồi chức năng</span>
+                    <span class="nh-facility-tag">0988 123 531</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Viện 5: Viện dưỡng lão An Nhiên -->
+              <a href="tel:0988123531" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="shield-plus" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Viện dưỡng lão An Nhiên</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>KĐT sinh thái, Long Biên, Hà Nội</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">Dưỡng lão sinh thái</span>
+                    <span class="nh-facility-tag tag-teal">Family App 24/7</span>
+                    <span class="nh-facility-tag">0988 123 531</span>
+                  </div>
+                </div>
+              </a>
+
+              <!-- Viện 6: Viện dưỡng lão Bách Niên -->
+              <a href="tel:0988123531" class="nh-facility-item group">
+                <div class="nh-facility-item-icon">
+                  <i data-lucide="activity" class="w-4 h-4"></i>
+                </div>
+                <div class="nh-facility-info">
+                  <div class="nh-facility-name">Viện dưỡng lão Bách Niên</div>
+                  <div class="nh-facility-addr">
+                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                    <span>Quận 7, TP. Hồ Chí Minh</span>
+                  </div>
+                  <div class="nh-facility-tags">
+                    <span class="nh-facility-tag tag-orange">Y tế số toàn diện</span>
+                    <span class="nh-facility-tag tag-teal">Trợ lý AI Care</span>
+                    <span class="nh-facility-tag">0988 123 531</span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Chân Dropdown -->
+            <div class="nh-dropdown-footer">
+              <span class="text-xs text-slate-500 font-medium">Hotline: <strong class="text-slate-800">0988 123 531</strong></span>
+              <a href="company.html#partners" class="nh-dropdown-all-btn">
+                <span data-i18n="header_nh_all_facilities">Xem toàn bộ mạng lưới cơ sở</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Cụm Phải: Badge kết nối mạng lưới & Hotline nhanh -->
+      <div class="nh-header-right">
+        <span class="nh-header-badge hidden sm:inline-flex">
+          <span class="nh-status-dot"></span>
+          <span data-i18n="header_nh_badge_text">Mạng lưới 15+ cơ sở dưỡng lão toàn quốc</span>
+        </span>
+        <a href="tel:0988123531" class="nh-header-hotline" title="Gọi đường dây nóng kết nối viện">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5 text-orange-500"></i>
+          <span class="hidden md:inline" data-i18n="header_nh_hotline">Hotline kết nối: 0988 123 531</span>
+          <span class="md:hidden">0988 123 531</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

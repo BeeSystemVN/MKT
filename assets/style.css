@@ -1,4 +1,4 @@
-﻿/* Ensure Vietnamese font applied globally without system fallback quirks */
+/* Ensure Vietnamese font applied globally without system fallback quirks */
 body,
 html,
 input,
@@ -1395,80 +1395,183 @@ h6 {
   padding-bottom: 32px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
-@media (min-width: 768px) {
+@media (min-width: 640px) and (max-width: 1023px) {
   .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
   }
 }
-@media (min-width: 640px) and (max-width: 767px) {
+@media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 2.2fr 1fr 1fr 1.3fr !important;
+    gap: 32px !important;
   }
 }
 
-/* Footer brand column */
-.footer-brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 18px 8px 10px;
-  margin-bottom: 18px;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.95);
+/* Footer brand column & Facility card */
+.footer-brand-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: nowrap !important; /* Luôn sang ngang nhau */
+  margin-bottom: 18px !important;
+  max-width: 100%;
+}
+
+.footer-brand-logo,
+.footer-facility-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  height: 56px !important; /* Chiều cao đồng bộ chuẩn xác 56px */
+  min-height: 56px !important;
+  max-height: 56px !important;
+  box-sizing: border-box !important;
+  padding: 0 14px 0 8px !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px !important;
   border: 1px solid rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 10px 25px -4px rgba(10, 30, 60, 0.22),
+  box-shadow: 0 8px 20px -3px rgba(10, 30, 60, 0.18),
+              0 3px 8px -2px rgba(0, 0, 0, 0.06),
+              inset 0 1px 2px rgba(255, 255, 255, 1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  user-select: none;
+  flex-shrink: 0 !important;
+}
+
+.footer-brand-logo:hover,
+.footer-facility-card:hover {
+  transform: translateY(-2px);
+  background: #ffffff !important;
+  border-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 12px 28px -3px rgba(10, 30, 60, 0.28),
               0 4px 10px -2px rgba(0, 0, 0, 0.08),
               inset 0 1px 2px rgba(255, 255, 255, 1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
-.footer-brand-logo:hover {
-  transform: translateY(-2px);
-  background: #ffffff;
-  box-shadow: 0 14px 32px -4px rgba(10, 30, 60, 0.32),
-              0 6px 14px -2px rgba(0, 0, 0, 0.1),
-              inset 0 1px 2px rgba(255, 255, 255, 1);
+
+.footer-brand-icon,
+.footer-facility-icon {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
 }
+
 .footer-brand-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(38, 83, 151, 0.12);
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(38, 83, 151, 0.12);
   border: 1px solid rgba(226, 232, 240, 0.85);
 }
+
 .footer-brand-icon img {
-  width: 30px;
-  height: 30px;
+  width: 26px !important;
+  height: 26px !important;
   object-fit: contain;
 }
-.footer-brand-name {
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+
+.footer-facility-icon {
+  background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%) !important;
+  box-shadow: 0 2px 6px rgba(255, 115, 0, 0.15);
+  border: 1px solid #FED7AA !important;
+  color: #FF7300 !important;
 }
+
+.footer-brand-logo > div:not(.footer-brand-icon),
+.footer-facility-card > div:not(.footer-facility-icon) {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  line-height: 1.15 !important;
+}
+
+.footer-brand-name {
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
 .footer-brand-name .bee,
 .footer-brand-name .care,
 .footer-logo-brand .footer-logo-bee,
 .footer-logo-brand .footer-logo-care {
   color: #265397 !important;
 }
-.footer-tagline {
-  font-size: 11px;
-  color: #475569;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  margin-top: 2px;
+
+.footer-facility-title {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.015em !important;
+  color: #FF7300 !important; /* Back trắng chữ Cam */
+  white-space: nowrap !important;
 }
+
+.footer-tagline,
+.footer-facility-tagline {
+  font-family: 'Be Vietnam Pro', 'Inter', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.01em !important;
+  margin-top: 2px !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2.2fr 1fr 1fr 1.3fr !important;
+  }
+}
+
+@media (max-width: 639px) {
+  .footer-brand-row {
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 4px !important;
+  }
+  .footer-brand-logo,
+  .footer-facility-card {
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    padding: 0 10px 0 6px !important;
+    border-radius: 13px !important;
+    gap: 8px !important;
+  }
+  .footer-brand-icon,
+  .footer-facility-icon {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    min-height: 34px !important;
+    border-radius: 8px !important;
+  }
+  .footer-brand-name {
+    font-size: 17px !important;
+  }
+  .footer-facility-title {
+    font-size: 13px !important;
+  }
+  .footer-tagline,
+  .footer-facility-tagline {
+    font-size: 9px !important;
+  }
+}
+
 .footer-desc {
   font-size: 13px;
   color: #f1f5f9;
